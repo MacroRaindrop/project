@@ -16,7 +16,7 @@ struct ContentView: View {
                 Text("18 Okt 2021") .padding()
             }
             HStack{
-                
+
                 VStack{
                     Text("27").font(.system(size: 60))
                     Text("Total Stock")
@@ -24,7 +24,7 @@ struct ContentView: View {
                     .padding()
                     .background(Color.gray)
                     .frame(width: 200, height: 180)
-                
+
                 VStack{
                     Text("Hello, world!")
                         .padding()
@@ -58,41 +58,47 @@ struct ContentView: View {
                 Text("View All")
             }.background(Color.gray) .cornerRadius(10).padding()
         
-            VStack{
-                Text("Today's Outbound") .bold()
-                HStack{
-                    padding()
-                    Text("Kecap Def")
-                    Spacer()
-                    Text("14 pcs")
-                    padding()
-                }
-                HStack{
-                    padding()
-                    Text("Kecap Def")
-                    Spacer()
-                    Text("14 pcs")
-                    padding()
-                }
-                HStack{
-                    padding()
-                    Text("Kecap Def")
-                    Spacer()
-                    Text("14 pcs")
-                    padding()
-                }
-            }.background(Color.gray) .cornerRadius(10).padding()
-        
+            ExtractedView()
+//
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ForEach(["iPhone 12"], id: \.self) { deviceName in
+        //ForEach(["iPhone 12"], id: \.self) { deviceName in
                     ContentView()
-                        .previewDevice(PreviewDevice(rawValue: deviceName))
-                        .previewDisplayName(deviceName)
+//                        .previewDevice(PreviewDevice(rawValue: deviceName))
+//                        .previewDisplayName(deviceName)
         }
+    }
+//}
+
+struct ExtractedView: View {
+    var body: some View {
+        VStack{
+            Text("Today's Outbound") .bold()
+            HStack{
+                padding()
+                Text("Kecap Def")
+                Spacer()
+                Text("14 pcs")
+                padding()
+            }
+            //                HStack{
+            //                    padding()
+            //                    Text("Kecap Def")
+            //                    Spacer()
+            //                    Text("14 pcs")
+            //                    padding()
+            //                }
+            //                HStack{
+            //                    padding()
+            //                    Text("Kecap Def")
+            //                    Spacer()
+            //                    Text("14 pcs")
+            //                    padding()
+            //                }
+        }.background(Color.gray) .cornerRadius(10).padding()
     }
 }
