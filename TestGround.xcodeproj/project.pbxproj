@@ -11,6 +11,7 @@
 		B828FCEF272179150015F0BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828FCEE272179150015F0BF /* ContentView.swift */; };
 		B828FCF1272179170015F0BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B828FCF0272179170015F0BF /* Assets.xcassets */; };
 		B828FCF4272179170015F0BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B828FCF3272179170015F0BF /* Preview Assets.xcassets */; };
+		C24F9A8027269047002ACC8D /* StockList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24F9A7F27269047002ACC8D /* StockList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		B828FCEE272179150015F0BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = TestGround/ContentView.swift; sourceTree = SOURCE_ROOT; };
 		B828FCF0272179170015F0BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B828FCF3272179170015F0BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C24F9A7F27269047002ACC8D /* StockList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 				B828FCEE272179150015F0BF /* ContentView.swift */,
 				B828FCF0272179170015F0BF /* Assets.xcassets */,
 				B828FCF2272179170015F0BF /* Preview Content */,
+				C24F9A7F27269047002ACC8D /* StockList.swift */,
 			);
 			path = TestGround;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C24F9A8027269047002ACC8D /* StockList.swift in Sources */,
 				B828FCEF272179150015F0BF /* ContentView.swift in Sources */,
 				B828FCED272179150015F0BF /* TestGroundApp.swift in Sources */,
 			);
