@@ -9,45 +9,97 @@ import SwiftUI
 
 struct RegisterView: View {
     @State var username: String = ""
+    @State var company: String = ""
+    @State var email: String = ""
+    @State var password: String = ""
+    @State var repeatPassword: String = ""
     
     var body: some View {
-        NavigationView {
+        VStack {
+            Text("Daftar")
+                .padding()
+                .font(.system(size: 30))
             VStack {
-                Form {
-                    Section(header: Text("Profile")) {
-                        TextField("FirstName", text: $username)
-                        TextField("LastName", text: $username)
-                    }
-                    Section(header: Text("Perusahaan")) {
-                        TextField("", text: $username)
-                    }
-                    Section(header: Text("Email")) {
-                        TextField("", text: $username)
-                    }
-                    Section(header: Text("Kata Sandi")) {
-                        TextField("*******", text: $username)
-                        
-                    }
-                    Section(header: Text("Ulangi Kata Sandi")) {
-                        TextField("*******", text: $username)
-                    }
-                    Section{
-                        Button (action: {
-                            print("Perform an action here...")
-                        }){
-                            Text("Buat Akun")
-                        }
-                        .frame(height: 55)
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .background(Color.purple)
-                        .buttonStyle(PlainButtonStyle())
-                        .cornerRadius(10)
-                        .foregroundColor(.black)
-                    }
+                HStack {
+                    Text("Username")
+                        .font(Font.headline.weight(.bold))
+                    
+                    Spacer()
                 }
+                .padding()
+                
+                TextField("Input Username", text: $username)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                
+                HStack {
+                    Text("Company")
+                        .font(Font.headline.weight(.bold))
+                    
+                    Spacer()
+                }
+                .padding()
+                
+                TextField("Input Company", text: $company)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                
+                HStack {
+                    Text("Email")
+                        .font(Font.headline.weight(.bold))
+                    
+                    Spacer()
+                }
+                .padding()
+                
+                TextField("Input Your Email", text: $email)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                
+                HStack {
+                    Text("Password")
+                        .font(Font.headline.weight(.bold))
+                    
+                    Spacer()
+                }
+                .padding()
+                
+                TextField("Input Password", text: $password)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                
+                HStack {
+                    Text("Repeat Password")
+                        .font(Font.headline.weight(.bold))
+                    
+                    Spacer()
+                }
+                .padding()
+                
+                TextField("Input Your Password Again", text: $repeatPassword)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                
             }
-            .navigationBarTitle("Register")
             
+            VStack {
+                Button(action: {
+                    print("Create New User")
+                }) {
+                    Text("Create User")
+                        .frame(maxWidth: 219, maxHeight: 20)
+                        .font(.system(size: 20))
+                        .padding()
+                        .foregroundColor(.black)
+                        .background(Color.green)
+                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                }
+                Spacer()
+                    .frame(height: 20)
+            }
+            
+            .padding()
+            Spacer()
         }
     }
 }
