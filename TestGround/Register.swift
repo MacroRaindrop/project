@@ -75,7 +75,9 @@ struct RegisterView: View {
                             TextField("Input Password", text: self.$password)
                                 .padding()
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                                .padding()
+                                .frame(width: UIScreen.main.bounds.width - 40)
+//                                .background((Color(red: 233.0/255, green: 234.0/255,blue: 243.0/255)))
+                                .cornerRadius(10)
                         } else {
                             SecureField("Input Password", text:
                                             self.$password)
@@ -112,7 +114,9 @@ struct RegisterView: View {
                             TextField("Input Password Again", text: self.$password)
                                 .padding()
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                                .padding()
+                                .frame(width: UIScreen.main.bounds.width - 40)
+//                                .background((Color(red: 233.0/255, green: 234.0/255,blue: 243.0/255)))
+                                .cornerRadius(10)
                         } else {
                             SecureField("Input Password Again", text:
                                             self.$password)
