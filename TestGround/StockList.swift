@@ -57,7 +57,7 @@ struct StocklistView: View {
 
 struct StockListView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+       StocklistView()
             .previewLayout(.device)
             .previewDevice("iPhone 12")
     }

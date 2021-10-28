@@ -14,6 +14,8 @@ struct RegisterView: View {
     @State var password: String = ""
     @State var repeatPassword: String = ""
     @State var hiddenPassword = false
+    
+    
     var body: some View {
         VStack {
             Text("Daftar")
@@ -52,9 +54,12 @@ struct RegisterView: View {
                 }
         
                 
-                TextField("Input Your Email", text: $email)
+                
+                TextField("Input Your Email", text: self.$email)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
+                 
+                    
                 
                 HStack {
                     Text("Password")
@@ -67,14 +72,17 @@ struct RegisterView: View {
                     Group {
                         
                         if self.hiddenPassword {
-                            TextField("Input Password", text: self.$password).padding()
+                            TextField("Input Password", text: self.$password)
+                                .padding()
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .padding()
                         } else {
                             SecureField("Input Password", text:
-                                            self.$password).padding()
-//                                .frame(width: UIScreen.main.bounds.width - 10)
-                                .background((Color(red: 233.0/255, green: 234.0/255,blue: 243.0/255)))
+                                            self.$password)
+                                .padding()
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .frame(width: UIScreen.main.bounds.width - 40)
+//                                .background((Color(red: 233.0/255, green: 234.0/255,blue: 243.0/255)))
                                 .cornerRadius(10)
                                 
                         }
@@ -86,7 +94,7 @@ struct RegisterView: View {
                                 "eye.slash.fill")
                                 .foregroundColor((self.hiddenPassword == true ) ?
                                                  Color.green : Color.secondary)
-                        }.offset(x: -45, y: 0)
+                        }.offset(x: -60, y: 0)
                     }
                 }
                 
@@ -101,14 +109,17 @@ struct RegisterView: View {
                     Group {
                         
                         if self.hiddenPassword {
-                            TextField("Input Password Again", text: self.$password).padding()
+                            TextField("Input Password Again", text: self.$password)
+                                .padding()
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .padding()
                         } else {
                             SecureField("Input Password Again", text:
-                                            self.$password).padding()
-//                                .frame(width: UIScreen.main.bounds.width - 10)
-                                .background((Color(red: 233.0/255, green: 234.0/255,blue: 243.0/255)))
+                                            self.$password)
+                                .padding()
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .frame(width: UIScreen.main.bounds.width - 40)
+//                                .background((Color(red: 233.0/255, green: 234.0/255,blue: 243.0/255)))
                                 .cornerRadius(10)
                                 
                         }
@@ -120,14 +131,14 @@ struct RegisterView: View {
                                 "eye.slash.fill")
                                 .foregroundColor((self.hiddenPassword == true ) ?
                                                  Color.green : Color.secondary)
-                        }.offset(x: -45, y: 0)
+                        }.offset(x: -60, y: 0)
                     }
                 }
                 
                 
             }
             .padding([.leading, .trailing])
-            Spacer(minLength: 20)
+            Spacer(minLength: 50)
             VStack {
                 Button(action: {
                     print("Create New User")
@@ -153,6 +164,11 @@ struct RegisterView: View {
 
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterView()
+        if #available(iOS 15.0, *) {
+            RegisterView()
+                .previewDevice("iPhone 12")
+        } else {
+            // Fallback on earlier versions
+        }
     }
 }
