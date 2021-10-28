@@ -13,7 +13,7 @@ struct RegisterView: View {
     @State var email: String = ""
     @State var password: String = ""
     @State var repeatPassword: String = ""
-    
+    @State var hiddenPassword = false
     var body: some View {
         VStack {
             Text("Daftar")
@@ -26,7 +26,7 @@ struct RegisterView: View {
                     
                     Spacer()
                 }
-                .padding()
+                
                 
                 TextField("Input Username", text: $username)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -38,7 +38,7 @@ struct RegisterView: View {
                     
                     Spacer()
                 }
-                .padding()
+               
                 
                 TextField("Input Company", text: $company)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -50,7 +50,7 @@ struct RegisterView: View {
                     
                     Spacer()
                 }
-                .padding()
+        
                 
                 TextField("Input Your Email", text: $email)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -62,11 +62,33 @@ struct RegisterView: View {
                     
                     Spacer()
                 }
-                .padding()
                 
-                TextField("Input Password", text: $password)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
+                HStack {
+                    Group {
+                        
+                        if self.hiddenPassword {
+                            TextField("Input Password", text: self.$password).padding()
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .padding()
+                        } else {
+                            SecureField("Input Password", text:
+                                            self.$password).padding()
+//                                .frame(width: UIScreen.main.bounds.width - 10)
+                                .background((Color(red: 233.0/255, green: 234.0/255,blue: 243.0/255)))
+                                .cornerRadius(10)
+                                
+                        }
+                        
+                        Button(action : {
+                            self.hiddenPassword.toggle()
+                        }) {
+                            Image(systemName: self.hiddenPassword ? "eye.fill" :
+                                "eye.slash.fill")
+                                .foregroundColor((self.hiddenPassword == true ) ?
+                                                 Color.green : Color.secondary)
+                        }.offset(x: -45, y: 0)
+                    }
+                }
                 
                 HStack {
                     Text("Repeat Password")
@@ -74,14 +96,38 @@ struct RegisterView: View {
                     
                     Spacer()
                 }
-                .padding()
                 
-                TextField("Input Your Password Again", text: $repeatPassword)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
+                HStack {
+                    Group {
+                        
+                        if self.hiddenPassword {
+                            TextField("Input Password Again", text: self.$password).padding()
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .padding()
+                        } else {
+                            SecureField("Input Password Again", text:
+                                            self.$password).padding()
+//                                .frame(width: UIScreen.main.bounds.width - 10)
+                                .background((Color(red: 233.0/255, green: 234.0/255,blue: 243.0/255)))
+                                .cornerRadius(10)
+                                
+                        }
+                        
+                        Button(action : {
+                            self.hiddenPassword.toggle()
+                        }) {
+                            Image(systemName: self.hiddenPassword ? "eye.fill" :
+                                "eye.slash.fill")
+                                .foregroundColor((self.hiddenPassword == true ) ?
+                                                 Color.green : Color.secondary)
+                        }.offset(x: -45, y: 0)
+                    }
+                }
+                
                 
             }
-            
+            .padding([.leading, .trailing])
+            Spacer(minLength: 20)
             VStack {
                 Button(action: {
                     print("Create New User")
