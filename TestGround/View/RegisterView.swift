@@ -7,6 +7,16 @@ struct RegisterView: View {
     @State var password: String = ""
     @State var repeatPassword: String = ""
     @State var hiddenPassword = false
+    @State var hiddenRepeatPassword = false
+    
+    @State var usernameNull: Bool = false
+    @State var companyNull: Bool = false
+    @State var emailNull: Bool = false
+    @State var passwordNull: Bool = false
+    @State var repeatPasswordNull: Bool = false
+    @State var authenticationDidFail: Bool = false
+    @State var authenticationDidSucceed: Bool = false
+    @State var newAcc: Bool = false
     
     
     var body: some View {
@@ -64,14 +74,14 @@ struct RegisterView: View {
                     Spacer()
                 }
                 
-                HStack {
+                ZStack {
                     Group {
                         
                         if self.hiddenPassword {
                             TextField("Input Password", text: self.$password)
                                 .padding()
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                                .frame(width: UIScreen.main.bounds.width - 40)
+                                .frame(width: UIScreen.main.bounds.width - 10)
 //                                .background((Color(red: 233.0/255, green: 234.0/255,blue: 243.0/255)))
                                 .cornerRadius(10)
                         } else {
@@ -79,7 +89,7 @@ struct RegisterView: View {
                                             self.$password)
                                 .padding()
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                                .frame(width: UIScreen.main.bounds.width - 40)
+                                .frame(width: UIScreen.main.bounds.width - 10)
 //                                .background((Color(red: 233.0/255, green: 234.0/255,blue: 243.0/255)))
                                 .cornerRadius(10)
                                 
@@ -92,22 +102,22 @@ struct RegisterView: View {
                                 "eye.slash.fill")
                                 .foregroundColor((self.hiddenPassword == true ) ?
                                                  Color.green : Color.secondary)
-                        }.offset(x: -60, y: 0)
+                        }.offset(x: 150, y: 0)
                     }
                 }
                 
                 HStack {
-                    Text("Repeat Password")
+                    Text("Confirm Password")
                         .font(Font.headline.weight(.bold))
                     
                     Spacer()
                 }
                 
-                HStack {
+                ZStack {
                     Group {
                         
-                        if self.hiddenPassword {
-                            TextField("Input Password Again", text: self.$password)
+                        if self.hiddenRepeatPassword {
+                            TextField("Confirm Your Password ", text: self.$repeatPassword)
                                 .padding()
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .frame(width: UIScreen.main.bounds.width - 40)
@@ -115,23 +125,24 @@ struct RegisterView: View {
                                 .cornerRadius(10)
                         } else {
                             SecureField("Input Password Again", text:
-                                            self.$password)
+                                            self.$repeatPassword)
                                 .padding()
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                                .frame(width: UIScreen.main.bounds.width - 40)
+                                .frame(width: UIScreen.main.bounds.width - 10)
 //                                .background((Color(red: 233.0/255, green: 234.0/255,blue: 243.0/255)))
                                 .cornerRadius(10)
                                 
                         }
                         
+                        
                         Button(action : {
-                            self.hiddenPassword.toggle()
+                            self.hiddenRepeatPassword.toggle()
                         }) {
-                            Image(systemName: self.hiddenPassword ? "eye.fill" :
+                            Image(systemName: self.hiddenRepeatPassword ? "eye.fill" :
                                 "eye.slash.fill")
-                                .foregroundColor((self.hiddenPassword == true ) ?
+                                .foregroundColor((self.hiddenRepeatPassword == true ) ?
                                                  Color.green : Color.secondary)
-                        }.offset(x: -60, y: 0)
+                        } .offset(x: 150, y: 0)
                     }
                 }
                 
@@ -140,9 +151,77 @@ struct RegisterView: View {
             .padding([.leading, .trailing])
             Spacer(minLength: 50)
             VStack {
+                if usernameNull {
+                    Text("username tidak boleh kosong")
+                        .offset(y: -10)
+                        .foregroundColor(.red)
+                        .padding()
+                }
+                else if companyNull {
+                    Text("company tidak boleh kosong")
+                        .offset(y: -10)
+                        .foregroundColor(.red)
+                        .padding()
+                }
+                else if emailNull {
+                    Text("email tidak boleh kosong")
+                        .offset(y: -10)
+                        .foregroundColor(.red)
+                        .padding()
+                }
+                else if passwordNull {
+                    Text("password tidak boleh kosong")
+                        .offset(y: -10)
+                        .foregroundColor(.red)
+                        .padding()
+                }
+                else if repeatPasswordNull {
+                    Text("password harus diulang")
+                        .offset(y: -10)
+                        .foregroundColor(.red)
+                        .padding()
+                }
+                else if authenticationDidFail {
+                    Text("password tidak sama. Coba lagi")
+                        .offset(y: -10)
+                        .foregroundColor(.red)
+                        .padding()
+                }
                 Button(action: {
+                    if username.isEmpty{
+                        usernameNull = true
+                    }else{
+                        usernameNull = false
+                    }
+                    if company.isEmpty{
+                        companyNull = true
+                    }else{
+                        companyNull = false
+                    }
+                    if email.isEmpty{
+                        emailNull = true
+                    }else{
+                        emailNull = false
+                    }
+                    if password.isEmpty{
+                        passwordNull = true
+                    }else{
+                        passwordNull = false
+                    }
+                    if repeatPassword.isEmpty{
+                        repeatPasswordNull = true
+                    }else{
+                        repeatPasswordNull = false
+                    }
+                    if self.password == repeatPassword {
+                        self.authenticationDidSucceed = true
+                        self.authenticationDidFail = false
+                    } else {
+                        self.authenticationDidFail = true
+                    }
                     print("Create New User")
                 }) {
+                    NavigationLink(destination: LoginView())
                     Text("Create User")
                         .frame(maxWidth: 219, maxHeight: 20)
                         .font(.system(size: 20))
@@ -150,8 +229,9 @@ struct RegisterView: View {
                         .foregroundColor(.black)
                         .background(Color.green)
                         .clipShape(RoundedRectangle(cornerRadius: 20))
+                        .padding()
                 }
-                Spacer()
+//                Spacer()
                     .frame(height: 20)
             }
             

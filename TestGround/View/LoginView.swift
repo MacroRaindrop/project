@@ -66,18 +66,19 @@ struct LoginView: View {
 
                 PasswordSecureField(password: $password)
             
-                if authenticationDidFail {
-                    Text("email atau password salah")
-                        .offset(y: -10)
-                        .foregroundColor(.red)
-                }
+                
                 if usernameNull {
                     Text("email tidak boleh kosong")
                         .offset(y: -10)
                         .foregroundColor(.red)
                 }
-                if passwordNull {
+                else if passwordNull {
                     Text("password tidak boleh kosong")
+                        .offset(y: -10)
+                        .foregroundColor(.red)
+                }
+                else if authenticationDidFail {
+                    Text("email atau password salah")
                         .offset(y: -10)
                         .foregroundColor(.red)
                 }
@@ -127,7 +128,7 @@ struct LoginView: View {
             .animation(Animation.default)
     }
 }
-    .offset(y: editingMode ? -150 : 0)
+   // .offset(y: editingMode ? -150 : 0)
         
     }
     
