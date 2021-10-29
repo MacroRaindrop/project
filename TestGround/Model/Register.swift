@@ -12,6 +12,7 @@ struct Register: Hashable, Codable, Identifiable {
     var id: UUID
     var username: String
     var email: String
+    var company: String
     var password: String
     var repeatPassword: String
 }

@@ -149,7 +149,7 @@ struct RegisterView: View {
                 
             }
             .padding([.leading, .trailing])
-            Spacer(minLength: 50)
+            Spacer(minLength: 20)
             VStack {
                 if usernameNull {
                     Text("username tidak boleh kosong")
@@ -221,7 +221,6 @@ struct RegisterView: View {
                     }
                     print("Create New User")
                 }) {
-                    NavigationLink(destination: LoginView())
                     Text("Create User")
                         .frame(maxWidth: 219, maxHeight: 20)
                         .font(.system(size: 20))
@@ -231,8 +230,8 @@ struct RegisterView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                         .padding()
                 }
-//                Spacer()
-                    .frame(height: 20)
+                Spacer()
+                    .frame(height: 60)
             }
             
             .padding()
