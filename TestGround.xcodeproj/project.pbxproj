@@ -14,6 +14,7 @@
 		C2445A4C2729211500C19C05 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2445A4B2729211500C19C05 /* RegisterView.swift */; };
 		C2445A4E272BDD7500C19C05 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2445A4D272BDD7500C19C05 /* Login.swift */; };
 		C2445A51272BDF9900C19C05 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2445A50272BDF9900C19C05 /* Register.swift */; };
+		C2445A57272BE41F00C19C05 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2445A56272BE41F00C19C05 /* Product.swift */; };
 		D57FD5A12729470F00441F18 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57FD5A02729470F00441F18 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		C2445A4B2729211500C19C05 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		C2445A4D272BDD7500C19C05 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		C2445A50272BDF9900C19C05 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		C2445A56272BE41F00C19C05 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		D57FD5A02729470F00441F18 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +84,7 @@
 			children = (
 				C2445A4D272BDD7500C19C05 /* Login.swift */,
 				C2445A50272BDF9900C19C05 /* Register.swift */,
+				C2445A56272BE41F00C19C05 /* Product.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				C2445A51272BDF9900C19C05 /* Register.swift in Sources */,
 				D57FD5A12729470F00441F18 /* LoginView.swift in Sources */,
 				B828FCED272179150015F0BF /* TestGroundApp.swift in Sources */,
+				C2445A57272BE41F00C19C05 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
