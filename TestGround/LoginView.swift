@@ -23,6 +23,7 @@ struct LoginView: View {
     
     
     @State var editingMode: Bool = false
+    @State var newAcc: Bool = false
     
 //    if username == NULL (){
 //        reminder.values = test
@@ -104,7 +105,10 @@ struct LoginView: View {
                 .padding()
                 Button("Belum punya akun?"){
                       print("daftar")
-                }
+                    self.newAcc = true
+                }.sheet(isPresented: $newAcc, content: {
+                    RegisterView()
+                })
             }
             .padding()
             
