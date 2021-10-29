@@ -31,6 +31,7 @@ struct RegisterView: View {
                 
                 
                 TextField("Input Username", text: $username)
+                    .frame(width: UIScreen.main.bounds.width - 40)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
                 
@@ -43,6 +44,7 @@ struct RegisterView: View {
                
                 
                 TextField("Input Company", text: $company)
+                    .frame(width: UIScreen.main.bounds.width - 40)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
                 
@@ -56,6 +58,7 @@ struct RegisterView: View {
                 
                 
                 TextField("Input Your Email", text: self.$email)
+                    .frame(width: UIScreen.main.bounds.width - 40)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
                  
