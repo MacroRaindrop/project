@@ -14,7 +14,6 @@
 		C2445A4C2729211500C19C05 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2445A4B2729211500C19C05 /* RegisterView.swift */; };
 		C2445A4E272BDD7500C19C05 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2445A4D272BDD7500C19C05 /* Login.swift */; };
 		C2445A51272BDF9900C19C05 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2445A50272BDF9900C19C05 /* Register.swift */; };
-		C24F9A8027269047002ACC8D /* StockList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24F9A7F27269047002ACC8D /* StockList.swift */; };
 		D57FD5A12729470F00441F18 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57FD5A02729470F00441F18 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,7 +26,6 @@
 		C2445A4B2729211500C19C05 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		C2445A4D272BDD7500C19C05 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		C2445A50272BDF9900C19C05 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
-		C24F9A7F27269047002ACC8D /* StockList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockList.swift; sourceTree = "<group>"; };
 		D57FD5A02729470F00441F18 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,14 +59,12 @@
 		B828FCEB272179150015F0BF /* TestGround */ = {
 			isa = PBXGroup;
 			children = (
+				C2445A55272BE2C900C19C05 /* View */,
 				C2445A4F272BDDC000C19C05 /* Model */,
 				B828FCEC272179150015F0BF /* TestGroundApp.swift */,
 				B828FCEE272179150015F0BF /* ContentView.swift */,
 				B828FCF0272179170015F0BF /* Assets.xcassets */,
 				B828FCF2272179170015F0BF /* Preview Content */,
-				C24F9A7F27269047002ACC8D /* StockList.swift */,
-				C2445A4B2729211500C19C05 /* RegisterView.swift */,
-				D57FD5A02729470F00441F18 /* LoginView.swift */,
 			);
 			path = TestGround;
 			sourceTree = "<group>";
@@ -88,6 +84,15 @@
 				C2445A50272BDF9900C19C05 /* Register.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C2445A55272BE2C900C19C05 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D57FD5A02729470F00441F18 /* LoginView.swift */,
+				C2445A4B2729211500C19C05 /* RegisterView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,7 +165,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C24F9A8027269047002ACC8D /* StockList.swift in Sources */,
 				B828FCEF272179150015F0BF /* ContentView.swift in Sources */,
 				C2445A4C2729211500C19C05 /* RegisterView.swift in Sources */,
 				C2445A4E272BDD7500C19C05 /* Login.swift in Sources */,
