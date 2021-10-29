@@ -15,6 +15,7 @@
 		C2445A4E272BDD7500C19C05 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2445A4D272BDD7500C19C05 /* Login.swift */; };
 		C2445A51272BDF9900C19C05 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2445A50272BDF9900C19C05 /* Register.swift */; };
 		C2445A57272BE41F00C19C05 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2445A56272BE41F00C19C05 /* Product.swift */; };
+		C2445A5B272BEFBB00C19C05 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2445A5A272BEFBB00C19C05 /* Color.swift */; };
 		D57FD5A12729470F00441F18 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57FD5A02729470F00441F18 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		C2445A4D272BDD7500C19C05 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		C2445A50272BDF9900C19C05 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		C2445A56272BE41F00C19C05 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		C2445A5A272BEFBB00C19C05 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		D57FD5A02729470F00441F18 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,6 +63,8 @@
 		B828FCEB272179150015F0BF /* TestGround */ = {
 			isa = PBXGroup;
 			children = (
+				C2445A59272BEFA600C19C05 /* Additional */,
+				C2445A58272BEF9B00C19C05 /* ViewModel */,
 				C2445A55272BE2C900C19C05 /* View */,
 				C2445A4F272BDDC000C19C05 /* Model */,
 				B828FCEC272179150015F0BF /* TestGroundApp.swift */,
@@ -96,6 +100,21 @@
 				C2445A4B2729211500C19C05 /* RegisterView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C2445A58272BEF9B00C19C05 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C2445A59272BEFA600C19C05 /* Additional */ = {
+			isa = PBXGroup;
+			children = (
+				C2445A5A272BEFBB00C19C05 /* Color.swift */,
+			);
+			path = Additional;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +192,7 @@
 				C2445A4E272BDD7500C19C05 /* Login.swift in Sources */,
 				C2445A51272BDF9900C19C05 /* Register.swift in Sources */,
 				D57FD5A12729470F00441F18 /* LoginView.swift in Sources */,
+				C2445A5B272BEFBB00C19C05 /* Color.swift in Sources */,
 				B828FCED272179150015F0BF /* TestGroundApp.swift in Sources */,
 				C2445A57272BE41F00C19C05 /* Product.swift in Sources */,
 			);

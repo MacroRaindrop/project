@@ -138,7 +138,7 @@ struct RegisterView: View {
                 
             }
             .padding([.leading, .trailing])
-            Spacer(minLength: 50)
+            Spacer(minLength: 20)
             VStack {
                 Button(action: {
                     print("Create New User")
@@ -152,7 +152,7 @@ struct RegisterView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                 }
                 Spacer()
-                    .frame(height: 20)
+                    .frame(height: 60)
             }
             
             .padding()
