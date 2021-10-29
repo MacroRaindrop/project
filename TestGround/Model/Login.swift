@@ -18,7 +18,7 @@ class APILogin: ObservableObject{
     //isi kodingan
     @Published var login = [Login]()
     
-    func loadDataAPI(completion: @escaping ([Login]) -> ()) {
+    func loadDataAPILogin(completion: @escaping ([Login]) -> ()) {
         //isi url & url session
     }
 }
