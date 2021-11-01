@@ -26,30 +26,33 @@ struct RegisterView: View {
                 .font(.system(size: 30))
             VStack {
                 HStack {
-                    Text("Username")
+                    Text("Nama Pemilik")
                         .font(Font.headline.weight(.bold))
+                        
                     
                     Spacer()
                 }
                 
                 
-                TextField("Input Username", text: $username)
+                TextField("Masukkan Nama", text: $username)
                     .frame(width: UIScreen.main.bounds.width - 40)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
+                    .autocapitalization(.none)
                 
                 HStack {
-                    Text("Company")
+                    Text("Perusahaan")
                         .font(Font.headline.weight(.bold))
                     
                     Spacer()
                 }
                
                 
-                TextField("Input Company", text: $company)
+                TextField("Masukkan Company", text: $company)
                     .frame(width: UIScreen.main.bounds.width - 40)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
+                    .autocapitalization(.none)
                 
                 HStack {
                     Text("Email")
@@ -60,15 +63,16 @@ struct RegisterView: View {
         
                 
                 
-                TextField("Input Your Email", text: self.$email)
+                TextField("Masukkan Email Anda", text: self.$email)
                     .frame(width: UIScreen.main.bounds.width - 40)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
+                    .autocapitalization(.none)
                  
                     
                 
                 HStack {
-                    Text("Password")
+                    Text("Kata Sandi")
                         .font(Font.headline.weight(.bold))
                     
                     Spacer()
@@ -78,20 +82,22 @@ struct RegisterView: View {
                     Group {
                         
                         if self.hiddenPassword {
-                            TextField("Input Password", text: self.$password)
+                            TextField("Masukkan Kata Sandi", text: self.$password)
                                 .padding()
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .frame(width: UIScreen.main.bounds.width - 10)
 //                                .background((Color(red: 233.0/255, green: 234.0/255,blue: 243.0/255)))
                                 .cornerRadius(10)
+                                .autocapitalization(.none)
                         } else {
-                            SecureField("Input Password", text:
+                            SecureField("Masukkan Kata Sandi", text:
                                             self.$password)
                                 .padding()
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .frame(width: UIScreen.main.bounds.width - 10)
 //                                .background((Color(red: 233.0/255, green: 234.0/255,blue: 243.0/255)))
                                 .cornerRadius(10)
+                                .autocapitalization(.none)
                                 
                         }
                         
@@ -107,7 +113,7 @@ struct RegisterView: View {
                 }
                 
                 HStack {
-                    Text("Confirm Password")
+                    Text("Ulangi Kata Sandi")
                         .font(Font.headline.weight(.bold))
                     
                     Spacer()
@@ -117,20 +123,22 @@ struct RegisterView: View {
                     Group {
                         
                         if self.hiddenRepeatPassword {
-                            TextField("Confirm Your Password ", text: self.$repeatPassword)
+                            TextField("Masukkan Kata Sandi", text: self.$repeatPassword)
                                 .padding()
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .frame(width: UIScreen.main.bounds.width - 40)
 //                                .background((Color(red: 233.0/255, green: 234.0/255,blue: 243.0/255)))
                                 .cornerRadius(10)
+                                .autocapitalization(.none)
                         } else {
-                            SecureField("Input Password Again", text:
+                            SecureField("Masukkan Kata Sandi", text:
                                             self.$repeatPassword)
                                 .padding()
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .frame(width: UIScreen.main.bounds.width - 10)
 //                                .background((Color(red: 233.0/255, green: 234.0/255,blue: 243.0/255)))
                                 .cornerRadius(10)
+                                .autocapitalization(.none)
                                 
                         }
                         
