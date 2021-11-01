@@ -20,230 +20,243 @@ struct RegisterView: View {
     
     
     var body: some View {
-        VStack {
-            Text("Daftar")
-                .padding()
-                .font(.system(size: 30))
-            VStack {
-                HStack {
-                    Text("Nama Pemilik")
-                        .font(Font.headline.weight(.bold))
-                        
-                    
-                    Spacer()
-                }
-                
-                
-                TextField("Masukkan Nama", text: $username)
-                    .frame(width: UIScreen.main.bounds.width - 40)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-                    .autocapitalization(.none)
-                
-                HStack {
-                    Text("Perusahaan")
-                        .font(Font.headline.weight(.bold))
-                    
-                    Spacer()
-                }
-               
-                
-                TextField("Masukkan Company", text: $company)
-                    .frame(width: UIScreen.main.bounds.width - 40)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-                    .autocapitalization(.none)
-                
-                HStack {
-                    Text("Email")
-                        .font(Font.headline.weight(.bold))
-                    
-                    Spacer()
-                }
         
-                
-                
-                TextField("Masukkan Email Anda", text: self.$email)
-                    .frame(width: UIScreen.main.bounds.width - 40)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-                    .autocapitalization(.none)
-                 
-                    
-                
-                HStack {
-                    Text("Kata Sandi")
-                        .font(Font.headline.weight(.bold))
-                    
-                    Spacer()
-                }
-                
-                ZStack {
-                    Group {
-                        
-                        if self.hiddenPassword {
-                            TextField("Masukkan Kata Sandi", text: self.$password)
-                                .padding()
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                                .frame(width: UIScreen.main.bounds.width - 10)
-//                                .background((Color(red: 233.0/255, green: 234.0/255,blue: 243.0/255)))
-                                .cornerRadius(10)
-                                .autocapitalization(.none)
-                        } else {
-                            SecureField("Masukkan Kata Sandi", text:
-                                            self.$password)
-                                .padding()
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                                .frame(width: UIScreen.main.bounds.width - 10)
-//                                .background((Color(red: 233.0/255, green: 234.0/255,blue: 243.0/255)))
-                                .cornerRadius(10)
-                                .autocapitalization(.none)
-                                
-                        }
-                        
-                        Button(action : {
-                            self.hiddenPassword.toggle()
-                        }) {
-                            Image(systemName: self.hiddenPassword ? "eye.fill" :
-                                "eye.slash.fill")
-                                .foregroundColor((self.hiddenPassword == true ) ?
-                                                 Color.green : Color.secondary)
-                        }.offset(x: 150, y: 0)
-                    }
-                }
-                
-                HStack {
-                    Text("Ulangi Kata Sandi")
-                        .font(Font.headline.weight(.bold))
-                    
-                    Spacer()
-                }
-                
-                ZStack {
-                    Group {
-                        
-                        if self.hiddenRepeatPassword {
-                            TextField("Masukkan Kata Sandi", text: self.$repeatPassword)
-                                .padding()
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                                .frame(width: UIScreen.main.bounds.width - 40)
-//                                .background((Color(red: 233.0/255, green: 234.0/255,blue: 243.0/255)))
-                                .cornerRadius(10)
-                                .autocapitalization(.none)
-                        } else {
-                            SecureField("Masukkan Kata Sandi", text:
-                                            self.$repeatPassword)
-                                .padding()
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                                .frame(width: UIScreen.main.bounds.width - 10)
-//                                .background((Color(red: 233.0/255, green: 234.0/255,blue: 243.0/255)))
-                                .cornerRadius(10)
-                                .autocapitalization(.none)
-                                
-                        }
-                        
-                        
-                        Button(action : {
-                            self.hiddenRepeatPassword.toggle()
-                        }) {
-                            Image(systemName: self.hiddenRepeatPassword ? "eye.fill" :
-                                "eye.slash.fill")
-                                .foregroundColor((self.hiddenRepeatPassword == true ) ?
-                                                 Color.green : Color.secondary)
-                        } .offset(x: 150, y: 0)
-                    }
-                }
-                
-                
-            }
-            .padding([.leading, .trailing])
-            Spacer(minLength: 20)
+        ZStack {
+            LinearGradient(gradient: Gradient(colors: [Color("RaindropColor"),
+                                                       Color("RaindropColor2")]), startPoint: .top, endPoint: .bottom).ignoresSafeArea(.all, edges: .all)
             VStack {
-                if usernameNull {
-                    Text("username tidak boleh kosong")
-                        .offset(y: -10)
-                        .foregroundColor(.red)
-                        .padding()
-                }
-                else if companyNull {
-                    Text("company tidak boleh kosong")
-                        .offset(y: -10)
-                        .foregroundColor(.red)
-                        .padding()
-                }
-                else if emailNull {
-                    Text("email tidak boleh kosong")
-                        .offset(y: -10)
-                        .foregroundColor(.red)
-                        .padding()
-                }
-                else if passwordNull {
-                    Text("password tidak boleh kosong")
-                        .offset(y: -10)
-                        .foregroundColor(.red)
-                        .padding()
-                }
-                else if repeatPasswordNull {
-                    Text("password harus diulang")
-                        .offset(y: -10)
-                        .foregroundColor(.red)
-                        .padding()
-                }
-                else if authenticationDidFail {
-                    Text("password tidak sama. Coba lagi")
-                        .offset(y: -10)
-                        .foregroundColor(.red)
-                        .padding()
-                }
-                Button(action: {
-                    if username.isEmpty{
-                        usernameNull = true
-                    }else{
-                        usernameNull = false
+                
+                Text("Daftar")
+                    .padding()
+                    .font(.system(size: 30))
+                VStack {
+                    HStack {
+                        Text("Nama Pemilik")
+                            .font(Font.headline.weight(.bold))
+                            
+                        
+                        Spacer()
                     }
-                    if company.isEmpty{
-                        companyNull = true
-                    }else{
-                        companyNull = false
-                    }
-                    if email.isEmpty{
-                        emailNull = true
-                    }else{
-                        emailNull = false
-                    }
-                    if password.isEmpty{
-                        passwordNull = true
-                    }else{
-                        passwordNull = false
-                    }
-                    if repeatPassword.isEmpty{
-                        repeatPasswordNull = true
-                    }else{
-                        repeatPasswordNull = false
-                    }
-                    if self.password == repeatPassword {
-                        self.authenticationDidSucceed = true
-                        self.authenticationDidFail = false
-                    } else {
-                        self.authenticationDidFail = true
-                    }
-                    print("Create New User")
-                }) {
-                    Text("Create User")
-                        .frame(maxWidth: 219, maxHeight: 20)
-                        .font(.system(size: 20))
+                    
+                    
+                    TextField("Masukkan Nama", text: $username)
+                        .frame(width: UIScreen.main.bounds.width - 40)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding()
-                        .foregroundColor(.black)
-                        .background(Color.green)
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                        .keyboardType(.default)
+                        .disableAutocorrection(true)
+                    
+                    HStack {
+                        Text("Perusahaan")
+                            .font(Font.headline.weight(.bold))
+                        
+                        Spacer()
+                    }
+                   
+                    
+                    TextField("Masukkan Company", text: $company)
+                        .frame(width: UIScreen.main.bounds.width - 40)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding()
-                }
-                Spacer()
-                    .frame(height: 60)
-            }
+                        .keyboardType(.default)
+                        .disableAutocorrection(true)
+                    
+                    HStack {
+                        Text("Email")
+                            .font(Font.headline.weight(.bold))
+                        
+                        Spacer()
+                    }
             
-            .padding()
-            Spacer()
+                    
+                    
+                    TextField("example@gmail.com", text: self.$email)
+                        .frame(width: UIScreen.main.bounds.width - 40)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding()
+                        .keyboardType(.default)
+                        .disableAutocorrection(true)
+                     
+                        
+                    
+                    HStack {
+                        Text("Kata Sandi")
+                            .font(Font.headline.weight(.bold))
+                        
+                        Spacer()
+                    }
+                    
+                    ZStack {
+                        Group {
+                            
+                            if self.hiddenPassword {
+                                TextField("Masukkan Kata Sandi", text: self.$password)
+                                    .padding()
+                                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                                    .frame(width: UIScreen.main.bounds.width - 10)
+    //                                .background((Color(red: 233.0/255, green: 234.0/255,blue: 243.0/255)))
+                                    .cornerRadius(10)
+                                    .keyboardType(.default)
+                                    .disableAutocorrection(true)
+                            } else {
+                                SecureField("Masukkan Kata Sandi", text:
+                                                self.$password)
+                                    .padding()
+                                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                                    .frame(width: UIScreen.main.bounds.width - 10)
+    //                                .background((Color(red: 233.0/255, green: 234.0/255,blue: 243.0/255)))
+                                    .cornerRadius(10)
+                                    .keyboardType(.default)
+                                    .disableAutocorrection(true)
+                                    
+                            }
+                            
+                            Button(action : {
+                                self.hiddenPassword.toggle()
+                            }) {
+                                Image(systemName: self.hiddenPassword ? "eye.fill" :
+                                    "eye.slash.fill")
+                                    .foregroundColor((self.hiddenPassword == true ) ?
+                                                     Color.green : Color.secondary)
+                            }.offset(x: 150, y: 0)
+                        }
+                    }
+                    
+                    HStack {
+                        Text("Ulangi Kata Sandi")
+                            .font(Font.headline.weight(.bold))
+                        
+                        Spacer()
+                    }
+                    
+                    ZStack {
+                        Group {
+                            
+                            if self.hiddenRepeatPassword {
+                                TextField("Masukkan Kata Sandi", text: self.$repeatPassword)
+                                    .padding()
+                                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                                    .frame(width: UIScreen.main.bounds.width - 40)
+    //                                .background((Color(red: 233.0/255, green: 234.0/255,blue: 243.0/255)))
+                                    .cornerRadius(10)
+                                    .keyboardType(.default)
+                                    .disableAutocorrection(true)
+                            } else {
+                                SecureField("Masukkan Kata Sandi", text:
+                                                self.$repeatPassword)
+                                    .padding()
+                                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                                    .frame(width: UIScreen.main.bounds.width - 10)
+    //                                .background((Color(red: 233.0/255, green: 234.0/255,blue: 243.0/255)))
+                                    .cornerRadius(10)
+                                    .keyboardType(.default)
+                                    .disableAutocorrection(true)
+                                    
+                            }
+                            
+                            
+                            Button(action : {
+                                self.hiddenRepeatPassword.toggle()
+                            }) {
+                                Image(systemName: self.hiddenRepeatPassword ? "eye.fill" :
+                                    "eye.slash.fill")
+                                    .foregroundColor((self.hiddenRepeatPassword == true ) ?
+                                                     Color.green : Color.secondary)
+                            } .offset(x: 150, y: 0)
+                        }
+                    }
+                    
+                    
+                }
+                .padding([.leading, .trailing])
+                Spacer(minLength: 20)
+                VStack {
+                    if usernameNull {
+                        Text("username tidak boleh kosong")
+                            .offset(y: -10)
+                            .foregroundColor(.red)
+                            .padding()
+                    }
+                    else if companyNull {
+                        Text("company tidak boleh kosong")
+                            .offset(y: -10)
+                            .foregroundColor(.red)
+                            .padding()
+                    }
+                    else if emailNull {
+                        Text("email tidak boleh kosong")
+                            .offset(y: -10)
+                            .foregroundColor(.red)
+                            .padding()
+                    }
+                    else if passwordNull {
+                        Text("password tidak boleh kosong")
+                            .offset(y: -10)
+                            .foregroundColor(.red)
+                            .padding()
+                    }
+                    else if repeatPasswordNull {
+                        Text("password harus diulang")
+                            .offset(y: -10)
+                            .foregroundColor(.red)
+                            .padding()
+                    }
+                    else if authenticationDidFail {
+                        Text("password tidak sama. Coba lagi")
+                            .offset(y: -10)
+                            .foregroundColor(.red)
+                            .padding()
+                    }
+                    Button(action: {
+                        if username.isEmpty{
+                            usernameNull = true
+                        }else{
+                            usernameNull = false
+                        }
+                        if company.isEmpty{
+                            companyNull = true
+                        }else{
+                            companyNull = false
+                        }
+                        if email.isEmpty{
+                            emailNull = true
+                        }else{
+                            emailNull = false
+                        }
+                        if password.isEmpty{
+                            passwordNull = true
+                        }else{
+                            passwordNull = false
+                        }
+                        if repeatPassword.isEmpty{
+                            repeatPasswordNull = true
+                        }else{
+                            repeatPasswordNull = false
+                        }
+                        if self.password == repeatPassword {
+                            self.authenticationDidSucceed = true
+                            self.authenticationDidFail = false
+                        } else {
+                            self.authenticationDidFail = true
+                        }
+                        print("Create New User")
+                    }) {
+                        Text("Create User")
+                            .frame(maxWidth: 219, maxHeight: 20)
+                            .font(.system(size: 20))
+                            .padding()
+                            .foregroundColor(.black)
+                            .background(Color.green)
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                            .padding()
+                    }
+                    Spacer()
+                        .frame(height: 60)
+                }
+                
+                .padding()
+                Spacer()
+            }
         }
     }
 }

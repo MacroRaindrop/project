@@ -30,8 +30,12 @@ struct LoginView: View {
 //    }
 
     var body: some View {
+        
         NavigationView {
+            
             ZStack {
+                LinearGradient(gradient: Gradient(colors: [Color("RaindropColor"),
+                                                           Color("RaindropColor2")]), startPoint: .top, endPoint: .bottom).ignoresSafeArea(.all, edges: .all)
                 VStack{
                         Text("Masuk")
                             .padding()
