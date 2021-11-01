@@ -193,7 +193,8 @@ struct LoginButtonContent : View {
             .font(.system(size: 20))
             .padding()
             .foregroundColor(.black)
-            .background(Color.green)
+            .background(Color.raindropColor)
             .clipShape(RoundedRectangle(cornerRadius: 20))
     }
 }
+

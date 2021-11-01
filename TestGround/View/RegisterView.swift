@@ -1,5 +1,7 @@
 import SwiftUI
 
+
+
 struct RegisterView: View {
     @State var username: String = ""
     @State var company: String = ""
@@ -17,6 +19,8 @@ struct RegisterView: View {
     @State var authenticationDidFail: Bool = false
     @State var authenticationDidSucceed: Bool = false
     @State var newAcc: Bool = false
+    
+    
     
     
     var body: some View {
@@ -246,7 +250,7 @@ struct RegisterView: View {
                             .font(.system(size: 20))
                             .padding()
                             .foregroundColor(.black)
-                            .background(Color.green)
+                            .background(Color.raindropColor)
                             .clipShape(RoundedRectangle(cornerRadius: 20))
                             .padding()
                     }
@@ -271,4 +275,8 @@ struct RegisterView_Previews: PreviewProvider {
             // Fallback on earlier versions
         }
     }
+}
+
+extension Color {
+    static let raindropColor = Color("RaindropColor")
 }
