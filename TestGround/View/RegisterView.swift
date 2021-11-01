@@ -32,7 +32,8 @@ struct RegisterView: View {
                 
                 Text("Daftar")
                     .padding()
-                    .font(.system(size: 30))
+                    .font(.system(size: 30, weight: .bold))
+                    
                 VStack {
                     HStack {
                         Text("Nama Pemilik")
