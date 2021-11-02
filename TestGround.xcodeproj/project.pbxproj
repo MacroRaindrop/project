@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7C2677E527314CF600285B1A /* addDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2677E427314CF600285B1A /* addDetailView.swift */; };
 		B828FCED272179150015F0BF /* TestGroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828FCEC272179150015F0BF /* TestGroundApp.swift */; };
 		B828FCEF272179150015F0BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828FCEE272179150015F0BF /* ContentView.swift */; };
 		B828FCF1272179170015F0BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B828FCF0272179170015F0BF /* Assets.xcassets */; };
@@ -17,11 +16,13 @@
 		C2445A51272BDF9900C19C05 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2445A50272BDF9900C19C05 /* Register.swift */; };
 		C2445A57272BE41F00C19C05 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2445A56272BE41F00C19C05 /* Product.swift */; };
 		C2445A5B272BEFBB00C19C05 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2445A5A272BEFBB00C19C05 /* Color.swift */; };
+		C279B4C3273124F400A4B8AF /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C279B4C2273124F400A4B8AF /* DashboardView.swift */; };
+		C279B4C8273146FF00A4B8AF /* APILogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C279B4C7273146FF00A4B8AF /* APILogin.swift */; };
+		C279B4CA2731475400A4B8AF /* APIRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = C279B4C92731475400A4B8AF /* APIRegister.swift */; };
 		D57FD5A12729470F00441F18 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57FD5A02729470F00441F18 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7C2677E427314CF600285B1A /* addDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = addDetailView.swift; path = TestGround/addDetailView.swift; sourceTree = SOURCE_ROOT; };
 		B828FCE9272179150015F0BF /* TestGround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestGround.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B828FCEC272179150015F0BF /* TestGroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TestGroundApp.swift; path = TestGround/TestGroundApp.swift; sourceTree = SOURCE_ROOT; };
 		B828FCEE272179150015F0BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = TestGround/ContentView.swift; sourceTree = SOURCE_ROOT; };
@@ -32,6 +33,9 @@
 		C2445A50272BDF9900C19C05 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		C2445A56272BE41F00C19C05 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		C2445A5A272BEFBB00C19C05 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		C279B4C2273124F400A4B8AF /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		C279B4C7273146FF00A4B8AF /* APILogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILogin.swift; sourceTree = "<group>"; };
+		C279B4C92731475400A4B8AF /* APIRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRegister.swift; sourceTree = "<group>"; };
 		D57FD5A02729470F00441F18 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,6 +69,7 @@
 		B828FCEB272179150015F0BF /* TestGround */ = {
 			isa = PBXGroup;
 			children = (
+				C279B4C4273145D000A4B8AF /* APIService */,
 				C2445A59272BEFA600C19C05 /* Additional */,
 				C2445A58272BEF9B00C19C05 /* ViewModel */,
 				C2445A55272BE2C900C19C05 /* View */,
@@ -100,7 +105,7 @@
 			children = (
 				D57FD5A02729470F00441F18 /* LoginView.swift */,
 				C2445A4B2729211500C19C05 /* RegisterView.swift */,
-				7C2677E427314CF600285B1A /* addDetailView.swift */,
+				C279B4C2273124F400A4B8AF /* DashboardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -118,6 +123,15 @@
 				C2445A5A272BEFBB00C19C05 /* Color.swift */,
 			);
 			path = Additional;
+			sourceTree = "<group>";
+		};
+		C279B4C4273145D000A4B8AF /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				C279B4C7273146FF00A4B8AF /* APILogin.swift */,
+				C279B4C92731475400A4B8AF /* APIRegister.swift */,
+			);
+			path = APIService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,10 +208,12 @@
 				C2445A4C2729211500C19C05 /* RegisterView.swift in Sources */,
 				C2445A4E272BDD7500C19C05 /* Login.swift in Sources */,
 				C2445A51272BDF9900C19C05 /* Register.swift in Sources */,
+				C279B4C3273124F400A4B8AF /* DashboardView.swift in Sources */,
 				D57FD5A12729470F00441F18 /* LoginView.swift in Sources */,
 				C2445A5B272BEFBB00C19C05 /* Color.swift in Sources */,
+				C279B4CA2731475400A4B8AF /* APIRegister.swift in Sources */,
 				B828FCED272179150015F0BF /* TestGroundApp.swift in Sources */,
-				7C2677E527314CF600285B1A /* addDetailView.swift in Sources */,
+				C279B4C8273146FF00A4B8AF /* APILogin.swift in Sources */,
 				C2445A57272BE41F00C19C05 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,7 +345,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TestGround/Preview Content\"";
-				DEVELOPMENT_TEAM = BD34535B6V;
+				DEVELOPMENT_TEAM = WLF43H5K2J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -359,7 +375,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TestGround/Preview Content\"";
-				DEVELOPMENT_TEAM = BD34535B6V;
+				DEVELOPMENT_TEAM = WLF43H5K2J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

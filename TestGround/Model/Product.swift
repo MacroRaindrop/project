@@ -10,10 +10,10 @@ import SwiftUI
 
 struct Product: Hashable, Codable, Identifiable {
     var id: UUID
-    var newProduct: String
+    var addProduct: String
     var detailProduct: String
-    var inboundProduct: String
-    var outboundProduct: String
+    var inboundProduct: String?
+    var outboundProduct: String?
     var purchaseOrder: String
     var image: String?
     var datePurchased: Date

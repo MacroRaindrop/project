@@ -30,104 +30,117 @@ struct LoginView: View {
 //    }
 
     var body: some View {
-        ZStack{
-        VStack{
-                Text("Masuk")
-                    .padding()
-                    .font(.system(size: 34))
-            VStack{
-                HStack{
-                    Text("Email")
-                            .font(Font.headline.weight(.bold))
-                    
-                    Spacer()
- 
-                }
-                
-                
-                            
-                UsernameTextField(username: $username, editingMode: $editingMode)
-                
-                    
-                
-                
-                HStack{
-                    Text("Password")
-                        .font(Font.headline.weight(.bold))
-                        .padding()
-                    
-                    Spacer()
-                    
-                    Button("Lupa Sandi?") {
-                        print("Button tapped!")
-                    }
-                    
-                }
-
-                PasswordSecureField(password: $password)
+        
+        NavigationView {
             
-                
-                if usernameNull {
-                    Text("email tidak boleh kosong")
-                        .offset(y: -10)
-                        .foregroundColor(.red)
-                }
-                else if passwordNull {
-                    Text("password tidak boleh kosong")
-                        .offset(y: -10)
-                        .foregroundColor(.red)
-                }
-                else if authenticationDidFail {
-                    Text("email atau password salah")
-                        .offset(y: -10)
-                        .foregroundColor(.red)
-                }
-                
-                Button(action: {
-                    if username.isEmpty{
-                        usernameNull = true
-                    }else{
-                        usernameNull = false
+            ZStack {
+                LinearGradient(gradient: Gradient(colors: [Color("RaindropColor"),
+                                                           Color("RaindropColor2")]), startPoint: .top, endPoint: .bottom).ignoresSafeArea(.all, edges: .all)
+                VStack{
+                        Text("Masuk")
+                            .padding()
+                            .font(.system(size: 34))
+                    VStack{
+                        HStack{
+                            Text("Email")
+                                    .font(Font.headline.weight(.bold))
+                            
+                            Spacer()
+         
+                        }
+                        
+                        
+                                    
+                        UsernameTextField(username: $username, editingMode: $editingMode)
+                        
+                            
+                        
+                        
+                        HStack{
+                            Text("Password")
+                                .font(Font.headline.weight(.bold))
+                                .padding()
+                            
+                            Spacer()
+                            
+                            Button("Lupa Sandi?") {
+                                print("Button tapped!")
+                            }
+                            
+                        }
+
+                        PasswordSecureField(password: $password)
+                    
+                        
+                        if usernameNull {
+                            Text("email tidak boleh kosong")
+                                .offset(y: -10)
+                                .foregroundColor(.red)
+                        }
+                        else if passwordNull {
+                            Text("password tidak boleh kosong")
+                                .offset(y: -10)
+                                .foregroundColor(.red)
+                        }
+                        else if authenticationDidFail {
+                            Text("email atau password salah")
+                                .offset(y: -10)
+                                .foregroundColor(.red)
+                        }
+                        
+                        Button(action: {
+                            if username.isEmpty{
+                                usernameNull = true
+                            }else{
+                                usernameNull = false
+                            }
+                            if password.isEmpty{
+                                passwordNull = true
+                            }else{
+                                passwordNull = false
+                            }
+                            if self.username == storedUsername && self.password == storedPassword {
+                                self.authenticationDidSucceed = true
+                                self.authenticationDidFail = false
+                            } else {
+                                self.authenticationDidFail = true
+                            }
+                        }){
+                            LoginButtonContent()
+                        }
+                        .padding()
+        //                Button("Belum punya akun?"){
+        //                      print("daftar")
+        //                    self.newAcc = true
+        //                }.sheet(isPresented: $newAcc, content: {
+        //                    RegisterView()
+        //                })
+                        NavigationLink(destination: RegisterView()){
+                            Text("Belum Punya Akun?")
+                        }
+                        .padding()
+                        
+                        
                     }
-                    if password.isEmpty{
-                        passwordNull = true
-                    }else{
-                        passwordNull = false
-                    }
-                    if self.username == storedUsername && self.password == storedPassword {
-                        self.authenticationDidSucceed = true
-                        self.authenticationDidFail = false
-                    } else {
-                        self.authenticationDidFail = true
-                    }
-                }){
-                    LoginButtonContent()
+                    .padding()
+                    
+                    Spacer()
+                    Text(reminder).hidden()
                 }
                 .padding()
-                Button("Belum punya akun?"){
-                      print("daftar")
-                    self.newAcc = true
-                }.sheet(isPresented: $newAcc, content: {
-                    RegisterView()
-                })
+            if authenticationDidSucceed {
+                Text("Login succeeded!")
+                    .font(.headline)
+                    .frame(width: 250, height: 80)
+                    .background(Color.green)
+                    .cornerRadius(20.0)
+                    .foregroundColor(.white)
+                    //change
+                    .animation(Animation.default)
             }
-            .padding()
-            
-            Spacer()
-            Text(reminder).hidden()
         }
-        .padding()
-    if authenticationDidSucceed {
-        Text("Login succeeded!")
-            .font(.headline)
-            .frame(width: 250, height: 80)
-            .background(Color.green)
-            .cornerRadius(20.0)
-            .foregroundColor(.white)
-            //change
-            .animation(Animation.default)
-    }
-}
+            .navigationTitle(Text(""))
+        }
    // .offset(y: editingMode ? -150 : 0)
         
     }
@@ -180,7 +193,8 @@ struct LoginButtonContent : View {
             .font(.system(size: 20))
             .padding()
             .foregroundColor(.black)
-            .background(Color.green)
+            .background(Color.raindropColor)
             .clipShape(RoundedRectangle(cornerRadius: 20))
     }
 }
+
