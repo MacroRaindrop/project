@@ -96,6 +96,7 @@ struct addDetailView: View {
                     
                     Text("Masukkan jumlah stok yang tersedia saat ini")
                         .foregroundColor(.gray)
+                        .font(.system(size: 14))
                         .padding()
                     
                     HStack{
@@ -112,6 +113,7 @@ struct addDetailView: View {
                     
                     Text("Masukkan jumlah minimum stok untuk diingatkan saat statusnya low")
                         .foregroundColor(.gray)
+                        .font(.system(size: 14))
                         .padding()
                     
                     HStack{
