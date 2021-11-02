@@ -13,9 +13,11 @@ struct addDetailView: View {
     @Binding var showModal: Bool
     @State var image: Image? = nil
     @State private var namaProduk: String = ""
-    @State var jumlahProduk : String = "0"
-    @State var jumlahMinimalStok : String = "0"
+    @State var jumlahProduk : String = ""
+    @State var jumlahMinimalStok : String = ""
     @State private var notesDeskripsi: String = ""
+    var unit = ["liter", "kg", "karton"]
+    @State private var unitSelected = "liter"
     
     
     var body: some View {
@@ -51,7 +53,7 @@ struct addDetailView: View {
                         .frame(width:193, height: 40)
                         .padding()
                       
-                    
+    
                        
                  
                 }
@@ -61,7 +63,7 @@ struct addDetailView: View {
                    }) {
                        Text("Tap to select a picture")
                            .frame(maxWidth: 344, maxHeight: 220)
-                           .font(.system(size: 20))
+                           .font(.system(size: 14))
                            .padding()
                            .foregroundColor(.white)
                            .background(Color.gray)
@@ -76,12 +78,19 @@ struct addDetailView: View {
                         Text("Jumlah")
                             .padding()
                         
-                        TextField("Total Produk yang tersedia", text: $jumlahProduk)
+                        TextField("0", text: $jumlahProduk)
                             .keyboardType(.numberPad)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding()
                         
-                        //picker
+                        Picker("please choose a unit", selection: $unitSelected){
+                            ForEach(unit, id: \.self){
+                                Text($0)
+                                
+                            }
+                        }
+                        .padding()
+                        
                         
                     }
                     
@@ -93,10 +102,12 @@ struct addDetailView: View {
                         Text("Minimal Stok")
                             .padding()
                         
-                        TextField("Stok Minimal", text: $jumlahMinimalStok)
+                        TextField("0", text: $jumlahMinimalStok)
                             .keyboardType(.numberPad)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding()
+                        
+                        
                     }
                     
                     Text("Masukkan jumlah minimum stok untuk diingatkan saat statusnya low")
@@ -110,23 +121,25 @@ struct addDetailView: View {
                         
                     }
                     
-                    TextField("", text: $namaProduk)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    TextField("Masukkan Deskripsi Produk", text: $notesDeskripsi)
                         .padding(.all, 20)
-                        .frame(width:347, height: 101)
+                        .font(.system(size: 14))
+                        .frame(width:347, height: 100)
+                        .foregroundColor(.white)
+                        .background(Color.gray)
+                        .clipShape(RoundedRectangle(cornerRadius: 20))
                         .padding()
-                    
+
                     }
                 
             Spacer()
         }
     }
 }
-
+}
 
 struct addDetailView_Previews: PreviewProvider {
     static var previews: some View {
            addDetailView(showModal: .constant(true))
-       }
-   }
+    }
 }
