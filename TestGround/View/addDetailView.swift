@@ -187,3 +187,4 @@ struct addDetailView_Previews: PreviewProvider {
            addDetailView(showModal: .constant(true))
     }
 }
+
