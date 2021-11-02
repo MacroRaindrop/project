@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct contentView: View {
+struct showModalView: View {
     @State private var showAddDetailView = false
        
        var body: some View {
@@ -19,8 +19,8 @@ struct contentView: View {
        }
    }
 
-struct contentView_Previews: PreviewProvider {
+struct showModalView_Previews: PreviewProvider {
     static var previews: some View {
-        contentView()
+        showModalView()
     }
 }
