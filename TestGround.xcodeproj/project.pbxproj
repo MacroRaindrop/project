@@ -10,10 +10,8 @@
 		7C2677E727314E2B00285B1A /* addDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2677E627314E2B00285B1A /* addDetailView.swift */; };
 		7C2677E927314E5800285B1A /* showModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2677E827314E5800285B1A /* showModalView.swift */; };
 		7C2677EB2731517700285B1A /* StokView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2677EA2731517700285B1A /* StokView.swift */; };
-		7C2677ED2731A7DD00285B1A /* maxchar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2677EC2731A7DD00285B1A /* maxchar.swift */; };
 		7C2677F12731A84A00285B1A /* maxTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2677F02731A84A00285B1A /* maxTextField.swift */; };
 		7C2677F42731B15100285B1A /* Camera-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7C2677F32731B15100285B1A /* Camera-SwiftUI */; };
-		7C2677FB2731B6B600285B1A /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2677FA2731B6B600285B1A /* CameraViewModel.swift */; };
 		B828FCED272179150015F0BF /* TestGroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828FCEC272179150015F0BF /* TestGroundApp.swift */; };
 		B828FCEF272179150015F0BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828FCEE272179150015F0BF /* ContentView.swift */; };
 		B828FCF1272179170015F0BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B828FCF0272179170015F0BF /* Assets.xcassets */; };
@@ -33,9 +31,7 @@
 		7C2677E627314E2B00285B1A /* addDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addDetailView.swift; sourceTree = "<group>"; };
 		7C2677E827314E5800285B1A /* showModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = showModalView.swift; sourceTree = "<group>"; };
 		7C2677EA2731517700285B1A /* StokView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StokView.swift; sourceTree = "<group>"; };
-		7C2677EC2731A7DD00285B1A /* maxchar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = maxchar.swift; sourceTree = "<group>"; };
 		7C2677F02731A84A00285B1A /* maxTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = maxTextField.swift; sourceTree = "<group>"; };
-		7C2677FA2731B6B600285B1A /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 		B828FCE9272179150015F0BF /* TestGround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestGround.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B828FCEC272179150015F0BF /* TestGroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TestGroundApp.swift; path = TestGround/TestGroundApp.swift; sourceTree = SOURCE_ROOT; };
 		B828FCEE272179150015F0BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = TestGround/ContentView.swift; sourceTree = SOURCE_ROOT; };
@@ -67,7 +63,6 @@
 		7C2677F92731B69800285B1A /* View Model */ = {
 			isa = PBXGroup;
 			children = (
-				7C2677FA2731B6B600285B1A /* CameraViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -91,8 +86,8 @@
 		B828FCEB272179150015F0BF /* TestGround */ = {
 			isa = PBXGroup;
 			children = (
-				C279B4C4273145D000A4B8AF /* APIService */,
 				C2445A59272BEFA600C19C05 /* Additional */,
+				C279B4C4273145D000A4B8AF /* APIService */,
 				7C2677F92731B69800285B1A /* View Model */,
 				C2445A55272BE2C900C19C05 /* View */,
 				C2445A4F272BDDC000C19C05 /* Model */,
@@ -127,7 +122,6 @@
 			children = (
 				D57FD5A02729470F00441F18 /* LoginView.swift */,
 				7C2677E627314E2B00285B1A /* addDetailView.swift */,
-				7C2677EC2731A7DD00285B1A /* maxchar.swift */,
 				7C2677F02731A84A00285B1A /* maxTextField.swift */,
 				C2445A4B2729211500C19C05 /* RegisterView.swift */,
 				C279B4C2273124F400A4B8AF /* DashboardView.swift */,
@@ -237,7 +231,6 @@
 				C2445A51272BDF9900C19C05 /* Register.swift in Sources */,
 				C279B4C3273124F400A4B8AF /* DashboardView.swift in Sources */,
 				7C2677E927314E5800285B1A /* showModalView.swift in Sources */,
-				7C2677ED2731A7DD00285B1A /* maxchar.swift in Sources */,
 				D57FD5A12729470F00441F18 /* LoginView.swift in Sources */,
 				C2445A5B272BEFBB00C19C05 /* Color.swift in Sources */,
 				C279B4CA2731475400A4B8AF /* APIRegister.swift in Sources */,
@@ -245,7 +238,6 @@
 				7C2677F12731A84A00285B1A /* maxTextField.swift in Sources */,
 				C279B4C8273146FF00A4B8AF /* APILogin.swift in Sources */,
 				C2445A57272BE41F00C19C05 /* Product.swift in Sources */,
-				7C2677FB2731B6B600285B1A /* CameraViewModel.swift in Sources */,
 				7C2677EB2731517700285B1A /* StokView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
