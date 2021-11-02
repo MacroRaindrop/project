@@ -10,14 +10,19 @@ import SwiftUI
 
 
 struct addDetailView: View {
+    @ObservedObject var namaProduk = TextBindingManager(limit: 20)
     @Binding var showModal: Bool
     @State var image: Image? = nil
-    @State private var namaProduk: String = ""
+    //@State private var namaProduk: String = ""
     @State var jumlahProduk : String = ""
     @State var jumlahMinimalStok : String = ""
     @State private var notesDeskripsi: String = ""
     var unit = ["liter", "kg", "karton"]
     @State private var unitSelected = "liter"
+    
+    @State var namaNull: Bool = true
+    @State var jumlahNull: Bool = true
+    @State var minNull: Bool = true
     
     
     var body: some View {
@@ -33,9 +38,46 @@ struct addDetailView: View {
                     
                     Spacer()
                 
+                    
                 Button("Simpan"){
                     print("sudah tersimpan")
-                }
+//
+//                    if namaNull {
+//                        Text("nama produk tidak boleh kosong")
+//                            .offset(y: -10)
+//                            .foregroundColor(.red)
+//                    }
+//                    else if jumlahNull {
+//                        Text("jumlah tidak boleh kosong")
+//                            .offset(y: -10)
+//                            .foregroundColor(.red)
+//                    }
+//                    else if minNull {
+//                        Text("minimal stok tidak boleh kosong")
+//                            .offset(y: -10)
+//                            .foregroundColor(.red)
+//                    }
+                    
+                    //validasi
+//                    if namaProduk.isEmpty{
+//                        namaNull = true
+//                    }else{
+//                        namaNull = false
+                    //}
+                    if jumlahProduk.isEmpty{
+                        jumlahNull = true
+                    }else{
+                        jumlahNull = false
+                    }
+                    if jumlahMinimalStok.isEmpty{
+                        minNull = true
+                    }else{
+                        minNull = false
+                    }
+                    
+                    //validasi semua hrs di isi
+                    
+                } .disabled(namaNull == true || jumlahNull == true || minNull == true) // || image == nil)
                 .padding()
                     
                     
@@ -47,7 +89,7 @@ struct addDetailView: View {
                         .padding()
                     
                     
-                    TextField("Nama Produk", text: $namaProduk)
+                    TextField("Nama Produk", text: $namaProduk.text)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding()
                         .frame(width:193, height: 40)
