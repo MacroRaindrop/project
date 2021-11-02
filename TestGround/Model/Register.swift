@@ -17,11 +17,3 @@ struct Register: Hashable, Codable, Identifiable {
     var repeatPassword: String
 }
 
-class APIRegister: ObservableObject{
-    //isi kodingan
-    @Published var register = [Register]()
-    
-    func loadDataAPIRegister(completion: @escaping ([Register]) -> ()) {
-        //isi url & url session
-    }
-}

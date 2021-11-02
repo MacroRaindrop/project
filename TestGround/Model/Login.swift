@@ -10,15 +10,8 @@ import Foundation
 
 struct Login: Hashable, Codable, Identifiable {
     var id: UUID
-    var name: String
+    var username: String
     var password: String
 }
 
-class APILogin: ObservableObject{
-    //isi kodingan
-    @Published var login = [Login]()
-    
-    func loadDataAPILogin(completion: @escaping ([Login]) -> ()) {
-        //isi url & url session
-    }
-}
+
