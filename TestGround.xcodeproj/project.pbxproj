@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C2677E527314CF600285B1A /* addDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2677E427314CF600285B1A /* addDetailView.swift */; };
 		B828FCED272179150015F0BF /* TestGroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828FCEC272179150015F0BF /* TestGroundApp.swift */; };
 		B828FCEF272179150015F0BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828FCEE272179150015F0BF /* ContentView.swift */; };
 		B828FCF1272179170015F0BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B828FCF0272179170015F0BF /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C2677E427314CF600285B1A /* addDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = addDetailView.swift; path = TestGround/addDetailView.swift; sourceTree = SOURCE_ROOT; };
 		B828FCE9272179150015F0BF /* TestGround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestGround.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B828FCEC272179150015F0BF /* TestGroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TestGroundApp.swift; path = TestGround/TestGroundApp.swift; sourceTree = SOURCE_ROOT; };
 		B828FCEE272179150015F0BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = TestGround/ContentView.swift; sourceTree = SOURCE_ROOT; };
@@ -98,6 +100,7 @@
 			children = (
 				D57FD5A02729470F00441F18 /* LoginView.swift */,
 				C2445A4B2729211500C19C05 /* RegisterView.swift */,
+				7C2677E427314CF600285B1A /* addDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				D57FD5A12729470F00441F18 /* LoginView.swift in Sources */,
 				C2445A5B272BEFBB00C19C05 /* Color.swift in Sources */,
 				B828FCED272179150015F0BF /* TestGroundApp.swift in Sources */,
+				7C2677E527314CF600285B1A /* addDetailView.swift in Sources */,
 				C2445A57272BE41F00C19C05 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
