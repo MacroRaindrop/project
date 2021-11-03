@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import Camera_SwiftUI
 
 
 
 struct addDetailView: View {
+    @State var showCaptureImageView: Bool = false
     @ObservedObject var namaProduk = TextBindingManager(limit: 20)
     @Binding var showModal: Bool
     @State var image: Image? = nil
@@ -99,20 +101,32 @@ struct addDetailView: View {
                        
                  
                 }
-                
-                Button(action: {
-                       print("Camera is Showed/Photos Library")
-                   }) {
-                       Text("Tap to select a picture")
-                           .frame(maxWidth: 344, maxHeight: 220)
-                           .font(.system(size: 14))
-                           .padding()
-                           .foregroundColor(.white)
-                           .background(Color.gray)
-                           .clipShape(RoundedRectangle(cornerRadius: 20))
-                           .padding()
-                           
-                   }
+                NavigationLink(destination: CameraView()){
+                    Text("Tap to select a picture")
+                }.frame(maxWidth: 344, maxHeight: 220)
+                    .font(.system(size: 14))
+                    .padding()
+                    .foregroundColor(.white)
+                    .background(Color.gray)
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                    .padding()
+//                Button(action: {
+//                    //self.showCaptureImageView.toggle()
+//
+//                   }) {
+//                       Text("Tap to select a picture")
+//                           .frame(maxWidth: 344, maxHeight: 220)
+//                           .font(.system(size: 14))
+//                           .padding()
+//                           .foregroundColor(.white)
+//                           .background(Color.gray)
+//                           .clipShape(RoundedRectangle(cornerRadius: 20))
+//                           .padding()
+//
+//                   }
+//                if (showCaptureImageView) {
+//                        CaptureImageView(isShown: $showCaptureImageView, image: $image)
+//                      }
                 
                 VStack {
                     HStack{
@@ -188,3 +202,27 @@ struct addDetailView_Previews: PreviewProvider {
     }
 }
 
+//struct CaptureImageView {
+//    
+//    /// MARK: - Properties
+//    @Binding var isShown: Bool
+//    @Binding var image: Image?
+//    
+//    func makeCoordinator() -> Coordinator {
+//      return Coordinator(isShown: $isShown, image: $image)
+//    }
+//}
+//
+//extension CaptureImageView: UIViewControllerRepresentable {
+//    func makeUIViewController(context: UIViewControllerRepresentableContext<CaptureImageView>) -> UIImagePickerController {
+//        let picker = UIImagePickerController()
+//        picker.delegate = context.coordinator
+//        //picker.sourceType = .camera
+//        return picker
+//    }
+//    
+//    func updateUIViewController(_ uiViewController: UIImagePickerController,
+//                                context: UIViewControllerRepresentableContext<CaptureImageView>) {
+//        
+//    }
+//}
