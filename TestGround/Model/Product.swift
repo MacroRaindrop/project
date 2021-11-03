@@ -15,6 +15,6 @@ struct Product: Hashable, Codable, Identifiable {
     var inboundProduct: String?
     var outboundProduct: String?
     var purchaseOrder: String
-    var image: String?
+    var imageURL: URL
     var datePurchased: Date
 }

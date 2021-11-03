@@ -15,6 +15,13 @@ class APIRegister: ObservableObject{
     
     func loadDataAPIRegister(completion: @escaping ([Register]) -> ()) {
         //isi url & url session
+        guard let url = URL(string: "https://be-raindrop-app.herokuapp.com/login") else { return }
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            let registers = try! JSONDecoder().decode([Register].self, from: data!)
+            DispatchQueue.main.async {
+                completion(registers)
+            }
+        }.resume()
     }
 }
 
