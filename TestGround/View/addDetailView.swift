@@ -97,14 +97,14 @@ struct addDetailView: View {
 //                        .frame(width:193.0, height: 40)
 //                        .padding()
                     
-//                    TextField("Masukkan nama barang", text: $namaProduk)
-//                        .font(.system(size: 14))
-//                        .frame(width: 193, height: 40, alignment: .trailing)
-//                        .textFieldStyle(PlainTextFieldStyle())
-//                        .padding([.horizontal], 15)
-//                        .cornerRadius(20)
-//                        .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.gray))
-//                        .padding([.horizontal], 2)
+                    TextField("Masukkan nama barang", text: $namaProduk.text)
+                        .font(.system(size: 14))
+                        .frame(width: 193, height: 40, alignment: .trailing)
+                        .textFieldStyle(PlainTextFieldStyle())
+                        .padding([.horizontal], 15)
+                        .cornerRadius(20)
+                        .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.gray))
+                        .padding([.horizontal], 2)
                     
 
                       
