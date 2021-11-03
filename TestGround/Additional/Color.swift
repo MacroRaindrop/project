@@ -8,5 +8,5 @@
 import Foundation
 import SwiftUI
 struct CustomColor {
-    static let myColor = Color("RaindropColor")
+    static let myColor = Color("Accent")
 }

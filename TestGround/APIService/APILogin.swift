@@ -30,14 +30,14 @@ class APILogin: ObservableObject{
     //isi kodingan
     @Published var login: [Login] = []
     
-    func loginCheck(email: String, password: String ) {
+    func loginCheck(owner_email: String, owner_password: String ) {
 
-        //3 pasang url
+        // pasang url
         guard let url = URL(string: "https://be-raindrop-app.herokuapp.com/login") else {
             return
         }
         
-        let body : [String : String] = ["email": email, "password": password ]
+        let body : [String : String] = ["owner_email": owner_email, "owner_password": owner_password ]
         
         guard let finalBody = try? JSONEncoder().encode(body) else {
             return
@@ -71,7 +71,7 @@ class APILogin: ObservableObject{
                         self.successLoggedin = true
                         //ubah status isCorrect
                         self.passwordCorrect = true
-                        self.userName = result.email
+                        self.userName = result.owner_email
                     }else {
                         self.passwordCorrect = false
                     }
