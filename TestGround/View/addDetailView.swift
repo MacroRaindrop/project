@@ -42,43 +42,8 @@ struct addDetailView: View {
                     
                 Button("Simpan"){
                     print("sudah tersimpan")
-//
-//                    if namaNull {
-//                        Text("nama produk tidak boleh kosong")
-//                            .offset(y: -10)
-//                            .foregroundColor(.red)
-//                    }
-//                    else if jumlahNull {
-//                        Text("jumlah tidak boleh kosong")
-//                            .offset(y: -10)
-//                            .foregroundColor(.red)
-//                    }
-//                    else if minNull {
-//                        Text("minimal stok tidak boleh kosong")
-//                            .offset(y: -10)
-//                            .foregroundColor(.red)
-//                    }
-                    
-                    //validasi
-//                    if namaProduk.isEmpty{
-//                        namaNull = true
-//                    }else{
-//                        namaNull = false
-                    //}
-                    if jumlahProduk.isEmpty{
-                        jumlahNull = true
-                    }else{
-                        jumlahNull = false
-                    }
-                    if jumlahMinimalStok.isEmpty{
-                        minNull = true
-                    }else{
-                        minNull = false
-                    }
-                    
-                    //validasi semua hrs di isi
-                    
-                } .disabled(namaNull == true || jumlahNull == true || minNull == true) // || image == nil)
+                }
+                .disabled(jumlahProduk.isEmpty || jumlahMinimalStok.isEmpty)
                 .padding()
                     
                     
@@ -89,14 +54,6 @@ struct addDetailView: View {
                     Text("Nama Produk")
                         .padding()
                     
-                    
-
-//                    TextField("Nama Produk", text: $namaProduk)
-//                        .textFieldStyle(RoundedBorderTextFieldStyle())
-//                        .padding()
-//                        .frame(width:193.0, height: 40)
-//                        .padding()
-                    
                     TextField("Masukkan nama barang", text: $namaProduk.text)
                         .font(.system(size: 14))
                         .frame(width: 193, height: 40, alignment: .trailing)
@@ -105,12 +62,6 @@ struct addDetailView: View {
                         .cornerRadius(20)
                         .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.gray))
                         .padding([.horizontal], 2)
-                    
-
-                      
-    
-                       
-                 
                 }
                 NavigationLink(destination: CameraView()){
                     Text("Tap to select a picture")
@@ -176,11 +127,6 @@ struct addDetailView: View {
                     HStack{
                         Text("Minimal Stok")
                             .padding()
-                        
-//                        TextField("0", text: $jumlahMinimalStok)
-//                            .keyboardType(.numberPad)
-//                            .textFieldStyle(RoundedBorderTextFieldStyle())
-//                            .padding()
                         
                         TextField("0", text: self.$jumlahMinimalStok)
                             .font(.system(size: 14))
