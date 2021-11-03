@@ -33,167 +33,186 @@ struct addDetailView: View {
     
     
     var body: some View {
-        VStack(alignment: .leading){
-                HStack {
-                
-                Button("Batal") {
-                    self.showModal.toggle()
-                }
-                .padding()
-                .foregroundColor(.red)
-                    
-                    Spacer()
-                
-                    
-                Button("Simpan"){
-                    print("sudah tersimpan")
-                }
-                .disabled(jumlahProduk.isEmpty || jumlahMinimalStok.isEmpty)
-                .padding()
-                    
-                    
-                }
-                
-                HStack {
-                    
-                    Text("Nama Produk")
-                        .padding()
-                    
-                    TextField("Masukkan nama barang", text: $namaProduk.text)
-                        .font(.system(size: 14))
-                        .frame(width: 193, height: 40, alignment: .trailing)
-                        .textFieldStyle(PlainTextFieldStyle())
-                        .padding([.horizontal], 15)
-                        .cornerRadius(20)
-                        .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.gray))
-                        .padding([.horizontal], 2)
-                }
-//                NavigationLink(destination: CameraView()){
-//                    Text("Tap to select a picture")
-//                }.frame(maxWidth: 344, maxHeight: 220)
-//                    .font(.system(size: 14))
-//                    .padding()
-//                    .foregroundColor(.white)
-//                    .background(Color.gray)
-//                    .clipShape(RoundedRectangle(cornerRadius: 20))
-//                    .padding()
-//                Button(action: {
-//                    //self.showCaptureImageView.toggle()
-//
-//
-//                   }) {
-//                       Text("Tap to select a picture")
-//                           .frame(maxWidth: 344, maxHeight: 220)
-//                           .font(.system(size: 14))
-//                           .padding()
-//                           .foregroundColor(.white)
-//                           .background(Color.gray)
-//                           .clipShape(RoundedRectangle(cornerRadius: 20))
-//                           .padding()
-////
-//                   }
-            image!
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 300, height: 300)
-                .clipShape(Circle())
-                .overlay(Circle().stroke(Color.white, lineWidth: 4))
-                .shadow(radius: 10)
-                .onTapGesture { self.shouldPresentActionScheet = true }
-                   .sheet(isPresented: $shouldPresentImagePicker) {
-                       SUImagePickerView(sourceType: self.shouldPresentCamera ? .camera : .photoLibrary, image: self.$image, isPresented: self.$shouldPresentImagePicker)
-               }.actionSheet(isPresented: $shouldPresentActionScheet) { () -> ActionSheet in
-                   ActionSheet(title: Text("Choose mode"), message: Text("Please choose your preferred mode to set your profile image"), buttons: [ActionSheet.Button.default(Text("Camera"), action: {
-                       self.shouldPresentImagePicker = true
-                       self.shouldPresentCamera = true
-                   }), ActionSheet.Button.default(Text("Photo Library"), action: {
-                       self.shouldPresentImagePicker = true
-                       self.shouldPresentCamera = false
-                   }), ActionSheet.Button.cancel()])
-               }
-//                if (showCaptureImageView) {
-//                        CaptureImageView(isShown: $showCaptureImageView, image: $image)
-//                      }
-                
+        ScrollView{
             VStack(alignment: .leading){
-                    HStack{
-                        
-                        Text("Jumlah")
-                            .padding()
-                        
-//                        TextField("0", text: $jumlahProduk)
-//                            .keyboardType(.numberPad)
-//                            .textFieldStyle(RoundedBorderTextFieldStyle())
-//                            .padding()
-                        
-                        TextField("0", text: self.$jumlahProduk)
-                            .font(.system(size: 14))
-                            .frame(height: 34)
-                            .textFieldStyle(PlainTextFieldStyle())
-                            .padding([.horizontal], 10)
-                            .cornerRadius(20)
-                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
-                            .padding([.horizontal], 2)
-                        
-                        Picker("please choose a unit", selection: $unitSelected){
-                            ForEach(unit, id: \.self){
-                                Text($0)
-                            }
-                            
-                        }
-                        .padding()
+                    HStack {
+                    
+                    Button("Batal") {
+                        self.showModal.toggle()
                     }
-                    
-                    Text("Masukkan jumlah stok yang tersedia saat ini")
-                        .foregroundColor(.gray)
-                        .font(.system(size: 14))
-                        .padding()
-                    
-                    HStack{
-                        Text("Minimal Stok")
-                            .padding()
+                    .padding()
+                    .foregroundColor(.red)
                         
-                        TextField("0", text: self.$jumlahMinimalStok)
-                            .font(.system(size: 14))
-                            .frame(height: 34)
-                            .textFieldStyle(PlainTextFieldStyle())
-                            .padding([.horizontal], 10)
-                            .cornerRadius(20)
-                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
-                            .padding([.horizontal])
+                        
+                        Spacer()
+                    
+                        
+                    Button("Simpan"){
+                        print("sudah tersimpan")
+                    }
+                    .disabled(jumlahProduk.isEmpty || jumlahMinimalStok.isEmpty)
+                    .padding()
+                        
                         
                     }
                     
-                    Text("Masukkan jumlah minimum stok untuk diingatkan saat statusnya low")
-                        .foregroundColor(.gray)
-                        .font(.system(size: 14))
-                        .fixedSize(horizontal: false, vertical: true)
-                        .padding()
-                    
-                    HStack{
-                        Text("Notes/Desc")
+                    HStack {
+                        
+                        Text("Nama Produk")
                             .padding()
                         
-                    }
-                    
-                    TextField("Masukkan notes dan deskripsi produk", text: self.$notesDeskripsi)
+                        TextField("Masukkan nama barang", text: $namaProduk.text)
                             .font(.system(size: 14))
-                            .frame(width: 347, height: 101, alignment: .topLeading)
+                            .frame(width: 193, height: 40, alignment: .trailing)
                             .textFieldStyle(PlainTextFieldStyle())
-                            .padding(5)
+                            .padding([.horizontal], 15)
                             .cornerRadius(20)
                             .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.gray))
-                            .fixedSize(horizontal: false, vertical: true)
-                            .padding([.horizontal])
-                        
-
+                            .padding([.horizontal], 2)
                     }
-            
-               Spacer()
+    //                NavigationLink(destination: CameraView()){
+    //                    Text("Tap to select a picture")
+    //                }.frame(maxWidth: 344, maxHeight: 220)
+    //                    .font(.system(size: 14))
+    //                    .padding()
+    //                    .foregroundColor(.white)
+    //                    .background(Color.gray)
+    //                    .clipShape(RoundedRectangle(cornerRadius: 20))
+    //                    .padding()
+    //                Button(action: {
+    //                    //self.showCaptureImageView.toggle()
+    //
+    //
+    //                   }) {
+    //                       Text("Tap to select a picture")
+    //                           .frame(maxWidth: 344, maxHeight: 220)
+    //                           .font(.system(size: 14))
+    //                           .padding()
+    //                           .foregroundColor(.white)
+    //                           .background(Color.gray)
+    //                           .clipShape(RoundedRectangle(cornerRadius: 20))
+    //                           .padding()
+    ////
+    //                   }
+                    image!
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 344, height: 220)
+                        .textFieldStyle(PlainTextFieldStyle())
+    //                    .padding()
+                        .cornerRadius(10)
+                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
+    //                    .padding([.horizonta)
+    //                    .frame(width: 344, height: 220)
+    //                    .clipShape(Circle())
+    //                    .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                        .padding()
+                        .shadow(radius: 10)
+                        .onTapGesture { self.shouldPresentActionScheet = true }
+                           .sheet(isPresented: $shouldPresentImagePicker) {
+                               SUImagePickerView(sourceType: self.shouldPresentCamera ? .camera : .photoLibrary, image: self.$image, isPresented: self.$shouldPresentImagePicker)
+                       }.actionSheet(isPresented: $shouldPresentActionScheet) { () -> ActionSheet in
+                           ActionSheet(title: Text("Choose mode"), message: Text("Please choose your preferred mode to set your profile image"), buttons: [ActionSheet.Button.default(Text("Camera"), action: {
+                               self.shouldPresentImagePicker = true
+                               self.shouldPresentCamera = true
+                           }), ActionSheet.Button.default(Text("Photo Library"), action: {
+                               self.shouldPresentImagePicker = true
+                               self.shouldPresentCamera = false
+                           }), ActionSheet.Button.cancel()])
+                            
+                       }
+    //                if (showCaptureImageView) {
+    //                        CaptureImageView(isShown: $showCaptureImageView, image: $image)
+    //                      }
+                    
+                VStack(alignment: .leading){
+                        HStack{
+                            Text("Jumlah")
+                                .padding()
+                            
+    //                        TextField("0", text: $jumlahProduk)
+    //                            .keyboardType(.numberPad)
+    //                            .textFieldStyle(RoundedBorderTextFieldStyle())
+    //                            .padding()
+                            
+                            TextField("0", text: self.$jumlahProduk)
+                                .font(.system(size: 14))
+                                .frame(height: 34)
+                                .textFieldStyle(PlainTextFieldStyle())
+                                .padding([.horizontal], 10)
+                                .cornerRadius(20)
+                                .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
+                                .padding([.horizontal], 2)
+                            
+                            Picker("please choose a unit", selection: $unitSelected){
+                                ForEach(unit, id: \.self){
+                                    Text($0)
+                                }
+                                
+                            }
+                            .padding()
+                        }
+                        
+                        Text("Masukkan jumlah stok yang tersedia saat ini")
+                            .foregroundColor(.gray)
+                            .font(.system(size: 14))
+                            .padding()
+                        
+                        HStack{
+                            Text("Minimal Stok")
+                                .padding()
+                            
+                            TextField("0", text: self.$jumlahMinimalStok)
+                                .font(.system(size: 14))
+                                .frame(height: 34)
+                                .textFieldStyle(PlainTextFieldStyle())
+                                .padding([.horizontal], 10)
+                                .cornerRadius(20)
+                                .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
+                                .padding([.horizontal])
+                            
+                        }
+                        
+                        Text("Masukkan jumlah minimum stok untuk diingatkan saat statusnya low")
+                            .foregroundColor(.gray)
+                            .font(.system(size: 14))
+                            .fixedSize(horizontal: false, vertical: true)
+                            .padding()
+                        
+                        HStack{
+                            Text("Notes/Desc")
+                                .padding()
+                            
+                        }
+                    
+                    VStack{
+                        
+                        TextField("Masukkan notes dan deskripsi produk", text: self.$notesDeskripsi)
+                                .font(.system(size: 14))
+                                .frame(width: 344, height: 80, alignment: .topLeading)
+                                .textFieldStyle(PlainTextFieldStyle())
+                                .padding(5)
+                                .cornerRadius(20)
+                                .overlay(RoundedRectangle(cornerRadius: 16)
+                                            .stroke(Color.gray))
+                                .fixedSize(horizontal: false, vertical: true)
+                                .padding([.horizontal])
+                        
+                    }
+                        
+                       
+                            
+
+                        }
+                
+                   Spacer()
+            }
         }
+            
     }
+            
+        }
         
-}
     
 
 
