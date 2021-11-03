@@ -15,6 +15,7 @@
 		7CB6137F273292F20039C14D /* Camera-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7CB6137E273292F20039C14D /* Camera-SwiftUI */; };
 		7CB61381273295AE0039C14D /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB61380273295AE0039C14D /* CameraViewModel.swift */; };
 		7CB61383273296C80039C14D /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB61382273296C80039C14D /* CameraView.swift */; };
+		7CDA13292732E789005A2D05 /* SUImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDA13282732E789005A2D05 /* SUImagePickerView.swift */; };
 		B828FCED272179150015F0BF /* TestGroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828FCEC272179150015F0BF /* TestGroundApp.swift */; };
 		B828FCEF272179150015F0BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828FCEE272179150015F0BF /* ContentView.swift */; };
 		B828FCF1272179170015F0BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B828FCF0272179170015F0BF /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 		7CB613782732819F0039C14D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7CB61380273295AE0039C14D /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 		7CB61382273296C80039C14D /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		7CDA13282732E789005A2D05 /* SUImagePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUImagePickerView.swift; sourceTree = "<group>"; };
 		B828FCE9272179150015F0BF /* TestGround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestGround.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B828FCEC272179150015F0BF /* TestGroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TestGroundApp.swift; path = TestGround/TestGroundApp.swift; sourceTree = SOURCE_ROOT; };
 		B828FCEE272179150015F0BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = TestGround/ContentView.swift; sourceTree = SOURCE_ROOT; };
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				D57FD5A02729470F00441F18 /* LoginView.swift */,
+				7CDA13282732E789005A2D05 /* SUImagePickerView.swift */,
 				7C2677E627314E2B00285B1A /* addDetailView.swift */,
 				7CB613782732819F0039C14D /* Coordinator.swift */,
 				7CB61382273296C80039C14D /* CameraView.swift */,
@@ -236,6 +239,7 @@
 				7CB61379273281A00039C14D /* Coordinator.swift in Sources */,
 				B828FCEF272179150015F0BF /* ContentView.swift in Sources */,
 				7C2677E727314E2B00285B1A /* addDetailView.swift in Sources */,
+				7CDA13292732E789005A2D05 /* SUImagePickerView.swift in Sources */,
 				7CB61383273296C80039C14D /* CameraView.swift in Sources */,
 				C2445A4C2729211500C19C05 /* RegisterView.swift in Sources */,
 				C2445A4E272BDD7500C19C05 /* Login.swift in Sources */,

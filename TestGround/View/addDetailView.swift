@@ -11,10 +11,15 @@ import Camera_SwiftUI
 
 
 struct addDetailView: View {
+    
+    @State private var shouldPresentImagePicker = false
+    @State private var shouldPresentActionScheet = false
+    @State private var shouldPresentCamera = false
+    
     @State var showCaptureImageView: Bool = false
     @ObservedObject var namaProduk = TextBindingManager(limit: 20)
     @Binding var showModal: Bool
-    @State var image: Image? = nil
+    @State var image: Image? = Image("InboundIcon")
     //@State private var namaProduk: String = ""
     @State var jumlahProduk : String = ""
     @State var jumlahMinimalStok : String = ""
@@ -63,17 +68,18 @@ struct addDetailView: View {
                         .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.gray))
                         .padding([.horizontal], 2)
                 }
-                NavigationLink(destination: CameraView()){
-                    Text("Tap to select a picture")
-                }.frame(maxWidth: 344, maxHeight: 220)
-                    .font(.system(size: 14))
-                    .padding()
-                    .foregroundColor(.white)
-                    .background(Color.gray)
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                    .padding()
+//                NavigationLink(destination: CameraView()){
+//                    Text("Tap to select a picture")
+//                }.frame(maxWidth: 344, maxHeight: 220)
+//                    .font(.system(size: 14))
+//                    .padding()
+//                    .foregroundColor(.white)
+//                    .background(Color.gray)
+//                    .clipShape(RoundedRectangle(cornerRadius: 20))
+//                    .padding()
 //                Button(action: {
 //                    //self.showCaptureImageView.toggle()
+//
 //
 //                   }) {
 //                       Text("Tap to select a picture")
@@ -84,8 +90,27 @@ struct addDetailView: View {
 //                           .background(Color.gray)
 //                           .clipShape(RoundedRectangle(cornerRadius: 20))
 //                           .padding()
-//
+////
 //                   }
+            image!
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 300, height: 300)
+                .clipShape(Circle())
+                .overlay(Circle().stroke(Color.white, lineWidth: 4))
+                .shadow(radius: 10)
+                .onTapGesture { self.shouldPresentActionScheet = true }
+                   .sheet(isPresented: $shouldPresentImagePicker) {
+                       SUImagePickerView(sourceType: self.shouldPresentCamera ? .camera : .photoLibrary, image: self.$image, isPresented: self.$shouldPresentImagePicker)
+               }.actionSheet(isPresented: $shouldPresentActionScheet) { () -> ActionSheet in
+                   ActionSheet(title: Text("Choose mode"), message: Text("Please choose your preferred mode to set your profile image"), buttons: [ActionSheet.Button.default(Text("Camera"), action: {
+                       self.shouldPresentImagePicker = true
+                       self.shouldPresentCamera = true
+                   }), ActionSheet.Button.default(Text("Photo Library"), action: {
+                       self.shouldPresentImagePicker = true
+                       self.shouldPresentCamera = false
+                   }), ActionSheet.Button.cancel()])
+               }
 //                if (showCaptureImageView) {
 //                        CaptureImageView(isShown: $showCaptureImageView, image: $image)
 //                      }
