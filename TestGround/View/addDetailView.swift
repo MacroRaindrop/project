@@ -28,8 +28,7 @@ struct addDetailView: View {
     
     
     var body: some View {
-        VStack {
-            VStack{
+        VStack(alignment: .leading){
                 HStack {
                 
                 Button("Batal") {
@@ -91,11 +90,24 @@ struct addDetailView: View {
                         .padding()
                     
                     
-                    TextField("Nama Produk", text: $namaProduk.text)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
-                        .frame(width:193, height: 40)
-                        .padding()
+
+//                    TextField("Nama Produk", text: $namaProduk)
+//                        .textFieldStyle(RoundedBorderTextFieldStyle())
+//                        .padding()
+//                        .frame(width:193.0, height: 40)
+//                        .padding()
+                    
+                    TextField("Masukkan nama barang", text: self.$namaProduk)
+                        .font(.system(size: 14))
+                        .frame(width: 193, height: 40, alignment: .trailing)
+                        .textFieldStyle(PlainTextFieldStyle())
+                        .padding([.horizontal], 15)
+                        .cornerRadius(20)
+                        .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.gray))
+                        .padding([.horizontal], 2)
+                    
+
+>>>>>>> agni
                       
     
                        
@@ -128,26 +140,33 @@ struct addDetailView: View {
 //                        CaptureImageView(isShown: $showCaptureImageView, image: $image)
 //                      }
                 
-                VStack {
+            VStack(alignment: .leading){
                     HStack{
                         
                         Text("Jumlah")
                             .padding()
                         
-                        TextField("0", text: $jumlahProduk)
-                            .keyboardType(.numberPad)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .padding()
+//                        TextField("0", text: $jumlahProduk)
+//                            .keyboardType(.numberPad)
+//                            .textFieldStyle(RoundedBorderTextFieldStyle())
+//                            .padding()
+                        
+                        TextField("0", text: self.$jumlahProduk)
+                            .font(.system(size: 14))
+                            .frame(height: 34)
+                            .textFieldStyle(PlainTextFieldStyle())
+                            .padding([.horizontal], 10)
+                            .cornerRadius(20)
+                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
+                            .padding([.horizontal], 2)
                         
                         Picker("please choose a unit", selection: $unitSelected){
                             ForEach(unit, id: \.self){
                                 Text($0)
-                                
                             }
+                            
                         }
                         .padding()
-                        
-                        
                     }
                     
                     Text("Masukkan jumlah stok yang tersedia saat ini")
@@ -159,42 +178,54 @@ struct addDetailView: View {
                         Text("Minimal Stok")
                             .padding()
                         
-                        TextField("0", text: $jumlahMinimalStok)
-                            .keyboardType(.numberPad)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .padding()
+//                        TextField("0", text: $jumlahMinimalStok)
+//                            .keyboardType(.numberPad)
+//                            .textFieldStyle(RoundedBorderTextFieldStyle())
+//                            .padding()
                         
+                        TextField("0", text: self.$jumlahMinimalStok)
+                            .font(.system(size: 14))
+                            .frame(height: 34)
+                            .textFieldStyle(PlainTextFieldStyle())
+                            .padding([.horizontal], 10)
+                            .cornerRadius(20)
+                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
+                            .padding([.horizontal])
                         
                     }
                     
                     Text("Masukkan jumlah minimum stok untuk diingatkan saat statusnya low")
                         .foregroundColor(.gray)
                         .font(.system(size: 14))
+                        .fixedSize(horizontal: false, vertical: true)
                         .padding()
                     
                     HStack{
                         Text("Notes/Desc")
                             .padding()
-                        Spacer()
                         
                     }
                     
-                    TextField("Masukkan Deskripsi Produk", text: $notesDeskripsi)
-                        .padding(.all, 20)
-                        .font(.system(size: 14))
-                        .frame(width:347, height: 100)
-                        .foregroundColor(.white)
-                        .background(Color.gray)
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                        .padding()
+                    TextField("Masukkan notes dan deskripsi produk", text: self.$notesDeskripsi)
+                            .font(.system(size: 14))
+                            .frame(width: 347, height: 101, alignment: .topLeading)
+                            .textFieldStyle(PlainTextFieldStyle())
+                            .padding(5)
+                            .cornerRadius(20)
+                            .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.gray))
+                            .fixedSize(horizontal: false, vertical: true)
+                            .padding([.horizontal])
+                        
 
                     }
-                
-            Spacer()
+            
+               Spacer()
         }
     }
+        
 }
-}
+    
+
 
 struct addDetailView_Previews: PreviewProvider {
     static var previews: some View {
