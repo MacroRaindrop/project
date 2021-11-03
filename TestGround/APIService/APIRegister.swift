@@ -8,18 +8,71 @@
 import Foundation
 import Combine
 import SwiftUI
+import SystemConfiguration
 
 class APIRegister: ObservableObject{
     //isi kodingan
-    @Published var register = [Register]()
+    var didChange = PassthroughSubject<APIRegister, Never>()
+    @Published var passwordCorrect : Bool = true
+    @Published var userName: String = ""
+    @Published var loginConnected : Bool = true
+    @Published var theAPIReachable : Bool = true {
+        didSet {
+            didChange.send(self)
+        }
+    }
+    @Published var successLoggedin : Bool = false {
+        didSet {
+            didChange.send(self)
+        }
+    }
+    @Published var register: [Register] = []
     
-    func loadDataAPIRegister(completion: @escaping ([Register]) -> ()) {
+    func registerCheck(owner_name: String, name: String, owner_email: String, owner_password: String ) {
         //isi url & url session
-        guard let url = URL(string: "https://be-raindrop-app.herokuapp.com/login") else { return }
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            let registers = try! JSONDecoder().decode([Register].self, from: data!)
-            DispatchQueue.main.async {
-                completion(registers)
+        guard let url = URL(string: "https://be-raindrop-app.herokuapp.com/companies") else {
+            return
+        }
+        
+        let body : [ String : String] = ["owner_name" : owner_name, "name" : name, "owner_email" : owner_email, "owner_password" : owner_password]
+        
+        guard let finishedBody = try? JSONEncoder().encode(body)
+        else {
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        request.httpBody = finishedBody
+        
+        URLSession.shared.dataTask(with: request) {(data, response, error) in
+            guard let data = data, error == nil else {
+                print("Data Response Kosong")
+                
+                DispatchQueue.main.async {
+                    self.theAPIReachable = false
+                }
+                return
+            }
+            
+            let result = try? JSONDecoder().decode(Register.self, from: data)
+            if let result = result {
+                DispatchQueue.main.async {
+                    if (result.success){
+                        self.successLoggedin = true
+                        self.passwordCorrect = true
+                        self.userName = result.owner_email
+                    }else {
+                        self.passwordCorrect = false
+                    }
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self.passwordCorrect = false
+                    print("gagal me-response dari web servis")
+                }
             }
         }.resume()
     }

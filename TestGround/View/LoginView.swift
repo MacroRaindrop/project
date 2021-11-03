@@ -39,8 +39,8 @@ struct LoginView: View {
         NavigationView {
             
             ZStack {
-                LinearGradient(gradient: Gradient(colors: [Color("RaindropColor"),
-                                                           Color("RaindropColor2")]), startPoint: .top, endPoint: .bottom).ignoresSafeArea(.all, edges: .all)
+//                LinearGradient(gradient: Gradient(colors: [Color("Accent"),
+//                                                           Color("Accent")]), startPoint: .top, endPoint: .bottom).ignoresSafeArea(.all, edges: .all)
                 VStack{
                         Text("Masuk")
                             .padding()
@@ -97,7 +97,7 @@ struct LoginView: View {
                             if(self.username.isEmpty || self.password.isEmpty) {
                                 self.isEmptyField = true
                             }else {
-                                self.userAuth.loginCheck(email: self.username, password: self.password)
+                                self.userAuth.loginCheck(owner_email: self.username, owner_password: self.password)
                             }
                             if username.isEmpty{
                                 usernameNull = true

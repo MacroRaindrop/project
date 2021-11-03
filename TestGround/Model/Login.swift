@@ -9,10 +9,10 @@ import SwiftUI
 import Foundation
 
 struct Login : Codable, Identifiable {
-    var id = UUID()
-    var email: String
+    var id: UUID
+    var owner_email: String
     var success: Bool
-    var password: String
+    var owner_password: String
     
 }
 
