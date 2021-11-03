@@ -11,6 +11,10 @@ let storedUsername = "Myusername"
 let storedPassword = "Mypassword"
 
 struct LoginView: View {
+    
+    @EnvironmentObject var userAuth: APILogin
+    
+    
     @State private var username: String = ""
     @State private var password: String = ""
     @State private var reminder: String = ""

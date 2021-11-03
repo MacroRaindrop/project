@@ -77,7 +77,6 @@
 			children = (
 				C279B4C4273145D000A4B8AF /* APIService */,
 				C2445A59272BEFA600C19C05 /* Additional */,
-				C2445A58272BEF9B00C19C05 /* ViewModel */,
 				C2445A55272BE2C900C19C05 /* View */,
 				C2445A4F272BDDC000C19C05 /* Model */,
 				B828FCEC272179150015F0BF /* TestGroundApp.swift */,
@@ -117,13 +116,6 @@
 				7C2677EA2731517700285B1A /* StokView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		C2445A58272BEF9B00C19C05 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		C2445A59272BEFA600C19C05 /* Additional */ = {

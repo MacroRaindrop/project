@@ -8,10 +8,12 @@
 import SwiftUI
 import Foundation
 
-struct Login: Hashable, Codable, Identifiable {
-    var id: UUID
-    var username: String
+struct Login : Codable, Identifiable {
+    var id = UUID()
+    var email: String
+    var success: Bool
     var password: String
+    
 }
 
 
