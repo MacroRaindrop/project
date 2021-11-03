@@ -29,6 +29,7 @@ struct LoginView: View {
     @State var editingMode: Bool = false
     @State var newAcc: Bool = false
     
+    @State var isEmptyField = false
 //    if username == NULL (){
 //        reminder.values = test
 //    }
@@ -93,6 +94,11 @@ struct LoginView: View {
                         }
                         
                         Button(action: {
+                            if(self.username.isEmpty || self.password.isEmpty) {
+                                self.isEmptyField = true
+                            }else {
+                                self.userAuth.loginCheck(email: self.username, password: self.password)
+                            }
                             if username.isEmpty{
                                 usernameNull = true
                             }else{
