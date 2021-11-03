@@ -53,6 +53,7 @@ struct addDetailView: View {
 //                        .padding()
                     
                     TextField("Masukkan nama barang", text: self.$namaProduk)
+                        .font(.system(size: 14))
                         .frame(width: 193, height: 40, alignment: .trailing)
                         .textFieldStyle(PlainTextFieldStyle())
                         .padding([.horizontal], 15)
@@ -93,11 +94,12 @@ struct addDetailView: View {
 //                            .padding()
                         
                         TextField("0", text: self.$jumlahProduk)
+                            .font(.system(size: 14))
                             .frame(height: 34)
                             .textFieldStyle(PlainTextFieldStyle())
                             .padding([.horizontal], 10)
                             .cornerRadius(20)
-                            .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.gray))
+                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
                             .padding([.horizontal], 2)
                         
                         Picker("please choose a unit", selection: $unitSelected){
@@ -124,15 +126,13 @@ struct addDetailView: View {
 //                            .padding()
                         
                         TextField("0", text: self.$jumlahMinimalStok)
+                            .font(.system(size: 14))
                             .frame(height: 34)
                             .textFieldStyle(PlainTextFieldStyle())
                             .padding([.horizontal], 10)
                             .cornerRadius(20)
-                            .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.gray))
+                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
                             .padding([.horizontal])
-                        
-                        
-                     
                         
                     }
                     
@@ -145,27 +145,28 @@ struct addDetailView: View {
                     HStack{
                         Text("Notes/Desc")
                             .padding()
-                        Spacer()
                         
                     }
                     
-                    TextField("Masukkan Deskripsi Produk", text: $notesDeskripsi)
-                        .padding(.all, 20)
-                        .font(.system(size: 14))
-                        .frame(width:347, height: 100)
-                        .foregroundColor(.white)
-                        .background(Color.white)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 16)
-                                .stroke(Color.gray, lineWidth: 1))
-                        .padding()
+                    TextField("Masukkan notes dan deskripsi produk", text: self.$notesDeskripsi)
+                            .font(.system(size: 14))
+                            .frame(width: 347, height: 101, alignment: .topLeading)
+                            .textFieldStyle(PlainTextFieldStyle())
+                            .padding(5)
+                            .cornerRadius(20)
+                            .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.gray))
+                            .fixedSize(horizontal: false, vertical: true)
+                            .padding([.horizontal])
+                        
 
                     }
             
                Spacer()
         }
     }
+        
 }
+    
 
 
 struct addDetailView_Previews: PreviewProvider {
