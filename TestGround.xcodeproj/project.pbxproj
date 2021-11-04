@@ -28,6 +28,7 @@
 		C279B4C3273124F400A4B8AF /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C279B4C2273124F400A4B8AF /* DashboardView.swift */; };
 		C279B4C8273146FF00A4B8AF /* APILogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C279B4C7273146FF00A4B8AF /* APILogin.swift */; };
 		C279B4CA2731475400A4B8AF /* APIRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = C279B4C92731475400A4B8AF /* APIRegister.swift */; };
+		D57A375E2733D3FD00F9B044 /* updateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57A375D2733D3FD00F9B044 /* updateView.swift */; };
 		D57FD5A12729470F00441F18 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57FD5A02729470F00441F18 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		C279B4C2273124F400A4B8AF /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		C279B4C7273146FF00A4B8AF /* APILogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILogin.swift; sourceTree = "<group>"; };
 		C279B4C92731475400A4B8AF /* APIRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRegister.swift; sourceTree = "<group>"; };
+		D57A375D2733D3FD00F9B044 /* updateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateView.swift; sourceTree = "<group>"; };
 		D57FD5A02729470F00441F18 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,6 +141,7 @@
 				C279B4C2273124F400A4B8AF /* DashboardView.swift */,
 				7C2677E827314E5800285B1A /* showModalView.swift */,
 				7C2677EA2731517700285B1A /* StokView.swift */,
+				D57A375D2733D3FD00F9B044 /* updateView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				7C2677F12731A84A00285B1A /* maxTextField.swift in Sources */,
 				C279B4C8273146FF00A4B8AF /* APILogin.swift in Sources */,
 				C2445A57272BE41F00C19C05 /* Product.swift in Sources */,
+				D57A375E2733D3FD00F9B044 /* updateView.swift in Sources */,
 				7CB61381273295AE0039C14D /* CameraViewModel.swift in Sources */,
 				7C2677EB2731517700285B1A /* StokView.swift in Sources */,
 			);
