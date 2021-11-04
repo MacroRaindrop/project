@@ -8,8 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Product: Hashable, Codable, Identifiable {
-    var id: UUID
+struct Product: Hashable, Codable{
     var addProduct: String
     var detailProduct: String
     var inboundProduct: String?

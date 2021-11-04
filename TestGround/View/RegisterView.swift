@@ -22,10 +22,15 @@ struct RegisterView: View {
     @State var authenticationDidFail: Bool = false
     @State var authenticationDidSucceed: Bool = false
     @State var newAcc: Bool = false
+<<<<<<< Updated upstream
     @State var isEmptyField: Bool = false
     
     @StateObject var authentication = APIRegister()
     
+=======
+    @State var isEmptyField = false
+    @StateObject var authentication = APIRegister()
+>>>>>>> Stashed changes
     var body: some View {
         
             ZStack {
@@ -265,6 +270,15 @@ struct RegisterView: View {
                                             .padding()
                                         
                                     }
+<<<<<<< Updated upstream
+=======
+                                    if !authentication.successLoggedin{
+                                        AnyView(LoginView())
+                                    }else {
+                                        AnyView(DashboardView().animation(.easeIn))
+                                    }
+                                    
+>>>>>>> Stashed changes
                                     Spacer()
                                         .frame(height: 100)
                                 }

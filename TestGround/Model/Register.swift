@@ -9,14 +9,11 @@
 import SwiftUI
 import Foundation
 
-struct Register: Hashable, Codable, Identifiable {
-    var id = UUID()
+struct Register: Hashable, Codable{
     var owner_name: String
     var name: String
     var owner_email: String
     var owner_password: String
     var success: Bool
-    
-
 }
 
