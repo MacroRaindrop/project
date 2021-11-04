@@ -10,7 +10,7 @@ import Camera_SwiftUI
 
 
 
-struct addDetailView: View {
+struct AddDetailView: View {
     
     @State private var shouldPresentImagePicker = false
     @State private var shouldPresentActionScheet = false
@@ -218,7 +218,7 @@ struct addDetailView: View {
 
 struct addDetailView_Previews: PreviewProvider {
     static var previews: some View {
-           addDetailView(showModal: .constant(true))
+           AddDetailView(showModal: .constant(true))
     }
 }
 
