@@ -63,69 +63,6 @@ struct StokView: View {
     }
 }
 
-//struct Card {
-//    let prompt: String
-//    let answer: String
-//
-//    static var example: Card {
-//        Card(prompt: "Who played the 13th Doctor in Doctor Who?", answer: "Jodie Whittaker")
-//    }
-//}
-//
-//struct CardView: View {
-//    let card: Card
-//
-//    var body: some View {
-//        ZStack {
-//            RoundedRectangle(cornerRadius: 25, style: .continuous)
-//                .fill(Color.white)
-//
-//            VStack {
-//                Text(card.prompt)
-//                    .font(.largeTitle)
-//                    .foregroundColor(.black)
-//
-//                Text(card.answer)
-//                    .font(.title)
-//                    .foregroundColor(.gray)
-//            }
-//            .padding(20)
-//            .multilineTextAlignment(.center)
-//        }
-//        .frame(width: 450, height: 250)
-//    }
-//}
-
-//struct Card {
-//    @State var users: [String] = []
-//
-//    // DATA LIES HERE
-//    static var example: Card {
-//        Card(users: ["Fandika", "Ikhsan"])
-//    }
-//
-//    func delete(at offsets: IndexSet) {
-//        users.remove(atOffsets: offsets)
-//    }
-//
-//}
-//
-//struct CardList: View {
-//
-//    let card: Card
-//
-//    var body: some View {
-//        NavigationView {
-//            List {
-//                ForEach(card.users, id: \.self) { user in
-//                    Text(user)
-//                }
-//                .onDelete(perform: card.delete)
-//            }
-//        }
-//    }
-//}
-
 struct ListVIew: View {
     
 //    let card: Card
@@ -193,3 +130,70 @@ struct StokView_Previews: PreviewProvider {
         StokView(text: .constant(""))
     }
 }
+
+
+
+// CARD YANG PUNYA FUNGSI DELETED
+
+//struct Card {
+//    let prompt: String
+//    let answer: String
+//
+//    static var example: Card {
+//        Card(prompt: "Who played the 13th Doctor in Doctor Who?", answer: "Jodie Whittaker")
+//    }
+//}
+//
+//struct CardView: View {
+//    let card: Card
+//
+//    var body: some View {
+//        ZStack {
+//            RoundedRectangle(cornerRadius: 25, style: .continuous)
+//                .fill(Color.white)
+//
+//            VStack {
+//                Text(card.prompt)
+//                    .font(.largeTitle)
+//                    .foregroundColor(.black)
+//
+//                Text(card.answer)
+//                    .font(.title)
+//                    .foregroundColor(.gray)
+//            }
+//            .padding(20)
+//            .multilineTextAlignment(.center)
+//        }
+//        .frame(width: 450, height: 250)
+//    }
+//}
+
+//struct Card {
+//    @State var users: [String] = []
+//
+//    // DATA LIES HERE
+//    static var example: Card {
+//        Card(users: ["Fandika", "Ikhsan"])
+//    }
+//
+//    func delete(at offsets: IndexSet) {
+//        users.remove(atOffsets: offsets)
+//    }
+//
+//}
+//
+//struct CardList: View {
+//
+//    let card: Card
+//
+//    var body: some View {
+//        NavigationView {
+//            List {
+//                ForEach(card.users, id: \.self) { user in
+//                    Text(user)
+//                }
+//                .onDelete(perform: card.delete)
+//            }
+//        }
+//    }
+//}
