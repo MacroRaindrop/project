@@ -1,6 +1,6 @@
 //
-//  ContentView.swift
-//  Macro-Proj1
+//  ForgetPassView.swift
+//  TestGround
 //
 //  Created by Fandika Ikhsan on 27/10/21.
 //

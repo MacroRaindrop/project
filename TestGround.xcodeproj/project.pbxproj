@@ -10,6 +10,7 @@
 		1619B8C32733B2A400877559 /* ForgetPassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1619B8C22733B2A400877559 /* ForgetPassView.swift */; };
 		1619B8C52733B85F00877559 /* ForgetPassRegisteredEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1619B8C42733B85F00877559 /* ForgetPassRegisteredEmailView.swift */; };
 		1619B8C72733B8E900877559 /* ForgetPassConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1619B8C62733B8E900877559 /* ForgetPassConfirmView.swift */; };
+		1619B8C92733C4C200877559 /* ForgetPassConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1619B8C82733C4C200877559 /* ForgetPassConfirmationView.swift */; };
 		16BF125227322E60002AFB7A /* StokView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BF125127322E60002AFB7A /* StokView.swift */; };
 		7C2677E727314E2B00285B1A /* addDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2677E627314E2B00285B1A /* addDetailView.swift */; };
 		7C2677E927314E5800285B1A /* showModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2677E827314E5800285B1A /* showModalView.swift */; };
@@ -32,6 +33,7 @@
 		1619B8C22733B2A400877559 /* ForgetPassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPassView.swift; sourceTree = "<group>"; };
 		1619B8C42733B85F00877559 /* ForgetPassRegisteredEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPassRegisteredEmailView.swift; sourceTree = "<group>"; };
 		1619B8C62733B8E900877559 /* ForgetPassConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPassConfirmView.swift; sourceTree = "<group>"; };
+		1619B8C82733C4C200877559 /* ForgetPassConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPassConfirmationView.swift; sourceTree = "<group>"; };
 		16BF125127322E60002AFB7A /* StokView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StokView.swift; sourceTree = "<group>"; };
 		7C2677E627314E2B00285B1A /* addDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addDetailView.swift; sourceTree = "<group>"; };
 		7C2677E827314E5800285B1A /* showModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = showModalView.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				16BF125127322E60002AFB7A /* StokView.swift */,
 				1619B8C22733B2A400877559 /* ForgetPassView.swift */,
 				1619B8C62733B8E900877559 /* ForgetPassConfirmView.swift */,
+				1619B8C82733C4C200877559 /* ForgetPassConfirmationView.swift */,
 				1619B8C42733B85F00877559 /* ForgetPassRegisteredEmailView.swift */,
 			);
 			path = View;
@@ -230,6 +233,7 @@
 				C2445A4E272BDD7500C19C05 /* Login.swift in Sources */,
 				C2445A51272BDF9900C19C05 /* Register.swift in Sources */,
 				C279B4C3273124F400A4B8AF /* DashboardView.swift in Sources */,
+				1619B8C92733C4C200877559 /* ForgetPassConfirmationView.swift in Sources */,
 				7C2677E927314E5800285B1A /* showModalView.swift in Sources */,
 				D57FD5A12729470F00441F18 /* LoginView.swift in Sources */,
 				C2445A5B272BEFBB00C19C05 /* Color.swift in Sources */,
