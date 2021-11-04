@@ -63,7 +63,7 @@ class APIRegister: ObservableObject{
                     if (result.success){
                         self.successLoggedin = true
                         self.passwordCorrect = true
-                        self.userName = result.owner_name
+                        self.userName = result.owner_email
                     }else {
                         self.passwordCorrect = false
                     }

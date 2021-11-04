@@ -131,10 +131,10 @@ struct LoginView: View {
                         .padding()
                         
                         //ini buat nyoba doang ke halaman detail add product
-                        NavigationLink(destination: addDetailView(showModal: .constant(true))){
-                            Text("detail")
-                        }
-                        .padding()
+//                        NavigationLink(destination: addDetailView(showModal: .constant(true))){
+//                            Text("detail")
+//                        }
+//                        .padding()
                         
                         
                     }
