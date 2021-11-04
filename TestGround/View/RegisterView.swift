@@ -219,7 +219,7 @@ struct RegisterView: View {
                                         if(self.username.isEmpty || self.password.isEmpty) {
                                             self.isEmptyField = true
                                         }else{
-                                            self.userAuth.registerCheck(owner_name: self.username, name: self.company, owner_email: self.email, owner_password: self.password)
+                                            self.authentication.registerCheck(owner_name: self.username, name: self.company, owner_email: self.email, owner_password: self.password)
                                         }
                                         if username.isEmpty{
                                             usernameNull = true
@@ -264,7 +264,7 @@ struct RegisterView: View {
                                             .padding()
                                         
                                     }
-                                    if !userAuth.successLoggedin{
+                                    if !authentication.successLoggedin{
                                         AnyView(LoginView())
                                     }else {
                                         AnyView(DashboardView().animation(.easeIn))
