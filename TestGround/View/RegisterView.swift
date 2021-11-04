@@ -24,6 +24,7 @@ struct RegisterView: View {
     @State var newAcc: Bool = false
     @State var isEmptyField: Bool = false
     @StateObject var authentication = APIRegister()
+
     
     var body: some View {
         
