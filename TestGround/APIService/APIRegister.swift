@@ -47,7 +47,7 @@ class APIRegister: ObservableObject{
         request.httpMethod = "POST"
         request.httpBody = finishedBody
         
-        URLSession.shared.dataTask(with: request) {(data, response, error) in
+        let task = URLSession.shared.dataTask(with: request, completionHandler:  { (data, response, error) in
             guard let data = data, error == nil else {
                 print("Data Response Kosong")
                 
@@ -63,7 +63,7 @@ class APIRegister: ObservableObject{
                     if (result.success){
                         self.successLoggedin = true
                         self.passwordCorrect = true
-                        self.userName = result.owner_email
+                        self.userName = result.owner_name
                     }else {
                         self.passwordCorrect = false
                     }
@@ -74,7 +74,8 @@ class APIRegister: ObservableObject{
                     print("gagal me-response dari web servis")
                 }
             }
-        }.resume()
+        })
+            task.resume()
     }
 }
 

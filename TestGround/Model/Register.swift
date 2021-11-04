@@ -5,8 +5,9 @@
 //  Created by Rostadhi Akbar, M.Pd on 29/10/21.
 //
 
-import Foundation
+
 import SwiftUI
+import Foundation
 
 struct Register: Hashable, Codable, Identifiable {
     var id = UUID()

@@ -22,12 +22,12 @@ struct RegisterView: View {
     @State var authenticationDidFail: Bool = false
     @State var authenticationDidSucceed: Bool = false
     @State var newAcc: Bool = false
-    @State var isEmptyField = false
+    @State var isEmptyField: Bool = false
     
-    
+    @StateObject var authentication = APIRegister()
     
     var body: some View {
-        NavigationView {
+        
             ZStack {
                 //            LinearGradient(gradient: Gradient(colors: [Color("Accent"),
                 //                                                       Color("Accent")]), startPoint: .top, endPoint: .bottom).ignoresSafeArea(.all, edges: .all)
@@ -52,7 +52,7 @@ struct RegisterView: View {
                                         .textFieldStyle(RoundedBorderTextFieldStyle())
                                         .padding()
                                         .keyboardType(.default)
-                                        .disableAutocorrection(true)
+                                        .autocapitalization(.none)
                                     
                                     HStack {
                                         Text("Perusahaan")
@@ -67,7 +67,7 @@ struct RegisterView: View {
                                         .textFieldStyle(RoundedBorderTextFieldStyle())
                                         .padding()
                                         .keyboardType(.default)
-                                        .disableAutocorrection(true)
+                                        .autocapitalization(.none)
                                     
                                     HStack {
                                         Text("Email")
@@ -83,7 +83,7 @@ struct RegisterView: View {
                                         .textFieldStyle(RoundedBorderTextFieldStyle())
                                         .padding()
                                         .keyboardType(.default)
-                                        .disableAutocorrection(true)
+                                        .autocapitalization(.none)
                                      
                                         
                                     
@@ -105,7 +105,7 @@ struct RegisterView: View {
                     //                                .background((Color(red: 233.0/255, green: 234.0/255,blue: 243.0/255)))
                                                     .cornerRadius(10)
                                                     .keyboardType(.default)
-                                                    .disableAutocorrection(true)
+                                                    .autocapitalization(.none)
                                             } else {
                                                 SecureField("Masukkan Kata Sandi", text:
                                                                 self.$password)
@@ -115,7 +115,7 @@ struct RegisterView: View {
                     //                                .background((Color(red: 233.0/255, green: 234.0/255,blue: 243.0/255)))
                                                     .cornerRadius(10)
                                                     .keyboardType(.default)
-                                                    .disableAutocorrection(true)
+                                                    .autocapitalization(.none)
                                                     
                                             }
                                             
@@ -148,7 +148,7 @@ struct RegisterView: View {
                     //                                .background((Color(red: 233.0/255, green: 234.0/255,blue: 243.0/255)))
                                                     .cornerRadius(10)
                                                     .keyboardType(.default)
-                                                    .disableAutocorrection(true)
+                                                    .autocapitalization(.none)
                                             } else {
                                                 SecureField("Masukkan Kata Sandi", text:
                                                                 self.$repeatPassword)
@@ -158,7 +158,7 @@ struct RegisterView: View {
                     //                                .background((Color(red: 233.0/255, green: 234.0/255,blue: 243.0/255)))
                                                     .cornerRadius(10)
                                                     .keyboardType(.default)
-                                                    .disableAutocorrection(true)
+                                                    .autocapitalization(.none)
                                                     
                                             }
                                             
@@ -219,7 +219,7 @@ struct RegisterView: View {
                                         if(self.username.isEmpty || self.password.isEmpty) {
                                             self.isEmptyField = true
                                         }else{
-                                            self.userAuth.registerCheck(owner_name: self.username, name: self.company, owner_email: self.email, owner_password: self.password)
+                                            self.authentication.registerCheck(owner_name: self.username, name: self.company, owner_email: self.email, owner_password: self.password)
                                         }
                                         if username.isEmpty{
                                             usernameNull = true
@@ -253,7 +253,8 @@ struct RegisterView: View {
                                             self.authenticationDidFail = true
                                         }
                                         print("Create New User")
-                                    }) {
+                                        
+                                    }){
                                         Text("Create User")
                                             .frame(maxWidth: 219, maxHeight: 20)
                                             .font(.system(size: 20))
@@ -264,22 +265,15 @@ struct RegisterView: View {
                                             .padding()
                                         
                                     }
-                                    if !userAuth.successLoggedin{
-                                        AnyView(LoginView())
-                                    }else {
-                                        AnyView(DashboardView().animation(.easeIn))
-                                    }
-                                    
                                     Spacer()
                                         .frame(height: 100)
                                 }
-                                
+                                .environmentObject(authentication)
                                 .padding()
                                 Spacer()
                             }
                         }
         }
-    }
 }
 
 
