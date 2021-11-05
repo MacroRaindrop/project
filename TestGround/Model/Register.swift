@@ -14,5 +14,7 @@ struct Register: Codable {
     var owner_name: String
     var name: String
     var owner_email: String
+    var owner_password: String
+
 }
 
