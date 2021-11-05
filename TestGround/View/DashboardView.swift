@@ -10,25 +10,25 @@ import SwiftUI
 struct DashboardView: View {
     var body: some View {
         TabView {
-            if #available(iOS 15.0, *) {
-                Text("The First Tab")
-                    .badge(10)
-                    .tabItem {
-                        Image(systemName: "1.square.fill")
-                        Text("First")
-                    }
-            } else {
-                // Fallback on earlier versions
-            }
             Text("Another Tab")
                 .tabItem {
-                    Image(systemName: "2.square.fill")
-                    Text("Second")
+                    Image(systemName: "chart.bar.xaxis")
+                    Text("Ringkasan")
+                }
+            StokView(text: .constant(""))
+                .tabItem {
+                    Image(systemName: "shippingbox")
+                    Text("Stok")
                 }
             Text("The Last Tab")
                 .tabItem {
-                    Image(systemName: "3.square.fill")
-                    Text("Third")
+                    Image(systemName: "arrow.left.arrow.right")
+                    Text("Pesanan")
+                }
+            Text("The Last Tab")
+                .tabItem {
+                    Image(systemName: "book")
+                    Text("Riwayat")
                 }
         }
         .font(.headline)
