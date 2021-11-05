@@ -13,23 +13,21 @@ import SystemConfiguration
 class APIRegister: ObservableObject{
     //isi kodingan
     var didChange = PassthroughSubject<APIRegister, Never>()
-    @Published var passwordCorrect : Bool = true
+
+
     @Published var userName: String = ""
-    @Published var loginConnected : Bool = true
-    @Published var emailIsInUse : Bool = false
+    @Published var email: String = ""
+    @Published var password: String = ""
     @Published var theAPIReachable : Bool = true {
-        didSet {
-            didChange.send(self)
-        }
-    }
-    @Published var successLoggedin : Bool = false {
         didSet {
             didChange.send(self)
         }
     }
     @Published var register: [Register] = []
     
+
     func registerCheck(owner_name: String, name: String, owner_email: String, owner_password: String ) {
+
         //isi url & url session
         guard let url = URL(string: "https://be-raindrop-app.herokuapp.com/companies") else {
             return
@@ -72,10 +70,12 @@ class APIRegister: ObservableObject{
 //                    }else {
 //                        self.passwordCorrect = false
 //                    }
+                    self.userName = result.owner_name
+                    self.email = result.owner_email
+                    self.password = result.owner_password
                 }
             } else {
                 DispatchQueue.main.async {
-                    self.passwordCorrect = false
                     print("gagal me-response dari web servis")
                 }
             }

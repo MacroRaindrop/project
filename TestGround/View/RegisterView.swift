@@ -224,11 +224,7 @@ struct RegisterView: View {
 //                                            .padding()
 //                                    }
                                     Button(action: {
-                                        if(self.username.isEmpty || self.password.isEmpty) {
-                                            self.isEmptyField = true
-                                        }else{
-                                            self.authentication.registerCheck(owner_name: self.username, name: self.company, owner_email: self.email, owner_password: self.password)
-                                        }
+                                        authentication.registerCheck(owner_name: self.username, name: self.company, owner_email: self.email, owner_password: self.password)
                                         if username.isEmpty{
                                             usernameNull = true
                                         }else{
@@ -272,11 +268,7 @@ struct RegisterView: View {
                                             .padding()
                                         
                                     }
-                                    if !authentication.successLoggedin{
-                                        AnyView(LoginView())
-                                    }else {
-                                        AnyView(DashboardView().animation(.easeIn))
-                                    }
+                                    
                                     
                                     Spacer()
                                         .frame(height: 100)
