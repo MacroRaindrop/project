@@ -16,6 +16,7 @@ class APIRegister: ObservableObject{
     @Published var passwordCorrect : Bool = true
     @Published var userName: String = ""
     @Published var loginConnected : Bool = true
+//    @Published var emailIsInUse : Bool = true
     @Published var theAPIReachable : Bool = true {
         didSet {
             didChange.send(self)
@@ -57,16 +58,20 @@ class APIRegister: ObservableObject{
                 return
             }
             
+            print(response!)
+            print(String(data: data, encoding: String.Encoding.utf8)!)
+            
             let result = try? JSONDecoder().decode(Register.self, from: data)
+            print(result)
             if let result = result {
                 DispatchQueue.main.async {
-                    if (result.success){
-                        self.successLoggedin = true
-                        self.passwordCorrect = true
-                        self.userName = result.owner_email
-                    }else {
-                        self.passwordCorrect = false
-                    }
+//                    if (result){
+//                        self.successLoggedin = true
+//                        self.passwordCorrect = true
+//                        self.userName = result.owner_email
+//                    }else {
+//                        self.passwordCorrect = false
+//                    }
                 }
             } else {
                 DispatchQueue.main.async {

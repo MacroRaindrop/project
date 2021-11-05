@@ -216,6 +216,13 @@ struct RegisterView: View {
                                             .foregroundColor(.red)
                                             .padding()
                                     }
+//                                todo:
+//                                    else if authentication.emailIsInUse {
+//                                        Text("email sudah digunakan")
+//                                            .offset(y: -10)
+//                                            .foregroundColor(.red)
+//                                            .padding()
+//                                    }
                                     Button(action: {
                                         if(self.username.isEmpty || self.password.isEmpty) {
                                             self.isEmptyField = true
