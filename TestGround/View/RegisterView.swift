@@ -4,7 +4,7 @@ import SwiftUI
 
 struct RegisterView: View {
     
-    @EnvironmentObject var userAuth: APIRegister
+    
     
     @State var username: String = ""
     @State var company: String = ""
@@ -23,7 +23,8 @@ struct RegisterView: View {
     @State var authenticationDidSucceed: Bool = false
     @State var newAcc: Bool = false
     @State var isEmptyField = false
-    @StateObject var authentication = APIRegister()
+    
+    @ObservedObject var authentication = APIRegister()
     
     
     var body: some View {

@@ -7,20 +7,20 @@
 
 import SwiftUI
 
-struct showModalView: View {
+struct ShowModalView: View {
     @State private var showAddDetailView = false
        
        var body: some View {
           Button("Show Modal") {
              self.showAddDetailView.toggle()
           }.sheet(isPresented: $showAddDetailView) {
-              addDetailView(showModal: self.$showAddDetailView)
+              AddDetailView(showModal: self.$showAddDetailView)
            }
        }
    }
 
 struct showModalView_Previews: PreviewProvider {
     static var previews: some View {
-        showModalView()
+        ShowModalView()
     }
 }
