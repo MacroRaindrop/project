@@ -13,6 +13,7 @@ import SystemConfiguration
 class APIRegister: ObservableObject{
     //isi kodingan
     var didChange = PassthroughSubject<APIRegister, Never>()
+    
     @Published var passwordCorrect : Bool = true
     @Published var userName: String = ""
     @Published var loginConnected : Bool = true
@@ -28,13 +29,13 @@ class APIRegister: ObservableObject{
     }
     @Published var register: [Register] = []
     
-    func registerCheck(owner_name: String, name: String, owner_email: String, owner_password: String ) {
+    func registerCheck(owner_name: String, name: String, owner_email: String) {
         //isi url & url session
         guard let url = URL(string: "https://be-raindrop-app.herokuapp.com/companies") else {
             return
         }
         
-        let body : [ String : String] = ["owner_name" : owner_name, "name" : name, "owner_email" : owner_email, "owner_password" : owner_password]
+        let body : [ String : String] = ["owner_name" : owner_name, "name" : name, "owner_email" : owner_email]
         
         guard let finishedBody = try? JSONEncoder().encode(body)
         else {
@@ -57,16 +58,14 @@ class APIRegister: ObservableObject{
                 return
             }
             
+            print(response!)
+            print(String(data: data, encoding: String.Encoding.utf8)!)
+            
             let result = try? JSONDecoder().decode(Register.self, from: data)
+            
             if let result = result {
                 DispatchQueue.main.async {
-                    if (result.success){
-                        self.successLoggedin = true
-                        self.passwordCorrect = true
-                        self.userName = result.owner_email
-                    }else {
-                        self.passwordCorrect = false
-                    }
+                    self.userName = result.owner_email
                 }
             } else {
                 DispatchQueue.main.async {
