@@ -4,7 +4,7 @@ import SwiftUI
 
 struct RegisterView: View {
     
-    @EnvironmentObject var userAuth: APIRegister
+    
     
     @State var username: String = ""
     @State var company: String = ""
@@ -22,12 +22,13 @@ struct RegisterView: View {
     @State var authenticationDidFail: Bool = false
     @State var authenticationDidSucceed: Bool = false
     @State var newAcc: Bool = false
-    @State var isEmptyField: Bool = false
-    @StateObject var authentication = APIRegister()
-
+    @State var isEmptyField = false
+    
+    @ObservedObject var authentication = APIRegister()
+    
     
     var body: some View {
-        
+        NavigationView {
             ZStack {
                 //            LinearGradient(gradient: Gradient(colors: [Color("Accent"),
                 //                                                       Color("Accent")]), startPoint: .top, endPoint: .bottom).ignoresSafeArea(.all, edges: .all)
@@ -52,7 +53,7 @@ struct RegisterView: View {
                                         .textFieldStyle(RoundedBorderTextFieldStyle())
                                         .padding()
                                         .keyboardType(.default)
-                                        .autocapitalization(.none)
+                                        .disableAutocorrection(true)
                                     
                                     HStack {
                                         Text("Perusahaan")
@@ -67,7 +68,7 @@ struct RegisterView: View {
                                         .textFieldStyle(RoundedBorderTextFieldStyle())
                                         .padding()
                                         .keyboardType(.default)
-                                        .autocapitalization(.none)
+                                        .disableAutocorrection(true)
                                     
                                     HStack {
                                         Text("Email")
@@ -83,7 +84,7 @@ struct RegisterView: View {
                                         .textFieldStyle(RoundedBorderTextFieldStyle())
                                         .padding()
                                         .keyboardType(.default)
-                                        .autocapitalization(.none)
+                                        .disableAutocorrection(true)
                                      
                                         
                                     
@@ -105,7 +106,7 @@ struct RegisterView: View {
                     //                                .background((Color(red: 233.0/255, green: 234.0/255,blue: 243.0/255)))
                                                     .cornerRadius(10)
                                                     .keyboardType(.default)
-                                                    .autocapitalization(.none)
+                                                    .disableAutocorrection(true)
                                             } else {
                                                 SecureField("Masukkan Kata Sandi", text:
                                                                 self.$password)
@@ -115,7 +116,7 @@ struct RegisterView: View {
                     //                                .background((Color(red: 233.0/255, green: 234.0/255,blue: 243.0/255)))
                                                     .cornerRadius(10)
                                                     .keyboardType(.default)
-                                                    .autocapitalization(.none)
+                                                    .disableAutocorrection(true)
                                                     
                                             }
                                             
@@ -148,7 +149,7 @@ struct RegisterView: View {
                     //                                .background((Color(red: 233.0/255, green: 234.0/255,blue: 243.0/255)))
                                                     .cornerRadius(10)
                                                     .keyboardType(.default)
-                                                    .autocapitalization(.none)
+                                                    .disableAutocorrection(true)
                                             } else {
                                                 SecureField("Masukkan Kata Sandi", text:
                                                                 self.$repeatPassword)
@@ -158,7 +159,7 @@ struct RegisterView: View {
                     //                                .background((Color(red: 233.0/255, green: 234.0/255,blue: 243.0/255)))
                                                     .cornerRadius(10)
                                                     .keyboardType(.default)
-                                                    .autocapitalization(.none)
+                                                    .disableAutocorrection(true)
                                                     
                                             }
                                             
@@ -215,12 +216,15 @@ struct RegisterView: View {
                                             .foregroundColor(.red)
                                             .padding()
                                     }
+//                                todo:
+//                                    else if authentication.emailIsInUse {
+//                                        Text("email sudah digunakan")
+//                                            .offset(y: -10)
+//                                            .foregroundColor(.red)
+//                                            .padding()
+//                                    }
                                     Button(action: {
-                                        if(self.username.isEmpty || self.password.isEmpty) {
-                                            self.isEmptyField = true
-                                        }else{
-                                            self.authentication.registerCheck(owner_name: self.username, name: self.company, owner_email: self.email, owner_password: self.password)
-                                        }
+                                        authentication.registerCheck(owner_name: self.username, name: self.company, owner_email: self.email, owner_password: self.password)
                                         if username.isEmpty{
                                             usernameNull = true
                                         }else{
@@ -253,8 +257,7 @@ struct RegisterView: View {
                                             self.authenticationDidFail = true
                                         }
                                         print("Create New User")
-                                        
-                                    }){
+                                    }) {
                                         Text("Create User")
                                             .frame(maxWidth: 219, maxHeight: 20)
                                             .font(.system(size: 20))
@@ -265,20 +268,18 @@ struct RegisterView: View {
                                             .padding()
                                         
                                     }
-                                    if !authentication.successLoggedin{
-                                        AnyView(LoginView())
-                                    }else {
-                                        AnyView(DashboardView().animation(.easeIn))
-                                    }
+                                    
+                                    
                                     Spacer()
                                         .frame(height: 100)
                                 }
-                                .environmentObject(authentication)
+                                
                                 .padding()
                                 Spacer()
                             }
                         }
         }
+    }
 }
 
 
