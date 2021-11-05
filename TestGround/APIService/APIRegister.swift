@@ -16,7 +16,7 @@ class APIRegister: ObservableObject{
     @Published var passwordCorrect : Bool = true
     @Published var userName: String = ""
     @Published var loginConnected : Bool = true
-//    @Published var emailIsInUse : Bool = true
+    @Published var emailIsInUse : Bool = false
     @Published var theAPIReachable : Bool = true {
         didSet {
             didChange.send(self)
