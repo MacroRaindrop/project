@@ -8,8 +8,24 @@
 import SwiftUI
 
 struct updateView: View {
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        NavigationView{
+            VStack{
+                ZStack{
+                    VStack(alignment: .leading, spacing: 20){
+                        Text("Purchase Order")
+                        Text("Buat PO baru dan lihat list barang yang akan dipesan.")
+                        Image("POicon")
+                        
+                        
+                    }
+                    .navigationTitle("Pesanan")
+                }
+            }
+        }
     }
 }
 

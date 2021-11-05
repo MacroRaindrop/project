@@ -125,7 +125,7 @@ struct AddDetailView: View {
     //                        CaptureImageView(isShown: $showCaptureImageView, image: $image)
     //                      }
                     
-                VStack(alignment: .leading){
+                VStack(alignment: .leading, spacing: 1){
                         HStack{
                             Text("Jumlah")
                                 .padding()
