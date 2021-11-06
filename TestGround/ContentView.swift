@@ -39,24 +39,24 @@ struct ContentView: View {
             }
             .cornerRadius(10)
             
-            VStack{
-                VStack (alignment: .leading, spacing: 6){
-                    Text("PO1")
-                    Text("PT Nama Perusahaan")
-                    Divider()
-                }
-                VStack{
-                    Text("PO1")
-                    Text("PT Nama Perusahaan")
-                    Divider()
-                }
-                VStack{
-                    Text("PO1")
-                    Text("PT Nama Perusahaan")
-                    Divider()
-                }
-                Text("View All")
-            }.background(Color.gray) .cornerRadius(10).padding()
+//            VStack{
+//                VStack (alignment: .leading, spacing: 6){
+//                    Text("PO1")
+//                    Text("PT Nama Perusahaan")
+//                    Divider()
+//                }
+//                VStack{
+//                    Text("PO1")
+//                    Text("PT Nama Perusahaan")
+//                    Divider()
+//                }
+//                VStack{
+//                    Text("PO1")
+//                    Text("PT Nama Perusahaan")
+//                    Divider()
+//                }
+//                Text("View All")
+//            }.background(Color.gray) .cornerRadius(10).padding()
         
             ExtractedView()
 //

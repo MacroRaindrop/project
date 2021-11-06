@@ -60,7 +60,7 @@ class APIRegister: ObservableObject{
             print(String(data: data, encoding: String.Encoding.utf8)!)
             
             let result = try? JSONDecoder().decode(Register.self, from: data)
-            print(result)
+ 
             if let result = result {
                 DispatchQueue.main.async {
 //                    if (result){

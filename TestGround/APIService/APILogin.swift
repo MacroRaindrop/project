@@ -67,14 +67,14 @@ class APILogin: ObservableObject{
             
             if let result = result {
                 DispatchQueue.main.async {
-                    if(result.success){
-                        self.successLoggedin = true
-                        //ubah status isCorrect
-                        self.passwordCorrect = true
-                        self.userName = result.owner_email
-                    }else {
-                        self.passwordCorrect = false
-                    }
+//                    if(result.success){
+//                        self.successLoggedin = true
+//                        //ubah status isCorrect
+//                        self.passwordCorrect = true
+//                        self.userName = result.owner_email
+//                    }else {
+//                        self.passwordCorrect = false
+//                    }
                 }
                 
             } else {
