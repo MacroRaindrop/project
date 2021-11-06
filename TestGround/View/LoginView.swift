@@ -12,7 +12,7 @@ let storedPassword = "Mypassword"
 
 struct LoginView: View {
     
-    @EnvironmentObject var userAuth: APILogin
+    
     
     
     @State private var username: String = ""
@@ -30,35 +30,33 @@ struct LoginView: View {
     @State var newAcc: Bool = false
     
     @State var isEmptyField = false
-//    if username == NULL (){
-//        reminder.values = test
-//    }
 
+    
+    @ObservedObject var loginAuth = APILogin()
+    
     var body: some View {
         
         NavigationView {
             
             ZStack {
-//                LinearGradient(gradient: Gradient(colors: [Color("Accent"),
-//                                                           Color("Accent")]), startPoint: .top, endPoint: .bottom).ignoresSafeArea(.all, edges: .all)
                 VStack{
-                        Text("Masuk")
-                            .padding()
-                            .font(.system(size: 34))
+                    Text("Masuk")
+                        .padding()
+                        .font(.system(size: 34))
                     VStack{
                         HStack{
                             Text("Email")
-                                    .font(Font.headline.weight(.bold))
+                                .font(Font.headline.weight(.bold))
                             
                             Spacer()
-         
+                            
                         }
                         
                         
-                                    
+                        
                         UsernameTextField(username: $username, editingMode: $editingMode)
                         
-                            
+                        
                         
                         
                         HStack{
@@ -73,9 +71,9 @@ struct LoginView: View {
                             }
                             
                         }
-
+                        
                         PasswordSecureField(password: $password)
-                    
+                        
                         
                         if usernameNull {
                             Text("email tidak boleh kosong")
@@ -94,11 +92,7 @@ struct LoginView: View {
                         }
                         
                         Button(action: {
-                            if(self.username.isEmpty || self.password.isEmpty) {
-                                self.isEmptyField = true
-                            }else {
-                                self.userAuth.loginCheck(owner_email: self.username, owner_password: self.password)
-                            }
+                            loginAuth.loginCheck(owner_email: self.username, owner_password: self.password)
                             if username.isEmpty{
                                 usernameNull = true
                             }else{
@@ -115,16 +109,11 @@ struct LoginView: View {
                             } else {
                                 self.authenticationDidFail = true
                             }
+                            
                         }){
                             LoginButtonContent()
                         }
                         .padding()
-        //                Button("Belum punya akun?"){
-        //                      print("daftar")
-        //                    self.newAcc = true
-        //                }.sheet(isPresented: $newAcc, content: {
-        //                    RegisterView()
-        //                })
                         NavigationLink(destination: RegisterView()){
                             Text("Belum Punya Akun?")
                         }
@@ -144,20 +133,20 @@ struct LoginView: View {
                     Text(reminder).hidden()
                 }
                 .padding()
-            if authenticationDidSucceed {
-                Text("Login succeeded!")
-                    .font(.headline)
-                    .frame(width: 250, height: 80)
-                    .background(Color.green)
-                    .cornerRadius(20.0)
-                    .foregroundColor(.white)
+                if authenticationDidSucceed {
+                    Text("Login succeeded!")
+                        .font(.headline)
+                        .frame(width: 250, height: 80)
+                        .background(Color.green)
+                        .cornerRadius(20.0)
+                        .foregroundColor(.white)
                     //change
-                    .animation(Animation.default)
+                        .animation(Animation.default)
+                }
             }
-        }
             .navigationTitle(Text(""))
         }
-   // .offset(y: editingMode ? -150 : 0)
+        // .offset(y: editingMode ? -150 : 0)
         
     }
     
@@ -186,6 +175,7 @@ struct UsernameTextField : View {
             .cornerRadius(5.0)
             .padding(.bottom, 20)
             .textFieldStyle(RoundedBorderTextFieldStyle())
+            .autocapitalization(.none)
     }
 }
 
@@ -199,6 +189,7 @@ struct PasswordSecureField : View {
             .padding(.top, 20)
             .cornerRadius(5.0)
             .padding(.bottom, 20)
+            .autocapitalization(.none)
     }
 }
 

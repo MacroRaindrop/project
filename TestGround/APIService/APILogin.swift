@@ -13,22 +13,17 @@ import SystemConfiguration
 class APILogin: ObservableObject{
     
     var didChange = PassthroughSubject<APILogin, Never>()
-    @Published var passwordCorrect : Bool = true
-    @Published var userName: String = ""
-    @Published var loginConnected : Bool = true
+
+    @Published var email: String = ""
+    @Published var password: String = ""
     @Published var theAPIReachable : Bool = true {
         didSet {
             didChange.send(self)
         }
     }
     
-    @Published var successLoggedin : Bool = false {
-        didSet {
-            didChange.send(self)
-        }
-    }
     //isi kodingan
-    @Published var login: [Login] = []
+    @Published var logins: [Register] = []
     
     func loginCheck(owner_email: String, owner_password: String ) {
 
@@ -37,7 +32,7 @@ class APILogin: ObservableObject{
             return
         }
         
-        let body : [String : String] = ["owner_email": owner_email, "owner_password": owner_password ]
+        let body : [ String : String] = ["owner_email" : owner_email, "owner_password" : owner_password]
         
         guard let finalBody = try? JSONEncoder().encode(body) else {
             return
@@ -61,25 +56,21 @@ class APILogin: ObservableObject{
                 return
                 
             }
+            print(response!)
+            print(String(data: data, encoding: String.Encoding.utf8)!)
             
             // decode data
-            let result = try? JSONDecoder().decode(Login.self, from: data)
+            let result = try? JSONDecoder().decode(Register.self, from: data)
             
             if let result = result {
                 DispatchQueue.main.async {
-                    if(result.success){
-                        self.successLoggedin = true
-                        //ubah status isCorrect
-                        self.passwordCorrect = true
-                        self.userName = result.owner_email
-                    }else {
-                        self.passwordCorrect = false
-                    }
+                    self.email = result.owner_email
+                    self.password = result.owner_password
                 }
                 
             } else {
                 DispatchQueue.main.async {
-                    self.passwordCorrect = false
+                   
                     print("Invalid response from web services!")
                 }
             }
