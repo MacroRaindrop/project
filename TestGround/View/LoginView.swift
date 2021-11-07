@@ -47,18 +47,9 @@ struct LoginView: View {
                         HStack{
                             Text("Email")
                                 .font(Font.headline.weight(.bold))
-                            
                             Spacer()
-                            
                         }
-                        
-                        
-                        
                         UsernameTextField(username: $username, editingMode: $editingMode)
-                        
-                        
-                        
-                        
                         HStack{
                             Text("Password")
                                 .font(Font.headline.weight(.bold))
@@ -69,12 +60,8 @@ struct LoginView: View {
                             Button("Lupa Sandi?") {
                                 print("Button tapped!")
                             }
-                            
                         }
-                        
                         PasswordSecureField(password: $password)
-                        
-                        
                         if usernameNull {
                             Text("email tidak boleh kosong")
                                 .offset(y: -10)
@@ -90,28 +77,29 @@ struct LoginView: View {
                                 .offset(y: -10)
                                 .foregroundColor(.red)
                         }
-                        
-                        Button(action: {
-                            loginAuth.loginCheck(owner_email: self.username, owner_password: self.password)
-                            if username.isEmpty{
-                                usernameNull = true
-                            }else{
-                                usernameNull = false
+                        //TODO : Metode pindah view selain navigation link.
+                        NavigationLink(destination: DashboardView()){
+                            Button(action: {
+                                loginAuth.loginCheck(owner_email: self.username, owner_password: self.password)
+                                if username.isEmpty{
+                                    usernameNull = true
+                                }else{
+                                    usernameNull = false
+                                }
+                                if password.isEmpty{
+                                    passwordNull = true
+                                }else{
+                                    passwordNull = false
+                                }
+                                if self.username == storedUsername && self.password == storedPassword {
+                                    self.authenticationDidSucceed = true
+                                    self.authenticationDidFail = false
+                                } else {
+                                    self.authenticationDidFail = true
+                                }
+                            }){
+                                LoginButtonContent()
                             }
-                            if password.isEmpty{
-                                passwordNull = true
-                            }else{
-                                passwordNull = false
-                            }
-                            if self.username == storedUsername && self.password == storedPassword {
-                                self.authenticationDidSucceed = true
-                                self.authenticationDidFail = false
-                            } else {
-                                self.authenticationDidFail = true
-                            }
-                            
-                        }){
-                            LoginButtonContent()
                         }
                         .padding()
                         NavigationLink(destination: RegisterView()){
@@ -119,16 +107,13 @@ struct LoginView: View {
                         }
                         .padding()
                         
-                        //ini buat nyoba doang ke halaman detail add product
+                        //TODO : Ganti metode dan tambah data ke DB
                         NavigationLink(destination: AddDetailView(showModal: .constant(true))){
                             Text("detail")
                         }
                         .padding()
-                        
-                        
                     }
                     .padding()
-                    
                     Spacer()
                     Text(reminder).hidden()
                 }
@@ -146,10 +131,7 @@ struct LoginView: View {
             }
             .navigationTitle(Text(""))
         }
-        // .offset(y: editingMode ? -150 : 0)
-        
     }
-    
 }
 
 struct LoginView_Previews: PreviewProvider {

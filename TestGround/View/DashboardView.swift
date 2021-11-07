@@ -10,7 +10,6 @@ import SwiftUI
 struct DashboardView: View {
     var body: some View {
         NavigationView {
-            
             TabView {
                 SummaryView()
                     .tabItem {
