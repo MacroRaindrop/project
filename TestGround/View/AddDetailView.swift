@@ -212,10 +212,6 @@ struct AddDetailView: View {
     }
             
         }
-        
-    
-
-
 struct addDetailView_Previews: PreviewProvider {
     static var previews: some View {
            AddDetailView(showModal: .constant(true))

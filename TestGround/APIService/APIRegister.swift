@@ -27,7 +27,7 @@ class APIRegister: ObservableObject{
     @Published var register: [Register] = []
     
     
-    func registerCheck(owner_name: String, name: String, owner_email: String, owner_password: String ) {
+    func registerCheck(owner_name: String, name: String, owner_email: String, owner_password: String) {
         
         //isi url & url session
         guard let url = URL(string: "https://be-raindrop-app.herokuapp.com/companies") else {

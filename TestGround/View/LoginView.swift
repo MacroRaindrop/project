@@ -80,7 +80,12 @@ struct LoginView: View {
                         //TODO : Metode pindah view selain navigation link.
                         NavigationLink(destination: DashboardView()){
                             Button(action: {
-                                loginAuth.loginCheck(owner_email: self.username, owner_password: self.password)
+                                if self.authenticationDidSucceed{
+                                    loginAuth.loginCheck(owner_email: self.username, owner_password: self.password)
+                                }else {
+                                    self.authenticationDidFail
+                                    print("gagal login")
+                                }
                                 if username.isEmpty{
                                     usernameNull = true
                                 }else{
@@ -93,7 +98,6 @@ struct LoginView: View {
                                 }
                                 if self.username == storedUsername && self.password == storedPassword {
                                     self.authenticationDidSucceed = true
-                                    self.authenticationDidFail = false
                                 } else {
                                     self.authenticationDidFail = true
                                 }
