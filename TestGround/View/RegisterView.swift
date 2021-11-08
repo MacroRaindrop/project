@@ -25,8 +25,6 @@ struct RegisterView: View {
     @State var isEmptyField = false
     
     @ObservedObject var authentication = APIRegister()
-    @StateObject var loginauth = APIRegister()
-    
     //abis register langsung masuk ke login
     //jika balik ke login gk perlu navigationview
     var body: some View {
