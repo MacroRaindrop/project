@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-let storedUsername = "Myusername"
-let storedPassword = "Mypassword"
+//let storedUsername = "Myusername"
+//let storedPassword = "Mypassword"
 
 struct LoginView: View {
     
-    
-    
+    @StateObject var authenticate = APILogin()
+    @ObservedObject var loginAuth = APILogin()
     
     @State private var username: String = ""
     @State private var password: String = ""
@@ -31,8 +31,7 @@ struct LoginView: View {
     
     @State var isEmptyField = false
 
-    
-    @ObservedObject var loginAuth = APILogin()
+
     
     var body: some View {
         
@@ -80,12 +79,8 @@ struct LoginView: View {
                         //TODO : Metode pindah view selain navigation link.
                         NavigationLink(destination: DashboardView()){
                             Button(action: {
-                                if self.authenticationDidSucceed{
-                                    loginAuth.loginCheck(owner_email: self.username, owner_password: self.password)
-                                }else {
-                                    self.authenticationDidFail
-                                    print("gagal login")
-                                }
+                                
+                                
                                 if username.isEmpty{
                                     usernameNull = true
                                 }else{
@@ -96,11 +91,22 @@ struct LoginView: View {
                                 }else{
                                     passwordNull = false
                                 }
-                                if self.username == storedUsername && self.password == storedPassword {
+                                if self.username == owner_email && self.password == password {
                                     self.authenticationDidSucceed = true
                                 } else {
                                     self.authenticationDidFail = true
+                                    print("gagal login")
                                 }
+//                                if loginAuth.loginCheck(owner_email: self.username, owner_password: self.password){
+//                                    authenticationDidSucceed = true
+//                                }
+//                                if self.authenticationDidSucceed{
+//                                    loginAuth.loginCheck(owner_email: self.username, owner_password: self.password)
+//                                }else {
+//                                    self.authenticationDidFail = true
+//                                    print("gagal login")
+//                                }
+                                
                             }){
                                 LoginButtonContent()
                             }
