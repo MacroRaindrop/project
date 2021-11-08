@@ -91,12 +91,12 @@ struct LoginView: View {
                                 }else{
                                     passwordNull = false
                                 }
-                                if self.username == owner_email && self.password == password {
-                                    self.authenticationDidSucceed = true
-                                } else {
-                                    self.authenticationDidFail = true
-                                    print("gagal login")
-                                }
+//                                if self.username == owner_email && self.password == password {
+//                                    self.authenticationDidSucceed = true
+//                                } else {
+//                                    self.authenticationDidFail = true
+//                                    print("gagal login")
+//                                }
 //                                if loginAuth.loginCheck(owner_email: self.username, owner_password: self.password){
 //                                    authenticationDidSucceed = true
 //                                }
