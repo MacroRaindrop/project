@@ -95,7 +95,9 @@ struct LoginView: View {
                                 if self.authenticationDidSucceed {
                                     self.loginManager.loginCheck(owner_email: self.username, owner_password: self.password)
                                     //kasih timer/delay async
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 3){
                                     self.willMoveToNextScreen = self.loginManager.loggedIn
+                                    }
                                 } else {
                                     print("gagal login")
                                 }

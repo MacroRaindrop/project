@@ -17,30 +17,30 @@ struct POdetail: View {
             Text("PO1").bold()
             //padding()
             VStack(alignment: .leading){
-            HStack (spacing: 50) {
-                Text("Tanggal")
-                
-                Text("4 november 2021")
-                
+                HStack (spacing: 50) {
+                    Text("Tanggal")
+                    
+                    Text("4 november 2021")
+                    
+                }
+                HStack (spacing: 83){
+                    Text("PIC")
+                    
+                    Text("Abdul")
+                }
+                HStack (spacing: 45){
+                    Text("Supplier")
+                    
+                    Text("PT binjai")
+                }
             }
-            HStack (spacing: 83){
-                Text("PIC")
+            POlist()
             
-                Text("Abdul")
-            }
-            HStack (spacing: 45){
-                Text("Supplier")
-                
-                Text("PT binjai")
-            }
-            }
-                POlist()
-                
             Text("Pastikan jumlah barang yang datang sama dengan yang tertulis").padding(.top, 50) .padding()
             cekButton()
         }
-        }
     }
+}
 
 
 struct POdetail_Previews: PreviewProvider {
@@ -72,11 +72,11 @@ struct POlist: View {
                     
                     
                 } .background(Color.white)
-                .padding()
-//                .overlay(
-//                        RoundedRectangle(cornerRadius: 3)
-//                            .stroke(Color.white, lineWidth: 1)
-//                )
+                    .padding()
+                //                .overlay(
+                //                        RoundedRectangle(cornerRadius: 3)
+                //                            .stroke(Color.white, lineWidth: 1)
+                //                )
             }
         } //.scaledToFit()
     }
@@ -135,7 +135,8 @@ struct POTextfield : View {
             .padding(.bottom, 20)
             .textFieldStyle(RoundedBorderTextFieldStyle())
             .autocapitalization(.none)
-            
+//            .background(RoundedRectangle(cornerRadius: 5.0).fill(Color.gray))
+        
             .foregroundColor(Color.gray)
     }
 }
