@@ -20,7 +20,7 @@ struct LoginView: View {
     @State private var lupaSandi =  false
     
     @State var authenticationDidFail: Bool = false
-    @State var authenticationDidSucceed: Bool = false
+    @State var authenticationDidSucceed: Bool = true
     @State var usernameNull: Bool = false
     @State var passwordNull: Bool = false
     
@@ -29,6 +29,7 @@ struct LoginView: View {
     @State var newAcc: Bool = false
 
     @State var isEmptyField: Bool = false
+    @State var willMoveToNextScreen: Bool = true
 
     
     var body: some View {
@@ -76,10 +77,12 @@ struct LoginView: View {
                         }
                         //TODO : Metode pindah view selain navigation link.
                         Button(action: {
-                            if (self.username.isEmpty || self.password.isEmpty) {
-                                self.isEmptyField = true
-                            } else {
+                            if self.authenticationDidSucceed {
                                 self.loginAuth.loginCheck(owner_email: self.username, owner_password: self.password)
+                                print("berhasil login")
+                            } else {
+                                self.authenticationDidFail = true
+                                print("gagal login")
                             }
                             if username.isEmpty{
                                 usernameNull = true
@@ -91,10 +94,9 @@ struct LoginView: View {
                             }else{
                                 passwordNull = false
                             }
+                            
                         }){
-                            NavigationLink(destination: DashboardView()) {
-                                LoginButtonContent()
-                            }
+                            LoginButtonContent()
                         }
                         NavigationLink(destination: RegisterView()){
                             Text("Belum Punya Akun?")
@@ -112,16 +114,6 @@ struct LoginView: View {
                     Text(reminder).hidden()
                 }
                 .padding()
-                if authenticationDidSucceed {
-                    Text("Login succeeded!")
-                        .font(.headline)
-                        .frame(width: 250, height: 80)
-                        .background(Color.green)
-                        .cornerRadius(20.0)
-                        .foregroundColor(.white)
-                    //change
-                        .animation(Animation.default)
-                }
             }
             .navigationTitle(Text(""))
         })
@@ -178,6 +170,31 @@ struct LoginButtonContent : View {
             .foregroundColor(.black)
             .background(Color.raindropColor)
             .clipShape(RoundedRectangle(cornerRadius: 20))
+    }
+}
+
+extension View {
+    /// Navigate to a new view.
+    /// - Parameters:
+    ///   - view: View to navigate to.
+    ///   - binding: Only navigates when this condition is `true`.
+    func navigate<NewView: View>(to view: NewView, when binding: Binding<Bool>) -> some View {
+        NavigationView {
+            ZStack {
+                self
+                    .navigationBarTitle("")
+                    .navigationBarHidden(true)
+
+                NavigationLink(
+                    destination: view
+                        .navigationBarTitle("")
+                        .navigationBarHidden(true),
+                    isActive: binding
+                ) {
+                    RegisterView()
+                }
+            }
+        }
     }
 }
 
