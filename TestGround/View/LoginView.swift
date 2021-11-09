@@ -34,10 +34,11 @@ struct LoginView: View {
     
     var body: some View {
         
-        return NavigationView (content: {
+        NavigationView {
             
             ZStack {
                 VStack{
+                    
                     Text("Masuk")
                         .padding()
                         .font(.system(size: 34))
@@ -75,13 +76,13 @@ struct LoginView: View {
                                 .offset(y: -10)
                                 .foregroundColor(.red)
                         }
-                        //TODO : Metode pindah view selain navigation link.
+
                         Button(action: {
                             if self.authenticationDidSucceed {
                                 self.loginAuth.loginCheck(owner_email: self.username, owner_password: self.password)
                                 print("berhasil login")
                             } else {
-                                self.authenticationDidFail = true
+                                self.authenticationDidSucceed = true
                                 print("gagal login")
                             }
                             if username.isEmpty{
@@ -94,7 +95,6 @@ struct LoginView: View {
                             }else{
                                 passwordNull = false
                             }
-                            
                         }){
                             LoginButtonContent()
                         }
@@ -116,7 +116,7 @@ struct LoginView: View {
                 .padding()
             }
             .navigationTitle(Text(""))
-        })
+        }
     }
 }
 
