@@ -11,9 +11,8 @@ import SwiftUI
 //let storedPassword = "Mypassword"
 
 struct LoginView: View {
-    
-    @StateObject var authenticate = APILogin()
-    @ObservedObject var loginAuth = APILogin()
+
+    @StateObject var loginAuth = APILogin()
     
     @State private var username: String = ""
     @State private var password: String = ""
@@ -28,14 +27,13 @@ struct LoginView: View {
     
     @State var editingMode: Bool = false
     @State var newAcc: Bool = false
-    
-    @State var isEmptyField = false
 
+    @State var isEmptyField: Bool = false
 
     
     var body: some View {
         
-        NavigationView {
+        return NavigationView (content: {
             
             ZStack {
                 VStack{
@@ -48,7 +46,7 @@ struct LoginView: View {
                                 .font(Font.headline.weight(.bold))
                             Spacer()
                         }
-                        UsernameTextField(username: $username, editingMode: $editingMode)
+                        UsernameTextField(username: self.$username, editingMode: $editingMode)
                         HStack{
                             Text("Password")
                                 .font(Font.headline.weight(.bold))
@@ -60,7 +58,7 @@ struct LoginView: View {
                                 print("Button tapped!")
                             }
                         }
-                        PasswordSecureField(password: $password)
+                        PasswordSecureField(password: self.$password)
                         if usernameNull {
                             Text("email tidak boleh kosong")
                                 .offset(y: -10)
@@ -77,41 +75,27 @@ struct LoginView: View {
                                 .foregroundColor(.red)
                         }
                         //TODO : Metode pindah view selain navigation link.
-                        NavigationLink(destination: DashboardView()){
-                            Button(action: {
-                                
-                                
-                                if username.isEmpty{
-                                    usernameNull = true
-                                }else{
-                                    usernameNull = false
-                                }
-                                if password.isEmpty{
-                                    passwordNull = true
-                                }else{
-                                    passwordNull = false
-                                }
-//                                if self.username == owner_email && self.password == password {
-//                                    self.authenticationDidSucceed = true
-//                                } else {
-//                                    self.authenticationDidFail = true
-//                                    print("gagal login")
-//                                }
-//                                if loginAuth.loginCheck(owner_email: self.username, owner_password: self.password){
-//                                    authenticationDidSucceed = true
-//                                }
-//                                if self.authenticationDidSucceed{
-//                                    loginAuth.loginCheck(owner_email: self.username, owner_password: self.password)
-//                                }else {
-//                                    self.authenticationDidFail = true
-//                                    print("gagal login")
-//                                }
-                                
-                            }){
+                        Button(action: {
+                            if (self.username.isEmpty || self.password.isEmpty) {
+                                self.isEmptyField = true
+                            } else {
+                                self.loginAuth.loginCheck(owner_email: self.username, owner_password: self.password)
+                            }
+                            if username.isEmpty{
+                                usernameNull = true
+                            }else{
+                                usernameNull = false
+                            }
+                            if password.isEmpty{
+                                passwordNull = true
+                            }else{
+                                passwordNull = false
+                            }
+                        }){
+                            NavigationLink(destination: DashboardView()) {
                                 LoginButtonContent()
                             }
                         }
-                        .padding()
                         NavigationLink(destination: RegisterView()){
                             Text("Belum Punya Akun?")
                         }
@@ -140,7 +124,7 @@ struct LoginView: View {
                 }
             }
             .navigationTitle(Text(""))
-        }
+        })
     }
 }
 

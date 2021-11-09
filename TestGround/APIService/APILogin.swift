@@ -16,11 +16,13 @@ class APILogin: ObservableObject{
 
     @Published var email: String = ""
     @Published var password: String = ""
+    @Published var loggedIn = false
     @Published var theAPIReachable : Bool = true {
         didSet {
             didChange.send(self)
         }
     }
+    
     
     //isi kodingan
     @Published var logins: [Register] = []
@@ -39,9 +41,10 @@ class APILogin: ObservableObject{
         }
 
         var request = URLRequest(url: url)
-        
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
         request.httpBody = finalBody
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
@@ -77,6 +80,4 @@ class APILogin: ObservableObject{
             
         }.resume()
     }
-    
-        
 }

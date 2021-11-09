@@ -42,9 +42,10 @@ class APIRegister: ObservableObject{
         }
         
         var request = URLRequest(url: url)
-        
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
         request.httpBody = finishedBody
         
         URLSession.shared.dataTask(with: request) {(data, response, error) in
@@ -61,7 +62,7 @@ class APIRegister: ObservableObject{
             print(String(data: data, encoding: String.Encoding.utf8)!)
             
             let result = try? JSONDecoder().decode(Register.self, from: data)
-            print(result)
+            
             if let result = result {
                 DispatchQueue.main.async {
                     self.owner_name = result.owner_name
