@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct TestGroundApp: App {
+    @StateObject var loginManager = APILogin()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LoginView(loginManager: loginManager)
         }
     }
 }

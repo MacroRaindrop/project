@@ -4,7 +4,7 @@ import SwiftUI
 
 struct RegisterView: View {
     
-    
+    @StateObject var authentication = APIRegister()
     
     @State var username: String = ""
     @State var company: String = ""
@@ -24,7 +24,7 @@ struct RegisterView: View {
     @State var newAcc: Bool = false
     @State var isEmptyField = false
     
-    @ObservedObject var authentication = APIRegister()
+    
     //abis register langsung masuk ke login
     //jika balik ke login gk perlu navigationview
     var body: some View {
@@ -39,7 +39,7 @@ struct RegisterView: View {
                         .font(Font.headline.weight(.bold))
                             Spacer()
                     }
-                    TextField("Masukkan Nama", text: $username)
+                TextField("Masukkan Nama", text: self.$username)
                         .frame(width: UIScreen.main.bounds.width - 40)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding()
@@ -50,7 +50,7 @@ struct RegisterView: View {
                         .font(Font.headline.weight(.bold))
                         Spacer()
                         }
-                    TextField("Masukkan Company", text: $company)
+                TextField("Masukkan Company", text: self.$company)
                         .frame(width: UIScreen.main.bounds.width - 40)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding()
@@ -173,6 +173,7 @@ struct RegisterView: View {
                             .padding()
                     }
                     Button(action: {
+                        self.authentication.registerCheck(owner_name: self.username, name: self.company, owner_email: self.email, owner_password: self.password)
                         if username.isEmpty{
                             usernameNull = true
                         }else{
@@ -204,25 +205,16 @@ struct RegisterView: View {
                         } else {
                             self.authenticationDidFail = true
                         }
-                        //Berhasil Meload Data API Di Bagian Debug, Tetapi Gagal Mendapatkan Password.
-                        if self.authenticationDidSucceed {
-                            authentication.registerCheck(owner_name: self.username, name: self.company, owner_email: self.email, owner_password: self.password)
-                        } else {
-                            self.authenticationDidFail = true
-                        }
-                        print("Create New User")
                     }) {
                         //TODO: Bagaimana Membalikkan Ke Login View Dengan Flow Yang Maju-Mundur, Bukan Maju-Maju ??
-                        NavigationLink(destination: LoginView()) {
-                            Text("Create User")
-                                .frame(maxWidth: 219, maxHeight: 20)
-                                .font(.system(size: 20))
-                                .padding()
-                                .foregroundColor(.black)
-                                .background(Color.raindropColor)
-                                .clipShape(RoundedRectangle(cornerRadius: 20))
-                                .padding()
-                        }
+                        Text("Create User")
+                            .frame(maxWidth: 219, maxHeight: 20)
+                            .font(.system(size: 20))
+                            .padding()
+                            .foregroundColor(.black)
+                            .background(Color.raindropColor)
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                            .padding()
                     }
                     Spacer()
                         .frame(height: 100)

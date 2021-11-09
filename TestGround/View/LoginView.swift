@@ -11,10 +11,6 @@ import SwiftUI
 //let storedPassword = "Mypassword"
 
 struct LoginView: View {
-    
-    @StateObject var authenticate = APILogin()
-    @ObservedObject var loginAuth = APILogin()
-    
     @State private var username: String = ""
     @State private var password: String = ""
     @State private var reminder: String = ""
@@ -28,10 +24,11 @@ struct LoginView: View {
     
     @State var editingMode: Bool = false
     @State var newAcc: Bool = false
+
+    @State var isEmptyField: Bool = false
+    @State var willMoveToNextScreen = false
     
-    @State var isEmptyField = false
-
-
+    @ObservedObject var loginManager: APILogin
     
     var body: some View {
         
@@ -39,6 +36,7 @@ struct LoginView: View {
             
             ZStack {
                 VStack{
+                    
                     Text("Masuk")
                         .padding()
                         .font(.system(size: 34))
@@ -48,7 +46,7 @@ struct LoginView: View {
                                 .font(Font.headline.weight(.bold))
                             Spacer()
                         }
-                        UsernameTextField(username: $username, editingMode: $editingMode)
+                        UsernameTextField(username: self.$username, editingMode: $editingMode)
                         HStack{
                             Text("Password")
                                 .font(Font.headline.weight(.bold))
@@ -60,7 +58,7 @@ struct LoginView: View {
                                 print("Button tapped!")
                             }
                         }
-                        PasswordSecureField(password: $password)
+                        PasswordSecureField(password: self.$password)
                         if usernameNull {
                             Text("email tidak boleh kosong")
                                 .offset(y: -10)
@@ -76,11 +74,9 @@ struct LoginView: View {
                                 .offset(y: -10)
                                 .foregroundColor(.red)
                         }
-                        //TODO : Metode pindah view selain navigation link.
-                        NavigationLink(destination: DashboardView()){
+
+                        NavigationLink(destination: DashboardView(), isActive: $willMoveToNextScreen){
                             Button(action: {
-                                
-                                
                                 if username.isEmpty{
                                     usernameNull = true
                                 }else{
@@ -91,27 +87,24 @@ struct LoginView: View {
                                 }else{
                                     passwordNull = false
                                 }
-//                                if self.username == owner_email && self.password == password {
-//                                    self.authenticationDidSucceed = true
-//                                } else {
-//                                    self.authenticationDidFail = true
-//                                    print("gagal login")
-//                                }
-//                                if loginAuth.loginCheck(owner_email: self.username, owner_password: self.password){
-//                                    authenticationDidSucceed = true
-//                                }
-//                                if self.authenticationDidSucceed{
-//                                    loginAuth.loginCheck(owner_email: self.username, owner_password: self.password)
-//                                }else {
-//                                    self.authenticationDidFail = true
-//                                    print("gagal login")
-//                                }
-                                
+                                if usernameNull == true || passwordNull == true{
+                                    authenticationDidSucceed = false
+                                } else {
+                                    authenticationDidSucceed = true
+                                }
+                                if self.authenticationDidSucceed {
+                                    self.loginManager.loginCheck(owner_email: self.username, owner_password: self.password)
+                                    //kasih timer/delay async
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+                                    self.willMoveToNextScreen = self.loginManager.loggedIn
+                                    }
+                                } else {
+                                    print("gagal login")
+                                }
                             }){
                                 LoginButtonContent()
                             }
                         }
-                        .padding()
                         NavigationLink(destination: RegisterView()){
                             Text("Belum Punya Akun?")
                         }
@@ -128,27 +121,17 @@ struct LoginView: View {
                     Text(reminder).hidden()
                 }
                 .padding()
-                if authenticationDidSucceed {
-                    Text("Login succeeded!")
-                        .font(.headline)
-                        .frame(width: 250, height: 80)
-                        .background(Color.green)
-                        .cornerRadius(20.0)
-                        .foregroundColor(.white)
-                    //change
-                        .animation(Animation.default)
-                }
             }
             .navigationTitle(Text(""))
         }
     }
 }
 
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView()
-    }
-}
+//struct LoginView_Previews: PreviewProvider {
+//    static var previews: some View {
+////        LoginView()
+//    }
+//}
 
 struct UsernameTextField : View {
     
@@ -194,6 +177,31 @@ struct LoginButtonContent : View {
             .foregroundColor(.black)
             .background(Color.raindropColor)
             .clipShape(RoundedRectangle(cornerRadius: 20))
+    }
+}
+
+extension View {
+    /// Navigate to a new view.
+    /// - Parameters:
+    ///   - view: View to navigate to.
+    ///   - binding: Only navigates when this condition is `true`.
+    func navigate<NewView: View>(to view: NewView, when binding: Binding<Bool>) -> some View {
+        NavigationView {
+            ZStack {
+                self
+                    .navigationBarTitle("")
+                    .navigationBarHidden(true)
+
+                NavigationLink(
+                    destination: view
+                        .navigationBarTitle("")
+                        .navigationBarHidden(true),
+                    isActive: binding
+                ) {
+                    RegisterView()
+                }
+            }
+        }
     }
 }
 
