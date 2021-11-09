@@ -12,6 +12,8 @@
 		7C2677E927314E5800285B1A /* ShowModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2677E827314E5800285B1A /* ShowModalView.swift */; };
 		7C2677EB2731517700285B1A /* StokView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2677EA2731517700285B1A /* StokView.swift */; };
 		7C2677F12731A84A00285B1A /* MaxTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2677F02731A84A00285B1A /* MaxTextField.swift */; };
+		7C298253273AC09700686588 /* daftarPO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C298252273AC09700686588 /* daftarPO.swift */; };
+		7C298255273AC48000686588 /* inboundConfirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C298254273AC48000686588 /* inboundConfirmation.swift */; };
 		7CB61379273281A00039C14D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB613782732819F0039C14D /* Coordinator.swift */; };
 		7CB6137F273292F20039C14D /* Camera-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7CB6137E273292F20039C14D /* Camera-SwiftUI */; };
 		7CB61381273295AE0039C14D /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB61380273295AE0039C14D /* CameraViewModel.swift */; };
@@ -41,6 +43,8 @@
 		7C2677E827314E5800285B1A /* ShowModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowModalView.swift; sourceTree = "<group>"; };
 		7C2677EA2731517700285B1A /* StokView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StokView.swift; sourceTree = "<group>"; };
 		7C2677F02731A84A00285B1A /* MaxTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxTextField.swift; sourceTree = "<group>"; };
+		7C298252273AC09700686588 /* daftarPO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = daftarPO.swift; sourceTree = "<group>"; };
+		7C298254273AC48000686588 /* inboundConfirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inboundConfirmation.swift; sourceTree = "<group>"; };
 		7CB613782732819F0039C14D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7CB61380273295AE0039C14D /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 		7CB61382273296C80039C14D /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
@@ -150,6 +154,8 @@
 				C2264AB0273500B100539551 /* PurchaseOrderView.swift */,
 				C2264AB2273500D500539551 /* HistoryView.swift */,
 				D57A375D2733D3FD00F9B044 /* updateView.swift */,
+				7C298252273AC09700686588 /* daftarPO.swift */,
+				7C298254273AC48000686588 /* inboundConfirmation.swift */,
 				7C261789273999CB000836BD /* POdetail.swift */,
 			);
 			path = View;
@@ -250,6 +256,8 @@
 			files = (
 				7C26178A273999CB000836BD /* POdetail.swift in Sources */,
 				7CB61379273281A00039C14D /* Coordinator.swift in Sources */,
+				7C298253273AC09700686588 /* daftarPO.swift in Sources */,
+				7C298255273AC48000686588 /* inboundConfirmation.swift in Sources */,
 				B828FCEF272179150015F0BF /* ContentView.swift in Sources */,
 				7C2677E727314E2B00285B1A /* AddDetailView.swift in Sources */,
 				7CDA13292732E789005A2D05 /* SUImagePickerView.swift in Sources */,
