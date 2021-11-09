@@ -27,7 +27,7 @@ class APILogin: ObservableObject{
     //isi kodingan
     @Published var logins: [Register] = []
     
-    func loginCheck(owner_email: String, owner_password: String ) {
+    func loginCheck(owner_email: String, owner_password: String ){
 
         // pasang url
         guard let url = URL(string: "https://be-raindrop-app.herokuapp.com/login") else {
@@ -47,7 +47,7 @@ class APILogin: ObservableObject{
         
         request.httpBody = finalBody
         
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
+        URLSession.shared.dataTask(with: request) { [self] (data, response, error) in
             
             //4 set isApiReachable
             guard let data = data, error == nil else {
@@ -69,14 +69,19 @@ class APILogin: ObservableObject{
                 DispatchQueue.main.async {
                     self.email = result.owner_email
                     self.password = result.owner_password
+                    self.loggedIn = true
                 }
                 
             } else {
                 DispatchQueue.main.async {
                    
                     print("Invalid response from web services!")
+                    self.loggedIn = false
                 }
+                
             }
+            
+        
             
         }.resume()
     }

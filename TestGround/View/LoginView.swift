@@ -11,16 +11,13 @@ import SwiftUI
 //let storedPassword = "Mypassword"
 
 struct LoginView: View {
-
-    @StateObject var loginAuth = APILogin()
-    
     @State private var username: String = ""
     @State private var password: String = ""
     @State private var reminder: String = ""
     @State private var lupaSandi =  false
     
     @State var authenticationDidFail: Bool = false
-    @State var authenticationDidSucceed: Bool = true
+    @State var authenticationDidSucceed: Bool = false
     @State var usernameNull: Bool = false
     @State var passwordNull: Bool = false
     
@@ -29,8 +26,9 @@ struct LoginView: View {
     @State var newAcc: Bool = false
 
     @State var isEmptyField: Bool = false
-    @State var willMoveToNextScreen: Bool = true
-
+    @State var willMoveToNextScreen = false
+    
+    @ObservedObject var loginManager: APILogin
     
     var body: some View {
         
@@ -77,26 +75,33 @@ struct LoginView: View {
                                 .foregroundColor(.red)
                         }
 
-                        Button(action: {
-                            if self.authenticationDidSucceed {
-                                self.loginAuth.loginCheck(owner_email: self.username, owner_password: self.password)
-                                print("berhasil login")
-                            } else {
-                                self.authenticationDidSucceed = true
-                                print("gagal login")
+                        NavigationLink(destination: DashboardView(), isActive: $willMoveToNextScreen){
+                            Button(action: {
+                                if username.isEmpty{
+                                    usernameNull = true
+                                }else{
+                                    usernameNull = false
+                                }
+                                if password.isEmpty{
+                                    passwordNull = true
+                                }else{
+                                    passwordNull = false
+                                }
+                                if usernameNull == true || passwordNull == true{
+                                    authenticationDidSucceed = false
+                                } else {
+                                    authenticationDidSucceed = true
+                                }
+                                if self.authenticationDidSucceed {
+                                    self.loginManager.loginCheck(owner_email: self.username, owner_password: self.password)
+                                    //kasih timer/delay async
+                                    self.willMoveToNextScreen = self.loginManager.loggedIn
+                                } else {
+                                    print("gagal login")
+                                }
+                            }){
+                                LoginButtonContent()
                             }
-                            if username.isEmpty{
-                                usernameNull = true
-                            }else{
-                                usernameNull = false
-                            }
-                            if password.isEmpty{
-                                passwordNull = true
-                            }else{
-                                passwordNull = false
-                            }
-                        }){
-                            LoginButtonContent()
                         }
                         NavigationLink(destination: RegisterView()){
                             Text("Belum Punya Akun?")
@@ -120,11 +125,11 @@ struct LoginView: View {
     }
 }
 
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView()
-    }
-}
+//struct LoginView_Previews: PreviewProvider {
+//    static var previews: some View {
+////        LoginView()
+//    }
+//}
 
 struct UsernameTextField : View {
     

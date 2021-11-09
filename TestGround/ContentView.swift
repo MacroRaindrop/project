@@ -9,10 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     //Membuat Flow Maju Mundur Untuk Login-Register-ForgotPassword
-    @State var isLoggedIn: Bool = false
+    @StateObject var loginManager = APILogin()
     var body: some View {
-        if !isLoggedIn {
-            LoginView()
+        if loginManager.loggedIn{
+            LoginView(loginManager:loginManager)
         } else {
             RegisterView()
         }
