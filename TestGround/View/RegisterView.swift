@@ -2,9 +2,10 @@ import SwiftUI
 
 
 
+@available(iOS 15.0, *)
 struct RegisterView: View {
     
-    @StateObject var authentication = APIRegister()
+    
     
     @State var username: String = ""
     @State var company: String = ""
@@ -23,7 +24,10 @@ struct RegisterView: View {
     @State var authenticationDidSucceed: Bool = false
     @State var newAcc: Bool = false
     @State var isEmptyField = false
+    @State var moveToLogin = false
+    @StateObject var authentication = APIRegister()
     
+    @Environment(\.dismiss) var dismiss
     
     //abis register langsung masuk ke login
     //jika balik ke login gk perlu navigationview
@@ -173,7 +177,6 @@ struct RegisterView: View {
                             .padding()
                     }
                     Button(action: {
-                        self.authentication.registerCheck(owner_name: self.username, name: self.company, owner_email: self.email, owner_password: self.password)
                         if username.isEmpty{
                             usernameNull = true
                         }else{
@@ -205,8 +208,14 @@ struct RegisterView: View {
                         } else {
                             self.authenticationDidFail = true
                         }
+                        if self.authenticationDidSucceed {
+                            self.authentication.registerCheck(owner_name: self.username, name: self.company, owner_email: self.email, owner_password: self.password)
+                            
+                        } else {
+                            print("register gagal")
+                        }
+                        dismiss()
                     }) {
-                        //TODO: Bagaimana Membalikkan Ke Login View Dengan Flow Yang Maju-Mundur, Bukan Maju-Maju ??
                         Text("Create User")
                             .frame(maxWidth: 219, maxHeight: 20)
                             .font(.system(size: 20))

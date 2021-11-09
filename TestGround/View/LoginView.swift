@@ -105,10 +105,14 @@ struct LoginView: View {
                                 LoginButtonContent()
                             }
                         }
-                        NavigationLink(destination: RegisterView()){
-                            Text("Belum Punya Akun?")
+                        if #available(iOS 15.0, *) {
+                            NavigationLink(destination: RegisterView()){
+                                Text("Belum Punya Akun?")
+                            }
+                            .padding()
+                        } else {
+                            // Fallback on earlier versions
                         }
-                        .padding()
                         
                         //TODO : Ganti metode dan tambah data ke DB
                         NavigationLink(destination: AddDetailView(showModal: .constant(true))){
@@ -123,6 +127,7 @@ struct LoginView: View {
                 .padding()
             }
             .navigationTitle(Text(""))
+            .navigationBarHidden(true)
         }
     }
 }
@@ -198,7 +203,11 @@ extension View {
                         .navigationBarHidden(true),
                     isActive: binding
                 ) {
-                    RegisterView()
+                    if #available(iOS 15.0, *) {
+                        RegisterView()
+                    } else {
+                        // Fallback on earlier versions
+                    }
                 }
             }
         }
