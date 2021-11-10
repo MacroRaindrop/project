@@ -9,38 +9,57 @@ import SwiftUI
 
 struct SummaryView: View {
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading) {
-                HStack{
-                    Text("Summary").font(.title) .bold().padding()
-                    Spacer()
-                    Text("18 Okt 2021") .padding()
-                }
-                HStack{
-                    
-                    VStack{
-                        Text("27").font(.system(size: 60))
-                        Text("Total Stock")
-                    }
-                    .padding()
-                    .background(Color.raindropColor)
-                    .frame(width: 200, height: 180)
-                    
-                    VStack{
-                        Text("Hello, world!")
-                            .padding()
-                            .background(Color.raindropColor)
-                        Text("Hello, world!")
-                            .padding()
-                            .background(Color.raindropColor)
-                        Text("Hello, world!")
-                            .padding()
-                            .background(Color.raindropColor)
-                    }
-                }
-                .cornerRadius(10)
+        VStack(alignment: .leading) {
+            HStack{
+                Text("Ringkasan").font(.title) .bold().padding()
+                Spacer()
                 
-                VStack{
+            }
+            HStack(alignment: .center){
+                VStack(alignment: .center){
+                    Text("27").font(.system(size: 60))
+                    Text("Low Stock")
+                }
+                .padding()
+                .background(Color.lowColor)
+                .frame(width: 100, height: 150)
+                
+                VStack(alignment: .center){
+                    Text("27").font(.system(size: 60))
+                    Text("No Stock")
+                }
+                .padding()
+                .background(Color.noStockColor)
+                .frame(width: 100, height: 150)
+                VStack(alignment: .center){
+                    Text("27").font(.system(size: 60))
+                    Text("Discontinued")
+                }
+                .padding()
+                .background(Color.discontinueColor)
+                .frame(width: 100, height: 150)
+            }
+            VStack{
+                VStack (alignment: .leading, spacing: 10){
+                    Text("PO1")
+                    Text("PT Nama Perusahaan")
+                    Divider()
+                }
+                VStack (alignment: .leading, spacing: 10){
+                    Text("PO1")
+                    Text("PT Nama Perusahaan")
+                    Divider()
+                }
+                VStack (alignment: .leading, spacing: 10){
+                    Text("PO1")
+                    Text("PT Nama Perusahaan")
+                    Divider()
+                }
+                Text("View All")
+            }.background(Color.raindrop1Color) .cornerRadius(10)
+                .padding()
+            HStack {
+                VStack {
                     VStack (alignment: .leading, spacing: 6){
                         Text("PO1")
                         Text("PT Nama Perusahaan")
@@ -57,32 +76,13 @@ struct SummaryView: View {
                         Divider()
                     }
                     Text("View All")
-                }.background(Color.raindropColor) .cornerRadius(10).padding()
+                }.background(Color.raindrop1Color) .cornerRadius(10)
                     .padding()
-                HStack {
-                    VStack {
-                        VStack (alignment: .leading, spacing: 6){
-                            Text("PO1")
-                            Text("PT Nama Perusahaan")
-                            Divider()
-                        }
-                        VStack (alignment: .leading, spacing: 6){
-                            Text("PO1")
-                            Text("PT Nama Perusahaan")
-                            Divider()
-                        }
-                        VStack (alignment: .leading, spacing: 6){
-                            Text("PO1")
-                            Text("PT Nama Perusahaan")
-                            Divider()
-                        }
-                        Text("View All")
-                    }
-                }
             }
         }
     }
 }
+
 
 struct SummaryView_Previews: PreviewProvider {
     static var previews: some View {

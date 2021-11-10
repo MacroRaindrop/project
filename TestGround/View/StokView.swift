@@ -11,23 +11,14 @@ import SwiftUI
 struct StokView: View {
     @Binding var text: String
     @State var isEditing: Bool = false
-    
-    
-    
-    
     var body: some View {
-      
         VStack {
-            
-            
             // title
             VStack {
                 Text("Stok")
                     .font(.title)
                     .bold()
-
             }
-            
             // search bar
             TextField("Search...", text: $text)
                 .padding(7)
@@ -36,7 +27,7 @@ struct StokView: View {
                 .cornerRadius(8)
                 .padding(.horizontal, 10)
                 .onTapGesture {
-                  self.isEditing = true
+                    self.isEditing = true
                 }
             
             if isEditing {
@@ -52,7 +43,7 @@ struct StokView: View {
             }
             
             // card
-//            CardList(card: Card.example)
+            //            CardList(card: Card.example)
             ListVIew()
             
             
@@ -128,8 +119,8 @@ struct StokView: View {
 
 struct ListVIew: View {
     
-//    let card: Card
-//
+    //    let card: Card
+    //
     var body: some View {
         
         NavigationView {
@@ -165,9 +156,9 @@ struct ListVIew: View {
                 }
                 .padding()
                 .overlay(
-                        RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color.yellow, lineWidth: 1)
-                    )
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color.yellow, lineWidth: 1)
+                )
                 
                 
                 Spacer()

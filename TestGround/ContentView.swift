@@ -14,7 +14,11 @@ struct ContentView: View {
         if loginManager.loggedIn{
             LoginView(loginManager:loginManager)
         } else {
-            RegisterView()
+            if #available(iOS 15.0, *) {
+                RegisterView()
+            } else {
+                // Fallback on earlier versions
+            }
         }
     }
 }

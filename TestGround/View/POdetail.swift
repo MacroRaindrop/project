@@ -12,28 +12,8 @@ struct POdetail: View {
     
     var body: some View {
         
-        
-        VStack(spacing: 20){
-            Text("PO1").bold()
-            //padding()
-            VStack(alignment: .leading){
-                HStack (spacing: 50) {
-                    Text("Tanggal")
-                    
-                    Text("4 november 2021")
-                    
-                }
-                HStack (spacing: 83){
-                    Text("PIC")
-                    
-                    Text("Abdul")
-                }
-                HStack (spacing: 45){
-                    Text("Supplier")
-                    
-                    Text("PT binjai")
-                }
-            }
+        VStack{
+        detailPO()
             POlist()
             
             Text("Pastikan jumlah barang yang datang sama dengan yang tertulis").padding(.top, 50) .padding()
@@ -96,6 +76,31 @@ struct cekButton : View {
     }
 }
 
+struct detailPO : View {
+    var body: some View{
+        Text("PO1").bold().font(.title2)
+            .padding()
+        //padding()
+        VStack(alignment: .leading){
+            HStack (spacing: 70) {
+                Text("Tanggal")
+                
+                Text("4 november 2021")
+                
+            }
+            HStack (spacing: 103){
+                Text("PIC")
+                
+                Text("Abdul")
+            }
+            HStack (spacing: 66){
+                Text("Supplier")
+                
+                Text("PT binjai")
+            }
+        }.frame(width: 350, alignment: .leading)
+    }
+}
 struct listTextfield : View {
     
     @Binding var username: String

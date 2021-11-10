@@ -8,13 +8,14 @@
 import Foundation
 import SwiftUI
 
-struct Product: Hashable, Codable, Identifiable {
-    var id: UUID
-    var addProduct: String
-    var detailProduct: String
-    var inboundProduct: String?
-    var outboundProduct: String?
-    var purchaseOrder: String
-    var imageURL: URL
-    var datePurchased: Date
+struct Product: Codable {
+    var id: Int
+    var created_at: String
+    var id_company: Int
+    var name: String
+    var minimum_stock: Int
+    var image: String
+    var unit: String
+    var description: String
+    var quantity: Int
 }
