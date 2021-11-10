@@ -24,7 +24,7 @@ struct LoginView: View {
     
     @State var editingMode: Bool = false
     @State var newAcc: Bool = false
-
+    
     @State var isEmptyField: Bool = false
     @State var willMoveToNextScreen = false
     
@@ -74,7 +74,7 @@ struct LoginView: View {
                                 .offset(y: -10)
                                 .foregroundColor(.red)
                         }
-
+                        
                         NavigationLink(destination: DashboardView(), isActive: $willMoveToNextScreen){
                             Button(action: {
                                 if username.isEmpty{
@@ -96,7 +96,7 @@ struct LoginView: View {
                                     self.loginManager.loginCheck(owner_email: self.username, owner_password: self.password)
                                     //kasih timer/delay async
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 3){
-                                    self.willMoveToNextScreen = self.loginManager.loggedIn
+                                        self.willMoveToNextScreen = self.loginManager.loggedIn
                                     }
                                 } else {
                                     print("gagal login")
@@ -196,7 +196,7 @@ extension View {
                 self
                     .navigationBarTitle("")
                     .navigationBarHidden(true)
-
+                
                 NavigationLink(
                     destination: view
                         .navigationBarTitle("")
