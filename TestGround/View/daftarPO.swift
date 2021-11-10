@@ -26,7 +26,7 @@ struct listPO: View {
     @State var editingMode2: Bool = false
     @State private var jumlah: String = ""
     var body: some View {
-        NavigationView {
+    
             List(0 ..< 3) { item in
                 HStack {
                     
@@ -44,14 +44,14 @@ struct listPO: View {
                     }
                     
                     
-                } .background(Color.white)
+                } //.background(Color.ui.raindrop1)
                     .padding()
                 //                .overlay(
                 //                        RoundedRectangle(cornerRadius: 3)
                 //                            .stroke(Color.white, lineWidth: 1)
                 //                )
-            }
+            }.background(Color.ui.raindrop1)
         } //.scaledToFit()
-        .background(Color.primary)
-    }
+        
+    
 }

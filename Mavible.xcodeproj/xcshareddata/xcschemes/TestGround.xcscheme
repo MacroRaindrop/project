@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B828FCE8272179150015F0BF"
-               BuildableName = "TestGround.app"
-               BlueprintName = "TestGround"
-               ReferencedContainer = "container:TestGround.xcodeproj">
+               BuildableName = "Mavible.app"
+               BlueprintName = "Mavible"
+               ReferencedContainer = "container:Mavible.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B828FCE8272179150015F0BF"
-            BuildableName = "TestGround.app"
-            BlueprintName = "TestGround"
-            ReferencedContainer = "container:TestGround.xcodeproj">
+            BuildableName = "Mavible.app"
+            BlueprintName = "Mavible"
+            ReferencedContainer = "container:Mavible.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B828FCE8272179150015F0BF"
-            BuildableName = "TestGround.app"
-            BlueprintName = "TestGround"
-            ReferencedContainer = "container:TestGround.xcodeproj">
+            BuildableName = "Mavible.app"
+            BlueprintName = "Mavible"
+            ReferencedContainer = "container:Mavible.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
