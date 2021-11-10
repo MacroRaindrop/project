@@ -80,9 +80,12 @@ struct notesPO : View{
     var body: some View{
         VStack{
             Text("Notes:").frame(width: 350, alignment: .leading)
-            Rectangle().foregroundColor(Color.white) .frame(width: 350, height: 100)
-                .border(Color.black,width: 1)
-                .cornerRadius(10)
+            HStack{
+                    
+            }.foregroundColor(Color.white) .frame(width: 350, height: 100)
+                .border(Color.black,width: 1.5)
+                
+                .clipShape(RoundedRectangle(cornerRadius: 5))
         }
     }
 }
