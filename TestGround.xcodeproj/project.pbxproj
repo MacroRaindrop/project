@@ -33,6 +33,7 @@
 		C279B4C3273124F400A4B8AF /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C279B4C2273124F400A4B8AF /* DashboardView.swift */; };
 		C279B4C8273146FF00A4B8AF /* APILogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C279B4C7273146FF00A4B8AF /* APILogin.swift */; };
 		C279B4CA2731475400A4B8AF /* APIRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = C279B4C92731475400A4B8AF /* APIRegister.swift */; };
+		C2E50D41273BA8E000FC6A57 /* APIProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E50D40273BA8E000FC6A57 /* APIProduct.swift */; };
 		D57A375E2733D3FD00F9B044 /* updateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57A375D2733D3FD00F9B044 /* updateView.swift */; };
 		D57FD5A12729470F00441F18 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57FD5A02729470F00441F18 /* LoginView.swift */; };
 /* End PBXBuildFile section */
@@ -64,6 +65,7 @@
 		C279B4C2273124F400A4B8AF /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		C279B4C7273146FF00A4B8AF /* APILogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILogin.swift; sourceTree = "<group>"; };
 		C279B4C92731475400A4B8AF /* APIRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRegister.swift; sourceTree = "<group>"; };
+		C2E50D40273BA8E000FC6A57 /* APIProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProduct.swift; sourceTree = "<group>"; };
 		D57A375D2733D3FD00F9B044 /* updateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateView.swift; sourceTree = "<group>"; };
 		D57FD5A02729470F00441F18 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,6 +176,7 @@
 			children = (
 				C279B4C7273146FF00A4B8AF /* APILogin.swift */,
 				C279B4C92731475400A4B8AF /* APIRegister.swift */,
+				C2E50D40273BA8E000FC6A57 /* APIProduct.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2E50D41273BA8E000FC6A57 /* APIProduct.swift in Sources */,
 				7C26178A273999CB000836BD /* POdetail.swift in Sources */,
 				7CB61379273281A00039C14D /* Coordinator.swift in Sources */,
 				7C298253273AC09700686588 /* daftarPO.swift in Sources */,

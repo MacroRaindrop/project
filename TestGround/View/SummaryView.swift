@@ -11,34 +11,33 @@ struct SummaryView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack{
-                Text("Summary").font(.title) .bold().padding()
+                Text("Ringkasan").font(.title) .bold().padding()
                 Spacer()
-                Text("18 Okt 2021") .padding()
+                
             }
-            HStack{
+            HStack(alignment: .center){
+                VStack(alignment: .center){
+                    Text("27").font(.system(size: 60))
+                    Text("Low Stock")
+                }
+                .padding()
+                .background(Color.lowColor)
+                .frame(width: 100, height: 150)
                 
-                VStack{
+                VStack(alignment: .center){
                     Text("27").font(.system(size: 60))
-                    Text("Total Stock")
+                    Text("No Stock")
                 }
                 .padding()
-                .background(Color.raindropColor)
-                .frame(width: 128, height: 150)
-                
-                VStack{
+                .background(Color.noStockColor)
+                .frame(width: 100, height: 150)
+                VStack(alignment: .center){
                     Text("27").font(.system(size: 60))
-                    Text("Total Stock")
+                    Text("Discontinued")
                 }
                 .padding()
-                .background(Color.raindropColor)
-                .frame(width: 120, height: 0)
-                VStack{
-                    Text("27").font(.system(size: 60))
-                    Text("Total Stock")
-                }
-                .padding()
-                .background(Color.raindropColor)
-                .frame(width: 120, height: 0)
+                .background(Color.discontinueColor)
+                .frame(width: 100, height: 150)
             }
             VStack{
                 VStack (alignment: .leading, spacing: 10){
@@ -57,7 +56,7 @@ struct SummaryView: View {
                     Divider()
                 }
                 Text("View All")
-            }.background(Color.raindropColor) .cornerRadius(10)
+            }.background(Color.raindrop1Color) .cornerRadius(10)
                 .padding()
             HStack {
                 VStack {
@@ -77,7 +76,8 @@ struct SummaryView: View {
                         Divider()
                     }
                     Text("View All")
-                }
+                }.background(Color.raindrop1Color) .cornerRadius(10)
+                    .padding()
             }
         }
     }

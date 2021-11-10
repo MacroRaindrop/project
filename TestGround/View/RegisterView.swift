@@ -249,4 +249,10 @@ struct RegisterView_Previews: PreviewProvider {
 
 extension Color {
     static let raindropColor = Color("Accent")
+    static let raindrop1Color = Color("raindrop1")
+    static let discontinueColor = Color("Discontinue")
+    static let disabledButtonColor = Color("DisabledButton")
+    static let lowColor = Color("LowStock")
+    static let noStockColor = Color("NoStock")
+    static let secondaryButtonColor = Color("SecondaryButton")
 }
