@@ -13,7 +13,7 @@ struct TestGroundApp: App {
     var body: some Scene {
         WindowGroup {
             //LoginView(loginManager: loginManager)
-            daftarPO()
+            POdetail()
         }
     }
 }

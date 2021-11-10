@@ -44,14 +44,16 @@ struct listPO: View {
                     }
                     
                     
-                } .background(Color.white)
-                    .padding()
+                }
+                .padding()
+                .background(Color.white)
+                .ignoresSafeArea()
                 //                .overlay(
                 //                        RoundedRectangle(cornerRadius: 3)
                 //                            .stroke(Color.white, lineWidth: 1)
                 //                )
             }
         } //.scaledToFit()
-        .background(Color.primary)
+        .background(Color.white)
     }
 }
