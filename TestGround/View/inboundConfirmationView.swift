@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct inboundConfirmation: View {
+    @State private var note: String = ""
+    @State var editingMode: Bool = false
+    
     var body: some View {
         VStack(spacing: 20){
                 detailPO()
             tableInbound()
-            notesPO()
+            //notesPO()
+            notes(note: self.$note, editingMode: $editingMode)
             Button(action: {
                 print("berhasil konfirmasi")
             }){
@@ -118,4 +122,32 @@ extension Color {
          let raindrop1 = Color("raindrop1")
         let raindrop2 = Color("raindrop2")
     }
+}
+
+struct notes : View {
+    
+    @Binding var note: String
+    
+    @Binding var editingMode: Bool
+    
+    var body: some View {
+        
+        
+        VStack{
+        Text("Notes:").frame(width: 350, alignment: .leading)
+         TextField("", text: $note, onEditingChanged: {edit in
+            if edit == true
+            {self.editingMode = true}
+            else
+            {self.editingMode = false}
+        })
+                .frame(width: 350, height: 100, alignment: .topLeading)
+                .textFieldStyle(PlainTextFieldStyle())
+                .cornerRadius(20)
+                
+            //.textFieldStyle(RoundedBorderTextFieldStyle())
+            .autocapitalization(.none)
+            .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.black))
+    }
+}
 }
