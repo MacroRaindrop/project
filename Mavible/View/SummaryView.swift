@@ -23,7 +23,6 @@ struct SummaryView: View {
                 .padding()
                 .background(Color.lowColor)
                 .frame(width: 100, height: 150)
-                
                 VStack(alignment: .center){
                     Text("27").font(.system(size: 60))
                     Text("No Stock")
