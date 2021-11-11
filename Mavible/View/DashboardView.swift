@@ -30,7 +30,8 @@ struct DashboardView: View {
                 .tabItem {
                     Image(systemName: "book")
                     Text("Riwayat")
-            }
+
+                }
         }
     }
 }

@@ -31,6 +31,10 @@ class APIProduct: ObservableObject {
         guard let finishBody = try? JSONEncoder().encode(body) else { return }
         
         //Request Parameter
+    @Published var products: [Product] = []
+    
+    func addProduct() {
+        guard let url = URL(string: "https://be-raindrop-app.herokuapp.com/products") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Accept")
@@ -68,7 +72,6 @@ class APIProduct: ObservableObject {
             }
         }.resume()
     }
-    
 //    func getProduct() {
 //        guard let url = URL(string: "https://be-raindrop-app.herokuapp.com/products?skip=0&limit=10") else { return }
 //

@@ -8,15 +8,14 @@
 import Foundation
 import SwiftUI
 
-
 struct Product: Codable {
-    public var id: Int
-    public var created_at: String
-    public var id_company: Int
-    public var name: String
-    public var minimum_stock: Int
-    public var image: String
-    public var unit: String
-    public var description: String
-    public var quantity: Int
+    var id: Int
+    var created_at: String
+    var id_company: Int
+    var name: String
+    var minimum_stock: Int
+    var image: String
+    var unit: String
+    var description: String
+    var quantity: Int
 }
