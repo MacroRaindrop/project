@@ -53,7 +53,7 @@ struct listPO: View {
             HStack {
 
                 VStack (alignment: .leading, spacing: 5) {
-                    Text("kelapa kering")
+                    Text("PO1")
                         .font(.title3)
                         .fontWeight(.semibold)
 
