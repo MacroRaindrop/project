@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		169402A3273D225200B8A7AB /* OutbondConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169402A2273D225200B8A7AB /* OutbondConfirmationView.swift */; };
 		7C2286A7273C484900808B72 /* Tutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2286A6273C484900808B72 /* Tutor.swift */; };
 		7C2286A9273C49DF00808B72 /* TutorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2286A8273C49DF00808B72 /* TutorDetail.swift */; };
 		7C26178A273999CB000836BD /* POdetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C261789273999CB000836BD /* POdetailView.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		169402A2273D225200B8A7AB /* OutbondConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutbondConfirmationView.swift; sourceTree = "<group>"; };
 		7C2286A6273C484900808B72 /* Tutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutor.swift; sourceTree = "<group>"; };
 		7C2286A8273C49DF00808B72 /* TutorDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorDetail.swift; sourceTree = "<group>"; };
 		7C261789273999CB000836BD /* POdetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POdetailView.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				7C2286A8273C49DF00808B72 /* TutorDetail.swift */,
 				7C298252273AC09700686588 /* daftarPOView.swift */,
 				7C298254273AC48000686588 /* inboundConfirmationView.swift */,
+				169402A2273D225200B8A7AB /* OutbondConfirmationView.swift */,
 				7C261789273999CB000836BD /* POdetailView.swift */,
 			);
 			path = View;
@@ -290,6 +293,7 @@
 				D57A375E2733D3FD00F9B044 /* updateView.swift in Sources */,
 				7CB61381273295AE0039C14D /* CameraViewModel.swift in Sources */,
 				7C2677EB2731517700285B1A /* StokView.swift in Sources */,
+				169402A3273D225200B8A7AB /* OutbondConfirmationView.swift in Sources */,
 				C2264AB1273500B100539551 /* PurchaseOrderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
