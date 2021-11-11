@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		169402A3273D225200B8A7AB /* OutbondConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169402A2273D225200B8A7AB /* OutbondConfirmationView.swift */; };
+		169402A5273D2D0400B8A7AB /* OutbondListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169402A4273D2D0400B8A7AB /* OutbondListView.swift */; };
 		7C2286A7273C484900808B72 /* Tutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2286A6273C484900808B72 /* Tutor.swift */; };
 		7C2286A9273C49DF00808B72 /* TutorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2286A8273C49DF00808B72 /* TutorDetail.swift */; };
 		7C26178A273999CB000836BD /* POdetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C261789273999CB000836BD /* POdetailView.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		169402A2273D225200B8A7AB /* OutbondConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutbondConfirmationView.swift; sourceTree = "<group>"; };
+		169402A4273D2D0400B8A7AB /* OutbondListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutbondListView.swift; sourceTree = "<group>"; };
 		7C2286A6273C484900808B72 /* Tutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutor.swift; sourceTree = "<group>"; };
 		7C2286A8273C49DF00808B72 /* TutorDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorDetail.swift; sourceTree = "<group>"; };
 		7C261789273999CB000836BD /* POdetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POdetailView.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				7C298252273AC09700686588 /* daftarPOView.swift */,
 				7C298254273AC48000686588 /* inboundConfirmationView.swift */,
 				169402A2273D225200B8A7AB /* OutbondConfirmationView.swift */,
+				169402A4273D2D0400B8A7AB /* OutbondListView.swift */,
 				7C261789273999CB000836BD /* POdetailView.swift */,
 			);
 			path = View;
@@ -288,6 +291,7 @@
 				7C2677F12731A84A00285B1A /* MaxTextField.swift in Sources */,
 				C279B4C8273146FF00A4B8AF /* APILogin.swift in Sources */,
 				7C2286A9273C49DF00808B72 /* TutorDetail.swift in Sources */,
+				169402A5273D2D0400B8A7AB /* OutbondListView.swift in Sources */,
 				C2445A57272BE41F00C19C05 /* Product.swift in Sources */,
 				C2264AAF2735007600539551 /* SummaryView.swift in Sources */,
 				D57A375E2733D3FD00F9B044 /* updateView.swift in Sources */,
