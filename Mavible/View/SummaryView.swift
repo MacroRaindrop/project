@@ -41,21 +41,6 @@ struct SummaryView: View {
             } .padding(.horizontal, 30)
             VStack{
                 listPO2()
-//                VStack (alignment: .leading, spacing: 10){
-//                    Text("PO1")
-//                    Text("PT Nama Perusahaan")
-//                    Divider()
-//                }
-//                VStack (alignment: .leading, spacing: 10){
-//                    Text("PO1")
-//                    Text("PT Nama Perusahaan")
-//                    Divider()
-//                }
-//                VStack (alignment: .leading, spacing: 10){
-//                    Text("PO1")
-//                    Text("PT Nama Perusahaan")
-//                    Divider()
-//                }
                 Text("View All")
             }.background(Color.ui.raindrop2) .cornerRadius(10)
                 .padding()
