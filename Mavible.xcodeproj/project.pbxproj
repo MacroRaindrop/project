@@ -21,8 +21,8 @@
 		7CB61381273295AE0039C14D /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB61380273295AE0039C14D /* CameraViewModel.swift */; };
 		7CB61383273296C80039C14D /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB61382273296C80039C14D /* CameraView.swift */; };
 		7CDA13292732E789005A2D05 /* SUImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDA13282732E789005A2D05 /* SUImagePickerView.swift */; };
-		B828FCED272179150015F0BF /* TestGroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828FCEC272179150015F0BF /* TestGroundApp.swift */; };
-		B828FCEF272179150015F0BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828FCEE272179150015F0BF /* ContentView.swift */; };
+		7CEA5FE4273D0B5300FC322F /* TestGroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEA5FE2273D0B5300FC322F /* TestGroundApp.swift */; };
+		7CEA5FE5273D0B5300FC322F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEA5FE3273D0B5300FC322F /* ContentView.swift */; };
 		B828FCF1272179170015F0BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B828FCF0272179170015F0BF /* Assets.xcassets */; };
 		B828FCF4272179170015F0BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B828FCF3272179170015F0BF /* Preview Assets.xcassets */; };
 		C2264AAF2735007600539551 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2264AAE2735007600539551 /* SummaryView.swift */; };
@@ -54,9 +54,9 @@
 		7CB61380273295AE0039C14D /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 		7CB61382273296C80039C14D /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		7CDA13282732E789005A2D05 /* SUImagePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUImagePickerView.swift; sourceTree = "<group>"; };
+		7CEA5FE2273D0B5300FC322F /* TestGroundApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestGroundApp.swift; path = Mavible/TestGroundApp.swift; sourceTree = SOURCE_ROOT; };
+		7CEA5FE3273D0B5300FC322F /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = Mavible/ContentView.swift; sourceTree = SOURCE_ROOT; };
 		B828FCE9272179150015F0BF /* Mavible.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mavible.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B828FCEC272179150015F0BF /* TestGroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TestGroundApp.swift; path = TestGround/TestGroundApp.swift; sourceTree = SOURCE_ROOT; };
-		B828FCEE272179150015F0BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = TestGround/ContentView.swift; sourceTree = SOURCE_ROOT; };
 		B828FCF0272179170015F0BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B828FCF3272179170015F0BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C2264AAE2735007600539551 /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
@@ -120,8 +120,8 @@
 				7C2677F92731B69800285B1A /* View Model */,
 				C2445A55272BE2C900C19C05 /* View */,
 				C2445A4F272BDDC000C19C05 /* Model */,
-				B828FCEC272179150015F0BF /* TestGroundApp.swift */,
-				B828FCEE272179150015F0BF /* ContentView.swift */,
+				7CEA5FE3273D0B5300FC322F /* ContentView.swift */,
+				7CEA5FE2273D0B5300FC322F /* TestGroundApp.swift */,
 				B828FCF0272179170015F0BF /* Assets.xcassets */,
 				B828FCF2272179170015F0BF /* Preview Content */,
 			);
@@ -269,7 +269,6 @@
 				7CB61379273281A00039C14D /* Coordinator.swift in Sources */,
 				7C298253273AC09700686588 /* daftarPOView.swift in Sources */,
 				7C298255273AC48000686588 /* inboundConfirmationView.swift in Sources */,
-				B828FCEF272179150015F0BF /* ContentView.swift in Sources */,
 				7C2677E727314E2B00285B1A /* AddDetailView.swift in Sources */,
 				7CDA13292732E789005A2D05 /* SUImagePickerView.swift in Sources */,
 				7CB61383273296C80039C14D /* CameraView.swift in Sources */,
@@ -281,7 +280,6 @@
 				D57FD5A12729470F00441F18 /* LoginView.swift in Sources */,
 				C2445A5B272BEFBB00C19C05 /* Color.swift in Sources */,
 				C279B4CA2731475400A4B8AF /* APIRegister.swift in Sources */,
-				B828FCED272179150015F0BF /* TestGroundApp.swift in Sources */,
 				7C2677F12731A84A00285B1A /* MaxTextField.swift in Sources */,
 				C279B4C8273146FF00A4B8AF /* APILogin.swift in Sources */,
 				7C2286A9273C49DF00808B72 /* TutorDetail.swift in Sources */,
@@ -289,8 +287,10 @@
 				C2264AAF2735007600539551 /* SummaryView.swift in Sources */,
 				D57A375E2733D3FD00F9B044 /* updateView.swift in Sources */,
 				7CB61381273295AE0039C14D /* CameraViewModel.swift in Sources */,
+				7CEA5FE5273D0B5300FC322F /* ContentView.swift in Sources */,
 				7C2677EB2731517700285B1A /* StokView.swift in Sources */,
 				C2264AB1273500B100539551 /* PurchaseOrderView.swift in Sources */,
+				7CEA5FE4273D0B5300FC322F /* TestGroundApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,7 +420,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TestGround/Preview Content\"";
+				DEPLOYMENT_LOCATION = NO;
+				DEVELOPMENT_ASSET_PATHS = "\"Mavible/Preview Content\"";
 				DEVELOPMENT_TEAM = XWQ8XX5C45;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -454,7 +455,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TestGround/Preview Content\"";
+				DEPLOYMENT_LOCATION = NO;
+				DEVELOPMENT_ASSET_PATHS = "\"Mavible/Preview Content\"";
 				DEVELOPMENT_TEAM = XWQ8XX5C45;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
