@@ -30,11 +30,6 @@ class APIProduct: ObservableObject {
         let body : [ String : String] = ["name" : name, "minimum_stock" : minimum_stock, "image" : image, "unit" : unit, "description" : description, "quantity" : quantity]
         guard let finishBody = try? JSONEncoder().encode(body) else { return }
         
-        //Request Parameter
-    @Published var products: [Product] = []
-    
-    func addProduct() {
-        guard let url = URL(string: "https://be-raindrop-app.herokuapp.com/products") else { return }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Accept")
@@ -72,55 +67,55 @@ class APIProduct: ObservableObject {
             }
         }.resume()
     }
-//    func getProduct() {
-//        guard let url = URL(string: "https://be-raindrop-app.herokuapp.com/products?skip=0&limit=10") else { return }
-//
-//        var request = URLRequest(url: url)
-//        request.httpMethod = "GET"
-//        request.setValue("application/json", forHTTPHeaderField: "Accept")
-//
-//        URLSession.shared.dataTask(with: request) {(data, response, error) in
-//            if let error = error {
-//                print(error)
-//                return
-//            }
-//            guard let data = data else {
-//                return
-//            }
-//            do {
-//                let decodedData = try JSONDecoder().decode(Product.self, from: data)
-//                DispatchQueue.main.async {
-//                    self.products = decodedData.Items
-//                }
-//            } catch {
-//                print(error)
-//            }
-//        }.resume()
-//    }
-//    func updateProduct() {
-//        guard let url = URL(string: "https://be-raindrop-app.herokuapp.com/products") else { return }
-//
-//        var request = URLRequest(url: url)
-//        request.httpMethod = "PUT"
-//        request.setValue("application/json", forHTTPHeaderField: "Accept")
-//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//
-//        URLSession.shared.dataTask(with: request) {(data, response, error) in
-//            if let error = error {
-//                print(error)
-//                return
-//            }
-//            guard let data = data else {
-//                return
-//            }
-//            do {
-//                let decodedData = try JSONDecoder().decode(Product.self, from: data)
-//                DispatchQueue.main.async {
-//                    self.products = decodedData.Items
-//                }
-//            } catch {
-//                print(error)
-//            }
-//        }.resume()
-//    }
+    //    func getProduct() {
+    //        guard let url = URL(string: "https://be-raindrop-app.herokuapp.com/products?skip=0&limit=10") else { return }
+    //
+    //        var request = URLRequest(url: url)
+    //        request.httpMethod = "GET"
+    //        request.setValue("application/json", forHTTPHeaderField: "Accept")
+    //
+    //        URLSession.shared.dataTask(with: request) {(data, response, error) in
+    //            if let error = error {
+    //                print(error)
+    //                return
+    //            }
+    //            guard let data = data else {
+    //                return
+    //            }
+    //            do {
+    //                let decodedData = try JSONDecoder().decode(Product.self, from: data)
+    //                DispatchQueue.main.async {
+    //                    self.products = decodedData.Items
+    //                }
+    //            } catch {
+    //                print(error)
+    //            }
+    //        }.resume()
+    //    }
+    //    func updateProduct() {
+    //        guard let url = URL(string: "https://be-raindrop-app.herokuapp.com/products") else { return }
+    //
+    //        var request = URLRequest(url: url)
+    //        request.httpMethod = "PUT"
+    //        request.setValue("application/json", forHTTPHeaderField: "Accept")
+    //        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+    //
+    //        URLSession.shared.dataTask(with: request) {(data, response, error) in
+    //            if let error = error {
+    //                print(error)
+    //                return
+    //            }
+    //            guard let data = data else {
+    //                return
+    //            }
+    //            do {
+    //                let decodedData = try JSONDecoder().decode(Product.self, from: data)
+    //                DispatchQueue.main.async {
+    //                    self.products = decodedData.Items
+    //                }
+    //            } catch {
+    //                print(error)
+    //            }
+    //        }.resume()
+    //    }
 }
