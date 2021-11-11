@@ -99,7 +99,7 @@
 		B828FCE0272179150015F0BF = {
 			isa = PBXGroup;
 			children = (
-				B828FCEB272179150015F0BF /* TestGround */,
+				B828FCEB272179150015F0BF /* Mavible */,
 				B828FCEA272179150015F0BF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -112,7 +112,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B828FCEB272179150015F0BF /* TestGround */ = {
+		B828FCEB272179150015F0BF /* Mavible */ = {
 			isa = PBXGroup;
 			children = (
 				C2445A59272BEFA600C19C05 /* Additional */,
@@ -125,7 +125,7 @@
 				B828FCF0272179170015F0BF /* Assets.xcassets */,
 				B828FCF2272179170015F0BF /* Preview Content */,
 			);
-			path = TestGround;
+			path = Mavible;
 			sourceTree = "<group>";
 		};
 		B828FCF2272179170015F0BF /* Preview Content */ = {
