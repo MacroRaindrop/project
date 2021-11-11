@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		169402A3273D225200B8A7AB /* OutbondConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169402A2273D225200B8A7AB /* OutbondConfirmationView.swift */; };
 		169402A5273D2D0400B8A7AB /* OutbondListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169402A4273D2D0400B8A7AB /* OutbondListView.swift */; };
+		169402A7273D2D9500B8A7AB /* StockListContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169402A6273D2D9500B8A7AB /* StockListContentView.swift */; };
+		169402A9273D2DC300B8A7AB /* StockListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169402A8273D2DC300B8A7AB /* StockListView.swift */; };
+		169402AB273D2E0E00B8A7AB /* OutbondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169402AA273D2E0E00B8A7AB /* OutbondView.swift */; };
 		7C2286A7273C484900808B72 /* Tutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2286A6273C484900808B72 /* Tutor.swift */; };
 		7C2286A9273C49DF00808B72 /* TutorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2286A8273C49DF00808B72 /* TutorDetail.swift */; };
 		7C26178A273999CB000836BD /* POdetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C261789273999CB000836BD /* POdetailView.swift */; };
@@ -45,6 +48,9 @@
 /* Begin PBXFileReference section */
 		169402A2273D225200B8A7AB /* OutbondConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutbondConfirmationView.swift; sourceTree = "<group>"; };
 		169402A4273D2D0400B8A7AB /* OutbondListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutbondListView.swift; sourceTree = "<group>"; };
+		169402A6273D2D9500B8A7AB /* StockListContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListContentView.swift; sourceTree = "<group>"; };
+		169402A8273D2DC300B8A7AB /* StockListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListView.swift; sourceTree = "<group>"; };
+		169402AA273D2E0E00B8A7AB /* OutbondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutbondView.swift; sourceTree = "<group>"; };
 		7C2286A6273C484900808B72 /* Tutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutor.swift; sourceTree = "<group>"; };
 		7C2286A8273C49DF00808B72 /* TutorDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorDetail.swift; sourceTree = "<group>"; };
 		7C261789273999CB000836BD /* POdetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POdetailView.swift; sourceTree = "<group>"; };
@@ -168,6 +174,9 @@
 				7C298254273AC48000686588 /* inboundConfirmationView.swift */,
 				169402A2273D225200B8A7AB /* OutbondConfirmationView.swift */,
 				169402A4273D2D0400B8A7AB /* OutbondListView.swift */,
+				169402A6273D2D9500B8A7AB /* StockListContentView.swift */,
+				169402A8273D2DC300B8A7AB /* StockListView.swift */,
+				169402AA273D2E0E00B8A7AB /* OutbondView.swift */,
 				7C261789273999CB000836BD /* POdetailView.swift */,
 			);
 			path = View;
@@ -270,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2E50D41273BA8E000FC6A57 /* APIProduct.swift in Sources */,
+				169402A7273D2D9500B8A7AB /* StockListContentView.swift in Sources */,
 				7C2286A7273C484900808B72 /* Tutor.swift in Sources */,
 				7C26178A273999CB000836BD /* POdetailView.swift in Sources */,
 				7CB61379273281A00039C14D /* Coordinator.swift in Sources */,
@@ -277,6 +287,7 @@
 				7C298255273AC48000686588 /* inboundConfirmationView.swift in Sources */,
 				B828FCEF272179150015F0BF /* ContentView.swift in Sources */,
 				7C2677E727314E2B00285B1A /* AddDetailView.swift in Sources */,
+				169402A9273D2DC300B8A7AB /* StockListView.swift in Sources */,
 				7CDA13292732E789005A2D05 /* SUImagePickerView.swift in Sources */,
 				7CB61383273296C80039C14D /* CameraView.swift in Sources */,
 				C2264AB3273500D500539551 /* HistoryView.swift in Sources */,
@@ -290,6 +301,7 @@
 				B828FCED272179150015F0BF /* TestGroundApp.swift in Sources */,
 				7C2677F12731A84A00285B1A /* MaxTextField.swift in Sources */,
 				C279B4C8273146FF00A4B8AF /* APILogin.swift in Sources */,
+				169402AB273D2E0E00B8A7AB /* OutbondView.swift in Sources */,
 				7C2286A9273C49DF00808B72 /* TutorDetail.swift in Sources */,
 				169402A5273D2D0400B8A7AB /* OutbondListView.swift in Sources */,
 				C2445A57272BE41F00C19C05 /* Product.swift in Sources */,
