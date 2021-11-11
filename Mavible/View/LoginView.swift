@@ -169,6 +169,7 @@ struct PasswordSecureField : View {
             .padding(.top, 20)
             .cornerRadius(5.0)
             .padding(.bottom, 20)
+            .textFieldStyle(RoundedBorderTextFieldStyle())
             .autocapitalization(.none)
     }
 }
