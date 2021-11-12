@@ -9,62 +9,65 @@ import SwiftUI
 
 struct SummaryView: View {
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack{
-                Text("Ringkasan").font(.title) .bold().padding()
-                Spacer()
-                
-            }
-            HStack(alignment: .center){
-                VStack(alignment: .center){
-                    Text("27").font(.system(size: 60))
-                    Text("Low Stock")
-                }
-                .padding()
-                .background(Color.lowColor)
-                .frame(width: 100, height: 150)
-                VStack(alignment: .center){
-                    Text("27").font(.system(size: 60))
-                    Text("No Stock")
-                }
-                .padding()
-                .background(Color.noStockColor)
-                .frame(width: 100, height: 150)
-                VStack(alignment: .center){
-                    Text("27").font(.system(size: 60))
-                    Text("Discontinued")
-                }
-                .padding()
-                .background(Color.discontinueColor)
-                .frame(width: 100, height: 150)
-            } .padding(.horizontal, 30)
-            VStack{
-                listPO2()
-                Text("View All")
-            }.background(Color.ui.raindrop2) .cornerRadius(10)
-                .padding()
-            HStack {
-                VStack {
-                    VStack (alignment: .leading, spacing: 6){
-                        Text("PO1")
-                        Text("PT Nama Perusahaan")
-                        Divider()
+        GeometryReader{_ in
+            NavigationView {
+                VStack() {
+                    HStack{
+                        Text("Ringkasan").font(.title) .bold()
                     }
-                    VStack (alignment: .leading, spacing: 6){
-                        Text("PO1")
-                        Text("PT Nama Perusahaan")
-                        Divider()
+                    HStack(alignment: .center){
+                        VStack(alignment: .center){
+                            Text("27").font(.system(size: 60))
+                            Text("Low Stock")
+                        }
+                        .padding()
+                        .background(Color.lowColor)
+                        .frame(width: 100, height: 150)
+                        VStack(alignment: .center){
+                            Text("27").font(.system(size: 60))
+                            Text("No Stock")
+                        }
+                        .padding()
+                        .background(Color.noStockColor)
+                        .frame(width: 100, height: 150)
+                        VStack(alignment: .center){
+                            Text("27").font(.system(size: 60))
+                            Text("Discontinued")
+                        }
+                        .padding()
+                        .background(Color.discontinueColor)
+                        .frame(width: 100, height: 150)
+                    } .padding(.horizontal, 30)
+                    VStack{
+                        listPO2()
+                        Text("View All")
+                    }.background(Color.ui.raindrop2) .cornerRadius(10)
+                        .padding()
+                    HStack {
+                        VStack {
+                            VStack (alignment: .leading, spacing: 6){
+                                Text("PO1")
+                                Text("PT Nama Perusahaan")
+                                Divider()
+                            }
+                            VStack (alignment: .leading, spacing: 6){
+                                Text("PO1")
+                                Text("PT Nama Perusahaan")
+                                Divider()
+                            }
+                            VStack (alignment: .leading, spacing: 6){
+                                Text("PO1")
+                                Text("PT Nama Perusahaan")
+                                Divider()
+                            }
+                            Text("View All")
+                        }.background(Color.raindrop1Color) .cornerRadius(10)
+                            .padding()
                     }
-                    VStack (alignment: .leading, spacing: 6){
-                        Text("PO1")
-                        Text("PT Nama Perusahaan")
-                        Divider()
-                    }
-                    Text("View All")
-                }.background(Color.raindrop1Color) .cornerRadius(10)
-                    .padding()
+                }
             }
         }
+        .navigationBarHidden(true)
     }
 }
 

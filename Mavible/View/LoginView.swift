@@ -36,7 +36,6 @@ struct LoginView: View {
             
             ZStack {
                 VStack{
-                    
                     Text("Masuk")
                         .padding()
                         .font(.system(size: 34))
