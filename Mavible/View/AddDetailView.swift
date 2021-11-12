@@ -19,6 +19,8 @@ struct AddDetailView: View {
     @State var showCaptureImageView: Bool = false
     @Binding var showModal: Bool
     //@State private var namaProduk: String = ""
+    
+    //TODO Nambah array + nambah fungsi buat ngirim array ke DB
     var unit = ["liter", "kg", "karton"]
     @State private var unitSelected = "liter"
     
