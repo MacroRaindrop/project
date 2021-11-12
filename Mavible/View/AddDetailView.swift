@@ -102,10 +102,7 @@ struct AddDetailView: View {
     //                    .padding()
                         .cornerRadius(10)
                         .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
-    //                    .padding([.horizonta)
-    //                    .frame(width: 344, height: 220)
-    //                    .clipShape(Circle())
-    //                    .overlay(Circle().stroke(Color.white, lineWidth: 4))
+    
                         .padding()
                         .shadow(radius: 10)
                         .onTapGesture { self.shouldPresentActionScheet = true }
@@ -121,9 +118,7 @@ struct AddDetailView: View {
                            }), ActionSheet.Button.cancel()])
                             
                        }
-    //                if (showCaptureImageView) {
-    //                        CaptureImageView(isShown: $showCaptureImageView, image: $image)
-    //                      }
+   
                     
                 VStack(alignment: .leading, spacing: 1){
                         HStack{
@@ -139,6 +134,7 @@ struct AddDetailView: View {
                                 .font(.system(size: 14))
                                 .frame(height: 34)
                                 .textFieldStyle(PlainTextFieldStyle())
+                                .keyboardType(.numberPad)
                                 .padding([.horizontal], 10)
                                 .cornerRadius(20)
                                 .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
