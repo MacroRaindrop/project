@@ -8,32 +8,20 @@
 import SwiftUI
 
 struct updateView: View {
-    
-    
     var body: some View {
-        
         NavigationView{
-            
             ScrollView {
-                
                 VStack(spacing: 20) {
-                    
                     Text("")
-                    
                     NavigationLink(destination: PurchaseOrderView()) {
                         PurchaseOrder()
                     }
-                    
-                    
                     NavigationLink(destination: daftarPO() ) {
                         Inbound()
                     }
-                    
 //                    NavigationLink(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Destination@*/Text("Destination")/*@END_MENU_TOKEN@*/) {
 //                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Label Content@*/Text("Navigate")/*@END_MENU_TOKEN@*/}
                     Outbound()
-                    
-                    
                 }
                 .navigationTitle("Pesanan")
             }
