@@ -19,6 +19,7 @@
 		7CB61381273295AE0039C14D /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB61380273295AE0039C14D /* CameraViewModel.swift */; };
 		7CB61383273296C80039C14D /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB61382273296C80039C14D /* CameraView.swift */; };
 		7CDA13292732E789005A2D05 /* SUImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDA13282732E789005A2D05 /* SUImagePickerView.swift */; };
+		B7EC76E1273CE65D00C36C20 /* PO1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EC76E0273CE65D00C36C20 /* PO1View.swift */; };
 		B828FCED272179150015F0BF /* TestGroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828FCEC272179150015F0BF /* TestGroundApp.swift */; };
 		B828FCEF272179150015F0BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B828FCEE272179150015F0BF /* ContentView.swift */; };
 		B828FCF1272179170015F0BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B828FCF0272179170015F0BF /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 		7CB61380273295AE0039C14D /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 		7CB61382273296C80039C14D /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		7CDA13282732E789005A2D05 /* SUImagePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUImagePickerView.swift; sourceTree = "<group>"; };
+		B7EC76E0273CE65D00C36C20 /* PO1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PO1View.swift; sourceTree = "<group>"; };
 		B828FCE9272179150015F0BF /* TestGround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestGround.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B828FCEC272179150015F0BF /* TestGroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TestGroundApp.swift; path = TestGround/TestGroundApp.swift; sourceTree = SOURCE_ROOT; };
 		B828FCEE272179150015F0BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = TestGround/ContentView.swift; sourceTree = SOURCE_ROOT; };
@@ -152,6 +154,7 @@
 				7C2677EA2731517700285B1A /* StokView.swift */,
 				C2264AAE2735007600539551 /* SummaryView.swift */,
 				C2264AB0273500B100539551 /* PurchaseOrderView.swift */,
+				B7EC76E0273CE65D00C36C20 /* PO1View.swift */,
 				C2264AB2273500D500539551 /* HistoryView.swift */,
 				D57A375D2733D3FD00F9B044 /* updateView.swift */,
 				7C298252273AC09700686588 /* daftarPO.swift */,
@@ -271,6 +274,7 @@
 				C2445A5B272BEFBB00C19C05 /* Color.swift in Sources */,
 				C279B4CA2731475400A4B8AF /* APIRegister.swift in Sources */,
 				B828FCED272179150015F0BF /* TestGroundApp.swift in Sources */,
+				B7EC76E1273CE65D00C36C20 /* PO1View.swift in Sources */,
 				7C2677F12731A84A00285B1A /* MaxTextField.swift in Sources */,
 				C279B4C8273146FF00A4B8AF /* APILogin.swift in Sources */,
 				C2445A57272BE41F00C19C05 /* Product.swift in Sources */,

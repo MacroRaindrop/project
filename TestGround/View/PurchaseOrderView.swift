@@ -28,17 +28,6 @@ struct PurchaseOrderView: View {
                     .font(.system(size: 30, weight: .bold))
             VStack {
                 HStack {
-                    Text("ID")
-                        .font(Font.headline.weight(.bold))
-                            Spacer()
-                    }
-                TextField("Pilih ID", text: self.$identity)
-                    .frame(width: UIScreen.main.bounds.width - 40, height: 25)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
-                        .keyboardType(.default)
-                        .autocapitalization(.none)
-                HStack {
                     Text("PIC")
                         .font(Font.headline.weight(.bold))
                         Spacer()
