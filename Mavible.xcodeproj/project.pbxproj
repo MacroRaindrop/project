@@ -41,6 +41,7 @@
 		C2C3C14227421854007236DC /* APIPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3C14127421854007236DC /* APIPassword.swift */; };
 		C2C3C14427421863007236DC /* ForgetPassowordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3C14327421863007236DC /* ForgetPassowordViewModel.swift */; };
 		C2C3C14827421CBF007236DC /* ListStokView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3C14727421CBF007236DC /* ListStokView.swift */; };
+		C2C3C14A27421EA3007236DC /* PICViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3C14927421EA3007236DC /* PICViewModel.swift */; };
 		C2E50D41273BA8E000FC6A57 /* APIProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E50D40273BA8E000FC6A57 /* APIProduct.swift */; };
 		D57A375E2733D3FD00F9B044 /* UpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57A375D2733D3FD00F9B044 /* UpdateView.swift */; };
 		D57FD5A12729470F00441F18 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57FD5A02729470F00441F18 /* LoginView.swift */; };
@@ -81,6 +82,7 @@
 		C2C3C14127421854007236DC /* APIPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPassword.swift; sourceTree = "<group>"; };
 		C2C3C14327421863007236DC /* ForgetPassowordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPassowordViewModel.swift; sourceTree = "<group>"; };
 		C2C3C14727421CBF007236DC /* ListStokView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListStokView.swift; sourceTree = "<group>"; };
+		C2C3C14927421EA3007236DC /* PICViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PICViewModel.swift; sourceTree = "<group>"; };
 		C2E50D40273BA8E000FC6A57 /* APIProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProduct.swift; sourceTree = "<group>"; };
 		D57A375D2733D3FD00F9B044 /* UpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateView.swift; sourceTree = "<group>"; };
 		D57FD5A02729470F00441F18 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				7C2677E827314E5800285B1A /* ShowModalView.swift */,
 				C24123BB273E16D200A33C22 /* GetProductViewModel.swift */,
 				C2C3C14327421863007236DC /* ForgetPassowordViewModel.swift */,
+				C2C3C14927421EA3007236DC /* PICViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				C24123BC273E16D200A33C22 /* GetProductViewModel.swift in Sources */,
 				7C298255273AC48000686588 /* InboundConfirmationView.swift in Sources */,
 				7C2677E727314E2B00285B1A /* AddDetailView.swift in Sources */,
+				C2C3C14A27421EA3007236DC /* PICViewModel.swift in Sources */,
 				7CDA13292732E789005A2D05 /* SUImagePickerView.swift in Sources */,
 				7CB61383273296C80039C14D /* CameraView.swift in Sources */,
 				C2264AB3273500D500539551 /* HistoryView.swift in Sources */,
