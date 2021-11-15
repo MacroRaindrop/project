@@ -32,9 +32,9 @@ struct DashboardView: View {
                     .tabItem {
                         Image(systemName: "book")
                         Text("Riwayat")
-
                     }
             }
+            .accentColor(.raindropColor)
             .navigationBarHidden(true)
         }
     }

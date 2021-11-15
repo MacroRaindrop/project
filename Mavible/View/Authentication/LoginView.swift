@@ -114,10 +114,10 @@ struct LoginView: View {
                         }
                         
                         //TODO : Ganti metode dan tambah data ke DB
-                        NavigationLink(destination: AddDetailView(showModal: .constant(true))){
-                            Text("detail")
-                        }
-                        .padding()
+//                        NavigationLink(destination: AddDetailView(showModal: .constant(true))){
+//                            Text("detail")
+//                        }
+//                        .padding()
                     }
                     .padding()
                     Spacer()
@@ -130,7 +130,6 @@ struct LoginView: View {
         }
     }
 }
-
 //struct LoginView_Previews: PreviewProvider {
 //    static var previews: some View {
 ////        LoginView()
