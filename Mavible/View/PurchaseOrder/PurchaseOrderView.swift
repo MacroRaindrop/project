@@ -1,15 +1,15 @@
 //
 //  PurchaseOrderView.swift
-//  TestGround
+//  Mavible
 //
-//  Created by Rostadhi Akbar, M.Pd on 05/11/21.
+//  Created by Rostadhi Akbar, M.Pd on 15/11/21.
 //
 
 import SwiftUI
 
 struct PurchaseOrderView: View {
     var body: some View {
-        Text("Halaman Pesanan")
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
