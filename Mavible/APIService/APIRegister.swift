@@ -40,7 +40,6 @@ class APIRegister: ObservableObject{
         else {
             return
         }
-        
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Accept")
@@ -48,7 +47,7 @@ class APIRegister: ObservableObject{
         
         request.httpBody = finishedBody
         
-        URLSession.shared.dataTask(with: request) {(data, response, error) in
+        let task = URLSession.shared.dataTask(with: request, completionHandler:  { (data, response, error) in
             guard let data = data, error == nil else {
                 print("Data Response Kosong")
                 
@@ -62,7 +61,6 @@ class APIRegister: ObservableObject{
             print(String(data: data, encoding: String.Encoding.utf8)!)
             
             let result = try? JSONDecoder().decode(Register.self, from: data)
-            
             if let result = result {
                 DispatchQueue.main.async {
                     self.owner_name = result.owner_name
@@ -75,7 +73,8 @@ class APIRegister: ObservableObject{
                     print("gagal me-response dari web servis")
                 }
             }
-        }.resume()
+        })
+            task.resume()
     }
 }
 
