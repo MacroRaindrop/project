@@ -54,7 +54,7 @@ struct SummaryView: View {
                         .padding()
                 }
             }
-        }
+        }.navigationBarHidden(true)
     }
 }
 

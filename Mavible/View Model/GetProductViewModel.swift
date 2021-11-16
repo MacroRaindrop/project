@@ -10,7 +10,6 @@ class GetProductViewModel: ObservableObject {
     @Published var items = [GetProduct]()
     func getProduct() {
         guard let url = URL(string: "https://be-raindrop-app.herokuapp.com/products?skip=0&limit=10") else { return }
-        
 //            let body : [ String : String] = ["name" : name, "minimum_stock" : minimum_stock, "image" : image, "unit" : unit, "description" : description, "quantity" : quantity]
 //            guard let finishBody = try? JSONEncoder().encode(body) else { return }
 //

@@ -33,7 +33,6 @@ struct TutorDetail : View {
             }.padding().navigationBarTitle(Text(name), displayMode: .inline)
     }
 }
-
 #if DEBUG
 struct TutorDetail_Previews : PreviewProvider {
     static var previews: some View {
