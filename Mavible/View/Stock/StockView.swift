@@ -9,14 +9,24 @@ import SwiftUI
 
 struct StockView: View {
     @ObservedObject var viewModel = GetProductViewModel()
+    
+    
     var body: some View {
         NavigationView {
             VStack {
-                List(viewModel.items, id: \.id){ item in
-                    VStack(alignment: .leading) {
-                        Text(item.name)
-                        Text(item.description)
+                List{
+                    ForEach(viewModel.items, id: \.id){ item in
+                        VStack(alignment: .leading) {
+                            Text(item.name)
+                            Text(item.description)
+                        }
                     }
+                    //tambah func untuk delete, tapi mesti nambah model "remove" dulu
+                    .onDelete(perform: { (indexSet) in
+                        DispatchQueue.main.async {
+                            viewModel.removeItem(for: UUID())
+                        }
+                    })
                 }
                 .listStyle(GroupedListStyle())
             }
@@ -34,3 +44,7 @@ struct StockView_Previews: PreviewProvider {
         StockView()
     }
 }
+
+
+
+

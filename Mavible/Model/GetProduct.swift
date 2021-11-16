@@ -7,7 +7,7 @@
 
 import Foundation
 struct GetProduct: Codable {
-    var id: Int
+    var id = UUID()
     var created_at: String
     var id_company: Int
     var name: String
