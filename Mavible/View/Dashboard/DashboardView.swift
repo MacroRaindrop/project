@@ -10,7 +10,7 @@ import SwiftUI
 struct DashboardView: View {
     @State var selectedTabView = 1
     var body: some View {
-        NavigationView {
+        
             TabView(selection:$selectedTabView) {
                 SummaryView()
                     .tabItem {
@@ -18,12 +18,12 @@ struct DashboardView: View {
                         Text("Ringkasan")
                     }
 //                StokView(text: .constant(""))
-                StockView()
+                StockListView()
                     .tabItem {
                         Image(systemName: "shippingbox")
                         Text("Stok")
                     }
-                updateView()
+                UpdateView()
                     .tabItem {
                         Image(systemName: "arrow.left.arrow.right")
                         Text("Pesanan")
@@ -35,8 +35,8 @@ struct DashboardView: View {
                     }
             }
             .accentColor(.raindropColor)
+            .navigationBarBackButtonHidden(true)
             .navigationBarHidden(true)
-        }
     }
 }
 

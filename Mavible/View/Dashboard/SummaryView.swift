@@ -53,8 +53,10 @@ struct SummaryView: View {
                     }.background(Color.ui.raindrop2) .cornerRadius(10)
                         .padding()
                 }
-            }
-        }.navigationBarHidden(true)
+            }.navigationBarBackButtonHidden(true)
+                .navigationBarHidden(true)
+        }.navigationBarBackButtonHidden(true)
+            .navigationBarHidden(true)
     }
 }
 

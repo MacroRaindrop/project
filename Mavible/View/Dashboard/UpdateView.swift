@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct updateView: View {
+struct UpdateView: View {
     var body: some View {
         NavigationView{
             ScrollView {
@@ -25,13 +25,14 @@ struct updateView: View {
                 }
                 .navigationTitle("Pesanan")
             }
-        }
+        }.navigationBarBackButtonHidden(true)
+            .navigationBarHidden(true)
     }
 }
 
 struct updateView_Previews: PreviewProvider {
     static var previews: some View {
-        updateView()
+        UpdateView()
     }
 }
 

@@ -47,7 +47,8 @@ struct HistoryView: View {
                 }
             }
             .navigationTitle("Riwayat")
-        }
+        }.navigationBarBackButtonHidden(true)
+            .navigationBarHidden(true)
     }
 }
 

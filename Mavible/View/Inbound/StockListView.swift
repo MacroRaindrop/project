@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct StockListView: View {
-
+    
     @State private var query = ""
-
+    @State var showDetailView = false
+    
     var body: some View {
         
         
@@ -33,9 +34,12 @@ struct StockListView: View {
             .navigationBarItems(leading:
                                     Button(action: {print("...")}) {Text("Edit")},
                                 trailing:
-                                    Button(action: {print("...")}) {Image(systemName: "plus")})
+                                    Button(action: {
+                self.showDetailView = true}) {Image(systemName: "plus")})
+            NavigationLink(destination: AddDetailView(showModal: .constant(true)), isActive: $showDetailView){
+                Text ("Add Detail")
+            }.navigationBarBackButtonHidden(true)
         }
-        
     }
 }
 
