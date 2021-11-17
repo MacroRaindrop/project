@@ -224,8 +224,8 @@
 		C279B4C4273145D000A4B8AF /* APIService */ = {
 			isa = PBXGroup;
 			children = (
-				C279B4C7273146FF00A4B8AF /* APILogin.swift */,
 				C279B4C92731475400A4B8AF /* APIRegister.swift */,
+				C279B4C7273146FF00A4B8AF /* APILogin.swift */,
 				C2E50D40273BA8E000FC6A57 /* APIProduct.swift */,
 				C2C3C14127421854007236DC /* APIPassword.swift */,
 			);

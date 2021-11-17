@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 struct GetProduct: Codable {
     var id = UUID()
     var created_at: String

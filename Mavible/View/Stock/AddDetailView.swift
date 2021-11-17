@@ -29,11 +29,12 @@ struct AddDetailView: View {
     @State var minNull: Bool = true
     
     @ObservedObject var namaProduk = TextBindingManager(limit: 20)
+    @State var namaItem: String = ""
     @State var image: Image? = Image("InboundIcon")
     @State var jumlahProduk : String = ""
     @State var jumlahMinimalStok : String = ""
     @State var notesDeskripsi: String = ""
-    
+    @State var imageName: String = ""
     @State var authenticationDidFail: Bool = false
     @State var authenticationDidSucceed: Bool = false
     @ObservedObject var fetchProduct = APIProduct()
@@ -51,7 +52,7 @@ struct AddDetailView: View {
                     Spacer()
                     Button(action: {
                         if authenticationDidSucceed {
-//                            self.fetchProduct.addProduct(name: self.namaProduk, minimum_stock: self.jumlahMinimalStok, image: self.image, unit: self.unitSelected, description: self.notesDeskripsi, quantity: self.jumlahProduk)
+                            self.fetchProduct.addProduct(name: self.namaItem, minimum_stock: self.jumlahMinimalStok, image: self.imageName, unit: self.unitSelected, description: self.notesDeskripsi, quantity: self.jumlahProduk)
                         } else {
                             print("gagal menambah produk")
                         }

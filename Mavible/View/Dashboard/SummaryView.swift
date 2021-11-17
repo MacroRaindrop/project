@@ -16,6 +16,7 @@ struct SummaryView: View {
                         Text("Ringkasan")
                             .font(.title)
                             .bold()
+
                     }
                 }
                 ScrollView {

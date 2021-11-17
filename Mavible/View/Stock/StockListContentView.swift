@@ -24,6 +24,7 @@ struct StockListContentView: View {
     @State var captionText: String = "This is caption This is Captiopn This is Caption"
     @State var qtyText: Int = 1
     @State var satuanText: String = "Satuan"
+
     
     var body: some View {
         HStack {

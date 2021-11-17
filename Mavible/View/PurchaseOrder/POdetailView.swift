@@ -48,9 +48,6 @@ struct POlist: View {
                         
                         POTextfield(jumlah: $jumlah, editingMode2: $editingMode2)
                     }
-                    
-                    
-                    
                 } .background(Color.white)
                     .padding()
                 //                .overlay(
@@ -87,7 +84,7 @@ struct detailPO : View {
                 Text("Tanggal")
                 
                 Text("4 november 2021")
-                
+    
             }
             HStack (spacing: 103){
                 Text("PIC")
@@ -142,7 +139,6 @@ struct POTextfield : View {
             .textFieldStyle(RoundedBorderTextFieldStyle())
             .autocapitalization(.none)
 //            .background(RoundedRectangle(cornerRadius: 5.0).fill(Color.gray))
-        
             .foregroundColor(Color.gray)
     }
 }
