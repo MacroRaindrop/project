@@ -10,7 +10,6 @@ import SwiftUI
 struct DashboardView: View {
     @State var selectedTabView = 1
     var body: some View {
-        
             TabView(selection:$selectedTabView) {
                 SummaryView()
                     .tabItem {

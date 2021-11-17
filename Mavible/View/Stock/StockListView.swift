@@ -11,6 +11,7 @@ struct StockListView: View {
     
     @State private var query = ""
     @State var showDetailView = false
+    @ObservedObject var listModel = GetProductViewModel()
     
     var body: some View {
         
@@ -18,14 +19,14 @@ struct StockListView: View {
         
         NavigationView {
             List {
-                ForEach(0 ..< 10) { i in
+                ForEach(listModel.items, id: \.id) { item in
                     ZStack {
                         StockListContentView()
                     }
                     .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                         Button(action: {}) {Image(systemName: "trash")}
-                    }.tint(.red)
-                    
+                    }
+                    .tint(.red)
                 }
             }
             .listStyle(PlainListStyle())

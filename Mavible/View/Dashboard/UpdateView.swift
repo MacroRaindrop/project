@@ -13,13 +13,12 @@ struct UpdateView: View {
             ScrollView {
                 VStack(spacing: 20) {
                     Text("")
-                    NavigationLink(destination: PurchaseOrderView()) {
-                        PurchaseOrder()
-                    }
+//                  NavigationLink(destination: PurchaseOrder()) {
+                    PurchaseOrder()
                     NavigationLink(destination: daftarPO() ) {
-                        Inbound()
+                    Inbound()
                     }
-//                    NavigationLink(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Destination@*/Text("Destination")/*@END_MENU_TOKEN@*/) {
+//                  NavigationLink(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Destination@*/Text("Destination")/*@END_MENU_TOKEN@*/) {
 //                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Label Content@*/Text("Navigate")/*@END_MENU_TOKEN@*/}
                     Outbound()
                 }
@@ -53,14 +52,12 @@ struct PurchaseOrder: View {
                     .resizable(capInsets: EdgeInsets())
                     .frame(width: /*@START_MENU_TOKEN@*/135.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/75.0/*@END_MENU_TOKEN@*/)
                     .opacity(1.8)
-                
             }
         }
         .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
         .frame(width: /*@START_MENU_TOKEN@*/361.0, height: 231.0/*@END_MENU_TOKEN@*/)
         .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color("SecondaryButton")/*@END_MENU_TOKEN@*/)
         .cornerRadius(15.0)
-        
     }
 }
 

@@ -59,6 +59,7 @@ struct POlist: View {
                 //                )
             }
         } //.scaledToFit()
+        .navigationBarHidden(true)
     }
 }
 

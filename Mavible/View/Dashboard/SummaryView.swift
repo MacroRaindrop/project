@@ -12,7 +12,11 @@ struct SummaryView: View {
         ScrollView {
             VStack {
                 HStack{
-                    Text("Ringkasan").font(.title) .bold()
+                    VStack {
+                        Text("Ringkasan")
+                            .font(.title)
+                            .bold()
+                    }
                 }
                 ScrollView {
                     HStack(alignment: .center){
@@ -66,16 +70,9 @@ struct SummaryView_Previews: PreviewProvider {
         SummaryView()
     }
 }
-
 struct listPO2: View {
-    
     @State private var jumlah: String = ""
-    
     var body: some View {
-        
-            
-            
-            
 //            List(positions, rowContent: { position in
 //                Text(position.name)
 //            })
@@ -83,32 +80,19 @@ struct listPO2: View {
 //            List(tutors) { tutor in
 //                TutorCell(tutor: tutor)
 //            }
-            
         List(0 ..< 3) { item in
             HStack {
-
                 VStack (alignment: .leading, spacing: 5) {
                     Text("PO 1")
                         .font(.title3)
                         .fontWeight(.semibold)
-
                     Text("PT binjai")
-
                 }
-
                 NavigationLink(destination: POdetail()){
-
                 }
-
-
             }
             .padding(.top, 10)
-            
             .listRowBackground(Color.ui.raindrop2)
-            
-            
-            
-            
             //                .overlay(
             //                        RoundedRectangle(cornerRadius: 3)
             //                            .stroke(Color.white, lineWidth: 1)
@@ -120,18 +104,11 @@ struct listPO2: View {
         .padding()
         .frame(width: 350, height: 300)
         //.overlay(RoundedRectangle(cornerRadius: 10))
-        
     }
 }
 struct listPO3: View {
-    
     @State private var jumlah: String = ""
-    
     var body: some View {
-        
-            
-            
-            
 //            List(positions, rowContent: { position in
 //                Text(position.name)
 //            })
@@ -139,32 +116,19 @@ struct listPO3: View {
 //            List(tutors) { tutor in
 //                TutorCell(tutor: tutor)
 //            }
-            
         List(0 ..< 3) { item in
             HStack {
-
                 VStack (alignment: .leading, spacing: 5) {
                     Text("PO 1")
                         .font(.title3)
                         .fontWeight(.semibold)
-
                     Text("PT binjai")
-
                 }
-
                 NavigationLink(destination: POdetail()){
-
                 }
-
-
             }
             .padding(.top, 10)
-            
             .listRowBackground(Color.ui.raindrop2)
-            
-            
-            
-            
             //                .overlay(
             //                        RoundedRectangle(cornerRadius: 3)
             //                            .stroke(Color.white, lineWidth: 1)
@@ -176,7 +140,6 @@ struct listPO3: View {
         .padding()
         .frame(width: 350, height: 300)
         //.overlay(RoundedRectangle(cornerRadius: 10))
-        
     }
 }
 
