@@ -23,6 +23,7 @@
 		7CDA13292732E789005A2D05 /* SUImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDA13282732E789005A2D05 /* SUImagePickerView.swift */; };
 		7CEA5FE4273D0B5300FC322F /* TestGroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEA5FE2273D0B5300FC322F /* TestGroundApp.swift */; };
 		7CEA5FE5273D0B5300FC322F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEA5FE3273D0B5300FC322F /* ContentView.swift */; };
+		B745DE5127439EFD006A5AF4 /* PO1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B745DE5027439EFD006A5AF4 /* PO1View.swift */; };
 		B828FCF1272179170015F0BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B828FCF0272179170015F0BF /* Assets.xcassets */; };
 		B828FCF4272179170015F0BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B828FCF3272179170015F0BF /* Preview Assets.xcassets */; };
 		C2264AAF2735007600539551 /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2264AAE2735007600539551 /* SummaryView.swift */; };
@@ -63,6 +64,7 @@
 		7CDA13282732E789005A2D05 /* SUImagePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUImagePickerView.swift; sourceTree = "<group>"; };
 		7CEA5FE2273D0B5300FC322F /* TestGroundApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestGroundApp.swift; path = Mavible/TestGroundApp.swift; sourceTree = SOURCE_ROOT; };
 		7CEA5FE3273D0B5300FC322F /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = Mavible/ContentView.swift; sourceTree = SOURCE_ROOT; };
+		B745DE5027439EFD006A5AF4 /* PO1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PO1View.swift; sourceTree = "<group>"; };
 		B828FCE9272179150015F0BF /* Mavible.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mavible.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B828FCF0272179170015F0BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B828FCF3272179170015F0BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				C2C3C13F2742176F007236DC /* PurchaseOrderView.swift */,
+				B745DE5027439EFD006A5AF4 /* PO1View.swift */,
 			);
 			path = PurchaseOrder;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				7CEA5FE5273D0B5300FC322F /* ContentView.swift in Sources */,
 				7C2677EB2731517700285B1A /* StokView.swift in Sources */,
 				7CEA5FE4273D0B5300FC322F /* TestGroundApp.swift in Sources */,
+				B745DE5127439EFD006A5AF4 /* PO1View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
