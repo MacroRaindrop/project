@@ -12,11 +12,11 @@ struct inboundConfirmation: View {
     @State var editingMode: Bool = false
     
     var body: some View {
-        VStack(spacing: 20){
-                detailPO()
-            tableInbound()
+        VStack(){
+            detailPO() //.padding(.vertical, 20)
+            tableInbound() .padding(.vertical, 20)
             //notesPO()
-            notes(note: self.$note, editingMode: $editingMode)
+            notes(note: self.$note, editingMode: $editingMode) .padding(.bottom, 10)
             Button(action: {
                 print("berhasil konfirmasi")
             }){
@@ -86,7 +86,7 @@ struct notesPO : View{
     var body: some View{
         VStack{
             Text("Notes:").frame(width: 350, alignment: .leading)
-            Rectangle().foregroundColor(Color.white) .frame(width: 350, height: 100)
+            Rectangle().foregroundColor(Color.white) .frame(width: 350, height: 50)
                 .border(Color.black,width: 1)
                 .cornerRadius(10)
                 
@@ -103,7 +103,7 @@ struct konfirmasiButton : View {
             .padding()
             .foregroundColor(.black)
             .background(Color.ui.raindrop1)
-            .clipShape(RoundedRectangle(cornerRadius: 20))
+            .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }
 
@@ -114,8 +114,8 @@ struct cekLagiButton : View {
             .font(.system(size: 20))
             .padding()
             .foregroundColor(.black)
-            .background(Color.gray)
-            .clipShape(RoundedRectangle(cornerRadius: 20))
+            .background(CustomColor.raindrop2)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }
 
@@ -145,13 +145,13 @@ struct notes : View {
             else
             {self.editingMode = false}
         })
-                .frame(width: 350, height: 100, alignment: .topLeading)
+                .frame(width: 350, height: 70, alignment: .topLeading)
                 .textFieldStyle(PlainTextFieldStyle())
-                .cornerRadius(20)
+                .cornerRadius(10)
                 
             //.textFieldStyle(RoundedBorderTextFieldStyle())
             .autocapitalization(.none)
-            .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.black))
+            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.black))
     }
 }
 }

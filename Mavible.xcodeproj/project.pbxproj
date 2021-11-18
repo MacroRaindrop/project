@@ -21,6 +21,7 @@
 		7C1BC0FA2743A20D0022F4EB /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1BC0F52743A20D0022F4EB /* HistoryView.swift */; };
 		7C1BC0FE2743A2340022F4EB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1BC0FC2743A2340022F4EB /* LoginView.swift */; };
 		7C1BC0FF2743A2340022F4EB /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1BC0FD2743A2340022F4EB /* RegisterView.swift */; };
+		7C1BC10527465F470022F4EB /* CheckBoxViewHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1BC10427465F470022F4EB /* CheckBoxViewHolder.swift */; };
 		7C2286A7273C484900808B72 /* Tutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2286A6273C484900808B72 /* Tutor.swift */; };
 		7C2286A9273C49DF00808B72 /* TutorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2286A8273C49DF00808B72 /* TutorDetail.swift */; };
 		7C2677E727314E2B00285B1A /* AddDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2677E627314E2B00285B1A /* AddDetailView.swift */; };
@@ -28,8 +29,6 @@
 		7C2677F12731A84A00285B1A /* MaxTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2677F02731A84A00285B1A /* MaxTextField.swift */; };
 		7CB61379273281A00039C14D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB613782732819F0039C14D /* Coordinator.swift */; };
 		7CB6137F273292F20039C14D /* Camera-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7CB6137E273292F20039C14D /* Camera-SwiftUI */; };
-		7CB61381273295AE0039C14D /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB61380273295AE0039C14D /* CameraViewModel.swift */; };
-		7CB61383273296C80039C14D /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB61382273296C80039C14D /* CameraView.swift */; };
 		7CDA13292732E789005A2D05 /* SUImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDA13282732E789005A2D05 /* SUImagePickerView.swift */; };
 		7CEA5FE4273D0B5300FC322F /* TestGroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEA5FE2273D0B5300FC322F /* TestGroundApp.swift */; };
 		7CEA5FE5273D0B5300FC322F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEA5FE3273D0B5300FC322F /* ContentView.swift */; };
@@ -66,14 +65,13 @@
 		7C1BC0F52743A20D0022F4EB /* HistoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		7C1BC0FC2743A2340022F4EB /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		7C1BC0FD2743A2340022F4EB /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		7C1BC10427465F470022F4EB /* CheckBoxViewHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxViewHolder.swift; sourceTree = "<group>"; };
 		7C2286A6273C484900808B72 /* Tutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutor.swift; sourceTree = "<group>"; };
 		7C2286A8273C49DF00808B72 /* TutorDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorDetail.swift; sourceTree = "<group>"; };
 		7C2677E627314E2B00285B1A /* AddDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDetailView.swift; sourceTree = "<group>"; };
 		7C2677E827314E5800285B1A /* ShowModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowModalView.swift; sourceTree = "<group>"; };
 		7C2677F02731A84A00285B1A /* MaxTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxTextField.swift; sourceTree = "<group>"; };
 		7CB613782732819F0039C14D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		7CB61380273295AE0039C14D /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
-		7CB61382273296C80039C14D /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		7CDA13282732E789005A2D05 /* SUImagePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUImagePickerView.swift; sourceTree = "<group>"; };
 		7CEA5FE2273D0B5300FC322F /* TestGroundApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestGroundApp.swift; path = Mavible/TestGroundApp.swift; sourceTree = SOURCE_ROOT; };
 		7CEA5FE3273D0B5300FC322F /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = Mavible/ContentView.swift; sourceTree = SOURCE_ROOT; };
@@ -140,11 +138,11 @@
 			isa = PBXGroup;
 			children = (
 				7C2677F02731A84A00285B1A /* MaxTextField.swift */,
-				7CB61380273295AE0039C14D /* CameraViewModel.swift */,
 				7C2677E827314E5800285B1A /* ShowModalView.swift */,
 				C24123BB273E16D200A33C22 /* GetProductViewModel.swift */,
 				C2C3C14327421863007236DC /* ForgetPassowordViewModel.swift */,
 				C2C3C14927421EA3007236DC /* PICViewModel.swift */,
+				7C1BC10427465F470022F4EB /* CheckBoxViewHolder.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -209,7 +207,6 @@
 				7C1BC0DF2743A1E60022F4EB /* Inbound */,
 				C2C3C13C27421676007236DC /* PurchaseOrder */,
 				C2C3C13B27421540007236DC /* Stock */,
-				7CB61382273296C80039C14D /* CameraView.swift */,
 				7C2286A8273C49DF00808B72 /* TutorDetail.swift */,
 			);
 			path = View;
@@ -362,7 +359,6 @@
 				7C1BC0E92743A1E60022F4EB /* OutbondListView.swift in Sources */,
 				C2C3C14A27421EA3007236DC /* PICViewModel.swift in Sources */,
 				7CDA13292732E789005A2D05 /* SUImagePickerView.swift in Sources */,
-				7CB61383273296C80039C14D /* CameraView.swift in Sources */,
 				C2C3C14427421863007236DC /* ForgetPassowordViewModel.swift in Sources */,
 				C2445A51272BDF9900C19C05 /* Register.swift in Sources */,
 				7C2677E927314E5800285B1A /* ShowModalView.swift in Sources */,
@@ -375,8 +371,8 @@
 				7C2286A9273C49DF00808B72 /* TutorDetail.swift in Sources */,
 				C2445A57272BE41F00C19C05 /* Product.swift in Sources */,
 				C2C3C14227421854007236DC /* APIPassword.swift in Sources */,
+				7C1BC10527465F470022F4EB /* CheckBoxViewHolder.swift in Sources */,
 				7C1BC0E82743A1E60022F4EB /* OutbondView.swift in Sources */,
-				7CB61381273295AE0039C14D /* CameraViewModel.swift in Sources */,
 				7CEA5FE5273D0B5300FC322F /* ContentView.swift in Sources */,
 				7CEA5FE4273D0B5300FC322F /* TestGroundApp.swift in Sources */,
 				7C1BC0F82743A20D0022F4EB /* UpdateView.swift in Sources */,

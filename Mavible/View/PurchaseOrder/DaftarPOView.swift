@@ -13,14 +13,18 @@ struct daftarPO: View {
         NavigationView {
             List(0 ..< 10) { item in
                 HStack {
+                    VStack(alignment: .leading){
                     Text("PO1")
                         .font(.title3)
                         .fontWeight(.semibold)
-                    Text("PT binjai")
+                    Text("PT binjai") .foregroundColor(CustomColor.buttonFont)
+                            .opacity(0.6)
+                    }
                     NavigationLink(destination: POdetail()){
                     }
                 }
-                .padding()
+                .padding(.horizontal, 10)
+                .padding(.top, 10)
                 .listRowBackground(Color.ui.raindrop2)
             }
             .listStyle(PlainListStyle())
