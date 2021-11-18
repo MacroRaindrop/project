@@ -32,6 +32,7 @@ struct POdetail_Previews: PreviewProvider {
 struct POlist: View {
     @State var editingMode2: Bool = false
     @State private var jumlah: String = ""
+    @State private var checked = false
     var body: some View {
         NavigationView {
             List(0 ..< 3) { item in
@@ -48,6 +49,7 @@ struct POlist: View {
                         
                         POTextfield(jumlah: $jumlah, editingMode2: $editingMode2)
                     }
+                    CheckBoxView(checked: $checked)
                 } .background(Color.white)
                     .padding()
                 //                .overlay(
@@ -79,7 +81,7 @@ struct detailPO : View {
         Text("PO1").bold().font(.title2)
             .padding()
         //padding()
-        VStack(alignment: .leading){
+        VStack(alignment: .leading , spacing: 6){
             HStack (spacing: 70) {
                 Text("Tanggal")
                 
