@@ -47,6 +47,7 @@
 		C2C3C14227421854007236DC /* APIPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3C14127421854007236DC /* APIPassword.swift */; };
 		C2C3C14427421863007236DC /* ForgetPassowordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3C14327421863007236DC /* ForgetPassowordViewModel.swift */; };
 		C2C3C14A27421EA3007236DC /* PICViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3C14927421EA3007236DC /* PICViewModel.swift */; };
+		C2DA06D92746523500141E30 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DA06D82746523500141E30 /* Server.swift */; };
 		C2E50D41273BA8E000FC6A57 /* APIProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E50D40273BA8E000FC6A57 /* APIProduct.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		C2C3C14127421854007236DC /* APIPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPassword.swift; sourceTree = "<group>"; };
 		C2C3C14327421863007236DC /* ForgetPassowordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPassowordViewModel.swift; sourceTree = "<group>"; };
 		C2C3C14927421EA3007236DC /* PICViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PICViewModel.swift; sourceTree = "<group>"; };
+		C2DA06D82746523500141E30 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		C2E50D40273BA8E000FC6A57 /* APIProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProduct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -230,6 +232,7 @@
 				C279B4C7273146FF00A4B8AF /* APILogin.swift */,
 				C2E50D40273BA8E000FC6A57 /* APIProduct.swift */,
 				C2C3C14127421854007236DC /* APIPassword.swift */,
+				C2DA06D82746523500141E30 /* Server.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -260,7 +263,6 @@
 			children = (
 				7C1BC0E52743A1E60022F4EB /* POdetailView.swift */,
 				7C1BC0E32743A1E60022F4EB /* DaftarPOView.swift */,
-				C2C3C13F2742176F007236DC /* PurchaseOrderView.swift */,
 				B745DE5027439EFD006A5AF4 /* PO1View.swift */,
 			);
 			path = PurchaseOrder;
@@ -379,6 +381,7 @@
 				7CEA5FE4273D0B5300FC322F /* TestGroundApp.swift in Sources */,
 				7C1BC0F82743A20D0022F4EB /* UpdateView.swift in Sources */,
 				7C1BC0EE2743A1E60022F4EB /* StockListView.swift in Sources */,
+				C2DA06D92746523500141E30 /* Server.swift in Sources */,
 				B745DE5127439EFD006A5AF4 /* PO1View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
