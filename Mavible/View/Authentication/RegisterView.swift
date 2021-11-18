@@ -271,6 +271,6 @@ extension Color {
     static let lowColor = Color("LowStock")
     static let noStockColor = Color("NoStock")
     static let secondaryButtonColor = Color("SecondaryButton")
-    static let buttonFront = Color("ButtonFont")
+    static let buttonFont = Color("ButtonFont")
 }
 

@@ -33,30 +33,34 @@ struct LoginView: View {
     var body: some View {
         
         NavigationView {
-            
             ZStack {
                 VStack{
                     Text("Masuk")
-                        .padding()
-                        .font(.system(size: 34))
-                    VStack{
+                        .font(.title)
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color("ButtonFont"))
+                        .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                    VStack(alignment: .leading, spacing: 0){
                         HStack{
-                            Text("Email")
+                            Text("E-mail")
                                 .font(Font.headline.weight(.bold))
-                            Spacer()
+                                .padding(.bottom, 10.0)
                         }
                         UsernameTextField(username: self.$username, editingMode: $editingMode)
                         HStack{
-                            Text("Password")
+                            Text("Kata Sandi")
                                 .font(Font.headline.weight(.bold))
-                                .padding()
-                            
+                                
+
                             Spacer()
                             
                             Button("Lupa Sandi?") {
                                 print("Button tapped!")
                             }
+                            .foregroundColor(/*@START_MENU_TOKEN@*/Color("Accent")/*@END_MENU_TOKEN@*/)
                         }
+                        .padding(.top, 50)
+                        .padding(.bottom, 10.0)
                         PasswordSecureField(password: self.$password)
                         if usernameNull {
                             Text("email tidak boleh kosong")
@@ -107,17 +111,19 @@ struct LoginView: View {
                         if #available(iOS 15.0, *) {
                             NavigationLink(destination: RegisterView()){
                                 Text("Belum Punya Akun?")
+                                    .foregroundColor(Color("Accent"))
                             }
-                            .padding()
+                            .padding(.top, 16.0)
+                            .padding(.leading, 90)
                         } else {
                             // Fallback on earlier versions
                         }
                         
                         //TODO : Ganti metode dan tambah data ke DB
-//                        NavigationLink(destination: AddDetailView(showModal: .constant(true))){
-//                            Text("detail")
-//                        }
-//                        .padding()
+                        //                        NavigationLink(destination: AddDetailView(showModal: .constant(true))){
+                        //                            Text("detail")
+                        //                        }
+                        //                        .padding()
                     }
                     .padding()
                     Spacer()
@@ -131,12 +137,13 @@ struct LoginView: View {
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
-        .accentColor(Color.buttonFront)
+        .accentColor(Color.buttonFont)
     }
 }
+
 //struct LoginView_Previews: PreviewProvider {
 //    static var previews: some View {
-////        LoginView()
+//        LoginView()
 //    }
 //}
 
@@ -153,10 +160,12 @@ struct UsernameTextField : View {
             else
             {self.editingMode = false}
         })
-            .padding(.top, 20)
-            .cornerRadius(5.0)
-            .padding(.bottom, 20)
-            .textFieldStyle(RoundedBorderTextFieldStyle())
+            .font(.system(size: 14))
+            .frame(height: 34)
+            .textFieldStyle(PlainTextFieldStyle())
+            .padding(.horizontal, 10)
+            .cornerRadius(20)
+            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
             .autocapitalization(.none)
     }
 }
@@ -168,9 +177,13 @@ struct PasswordSecureField : View {
     
     var body: some View {
         return SecureField("Enter a password", text: $password)
-            .padding(.top, 20)
-            .cornerRadius(5.0)
-            .padding(.bottom, 20)
+            .font(.system(size: 14))
+            .frame(height: 34)
+            .textFieldStyle(PlainTextFieldStyle())
+            .padding(.horizontal, 10)
+            .cornerRadius(20)
+            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
+            .padding(.bottom, 50)
             .textFieldStyle(RoundedBorderTextFieldStyle())
             .autocapitalization(.none)
     }
@@ -179,12 +192,14 @@ struct PasswordSecureField : View {
 struct LoginButtonContent : View {
     var body: some View {
         return Text("Masuk")
-            .frame(maxWidth: 219, maxHeight: 20)
+            .multilineTextAlignment(.center)
+            .frame(maxWidth: 220, maxHeight: 48)
             .font(.system(size: 20))
-            .padding()
-            .foregroundColor(.black)
-            .background(Color.raindropColor)
+            .foregroundColor(.buttonFont)
+            .background(Color.raindrop1Color)
             .clipShape(RoundedRectangle(cornerRadius: 20))
+            .padding(.horizontal, 60)
+            
     }
 }
 
