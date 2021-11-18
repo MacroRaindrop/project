@@ -22,6 +22,8 @@
 		7C1BC0FE2743A2340022F4EB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1BC0FC2743A2340022F4EB /* LoginView.swift */; };
 		7C1BC0FF2743A2340022F4EB /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1BC0FD2743A2340022F4EB /* RegisterView.swift */; };
 		7C1BC10527465F470022F4EB /* CheckBoxViewHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1BC10427465F470022F4EB /* CheckBoxViewHolder.swift */; };
+		7C1BC10727469F280022F4EB /* registerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1BC10627469F280022F4EB /* registerViewModel.swift */; };
+		7C1BC1092746AFCE0022F4EB /* inboundBerhasilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1BC1082746AFCE0022F4EB /* inboundBerhasilView.swift */; };
 		7C2286A7273C484900808B72 /* Tutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2286A6273C484900808B72 /* Tutor.swift */; };
 		7C2286A9273C49DF00808B72 /* TutorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2286A8273C49DF00808B72 /* TutorDetail.swift */; };
 		7C2677E727314E2B00285B1A /* AddDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2677E627314E2B00285B1A /* AddDetailView.swift */; };
@@ -65,6 +67,8 @@
 		7C1BC0FC2743A2340022F4EB /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		7C1BC0FD2743A2340022F4EB /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		7C1BC10427465F470022F4EB /* CheckBoxViewHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxViewHolder.swift; sourceTree = "<group>"; };
+		7C1BC10627469F280022F4EB /* registerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerViewModel.swift; sourceTree = "<group>"; };
+		7C1BC1082746AFCE0022F4EB /* inboundBerhasilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inboundBerhasilView.swift; sourceTree = "<group>"; };
 		7C2286A6273C484900808B72 /* Tutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutor.swift; sourceTree = "<group>"; };
 		7C2286A8273C49DF00808B72 /* TutorDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorDetail.swift; sourceTree = "<group>"; };
 		7C2677E627314E2B00285B1A /* AddDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDetailView.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				7C1BC0E22743A1E60022F4EB /* InboundConfirmationView.swift */,
+				7C1BC1082746AFCE0022F4EB /* inboundBerhasilView.swift */,
 			);
 			path = Inbound;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 				C2C3C14327421863007236DC /* ForgetPassowordViewModel.swift */,
 				C2C3C14927421EA3007236DC /* PICViewModel.swift */,
 				7C1BC10427465F470022F4EB /* CheckBoxViewHolder.swift */,
+				7C1BC10627469F280022F4EB /* registerViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -341,6 +347,7 @@
 				7C1BC0ED2743A1E60022F4EB /* POdetailView.swift in Sources */,
 				7C1BC0F62743A20D0022F4EB /* DashboardView.swift in Sources */,
 				7C1BC0FF2743A2340022F4EB /* RegisterView.swift in Sources */,
+				7C1BC10727469F280022F4EB /* registerViewModel.swift in Sources */,
 				C2E50D41273BA8E000FC6A57 /* APIProduct.swift in Sources */,
 				7C1BC0EB2743A1E60022F4EB /* DaftarPOView.swift in Sources */,
 				7C1BC0EC2743A1E60022F4EB /* StockListContentView.swift in Sources */,
@@ -374,6 +381,7 @@
 				7CEA5FE4273D0B5300FC322F /* TestGroundApp.swift in Sources */,
 				7C1BC0F82743A20D0022F4EB /* UpdateView.swift in Sources */,
 				7C1BC0EE2743A1E60022F4EB /* StockListView.swift in Sources */,
+				7C1BC1092746AFCE0022F4EB /* inboundBerhasilView.swift in Sources */,
 				B745DE5127439EFD006A5AF4 /* PO1View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

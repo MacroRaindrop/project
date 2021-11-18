@@ -13,8 +13,8 @@ struct POdetail: View {
     var body: some View {
         
         VStack{
-        detailPO()
-            POlist()
+            detailPO()
+            POlist() .padding(.top)
             
             Text("Pastikan jumlah barang yang datang sama dengan yang tertulis").padding(.top, 50) .padding()
             cekButton()
@@ -34,32 +34,42 @@ struct POlist: View {
     @State private var jumlah: String = ""
     @State private var checked = false
     var body: some View {
-        NavigationView {
+        //VStack{
+            Button(action: {
+                checked = true
+            }) {
+                Text("Pilih semua")
+            }.frame(width: 350, alignment: .topTrailing)
+        
             List(0 ..< 3) { item in
                 HStack {
-                    Image("beras-gambar")
+                    Image("OutboundIcon")
+                        
                         .resizable()
                         .scaledToFit()
-                        .frame(height: 70, alignment: .leading)
+                        .frame(width: 60, height: 60, alignment: .leading)
+                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
                     
                     VStack (alignment: .leading, spacing: 5) {
                         Text("kelapa kering")
+                            
                             .font(.title3)
                             .fontWeight(.bold)
+                            .padding(.top, 20)
                         
                         POTextfield(jumlah: $jumlah, editingMode2: $editingMode2)
                     }
                     CheckBoxView(checked: $checked)
                 } .background(Color.white)
-                    .padding()
+                    //.padding()
                 //                .overlay(
                 //                        RoundedRectangle(cornerRadius: 3)
                 //                            .stroke(Color.white, lineWidth: 1)
                 //                )
-            }
+            }.listStyle(PlainListStyle())
         } //.scaledToFit()
-        .navigationBarHidden(true)
-    }
+        
+   // }
 }
 
 struct cekButton : View {
@@ -135,7 +145,6 @@ struct POTextfield : View {
             else
             {self.editingMode2 = false}
         })
-            .padding(.top, 20)
             .cornerRadius(5.0)
             .padding(.bottom, 20)
             .textFieldStyle(RoundedBorderTextFieldStyle())

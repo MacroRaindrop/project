@@ -12,8 +12,8 @@ struct TestGroundApp: App {
     @StateObject var loginManager = APILogin()
     var body: some Scene {
         WindowGroup {
-            LoginView(loginManager: loginManager)
-            //OutbondConfirmationView()
+            //LoginView(loginManager: loginManager)
+            inboundBerhasilView()
         }
     }
 }

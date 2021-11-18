@@ -6,7 +6,7 @@ import SwiftUI
 struct RegisterView: View {
     
     
-    
+    @ObservedObject var signupVM = SignupViewModel()
     @State var username: String = ""
     @State var company: String = ""
     @State var email: String = ""
@@ -18,6 +18,7 @@ struct RegisterView: View {
     @State var usernameNull: Bool = false
     @State var companyNull: Bool = false
     @State var emailNull: Bool = false
+    @State var emailNotValid: Bool = false
     @State var passwordNull: Bool = false
     @State var repeatPasswordNull: Bool = false
     @State var authenticationDidFail: Bool = false
@@ -69,7 +70,7 @@ struct RegisterView: View {
                             .font(Font.headline.weight(.bold))
                         Spacer()
                     }
-                    TextField("example@gmail.com", text: self.$email)
+                    TextField("example@gmail.com", text: $signupVM.email)
                         .frame(width: UIScreen.main.bounds.width - 40)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.bottom)
@@ -162,6 +163,12 @@ struct RegisterView: View {
                             .foregroundColor(.red)
                             .padding()
                     }
+                    else if emailNotValid {
+                        Text("format email salah")
+                            .offset(y: -10)
+                            .foregroundColor(.red)
+                            .padding()
+                    }
                     else if passwordNull {
                         Text("password tidak boleh kosong")
                             .offset(y: -10)
@@ -191,7 +198,7 @@ struct RegisterView: View {
                         }else{
                             companyNull = false
                         }
-                        if email.isEmpty{
+                        if signupVM.email.isEmpty{
                             emailNull = true
                         }else{
                             emailNull = false
@@ -206,7 +213,12 @@ struct RegisterView: View {
                         }else{
                             repeatPasswordNull = false
                         }
-                        if self.password == repeatPassword {
+                        if signupVM.validEMail == true {
+                            emailNotValid = false
+                        }else{
+                            emailNotValid = true
+                        }
+                        if self.password == repeatPassword && emailNotValid == false{
                             self.authenticationDidSucceed = true
                             self.authenticationDidFail = false
                         } else {
@@ -218,7 +230,7 @@ struct RegisterView: View {
                         } else {
                             print("register gagal")
                         }
-                        dismiss()
+                        //dismiss()
                     }) {
                         Text("Buat Akun")
                             .frame(maxWidth: 219, maxHeight: 20)
