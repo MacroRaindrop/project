@@ -131,6 +131,7 @@ struct LoginView: View {
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
+        .accentColor(Color.buttonFront)
     }
 }
 //struct LoginView_Previews: PreviewProvider {

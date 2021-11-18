@@ -41,120 +41,108 @@ struct RegisterView: View {
                 Text("Daftar")
                     .padding()
                     .font(.system(size: 30, weight: .bold))
-            VStack {
-                HStack {
-                    Text("Nama Pemilik")
-                        .font(Font.headline.weight(.bold))
-                            Spacer()
+                VStack {
+                    HStack {
+                        Text("Nama Pemilik")
+                            .font(Font.headline.weight(.bold))
+                        Spacer()
                     }
-                TextField("Masukkan Nama", text: self.$username)
+                    TextField("Masukkan Nama", text: self.$username)
                         .frame(width: UIScreen.main.bounds.width - 40)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
+                        .padding(.bottom)
                         .keyboardType(.default)
                         .autocapitalization(.none)
-                HStack {
-                    Text("Perusahaan")
-                        .font(Font.headline.weight(.bold))
+                    HStack {
+                        Text("Perusahaan")
+                            .font(Font.headline.weight(.bold))
                         Spacer()
-                        }
-                TextField("Masukkan Company", text: self.$company)
+                    }
+                    TextField("Masukkan Company", text: self.$company)
                         .frame(width: UIScreen.main.bounds.width - 40)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
+                        .padding(.bottom)
                         .keyboardType(.default)
                         .autocapitalization(.none)
                     HStack {
                         Text("Email")
-                        .font(Font.headline.weight(.bold))
+                            .font(Font.headline.weight(.bold))
                         Spacer()
-                        }
-                // textfield nyoba2
-//                TextField("email...", text: $textEmail, onEditingChanged: { (isChanged) in
-//                            if !isChanged {
-//                                if self.textFieldValidatorEmail(self.textEmail) {
-//                                    self.isEmailValid = true
-//                                } else {
-//                                    self.isEmailValid = false
-//                                    self.textEmail = ""
-//                                }
-//                            }
-//                        })
-                
-                        TextField("example@gmail.com", text: self.$email)
-                                               .frame(width: UIScreen.main.bounds.width - 40)
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                                .padding()
-                                .keyboardType(.default)
-                                .autocapitalization(.none)
+                    }
+                    TextField("example@gmail.com", text: self.$email)
+                        .frame(width: UIScreen.main.bounds.width - 40)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(.bottom)
+                        .keyboardType(.default)
+                        .autocapitalization(.none)
                     HStack {
                         Text("Kata Sandi")
-                        .font(Font.headline.weight(.bold))
+                            .font(Font.headline.weight(.bold))
                         Spacer()
-                            }
+                    }
                     ZStack {
                         Group {
                             if self.hiddenPassword {
                                 TextField("Masukkan Kata Sandi", text: self.$password)
-                                        .padding()
-                                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                                        .frame(width: UIScreen.main.bounds.width - 10)
-                                        .cornerRadius(10)
-                                        .keyboardType(.default)
-                                        .autocapitalization(.none)
+                                    .padding()
+                                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                                    .frame(width: UIScreen.main.bounds.width - 37)
+                                    .cornerRadius(10)
+                                    .keyboardType(.default)
+                                    .autocapitalization(.none)
                             } else {
                                 SecureField("Masukkan Kata Sandi", text:
-                                                            self.$password)
-                                        .padding()
-                                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                                        .frame(width: UIScreen.main.bounds.width - 10)
-                                        .cornerRadius(10)
-                                        .keyboardType(.default)
-                                        .autocapitalization(.none)
-                                    }
+                                                self.$password)
+                                    .padding(.bottom)
+                                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                                    .frame(width: UIScreen.main.bounds.width - 37)
+                                    .cornerRadius(10)
+                                    .keyboardType(.default)
+                                    .autocapitalization(.none)
+                            }
                             Button(action : {
                                 self.hiddenPassword.toggle()
                             }) {
                                 Image(systemName: self.hiddenPassword ? "eye.fill" : "eye.slash.fill")
                                     .foregroundColor((self.hiddenPassword == true ) ? Color.green : Color.secondary)
-                                        }.offset(x: 150, y: 0)
-                                    }
-                                }
-                HStack {
-                    Text("Ulangi Kata Sandi")
-                        .font(Font.headline.weight(.bold))
-                    Spacer()
-                    }
-                ZStack {
-                    Group {
-                        if self.hiddenRepeatPassword {
-                            TextField("Masukkan Kata Sandi", text: self.$repeatPassword)
-                                .padding()
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                                .frame(width: UIScreen.main.bounds.width - 10)
-                                .cornerRadius(10)
-                                .keyboardType(.default)
-                                .autocapitalization(.none)
-                        } else {
-                            SecureField("Masukkan Kata Sandi", text:
-                                            self.$repeatPassword)
-                                .padding()
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                                .frame(width: UIScreen.main.bounds.width - 10)
-                                .cornerRadius(10)
-                                .keyboardType(.default)
-                                .autocapitalization(.none)
+                            }.offset(x: 150, y: -8)
                         }
-                        Button(action : {
-                            self.hiddenRepeatPassword.toggle()
-                        }) {
-                            Image(systemName: self.hiddenRepeatPassword ? "eye.fill" : "eye.slash.fill")
-                                .foregroundColor((self.hiddenRepeatPassword == true ) ? Color.green : Color.secondary)
-                        } .offset(x: 150, y: 0)
+                    }
+                    HStack {
+                        Text("Ulangi Kata Sandi")
+                            .font(Font.headline.weight(.bold))
+                        Spacer()
+                    }
+                    ZStack {
+                        Group {
+                            if self.hiddenRepeatPassword {
+                                TextField("Masukkan Kata Sandi", text: self.$repeatPassword)
+                                    .padding()
+                                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                                    .frame(width: UIScreen.main.bounds.width - 37)
+                                    .cornerRadius(10)
+                                    .keyboardType(.default)
+                                    .autocapitalization(.none)
+                            } else {
+                                SecureField("Masukkan Kata Sandi", text:
+                                                self.$repeatPassword)
+                                    .padding(.bottom)
+                                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                                    .frame(width: UIScreen.main.bounds.width - 37)
+                                    .cornerRadius(10)
+                                    .keyboardType(.default)
+                                    .autocapitalization(.none)
+                            }
+                            Button(action : {
+                                self.hiddenRepeatPassword.toggle()
+                            }) {
+                                Image(systemName: self.hiddenRepeatPassword ? "eye.fill" : "eye.slash.fill")
+                                    .foregroundColor((self.hiddenRepeatPassword == true ) ? Color.green : Color.secondary)
+                            } .offset(x: 150, y: -8)
+                        }
                     }
                 }
-            }
-            .padding([.leading, .trailing])
+                .padding([.leading, .trailing])
                 Spacer(minLength: 20)
                 VStack {
                     if usernameNull {
@@ -232,12 +220,12 @@ struct RegisterView: View {
                         }
                         dismiss()
                     }) {
-                        Text("Create User")
+                        Text("Buat Akun")
                             .frame(maxWidth: 219, maxHeight: 20)
                             .font(.system(size: 20))
                             .padding()
                             .foregroundColor(.black)
-                            .background(Color.raindropColor)
+                            .background(Color.raindrop1Color)
                             .clipShape(RoundedRectangle(cornerRadius: 20))
                             .padding()
                     }
@@ -271,14 +259,6 @@ extension Color {
     static let lowColor = Color("LowStock")
     static let noStockColor = Color("NoStock")
     static let secondaryButtonColor = Color("SecondaryButton")
+    static let buttonFront = Color("ButtonFont")
 }
 
-//func textFieldValidatorEmail(_ string: String) -> Bool {
-//    if string.count > 100 {
-//        return false
-//    }
-//    let emailFormat = "(?:[\\p{L}0-9!#$%\\&'*+/=?\\^_`{|}~-]+(?:\\.[\\p{L}0-9!#$%\\&'*+/=?\\^_`{|}" + "~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\" + "x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[\\p{L}0-9](?:[a-" + "z0-9-]*[\\p{L}0-9])?\\.)+[\\p{L}0-9](?:[\\p{L}0-9-]*[\\p{L}0-9])?|\\[(?:(?:25[0-5" + "]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-" + "9][0-9]?|[\\p{L}0-9-]*[\\p{L}0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21" + "-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])"
-//    //let emailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-//    let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailFormat)
-//    return emailPredicate.evaluate(with: string)
-//}
