@@ -13,13 +13,13 @@ struct UpdateView: View {
             ScrollView {
                 VStack(spacing: 20) {
                     Text("")
-//                  NavigationLink(destination: PurchaseOrder()) {
+                    //                  NavigationLink(destination: PurchaseOrder()) {
                     PurchaseOrder()
                     NavigationLink(destination: daftarPO() ) {
-                    Inbound()
+                        Inbound()
                     }
-//                  NavigationLink(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Destination@*/Text("Destination")/*@END_MENU_TOKEN@*/) {
-//                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Label Content@*/Text("Navigate")/*@END_MENU_TOKEN@*/}
+                    //                  NavigationLink(destination: Text("Destination")) {
+                    //                        /*@PLACEHOLDER=Label Content@*/Text("Navigate")}
                     Outbound()
                 }
                 .navigationTitle("Pesanan")
@@ -37,15 +37,15 @@ struct updateView_Previews: PreviewProvider {
 
 struct PurchaseOrder: View {
     var body: some View {
-        VStack(alignment: .leading, spacing: 12.0){
+        VStack(alignment: .leading, spacing: 12){
             Text("Purchase Order")
-                .font(.title3)
-                .fontWeight(.medium)
-                .foregroundColor(.black)
+                .font(.title2)
+                .fontWeight(.semibold)
+                .foregroundColor(Color("ButtonFont"))
             Text("Buat PO baru dan lihat list barang yang akan di pesan")
                 .multilineTextAlignment(.leading)
-                .opacity(0.8)
-                .foregroundColor(.raindropColor)
+                .opacity(0.6)
+                .foregroundColor(.buttonFont)
             HStack{
                 Spacer()
                 Image("POicon")
@@ -64,13 +64,13 @@ struct PurchaseOrder: View {
 struct Inbound: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 6){
-            Text("Inbound")
-                .font(.title3)
-                .fontWeight(.medium)
-                .foregroundColor(.black)
+            Text("Barang Masuk")
+                .font(.title2)
+                .fontWeight(.semibold)
+                .foregroundColor(Color("ButtonFont"))
             Text("Cek barang yang akan masuk")
-                .opacity(0.8)
-                .foregroundColor(.raindropColor)
+                .opacity(0.6)
+                .foregroundColor(.buttonFont)
             HStack{
                 Spacer()
                 Image("InboundIcon")
@@ -89,12 +89,13 @@ struct Inbound: View {
 struct Outbound: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 6){
-            Text("Outbound")
-                .font(.title3)
-                .fontWeight(.medium)
+            Text("Barang Keluar")
+                .font(.title2)
+                .fontWeight(.semibold)
+                .foregroundColor(Color("ButtonFont"))
             Text("Buat list barang yang akan keluar")
-                .opacity(0.8)
-                .foregroundColor(.raindropColor)
+                .opacity(0.6)
+                .foregroundColor(.buttonFont)
             HStack{
                 Spacer()
                 Image("OutboundIcon")
