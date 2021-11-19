@@ -38,7 +38,6 @@ struct RegisterView: View {
     //jika balik ke login gk perlu navigationview
     var body: some View {
         ZStack {
-
             VStack {
                 Text("Daftar")
                     .padding(.bottom, 40)
@@ -266,6 +265,7 @@ struct RegisterView: View {
                 Spacer()
             }
         }
+        .navigationBarTitle("", displayMode: .inline)
     }
 }
 
