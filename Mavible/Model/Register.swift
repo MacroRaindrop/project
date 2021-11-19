@@ -8,8 +8,8 @@
 import Foundation
 import SwiftUI
 
-struct Register: Codable {
-    var id: Int
+struct Register: Codable, Identifiable {
+    var id = UUID()
     var created_at: String
     var owner_name: String
     var name: String
