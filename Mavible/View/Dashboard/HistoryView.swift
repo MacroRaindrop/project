@@ -12,7 +12,7 @@ struct HistoryView: View {
     
     
     init() {
-        UISegmentedControl.appearance().backgroundColor = UIColor(CustomColor.raindrop2)
+        UISegmentedControl.appearance().backgroundColor = UIColor(CustomColor.buttonFont2)
     }
     
     @State var selected = 1
@@ -20,12 +20,12 @@ struct HistoryView: View {
     var body: some View {
         
         NavigationView {
-            VStack (alignment: .leading, spacing: 2) {
+            VStack (alignment: .leading, spacing: 12) {
                 Picker(selection: $selected, label: Text("Picker"), content: {
-                    Text("Inbound").tag(1)
-                    Text("Outbound").tag(2)
+                    Text("Barang Masuk").tag(1)
+                    Text("Barang Keluar").tag(2)
                 })
-                    .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                    .padding(.all)
                     .pickerStyle(SegmentedPickerStyle())
                 
                 if selected == 1 {
@@ -47,8 +47,10 @@ struct HistoryView: View {
                 }
             }
             .navigationTitle("Riwayat")
-        }.navigationBarBackButtonHidden(true)
-            .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarHidden(false)
+            
+        }
     }
 }
 
@@ -70,7 +72,7 @@ struct inboundHistoryView: View {
     
     var body: some View {
         
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: 8) {
             
             Text(date, style: .date)
             
@@ -80,28 +82,37 @@ struct inboundHistoryView: View {
                     HStack {
                         VStack (alignment: .leading) {
                             Text("Jagung Rebus")
+                                .fontWeight(.semibold)
                             Text("-")
+                            
                         }
                         
                         Spacer()
                         
                         Text("+26")
-                            .font(.title)
+                            .font(.largeTitle)
+                            .fontWeight(.semibold)
                             .multilineTextAlignment(.center)
+                        
                     }
                     
                     HStack {
                         Text("PIC: ")
                         
                         Text("Budi Goks")
-                            .font(.body).italic()
+                            .font(.body).italic().opacity(0.6)
                         
                         Spacer()
                         
                         Text("stok")
                         
+                    
+                        
                     }
+                    
+                    Divider()
                 }
+                .foregroundColor(.buttonFont)
                 .padding()
                 .overlay(
                     RoundedRectangle(cornerRadius: 16)
@@ -119,7 +130,7 @@ struct inboundHistoryView: View {
 
 struct outboundHistoryView: View {
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: 8) {
             
             Text(date, style: .date)
             
@@ -128,13 +139,15 @@ struct outboundHistoryView: View {
                     HStack {
                         VStack (alignment: .leading) {
                             Text("Jagung Rebus")
+                                .fontWeight(.semibold)
                             Text("-")
                         }
                         
                         Spacer()
                         
                         Text("-26")
-                            .font(.title)
+                            .font(.largeTitle)
+                            .fontWeight(.semibold)
                             .multilineTextAlignment(.center)
                     }
                     
@@ -144,13 +157,14 @@ struct outboundHistoryView: View {
                         Text("PIC: ")
                         
                         Text("Budi Goks")
-                            .font(.body).italic()
+                            .font(.body).italic().opacity(0.6)
                         
                         Spacer()
                         
                         Text("stok")
                         
                     }
+                    Divider()
                 }
                 .padding()
                 .overlay(

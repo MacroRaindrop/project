@@ -41,7 +41,6 @@ struct OutbondView: View {
 }
 
 struct OutbondView_Previews: PreviewProvider {
-    
     static var previews: some View {
         OutbondView()
     }

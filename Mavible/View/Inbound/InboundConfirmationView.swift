@@ -138,20 +138,20 @@ struct notes : View {
         
         
         VStack{
-        Text("Notes:").frame(width: 350, alignment: .leading)
-         TextField("", text: $note, onEditingChanged: {edit in
-            if edit == true
-            {self.editingMode = true}
-            else
-            {self.editingMode = false}
-        })
+            Text("Notes:").frame(width: 350, alignment: .leading)
+            TextField("", text: $note, onEditingChanged: {edit in
+                if edit == true
+                {self.editingMode = true}
+                else
+                {self.editingMode = false}
+            })
                 .frame(width: 350, height: 70, alignment: .topLeading)
                 .textFieldStyle(PlainTextFieldStyle())
                 .cornerRadius(10)
-                
+            
             //.textFieldStyle(RoundedBorderTextFieldStyle())
-            .autocapitalization(.none)
-            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.black))
+                .autocapitalization(.none)
+                .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.black))
+        }
     }
-}
 }
