@@ -38,10 +38,11 @@ struct RegisterView: View {
     //jika balik ke login gk perlu navigationview
     var body: some View {
         ZStack {
+
             VStack {
                 Text("Daftar")
-                    .padding()
-                    .font(.system(size: 30, weight: .bold))
+                    .padding(.bottom, 40)
+                    .font(.system(size: 28, weight: .bold))
                 VStack {
                     HStack {
                         Text("Nama Pemilik")
@@ -72,7 +73,7 @@ struct RegisterView: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .autocapitalization(.none)
                     HStack {
-                        Text("Email")
+                        Text("E-mail")
                             .font(Font.headline.weight(.bold))
                         Spacer()
                     }
@@ -250,13 +251,13 @@ struct RegisterView: View {
                         //dismiss()
                     }) {
                         Text("Buat Akun")
-                            .frame(maxWidth: 219, maxHeight: 20)
+                            .multilineTextAlignment(.center)
+                            .frame(maxWidth: 220, maxHeight: 48)
                             .font(.system(size: 20))
-                            .padding()
-                            .foregroundColor(.black)
+                            .foregroundColor(.buttonFont)
                             .background(Color.raindrop1Color)
                             .clipShape(RoundedRectangle(cornerRadius: 20))
-                            .padding()
+                            .padding(.horizontal, 60)
                     }
                     Spacer()
                         .frame(height: 100)

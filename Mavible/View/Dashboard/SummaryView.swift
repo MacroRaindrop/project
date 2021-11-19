@@ -16,7 +16,6 @@ struct SummaryView: View {
                         Text("Ringkasan")
                             .font(.title)
                             .bold()
-
                     }
                 }
                 ScrollView {
@@ -59,9 +58,7 @@ struct SummaryView: View {
                         .padding()
                 }
             }.navigationBarBackButtonHidden(true)
-                .navigationBarHidden(true)
         }.navigationBarBackButtonHidden(true)
-            .navigationBarHidden(true)
     }
 }
 

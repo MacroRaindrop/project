@@ -18,7 +18,6 @@ struct HistoryView: View {
     @State var selected = 1
     
     var body: some View {
-        
         NavigationView {
             VStack (alignment: .leading, spacing: 12) {
                 Picker(selection: $selected, label: Text("Picker"), content: {

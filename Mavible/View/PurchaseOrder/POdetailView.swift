@@ -19,6 +19,7 @@ struct POdetail: View {
             Text("Pastikan jumlah barang yang datang sama dengan yang tertulis").padding(.top, 50) .padding()
             cekButton()
         }
+        .navigationBarHidden(true)
     }
 }
 
