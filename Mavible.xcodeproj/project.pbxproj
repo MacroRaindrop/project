@@ -43,6 +43,8 @@
 		C2445A5B272BEFBB00C19C05 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2445A5A272BEFBB00C19C05 /* Color.swift */; };
 		C279B4C8273146FF00A4B8AF /* APILogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C279B4C7273146FF00A4B8AF /* APILogin.swift */; };
 		C279B4CA2731475400A4B8AF /* APIRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = C279B4C92731475400A4B8AF /* APIRegister.swift */; };
+		C27E6B1327473D240090D424 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27E6B1227473D240090D424 /* RegisterViewModel.swift */; };
+		C27E6B1527473D700090D424 /* InboundBerhasilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27E6B1427473D700090D424 /* InboundBerhasilView.swift */; };
 		C2C3C14227421854007236DC /* APIPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3C14127421854007236DC /* APIPassword.swift */; };
 		C2C3C14427421863007236DC /* ForgetPassowordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3C14327421863007236DC /* ForgetPassowordViewModel.swift */; };
 		C2C3C14A27421EA3007236DC /* PICViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3C14927421EA3007236DC /* PICViewModel.swift */; };
@@ -87,6 +89,8 @@
 		C2445A5A272BEFBB00C19C05 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		C279B4C7273146FF00A4B8AF /* APILogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILogin.swift; sourceTree = "<group>"; };
 		C279B4C92731475400A4B8AF /* APIRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRegister.swift; sourceTree = "<group>"; };
+		C27E6B1227473D240090D424 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		C27E6B1427473D700090D424 /* InboundBerhasilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboundBerhasilView.swift; sourceTree = "<group>"; };
 		C2C3C14127421854007236DC /* APIPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPassword.swift; sourceTree = "<group>"; };
 		C2C3C14327421863007236DC /* ForgetPassowordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPassowordViewModel.swift; sourceTree = "<group>"; };
 		C2C3C14927421EA3007236DC /* PICViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PICViewModel.swift; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				7C1BC0E22743A1E60022F4EB /* InboundConfirmationView.swift */,
+				C27E6B1427473D700090D424 /* InboundBerhasilView.swift */,
 			);
 			path = Inbound;
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 				C2C3C14327421863007236DC /* ForgetPassowordViewModel.swift */,
 				C2C3C14927421EA3007236DC /* PICViewModel.swift */,
 				7C1BC10427465F470022F4EB /* CheckBoxViewHolder.swift */,
+				C27E6B1227473D240090D424 /* RegisterViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -373,8 +379,10 @@
 				C2C3C14227421854007236DC /* APIPassword.swift in Sources */,
 				7C1BC10527465F470022F4EB /* CheckBoxViewHolder.swift in Sources */,
 				7C1BC0E82743A1E60022F4EB /* OutbondView.swift in Sources */,
+				C27E6B1527473D700090D424 /* InboundBerhasilView.swift in Sources */,
 				7CEA5FE5273D0B5300FC322F /* ContentView.swift in Sources */,
 				7CEA5FE4273D0B5300FC322F /* TestGroundApp.swift in Sources */,
+				C27E6B1327473D240090D424 /* RegisterViewModel.swift in Sources */,
 				7C1BC0F82743A20D0022F4EB /* UpdateView.swift in Sources */,
 				7C1BC0EE2743A1E60022F4EB /* StockListView.swift in Sources */,
 				C2DA06D92746523500141E30 /* Server.swift in Sources */,

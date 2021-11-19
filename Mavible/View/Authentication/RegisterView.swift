@@ -49,10 +49,13 @@ struct RegisterView: View {
                         Spacer()
                     }
                     TextField("Masukkan Nama", text: self.$username)
-                        .frame(width: UIScreen.main.bounds.width - 40)
+                        .font(.system(size: 14))
+                        .frame(height: 34)
+                        .textFieldStyle(PlainTextFieldStyle())
+                        .padding(.horizontal, 10)
+                        .cornerRadius(20)
+                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.bottom)
-                        .keyboardType(.default)
                         .autocapitalization(.none)
                     HStack {
                         Text("Perusahaan")
@@ -60,10 +63,13 @@ struct RegisterView: View {
                         Spacer()
                     }
                     TextField("Masukkan Company", text: self.$company)
-                        .frame(width: UIScreen.main.bounds.width - 40)
+                        .font(.system(size: 14))
+                        .frame(height: 34)
+                        .textFieldStyle(PlainTextFieldStyle())
+                        .padding(.horizontal, 10)
+                        .cornerRadius(20)
+                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.bottom)
-                        .keyboardType(.default)
                         .autocapitalization(.none)
                     HStack {
                         Text("Email")
@@ -71,10 +77,13 @@ struct RegisterView: View {
                         Spacer()
                     }
                     TextField("example@gmail.com", text: $signupVM.email)
-                        .frame(width: UIScreen.main.bounds.width - 40)
+                        .font(.system(size: 14))
+                        .frame(height: 34)
+                        .textFieldStyle(PlainTextFieldStyle())
+                        .padding(.horizontal, 10)
+                        .cornerRadius(20)
+                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.bottom)
-                        .keyboardType(.default)
                         .autocapitalization(.none)
                     HStack {
                         Text("Kata Sandi")
@@ -85,20 +94,24 @@ struct RegisterView: View {
                         Group {
                             if self.hiddenPassword {
                                 TextField("Masukkan Kata Sandi", text: self.$password)
-                                    .padding()
+                                    .font(.system(size: 14))
+                                    .frame(height: 34)
+                                    .textFieldStyle(PlainTextFieldStyle())
+                                    .padding(.horizontal, 10)
+                                    .cornerRadius(20)
+                                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
                                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                                    .frame(width: UIScreen.main.bounds.width - 37)
-                                    .cornerRadius(10)
-                                    .keyboardType(.default)
                                     .autocapitalization(.none)
                             } else {
                                 SecureField("Masukkan Kata Sandi", text:
                                                 self.$password)
-                                    .padding(.bottom)
+                                    .font(.system(size: 14))
+                                    .frame(height: 34)
+                                    .textFieldStyle(PlainTextFieldStyle())
+                                    .padding(.horizontal, 10)
+                                    .cornerRadius(20)
+                                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
                                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                                    .frame(width: UIScreen.main.bounds.width - 37)
-                                    .cornerRadius(10)
-                                    .keyboardType(.default)
                                     .autocapitalization(.none)
                             }
                             Button(action : {
@@ -106,7 +119,7 @@ struct RegisterView: View {
                             }) {
                                 Image(systemName: self.hiddenPassword ? "eye.fill" : "eye.slash.fill")
                                     .foregroundColor((self.hiddenPassword == true ) ? Color.green : Color.secondary)
-                            }.offset(x: 150, y: -8)
+                            }.offset(x: 150, y: 0)
                         }
                     }
                     HStack {
@@ -118,20 +131,24 @@ struct RegisterView: View {
                         Group {
                             if self.hiddenRepeatPassword {
                                 TextField("Masukkan Kata Sandi", text: self.$repeatPassword)
-                                    .padding()
+                                    .font(.system(size: 14))
+                                    .frame(height: 34)
+                                    .textFieldStyle(PlainTextFieldStyle())
+                                    .padding(.horizontal, 10)
+                                    .cornerRadius(20)
+                                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
                                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                                    .frame(width: UIScreen.main.bounds.width - 37)
-                                    .cornerRadius(10)
-                                    .keyboardType(.default)
                                     .autocapitalization(.none)
                             } else {
                                 SecureField("Masukkan Kata Sandi", text:
                                                 self.$repeatPassword)
-                                    .padding(.bottom)
+                                    .font(.system(size: 14))
+                                    .frame(height: 34)
+                                    .textFieldStyle(PlainTextFieldStyle())
+                                    .padding(.horizontal, 10)
+                                    .cornerRadius(20)
+                                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
                                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                                    .frame(width: UIScreen.main.bounds.width - 37)
-                                    .cornerRadius(10)
-                                    .keyboardType(.default)
                                     .autocapitalization(.none)
                             }
                             Button(action : {
@@ -139,7 +156,7 @@ struct RegisterView: View {
                             }) {
                                 Image(systemName: self.hiddenRepeatPassword ? "eye.fill" : "eye.slash.fill")
                                     .foregroundColor((self.hiddenRepeatPassword == true ) ? Color.green : Color.secondary)
-                            } .offset(x: 150, y: -8)
+                            } .offset(x: 150, y: 0)
                         }
                     }
                 }

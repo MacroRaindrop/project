@@ -1,10 +1,11 @@
 //
-//  inboundBerhasilView.swift
+//  InboundBerhasilView.swift
 //  Mavible
 //
-//  Created by vincent meidianto on 18/11/21.
+//  Created by Rostadhi Akbar, M.Pd on 19/11/21.
 //
 
+import Foundation
 import SwiftUI
 
 struct inboundBerhasilView: View {
