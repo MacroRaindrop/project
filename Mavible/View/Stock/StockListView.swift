@@ -69,9 +69,7 @@ struct StockListView: View {
                                 trailing:
                                     Button(action: {
                 self.showDetailView = true}) {Image(systemName: "plus")})
-            NavigationLink(destination: AddDetailView(showModal: .constant(true)), isActive: $showDetailView){
-                Text ("Add Detail")
-            }
+            AddDetailView(showModal: .constant(true))
             .onAppear(perform: {
                 listModel.getProduct()
             })

@@ -63,10 +63,10 @@ class APIRegister: ObservableObject{
             let result = try? JSONDecoder().decode(Register.self, from: data)
             if let result = result {
                 DispatchQueue.main.async {
-                    self.owner_name = result.owner_name
-                    self.name = result.name
-                    self.owner_email = result.owner_email
-                    self.owner_password = result.owner_password
+                    self.owner_name = result.ownerName
+                    self.name = result.staffName
+                    self.owner_email = result.ownerEmail
+                    self.owner_password = result.password
                 }
             } else {
                 DispatchQueue.main.async {

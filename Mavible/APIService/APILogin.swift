@@ -67,8 +67,8 @@ class APILogin: ObservableObject{
             
             if let result = result {
                 DispatchQueue.main.async {
-                    self.email = result.owner_email
-                    self.password = result.owner_password
+                    self.email = result.ownerEmail
+                    self.password = result.password
                     self.loggedIn = true
                 }
                 
