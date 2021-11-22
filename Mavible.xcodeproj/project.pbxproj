@@ -522,7 +522,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEPLOYMENT_LOCATION = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"Mavible/Preview Content\"";
+<<<<<<< Updated upstream
 				DEVELOPMENT_TEAM = WLF43H5K2J;
+=======
+				DEVELOPMENT_TEAM = 65GSHJ8762;
+>>>>>>> Stashed changes
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "";
@@ -557,7 +561,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEPLOYMENT_LOCATION = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"Mavible/Preview Content\"";
+<<<<<<< Updated upstream
 				DEVELOPMENT_TEAM = WLF43H5K2J;
+=======
+				DEVELOPMENT_TEAM = 65GSHJ8762;
+>>>>>>> Stashed changes
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "";

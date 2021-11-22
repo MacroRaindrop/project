@@ -16,6 +16,7 @@ struct LoginView: View {
     @State private var password: String = ""
     @State private var reminder: String = ""
     @State private var lupaSandi =  false
+    @State var hiddenPassword = false
     
     @State var authenticationDidFail: Bool = false
     @State var authenticationDidSucceed: Bool = false
@@ -47,7 +48,9 @@ struct LoginView: View {
                                 .font(Font.headline.weight(.bold))
                                 .padding(.bottom, 10.0)
                         }
+                        
                         UsernameTextField(username: self.$username, editingMode: $editingMode)
+<<<<<<< Updated upstream
                         HStack{
                             Text("Kata Sandi")
                                 .font(Font.headline.weight(.bold))
@@ -57,27 +60,111 @@ struct LoginView: View {
                             
                             Button("Lupa Sandi?") {
                                 print("Button tapped!")
+=======
+                        
+                        Text("Kata Sandi")
+                            .padding(.top, 20)
+                            .font(Font.headline.weight(.bold))
+                            .padding(.bottom, 10)
+                        
+                        ZStack {
+                            Group {
+                                if self.hiddenPassword {
+                                    TextField("Masukkan Kata Sandi", text: self.$password)
+                                        .font(.system(size: 14))
+                                        .frame(height: 34)
+                                        .textFieldStyle(PlainTextFieldStyle())
+                                        .padding(.horizontal, 10)
+                                        .cornerRadius(20)
+                                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
+                                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                                        .autocapitalization(.none)
+                                    
+                                    if usernameNull {
+                                        Text("email tidak boleh kosong")
+                                            .offset(y: 45)
+                                            .foregroundColor(.red)
+                                    }
+                                    else if passwordNull {
+                                        Text("password tidak boleh kosong")
+                                            .offset(y: 45)
+                                            .foregroundColor(.red)
+                                    }
+                                    else if authenticationDidFail {
+                                        Text("email atau password salah")
+                                            .offset(y: 45)
+                                            .foregroundColor(.red)
+                                    }
+                                
+                                } else {
+                                    SecureField("Masukkan Kata Sandi", text:
+                                                    self.$password)
+                                        .font(.system(size: 14))
+                                        .frame(height: 34)
+                                        .textFieldStyle(PlainTextFieldStyle())
+                                        .padding(.horizontal, 10)
+                                        .cornerRadius(20)
+                                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
+                                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                                        .autocapitalization(.none)
+                                    
+                                    if usernameNull {
+                                        Text("email tidak boleh kosong")
+                                            .offset(y: 45)
+                                            .foregroundColor(.red)
+                                    }
+                                    else if passwordNull {
+                                        Text("password tidak boleh kosong")
+                                            .offset(y: 45)
+                                            .foregroundColor(.red)
+                                    }
+                                    else if authenticationDidFail {
+                                        Text("email atau password salah")
+                                            .offset(y: 45)
+                                            .foregroundColor(.red)
+                                    }
+                                }
+                                Button(action : {
+                                    self.hiddenPassword.toggle()
+                                }) {
+                                    Image(systemName: self.hiddenPassword ? "eye.fill" : "eye.slash.fill")
+                                        .foregroundColor((self.hiddenPassword == true ) ? Color.green : Color.secondary)
+                                }
+                                .offset(x: 140, y: 0)
+>>>>>>> Stashed changes
                             }
-                            .foregroundColor(/*@START_MENU_TOKEN@*/Color("Accent")/*@END_MENU_TOKEN@*/)
+                            .padding(.bottom, 50)
                         }
-                        .padding(.top, 50)
-                        .padding(.bottom, 10.0)
-                        PasswordSecureField(password: self.$password)
-                        if usernameNull {
-                            Text("email tidak boleh kosong")
-                                .offset(y: -10)
-                                .foregroundColor(.red)
-                        }
-                        else if passwordNull {
-                            Text("password tidak boleh kosong")
-                                .offset(y: -10)
-                                .foregroundColor(.red)
-                        }
-                        else if authenticationDidFail {
-                            Text("email atau password salah")
-                                .offset(y: -10)
-                                .foregroundColor(.red)
-                        }
+                        //                        HStack{
+                        //                            Text("Kata Sandi")
+                        //                                .font(Font.headline.weight(.bold))
+                        //
+                        //
+                        //                            Spacer()
+                        //
+                        //                            Button("Lupa Sandi?") {
+                        //                                print("Button tapped!")
+                        //                            }
+                        //                            .foregroundColor(/*@START_MENU_TOKEN@*/Color("Accent")/*@END_MENU_TOKEN@*/)
+                        //                        }
+                        //                        .padding(.top, 50)
+                        //                        .padding(.bottom, 10.0)
+                        //                        PasswordSecureField(password: self.$password)
+                        //                        if usernameNull {
+                        //                            Text("email tidak boleh kosong")
+                        //                                .offset(y: -10)
+                        //                                .foregroundColor(.red)
+                        //                        }
+                        //                        else if passwordNull {
+                        //                            Text("password tidak boleh kosong")
+                        //                                .offset(y: -10)
+                        //                                .foregroundColor(.red)
+                        //                        }
+                        //                        else if authenticationDidFail {
+                        //                            Text("email atau password salah")
+                        //                                .offset(y: -10)
+                        //                                .foregroundColor(.red)
+                        //                        }
                         
                         
                         
@@ -86,17 +173,20 @@ struct LoginView: View {
                                 
                                 if username.isEmpty{
                                     usernameNull = true
-                                }else{
+                                }
+                                else{
                                     usernameNull = false
                                 }
                                 if password.isEmpty{
                                     passwordNull = true
-                                }else{
+                                }
+                                else{
                                     passwordNull = false
                                 }
-                                if usernameNull == true || passwordNull == true{
-                                    authenticationDidSucceed = false
-                                } else {
+                                if usernameNull == false || passwordNull == false {
+                                    authenticationDidFail = true
+                                }
+                                else {
                                     authenticationDidSucceed = true
                                 }
                                 if self.authenticationDidSucceed {
@@ -175,7 +265,7 @@ struct UsernameTextField : View {
     @Binding var editingMode: Bool
     
     var body: some View {
-        return TextField("Type your email", text: $username, onEditingChanged: {edit in
+        return TextField("Masukkan Email Anda", text: $username, onEditingChanged: {edit in
             if edit == true
             {self.editingMode = true}
             else
