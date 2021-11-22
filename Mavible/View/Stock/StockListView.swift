@@ -62,11 +62,17 @@ struct StockListView: View {
             .navigationBarItems(leading:
                                     Button(action: {print("...")}) {Text("Edit")},
                                 trailing:
-                                    Button(action: {
-                self.showDetailView = true}) {Image(systemName: "plus")})
-            NavigationLink(destination: AddDetailView(showModal: .constant(true)), isActive: $showDetailView){
-                Text ("Add Detail")
-            }
+                                    NavigationLink(destination: AddDetailView(showModal: .constant(true)), isActive: $showDetailView){
+                Button(action: {self.showDetailView = true}) {
+                    Image(systemName: "plus")
+                }
+            })
+                                
+////                                    Button(action: {
+////                self.showDetailView = true}) {Image(systemName: "plus")})
+//            NavigationLink(destination: AddDetailView(showModal: .constant(true)), isActive: $showDetailView){
+//                Button(action: { self.showDetailView = true}) {Image(systemName: "plus")})
+//            }
             .onAppear(perform: {
                 listModel.getProduct()
             })
