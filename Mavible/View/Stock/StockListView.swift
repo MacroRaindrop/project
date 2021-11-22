@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StockListView: View {
     
-    @State var imageList: String = "beras-asset"
+    @State var imageList: String = "POicon"
     @State var strokeColor: Color = .raindropColor
     
     @State private var query = ""
@@ -55,11 +55,6 @@ struct StockListView: View {
                     }
                     .tint(.red)
                 }
-                .onDelete(perform: { (indexSet) in
-                    DispatchQueue.main.async {
-                        listModel.removeItem(for: UUID())
-                    }
-                })
             }
             .listStyle(PlainListStyle())
             .searchable(text: $query)
@@ -69,11 +64,12 @@ struct StockListView: View {
                                 trailing:
                                     Button(action: {
                 self.showDetailView = true}) {Image(systemName: "plus")})
-            AddDetailView(showModal: .constant(true))
+            NavigationLink(destination: AddDetailView(showModal: .constant(true)), isActive: $showDetailView){
+                Text ("Add Detail")
+            }
             .onAppear(perform: {
                 listModel.getProduct()
             })
-            .navigationBarBackButtonHidden(true)
         }
     }
 }
