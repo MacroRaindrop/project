@@ -43,7 +43,4 @@ class GetProductViewModel: ObservableObject {
             }
         }.resume()
     }
-    func removeItem(for id: UUID){
-        self.items.removeAll(where: {$0.id == id})
-    }
 }
