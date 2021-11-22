@@ -6,3 +6,5 @@
 //
 
 import Foundation
+
+let urlAPI = "https://be-raindrop-app.herokuapp.com/companies"
