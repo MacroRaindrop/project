@@ -30,6 +30,7 @@
 		7CB61379273281A00039C14D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB613782732819F0039C14D /* Coordinator.swift */; };
 		7CB6137F273292F20039C14D /* Camera-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7CB6137E273292F20039C14D /* Camera-SwiftUI */; };
 		7CDA13292732E789005A2D05 /* SUImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDA13282732E789005A2D05 /* SUImagePickerView.swift */; };
+		7CE2BDF4274B96FE00054E0E /* loadingVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE2BDF3274B96FE00054E0E /* loadingVIew.swift */; };
 		7CEA5FE4273D0B5300FC322F /* TestGroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEA5FE2273D0B5300FC322F /* TestGroundApp.swift */; };
 		7CEA5FE5273D0B5300FC322F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEA5FE3273D0B5300FC322F /* ContentView.swift */; };
 		B745DE5127439EFD006A5AF4 /* PO1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B745DE5027439EFD006A5AF4 /* PO1View.swift */; };
@@ -75,6 +76,7 @@
 		7C2677F02731A84A00285B1A /* MaxTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxTextField.swift; sourceTree = "<group>"; };
 		7CB613782732819F0039C14D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7CDA13282732E789005A2D05 /* SUImagePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUImagePickerView.swift; sourceTree = "<group>"; };
+		7CE2BDF3274B96FE00054E0E /* loadingVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadingVIew.swift; sourceTree = "<group>"; };
 		7CEA5FE2273D0B5300FC322F /* TestGroundApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestGroundApp.swift; path = Mavible/TestGroundApp.swift; sourceTree = SOURCE_ROOT; };
 		7CEA5FE3273D0B5300FC322F /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = Mavible/ContentView.swift; sourceTree = SOURCE_ROOT; };
 		B745DE5027439EFD006A5AF4 /* PO1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PO1View.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			children = (
 				7C1BC0FC2743A2340022F4EB /* LoginView.swift */,
 				7C1BC0FD2743A2340022F4EB /* RegisterView.swift */,
+				7CE2BDF3274B96FE00054E0E /* loadingVIew.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				7C2286A9273C49DF00808B72 /* TutorDetail.swift in Sources */,
 				C2445A57272BE41F00C19C05 /* Product.swift in Sources */,
 				C2C3C14227421854007236DC /* APIPassword.swift in Sources */,
+				7CE2BDF4274B96FE00054E0E /* loadingVIew.swift in Sources */,
 				7C1BC10527465F470022F4EB /* CheckBoxViewHolder.swift in Sources */,
 				7C1BC0E82743A1E60022F4EB /* OutbondView.swift in Sources */,
 				C27E6B1527473D700090D424 /* InboundBerhasilView.swift in Sources */,

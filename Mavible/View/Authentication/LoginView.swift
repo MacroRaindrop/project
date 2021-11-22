@@ -11,6 +11,7 @@ import SwiftUI
 //let storedPassword = "Mypassword"
 
 struct LoginView: View {
+    @State private var isLoading = false
     @State private var username: String = ""
     @State private var password: String = ""
     @State private var reminder: String = ""
@@ -50,8 +51,8 @@ struct LoginView: View {
                         HStack{
                             Text("Kata Sandi")
                                 .font(Font.headline.weight(.bold))
-                                
-
+                            
+                            
                             Spacer()
                             
                             Button("Lupa Sandi?") {
@@ -78,8 +79,11 @@ struct LoginView: View {
                                 .foregroundColor(.red)
                         }
                         
+                        
+                        
                         NavigationLink(destination: DashboardView(), isActive: $willMoveToNextScreen){
                             Button(action: {
+                                
                                 if username.isEmpty{
                                     usernameNull = true
                                 }else{
@@ -98,9 +102,11 @@ struct LoginView: View {
                                 if self.authenticationDidSucceed {
                                     self.loginManager.loginCheck(owner_email: self.username, owner_password: self.password)
                                     //kasih timer/delay async
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+                                    delay()
+                                    //DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+                                        
                                         self.willMoveToNextScreen = self.loginManager.loggedIn
-                                    }
+                                   // }
                                 } else {
                                     print("gagal login")
                                 }
@@ -138,7 +144,22 @@ struct LoginView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
         .accentColor(Color.buttonFont)
+        
+            if isLoading{
+                
+                loadingVIew()
+            }
+        
+        
+            //.onAppear{ delay() }
     }
+    func delay(){
+        isLoading = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+            isLoading = false
+        }
+    }
+    
 }
 
 //struct LoginView_Previews: PreviewProvider {
@@ -199,7 +220,7 @@ struct LoginButtonContent : View {
             .background(Color.raindrop1Color)
             .clipShape(RoundedRectangle(cornerRadius: 20))
             .padding(.horizontal, 60)
-            
+        
     }
 }
 
