@@ -10,54 +10,84 @@ import SwiftUI
 struct SummaryView: View {
     var body: some View {
         NavigationView {
-            VStack{
-                ScrollView {
-                    HStack(alignment: .center){
-                        VStack(alignment: .center){
-                            Text("27").font(.system(size: 60))
-                            Text("Low Stock")
+            ScrollView {
+                VStack(spacing:0){
+                    Text("Inventori")
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding()
+                    
+                    ScrollView {
+                        HStack(alignment: .center){
+                            
+                            VStack(alignment: .center){
+                                Text("27")
+                                    .font(.system(size: 36))
+                                Text("Low Stock")
+                                    .font(.system(size: 15))
+                            }
+                            .frame(width: 109, height: 100)
+                            .background(RoundedCorners(color: .lowColor, tl: 15, tr: 0, bl: 15, br: 0))
+                            
+                            VStack(alignment: .center){
+                                Text("27")
+                                    .font(.system(size: 36))
+                                Text("No Stock")
+                                    .font(.system(size: 15))
+                            }
+                            .frame(width: 109, height: 100)
+                            .background(RoundedCorners(color: .noStockColor, tl: 0, tr: 0, bl: 0, br: 0))
+                            
+                            VStack(alignment: .center){
+                                Text("27")
+                                    .font(.system(size: 36))
+                                Text("Discontinued")
+                                    .font(.system(size: 15))
+                            }
+                            .frame(width: 109, height: 100)
+                            .background(RoundedCorners(color: .discontinueColor, tl: 0, tr: 15, bl: 0, br: 15))
                         }
+                    }
+                    
+                    Text("Purchase Order")
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
-                        .background(Color.lowColor)
-                        .frame(width: 100, height: 150)
-                        VStack(alignment: .center){
-                            Text("27").font(.system(size: 60))
-                            Text("No Stock")
+                    
+                    
+                    ScrollView {
+                        VStack{
+                            listPO2()
+                            Text("View All")
                         }
+                        .background(Color.ui.raindrop2) .cornerRadius(10)
+                    }
+                    
+                    Text("Barang Keluar Hari Ini")
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
-                        .background(Color.noStockColor)
-                        .frame(width: 100, height: 150)
-                        VStack(alignment: .center){
-                            Text("27").font(.system(size: 60))
-                            Text("Discontinued")
+                    
+                    ScrollView {
+                        VStack {
+                            listPO3()
+                            Text("View All")
                         }
-                        .padding()
-                        .background(Color.discontinueColor)
-                        .frame(width: 100, height: 150)
-                    } .padding(.horizontal, 30)
-                }.padding()
-                ScrollView {
-                    VStack{
-                        listPO2()
-                        Text("View All")
-                    }.background(Color.ui.raindrop2) .cornerRadius(10)
-                        .padding()
+                        .background(Color.ui.raindrop2) .cornerRadius(10)
+                    }
                 }
-                ScrollView {
-                    VStack {
-                        listPO3()
-                        Text("View All")
-                    }.background(Color.ui.raindrop2) .cornerRadius(10)
-                        .padding()
-                }
+                .navigationTitle("Ringkasan")
             }
-            .navigationTitle("Ringkasan")
+            .navigationBarBackButtonHidden(true)
+            .navigationBarHidden(false)
+//            .navigationBarTitleDisplayMode()
         }
-        .navigationBarBackButtonHidden(true)
-        .navigationBarHidden(true)
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
+
 
 
 struct SummaryView_Previews: PreviewProvider {
@@ -65,16 +95,52 @@ struct SummaryView_Previews: PreviewProvider {
         SummaryView()
     }
 }
+struct RoundedCorners: View {
+    var color: Color = .blue
+    var tl: CGFloat = 0.0
+    var tr: CGFloat = 0.0
+    var bl: CGFloat = 0.0
+    var br: CGFloat = 0.0
+    
+    var body: some View {
+        GeometryReader { geometry in
+            Path { path in
+                
+                let w = geometry.size.width
+                let h = geometry.size.height
+                
+                // Make sure we do not exceed the size of the rectangle
+                let tr = min(min(self.tr, h/2), w/2)
+                let tl = min(min(self.tl, h/2), w/2)
+                let bl = min(min(self.bl, h/2), w/2)
+                let br = min(min(self.br, h/2), w/2)
+                
+                path.move(to: CGPoint(x: w / 2.0, y: 0))
+                path.addLine(to: CGPoint(x: w - tr, y: 0))
+                path.addArc(center: CGPoint(x: w - tr, y: tr), radius: tr, startAngle: Angle(degrees: -90), endAngle: Angle(degrees: 0), clockwise: false)
+                path.addLine(to: CGPoint(x: w, y: h - br))
+                path.addArc(center: CGPoint(x: w - br, y: h - br), radius: br, startAngle: Angle(degrees: 0), endAngle: Angle(degrees: 90), clockwise: false)
+                path.addLine(to: CGPoint(x: bl, y: h))
+                path.addArc(center: CGPoint(x: bl, y: h - bl), radius: bl, startAngle: Angle(degrees: 90), endAngle: Angle(degrees: 180), clockwise: false)
+                path.addLine(to: CGPoint(x: 0, y: tl))
+                path.addArc(center: CGPoint(x: tl, y: tl), radius: tl, startAngle: Angle(degrees: 180), endAngle: Angle(degrees: 270), clockwise: false)
+                path.closeSubpath()
+            }
+            .fill(self.color)
+        }
+    }
+}
+
 struct listPO2: View {
     @State private var jumlah: String = ""
     var body: some View {
-//            List(positions, rowContent: { position in
-//                Text(position.name)
-//            })
-//                .font(.largeTitle)
-//            List(tutors) { tutor in
-//                TutorCell(tutor: tutor)
-//            }
+        //            List(positions, rowContent: { position in
+        //                Text(position.name)
+        //            })
+        //                .font(.largeTitle)
+        //            List(tutors) { tutor in
+        //                TutorCell(tutor: tutor)
+        //            }
         List(0 ..< 3) { item in
             HStack {
                 VStack (alignment: .leading, spacing: 5) {
@@ -104,13 +170,13 @@ struct listPO2: View {
 struct listPO3: View {
     @State private var jumlah: String = ""
     var body: some View {
-//            List(positions, rowContent: { position in
-//                Text(position.name)
-//            })
-//                .font(.largeTitle)
-//            List(tutors) { tutor in
-//                TutorCell(tutor: tutor)
-//            }
+        //            List(positions, rowContent: { position in
+        //                Text(position.name)
+        //            })
+        //                .font(.largeTitle)
+        //            List(tutors) { tutor in
+        //                TutorCell(tutor: tutor)
+        //            }
         List(0 ..< 3) { item in
             HStack {
                 VStack (alignment: .leading, spacing: 5) {
