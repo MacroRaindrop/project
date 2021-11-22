@@ -124,7 +124,6 @@ struct AddDetailView: View {
                             self.shouldPresentImagePicker = true
                             self.shouldPresentCamera = false
                         }), ActionSheet.Button.cancel()])
-                        
                     }
                 //                if (showCaptureImageView) {
                 //                        CaptureImageView(isShown: $showCaptureImageView, image: $image)
