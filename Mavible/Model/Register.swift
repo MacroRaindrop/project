@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct Register: Codable, Identifiable {
-    var id = UUID()
+    var id: Int
     var created_at: String
     var owner_name: String
     var name: String

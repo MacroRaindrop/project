@@ -9,15 +9,8 @@ import SwiftUI
 
 struct SummaryView: View {
     var body: some View {
-        ScrollView {
-            VStack {
-                HStack{
-                    VStack {
-                        Text("Ringkasan")
-                            .font(.title)
-                            .bold()
-                    }
-                }
+        NavigationView {
+            VStack{
                 ScrollView {
                     HStack(alignment: .center){
                         VStack(alignment: .center){
@@ -57,8 +50,12 @@ struct SummaryView: View {
                     }.background(Color.ui.raindrop2) .cornerRadius(10)
                         .padding()
                 }
-            }.navigationBarBackButtonHidden(true)
-        }.navigationBarBackButtonHidden(true)
+            }
+            .navigationTitle("Ringkasan")
+        }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(true)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

@@ -26,6 +26,7 @@ struct UpdateView: View {
             }
         }.navigationBarBackButtonHidden(true)
             .navigationBarHidden(true)
+            .navigationBarTitleDisplayMode(.inline)
     }
 }
 

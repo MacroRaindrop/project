@@ -46,10 +46,10 @@ struct HistoryView: View {
                 }
             }
             .navigationTitle("Riwayat")
-            .navigationBarBackButtonHidden(true)
-            .navigationBarHidden(false)
-            
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(false)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
