@@ -30,7 +30,7 @@ class APILogin: ObservableObject{
     func loginCheck(owner_email: String, owner_password: String ){
 
         // pasang url
-        guard let url = URL(string: "https://be-raindrop-app.herokuapp.com/login") else {
+        guard let url = URL(string: urlLogin) else {
             return
         }
         

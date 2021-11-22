@@ -7,3 +7,6 @@
 
 import Foundation
 import SwiftUI
+
+let urlRegister = "https://be-raindrop-app.herokuapp.com/companies"
+let urlLogin = "https://be-raindrop-app.herokuapp.com/login"

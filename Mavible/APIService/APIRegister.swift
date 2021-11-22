@@ -30,7 +30,7 @@ class APIRegister: ObservableObject{
     func registerCheck(owner_name: String, name: String, owner_email: String, owner_password: String) {
         
         //isi url & url session
-        guard let url = URL(string: "https://be-raindrop-app.herokuapp.com/companies") else {
+        guard let url = URL(string: urlRegister ) else {
             return
         }
         
