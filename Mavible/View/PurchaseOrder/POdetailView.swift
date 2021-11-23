@@ -34,10 +34,13 @@ struct POlist: View {
     @State var editingMode2: Bool = false
     @State private var jumlah: String = ""
     @State private var checked = false
+    @State private var checkedAll = false
+    
     var body: some View {
         //VStack{
             Button(action: {
-                checked = true
+//                CheckBoxView(checked: true, checkedAll: <#T##Binding<Bool>#>)
+            checkedAll = true
             }) {
                 Text("Pilih semua")
             }.frame(width: 350, alignment: .topTrailing)
@@ -60,7 +63,7 @@ struct POlist: View {
                         
                         POTextfield(jumlah: $jumlah, editingMode2: $editingMode2)
                     }
-                    CheckBoxView(checked: $checked)
+                    CheckBoxView(checked: checked, checkedAll: $checkedAll)
                 } .background(Color.white)
                     //.padding()
                 //                .overlay(

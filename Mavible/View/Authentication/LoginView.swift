@@ -185,6 +185,11 @@ struct LoginView: View {
                     Text(reminder).hidden()
                 }
                 .padding()
+                
+                if isLoading{
+                    loadingVIew()
+                }
+                
             }
             .navigationTitle(Text(""))
             .navigationBarHidden(true)
@@ -194,10 +199,7 @@ struct LoginView: View {
         .navigationBarHidden(true)
         .accentColor(Color.buttonFont)
         
-            if isLoading{
-                
-                loadingVIew()
-            }
+            
         
         
             //.onAppear{ delay() }

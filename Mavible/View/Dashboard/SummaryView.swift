@@ -238,7 +238,7 @@ struct listOutbound: View {
         List(0 ..< 30) { item in
             HStack {
                 Text("Kelapa Kering")
-                Text("- \(outboundHariIni)\(unit[1])")
+                Text("-\(outboundHariIni) \(unit[1])")
                     .frame(maxWidth: .infinity, alignment: .trailing)
                 
                 

@@ -9,7 +9,8 @@ import Foundation
 import SwiftUI
 
 struct CheckBoxView: View {
-    @Binding var checked: Bool
+    @State var checked: Bool
+    @Binding var checkedAll: Bool
 
     var body: some View {
         Image(systemName: checked ? "checkmark.square.fill" : "square")
@@ -24,9 +25,10 @@ struct CheckBoxView: View {
 struct CheckBoxView_Previews: PreviewProvider {
     struct CheckBoxViewHolder: View {
         @State var checked = false
+        @State var checkedAll = false
 
         var body: some View {
-            CheckBoxView(checked: $checked)
+            CheckBoxView(checked: checked, checkedAll: $checkedAll)
         }
     }
 
