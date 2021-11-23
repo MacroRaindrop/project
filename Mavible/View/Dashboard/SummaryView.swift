@@ -17,7 +17,6 @@ struct SummaryView: View {
     let profileImage = Image(systemName: "person.circle")
     
     var body: some View {
-        NavigationView {
             ScrollView {
                 VStack(spacing:0){
 //                    Spacer()
@@ -124,8 +123,6 @@ struct SummaryView: View {
             .navigationBarTitle(Text("Ringkasan"))
             .navigationBarTitleDisplayMode(.automatic)
             .navigationBarBackButtonHidden(true)
-            .navigationBarHidden(false)
-            
             //            .navigationTitle("Ringkasan")
             //            .navigationBarItems(trailing: Button(action: {
             //                             // button activates link
@@ -143,8 +140,6 @@ struct SummaryView: View {
             //                            isActive: $settingProfile) { EmptyView() }
             //
         }
-        //            .navigationBarTitleDisplayMode()
-    }
 }
 
 

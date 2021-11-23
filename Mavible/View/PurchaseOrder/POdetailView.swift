@@ -19,7 +19,6 @@ struct POdetail: View {
             Text("Pastikan jumlah barang yang datang sama dengan yang tertulis").padding(.top, 50) .padding()
             cekButton()
         }
-        .navigationBarHidden(true)
     }
 }
 
@@ -81,7 +80,7 @@ struct cekButton : View {
             .font(.system(size: 20))
             .padding()
             .foregroundColor(.black)
-            .background(Color.raindropColor)
+            .background(Color.raindrop1Color)
             .clipShape(RoundedRectangle(cornerRadius: 20))
         
     }
@@ -110,6 +109,7 @@ struct detailPO : View {
                 Text("PT binjai")
             }
         }.frame(width: 350, alignment: .leading)
+            .navigationBarTitleDisplayMode(.inline)
     }
 }
 struct listTextfield : View {
