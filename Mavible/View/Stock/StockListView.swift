@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct StockListView: View {
     
@@ -60,7 +61,7 @@ struct StockListView: View {
             .searchable(text: $query)
             .navigationBarTitle("Stok")
             .navigationBarItems(leading:
-                                    Button(action: {print("...")}) {Text("Edit")},
+                                    Button(action: {print("...")}) {Text("")},
                                 trailing:
                                     NavigationLink(destination: AddDetailView(showModal: .constant(true)), isActive: $showDetailView){
                 Button(action: {self.showDetailView = true}) {

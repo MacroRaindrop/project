@@ -9,7 +9,6 @@ import SwiftUI
 
 struct UpdateView: View {
     var body: some View {
-        NavigationView{
             ScrollView {
                 VStack(spacing: 20) {
                     Text("")
@@ -22,11 +21,10 @@ struct UpdateView: View {
                     //                        /*@PLACEHOLDER=Label Content@*/Text("Navigate")}
                     Outbound()
                 }
-                .navigationTitle("Pesanan")
+                .navigationBarTitle("Pesanan")
+                .navigationBarBackButtonHidden(true)
+                .navigationBarTitleDisplayMode(.automatic)
             }
-        }.navigationBarBackButtonHidden(true)
-            .navigationBarHidden(true)
-            .navigationBarTitleDisplayMode(.inline)
     }
 }
 
