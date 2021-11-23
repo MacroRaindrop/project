@@ -8,3 +8,6 @@
 import Foundation
 import Combine
 
+class forgetPassword: ObservableObject {
+    
+}

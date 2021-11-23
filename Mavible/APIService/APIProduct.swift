@@ -69,34 +69,34 @@ class APIProduct: ObservableObject {
     }
     
     func updateProduct() {
-            guard let url = URL(string: "https://be-raindrop-app.herokuapp.com/products") else { return }
+            let url = URL(string: "https://be-raindrop-app.herokuapp.com/products")!
+            let fullURL = url.appendingPathComponent("/PUT")
     
-            var request = URLRequest(url: url)
+            var request = URLRequest(url: fullURL)
             request.httpMethod = "PUT"
-            request.setValue("application/json", forHTTPHeaderField: "Accept")
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-    
-            URLSession.shared.dataTask(with: request) {(data, response, error) in
+            request.allHTTPHeaderFields = [ "Content-Type": "application/json",
+                                            "Accept": "application/json"
+                                        ]
+        
+            let body : [ String : Any] = ["name" : name, "minimum_stock" : minimum_stock, "image" : image, "unit" : unit, "description" : description, "quantity" : quantity]
+            let data = try! JSONSerialization.data(withJSONObject: body, options: .prettyPrinted)
+        
+
+            URLSession.shared.uploadTask(with: request, from: data) {(responseData, response,error) in
                 if let error = error {
                     print(error)
                     return
                 }
-                guard let data = data else {
-                    return
-                }
-                do {
-                    let decodedData = try JSONDecoder().decode(Product.self, from: data)
-                    DispatchQueue.main.async {
-                        self.name = decodedData.name
-                        self.minimum_stock = decodedData.minimum_stock
-                        self.image = decodedData.image
-                        self.unit = decodedData.unit
-                        self.description = decodedData.description
-                        self.quantity = decodedData.quantity
+                if let responseCode = (response as? HTTPURLResponse)?.statusCode, let responseData = responseData {
+                        guard responseCode == 200 else {
+                            print("Invalid response code: \(responseCode)")
+                            return
+                        }
+                        
+                        if let responseJSONData = try? JSONSerialization.jsonObject(with: responseData, options: .allowFragments) {
+                            print("Response JSON data = \(responseJSONData)")
+                        }
                     }
-                } catch {
-                    print(error)
-                }
             }.resume()
         }
 }
