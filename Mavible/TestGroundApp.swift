@@ -12,8 +12,9 @@ struct TestGroundApp: App {
     @StateObject var loginManager = APILogin()
     var body: some Scene {
         WindowGroup {
-            LoginView(loginManager: loginManager)
+//            LoginView(loginManager: loginManager)
 //            inboundBerhasilView()
+            DashboardView()
         }
     }
 }
