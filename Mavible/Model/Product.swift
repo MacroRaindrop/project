@@ -7,8 +7,8 @@
 
 import Foundation
 import SwiftUI
-
-struct Product: Codable {
+import Combine 
+struct Product: Codable, Identifiable {
     var id: Int
     var created_at: String
     var id_company: Int

@@ -7,8 +7,12 @@
 
 import Foundation
 import Combine
+import SwiftUI
+import SystemConfiguration
 
 class APIProduct: ObservableObject {
+    
+    var didChange = PassthroughSubject<APIProduct, Never>()
     //Variabel Untuk Parameter DB
     @Published var name: String = ""
     @Published var minimum_stock: Int = 0
@@ -16,20 +20,22 @@ class APIProduct: ObservableObject {
     @Published var unit: String = ""
     @Published var description: String = ""
     @Published var quantity: Int = 0
-    
-    
-    
+    @Published var theAPIReachable : Bool = true {
+        didSet {
+            didChange.send(self)
+        }
+    }
     //Array Dari Model
     @Published var products: [Product] = []
     
     //Fungsi Menambah Product Ke DB
-    func addProduct(name: String,minimum_stock: String,image: String,unit: String,description: String,quantity: String) {
+    func addProduct(name: String, minimum_stock: Int,image: String,unit: String,description: String,quantity: Int) {
         
         //URL DB
         guard let url = URL(string: "https://be-raindrop-app.herokuapp.com/products") else { return }
         
         //Encoding Body
-        let body : [ String : String] = ["name" : name, "minimum_stock" : minimum_stock, "image" : image, "unit" : unit, "description" : description, "quantity" : quantity]
+        let body : [String : Any] = ["name" : name, "minimum_stock" : minimum_stock, "image" : image, "unit" : unit, "description" : description, "quantity" : quantity]
         guard let finishBody = try? JSONEncoder().encode(body) else { return }
         
         var request = URLRequest(url: url)
@@ -42,8 +48,9 @@ class APIProduct: ObservableObject {
         let task = URLSession.shared.dataTask(with: request, completionHandler:  { (data, response, error) in
             guard let data = data, error == nil else {
                 print("Data Response Kosong")
-                
-               
+                DispatchQueue.main.async {
+                    self.theAPIReachable = false
+                }
                 return
             }
             print(response!)
@@ -69,34 +76,33 @@ class APIProduct: ObservableObject {
     }
     
     func updateProduct() {
-            let url = URL(string: "https://be-raindrop-app.herokuapp.com/products")!
-            let fullURL = url.appendingPathComponent("/PUT")
-    
-            var request = URLRequest(url: fullURL)
-            request.httpMethod = "PUT"
-            request.allHTTPHeaderFields = [ "Content-Type": "application/json",
-                                            "Accept": "application/json"
-                                        ]
+        let url = URL(string: "https://be-raindrop-app.herokuapp.com/products")!
+        let fullURL = url.appendingPathComponent("/PUT")
         
-            let body : [ String : Any] = ["name" : name, "minimum_stock" : minimum_stock, "image" : image, "unit" : unit, "description" : description, "quantity" : quantity]
-            let data = try! JSONSerialization.data(withJSONObject: body, options: .prettyPrinted)
+        var request = URLRequest(url: fullURL)
+        request.httpMethod = "PUT"
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-
-            URLSession.shared.uploadTask(with: request, from: data) {(responseData, response,error) in
-                if let error = error {
-                    print(error)
+        let body : [ String : Any] = ["name" : name, "minimum_stock" : minimum_stock, "image" : image, "unit" : unit, "description" : description, "quantity" : quantity]
+        let data = try! JSONSerialization.data(withJSONObject: body, options: .prettyPrinted)
+        
+        
+        URLSession.shared.uploadTask(with: request, from: data) {(responseData, response,error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            if let responseCode = (response as? HTTPURLResponse)?.statusCode, let responseData = responseData {
+                guard responseCode == 200 else {
+                    print("Invalid response code: \(responseCode)")
                     return
                 }
-                if let responseCode = (response as? HTTPURLResponse)?.statusCode, let responseData = responseData {
-                        guard responseCode == 200 else {
-                            print("Invalid response code: \(responseCode)")
-                            return
-                        }
-                        
-                        if let responseJSONData = try? JSONSerialization.jsonObject(with: responseData, options: .allowFragments) {
-                            print("Response JSON data = \(responseJSONData)")
-                        }
-                    }
-            }.resume()
-        }
+                
+                if let responseJSONData = try? JSONSerialization.jsonObject(with: responseData, options: .allowFragments) {
+                    print("Response JSON data = \(responseJSONData)")
+                }
+            }
+        }.resume()
+    }
 }

@@ -74,7 +74,6 @@ class APILogin: ObservableObject{
                 
             } else {
                 DispatchQueue.main.async {
-                   
                     print("Invalid response from web services!")
                     self.loggedIn = false
                 }
