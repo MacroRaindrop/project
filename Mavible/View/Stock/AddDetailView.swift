@@ -59,6 +59,7 @@ struct AddDetailView: View {
                     Button(action: {
                         if authenticationDidSucceed {
                             print("sukses")
+                            //TODO Nyambungin ke module api product
                         } else {
                             print("gagal menambah produk")
                         }
@@ -183,7 +184,7 @@ struct AddDetailView: View {
                 }
                 .padding()
             }
-        }
+        } .navigationBarHidden(true)
     }
 }
 
