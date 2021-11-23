@@ -38,6 +38,8 @@ struct AddDetailView: View {
     @State var imageName: String = ""
     @State var authenticationDidFail: Bool = false
     @State var authenticationDidSucceed: Bool = false
+    
+    
     @ObservedObject var fetchProduct = APIProduct()
     
     
@@ -53,7 +55,7 @@ struct AddDetailView: View {
                     Spacer()
                     Button(action: {
                         if authenticationDidSucceed {
-                            self.fetchProduct.addProduct(name: self.namaItem, minimum_stock: self.jumlahMinimalStok, image: self.imageName, unit: self.unitSelected, description: self.notesDeskripsi, quantity: self.jumlahProduk)
+                            self.fetchProduct.addProduct(product: )
                         } else {
                             print("gagal menambah produk")
                         }

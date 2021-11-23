@@ -29,14 +29,14 @@ class APIProduct: ObservableObject {
     @Published var products: [Product] = []
     
     //Fungsi Menambah Product Ke DB
-    func addProduct(name: String, minimum_stock: Int,image: String,unit: String,description: String,quantity: Int) {
+    func addProduct(product: Product) {
         
         //URL DB
         guard let url = URL(string: "https://be-raindrop-app.herokuapp.com/products") else { return }
         
         //Encoding Body
-        let body : [String : Any] = ["name" : name, "minimum_stock" : minimum_stock, "image" : image, "unit" : unit, "description" : description, "quantity" : quantity]
-        guard let finishBody = try? JSONEncoder().encode(body) else { return }
+        
+        guard let finishBody = try? JSONEncoder().encode(product) else { return }
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
