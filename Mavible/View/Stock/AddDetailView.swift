@@ -66,7 +66,7 @@ struct AddDetailView: View {
                 HStack {
                     Text("Nama Produk")
                         .padding()
-                    TextField("Masukkan nama barang", text: $namaProduk.text)
+                    TextField("Masukkan nama barang", text: self.$namaItem)
                         .font(.system(size: 14))
                         .frame(width: 193, height: 40, alignment: .trailing)
                         .textFieldStyle(PlainTextFieldStyle())

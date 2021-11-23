@@ -17,6 +17,8 @@ class APIProduct: ObservableObject {
     @Published var description: String = ""
     @Published var quantity: Int = 0
     
+    
+    
     //Array Dari Model
     @Published var products: [Product] = []
     
@@ -37,31 +39,36 @@ class APIProduct: ObservableObject {
         request.httpBody = finishBody
         
         //URL Session & Decode
-        URLSession.shared.dataTask(with: request) {(data, response, error) in
-            if let error = error {
-                print(error)
+        let task = URLSession.shared.dataTask(with: request, completionHandler:  { (data, response, error) in
+            guard let data = data, error == nil else {
+                print("Data Response Kosong")
+                
+               
                 return
             }
-            guard let data = data else {
-                print("Response Kosong")
-                return
-            }
-            do {
-                let decodedData = try JSONDecoder().decode(Product.self, from: data)
+            print(response!)
+            print(String(data: data, encoding: String.Encoding.utf8)!)
+            
+            let result = try? JSONDecoder().decode(Product.self, from: data)
+            if let result = result {
                 DispatchQueue.main.async {
-                    self.name = decodedData.name
-                    self.minimum_stock = decodedData.minimum_stock
-                    self.image = decodedData.image
-                    self.unit = decodedData.unit
-                    self.description = decodedData.description
-                    self.quantity = decodedData.quantity
+                    self.name = result.name
+                    self.minimum_stock = result.minimum_stock
+                    self.image = result.image
+                    self.unit = result.unit
+                    self.description = result.description
+                    self.quantity = result.quantity
                 }
-            } catch {
-                print(error)
+            } else {
+                DispatchQueue.main.async {
+                    print("gagal me-response dari web servis")
+                }
             }
-        }.resume()
+        })
+            task.resume()
     }
-        func updateProduct() {
+    
+    func updateProduct() {
             guard let url = URL(string: "https://be-raindrop-app.herokuapp.com/products") else { return }
     
             var request = URLRequest(url: url)
