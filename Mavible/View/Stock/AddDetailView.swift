@@ -56,7 +56,7 @@ struct AddDetailView: View {
                     Spacer()
                     Button(action: {
                         if authenticationDidSucceed {
-                            self.fetchProduct.addProduct(product: self.Product)
+//                            self.fetchProduct.addProduct(product: self.Product)
                         } else {
                             print("gagal menambah produk")
                         }
