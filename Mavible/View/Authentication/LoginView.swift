@@ -11,6 +11,7 @@ import SwiftUI
 //let storedPassword = "Mypassword"
 
 struct LoginView: View {
+    @State private var hasTimeElapsed = false
     @State private var isLoading = false
     @State private var username: String = ""
     @State private var password: String = ""
@@ -75,21 +76,7 @@ struct LoginView: View {
                                         .textFieldStyle(RoundedBorderTextFieldStyle())
                                         .autocapitalization(.none)
                                     
-                                    if usernameNull {
-                                        Text("email tidak boleh kosong")
-                                            .offset(y: 40)
-                                            .foregroundColor(.red)
-                                    }
-                                    else if passwordNull {
-                                        Text("password tidak boleh kosong")
-                                            .offset(y: 40)
-                                            .foregroundColor(.red)
-                                    }
-                                    else if authenticationDidFail {
-                                        Text("email atau password salah")
-                                            .offset(y: 40)
-                                            .foregroundColor(.red)
-                                    }
+                                    
                                     
                                 } else {
                                     SecureField("Masukkan Kata Sandi", text:
@@ -103,22 +90,33 @@ struct LoginView: View {
                                         .textFieldStyle(RoundedBorderTextFieldStyle())
                                         .autocapitalization(.none)
                                     
-                                    if usernameNull {
-                                        Text("email tidak boleh kosong")
-                                            .offset(y: 40)
-                                            .foregroundColor(.red)
-                                    }
-                                    else if passwordNull {
-                                        Text("password tidak boleh kosong")
-                                            .offset(y: 40)
-                                            .foregroundColor(.red)
-                                    }
-                                    else if authenticationDidFail {
-                                        Text("email atau password salah")
-                                            .offset(y: 40)
-                                            .foregroundColor(.red)
-                                    }
                                 }
+                                
+                                if usernameNull {
+                                    Text("email tidak boleh kosong")
+                                        .offset(y: 40)
+                                        .foregroundColor(.red)
+                                }
+                                else if passwordNull {
+                                    Text("password tidak boleh kosong")
+                                        .offset(y: 40)
+                                        .foregroundColor(.red)
+                                }
+                                else if authenticationDidFail {
+                                    Text("email atau password salah")
+                                        .offset(y: 40)
+                                        .foregroundColor(.red)
+                                }
+                               else if authenticationDidSucceed{
+//                                   DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+                                   
+                                   Text("email atau password salah")
+                                        .offset(y: 40)
+                                        .foregroundColor(.red)
+                                       // .onAppear(perform: delayText)
+                                   
+                                   
+                               }  //.task(delayText)
                                 Button(action : {
                                     self.hiddenPassword.toggle()
                                 }) {
@@ -148,20 +146,32 @@ struct LoginView: View {
                                 } else {
                                     authenticationDidSucceed = true
                                 }
+                                
                                 if self.authenticationDidSucceed {
+                                    isLoading = true
                                     self.loginManager.loginCheck(owner_email: self.username, owner_password: self.password)
+                                    authenticationDidFail = false
                                     //kasih timer/delay async
-                                    delay()
+                                    
                                     //DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+                                    
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 3){
                                         
                                         self.willMoveToNextScreen = self.loginManager.loggedIn
+                                        isLoading = false
+                                    }
+                                    
+//                                    delay()
                                    // }
                                 } else {
+                                    authenticationDidFail = true
                                     print("gagal login")
                                 }
+                                
                             }){
                                 LoginButtonContent()
                             }
+                             
                         }
                         if #available(iOS 15.0, *) {
                             NavigationLink(destination: RegisterView()){
@@ -185,6 +195,11 @@ struct LoginView: View {
                     Text(reminder).hidden()
                 }
                 .padding()
+                
+                if isLoading{
+                    loadingVIew()
+                }
+                
             }
             .navigationTitle(Text(""))
             .navigationBarHidden(true)
@@ -194,10 +209,7 @@ struct LoginView: View {
         .navigationBarHidden(true)
         .accentColor(Color.buttonFont)
         
-            if isLoading{
-                
-                loadingVIew()
-            }
+            
         
         
             //.onAppear{ delay() }
@@ -208,7 +220,12 @@ struct LoginView: View {
             isLoading = false
         }
     }
-    
+     func delayText() async {
+            // Delay of 7.5 seconds (1 second = 1_000_000_000 nanoseconds)
+         DispatchQueue.main.asyncAfter(deadline: .now() + 7.5) {
+                     hasTimeElapsed = true
+                 }
+        }
 }
 
 //struct LoginView_Previews: PreviewProvider {

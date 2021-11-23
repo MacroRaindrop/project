@@ -31,6 +31,7 @@
 		7CB6137F273292F20039C14D /* Camera-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7CB6137E273292F20039C14D /* Camera-SwiftUI */; };
 		7CDA13292732E789005A2D05 /* SUImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDA13282732E789005A2D05 /* SUImagePickerView.swift */; };
 		7CE2BDF4274B96FE00054E0E /* loadingVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE2BDF3274B96FE00054E0E /* loadingVIew.swift */; };
+		7CE356EC274CF939006EE579 /* PurchaseOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE356EB274CF939006EE579 /* PurchaseOrderView.swift */; };
 		7CEA5FE4273D0B5300FC322F /* TestGroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEA5FE2273D0B5300FC322F /* TestGroundApp.swift */; };
 		7CEA5FE5273D0B5300FC322F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEA5FE3273D0B5300FC322F /* ContentView.swift */; };
 		B745DE5127439EFD006A5AF4 /* PO1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B745DE5027439EFD006A5AF4 /* PO1View.swift */; };
@@ -78,6 +79,7 @@
 		7CB613782732819F0039C14D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7CDA13282732E789005A2D05 /* SUImagePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUImagePickerView.swift; sourceTree = "<group>"; };
 		7CE2BDF3274B96FE00054E0E /* loadingVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadingVIew.swift; sourceTree = "<group>"; };
+		7CE356EB274CF939006EE579 /* PurchaseOrderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseOrderView.swift; sourceTree = "<group>"; };
 		7CEA5FE2273D0B5300FC322F /* TestGroundApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestGroundApp.swift; path = Mavible/TestGroundApp.swift; sourceTree = SOURCE_ROOT; };
 		7CEA5FE3273D0B5300FC322F /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = Mavible/ContentView.swift; sourceTree = SOURCE_ROOT; };
 		B745DE5027439EFD006A5AF4 /* PO1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PO1View.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 		C2C3C13C27421676007236DC /* PurchaseOrder */ = {
 			isa = PBXGroup;
 			children = (
+				7CE356EB274CF939006EE579 /* PurchaseOrderView.swift */,
 				7C1BC0E52743A1E60022F4EB /* POdetailView.swift */,
 				7C1BC0E32743A1E60022F4EB /* DaftarPOView.swift */,
 				B745DE5027439EFD006A5AF4 /* PO1View.swift */,
@@ -373,6 +376,7 @@
 				7CDA13292732E789005A2D05 /* SUImagePickerView.swift in Sources */,
 				C2C3C14427421863007236DC /* ForgetPassowordViewModel.swift in Sources */,
 				C2445A51272BDF9900C19C05 /* Register.swift in Sources */,
+				7CE356EC274CF939006EE579 /* PurchaseOrderView.swift in Sources */,
 				7C2677E927314E5800285B1A /* ShowModalView.swift in Sources */,
 				7C1BC0EF2743A1E60022F4EB /* OutbondConfirmationView.swift in Sources */,
 				C2445A5B272BEFBB00C19C05 /* Color.swift in Sources */,
