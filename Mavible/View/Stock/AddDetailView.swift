@@ -43,7 +43,7 @@ struct AddDetailView: View {
     
     @ObservedObject var fetchProduct = APIProduct()
     
-    var body 
+    
     
     
     var body: some View {
