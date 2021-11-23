@@ -32,7 +32,7 @@ class APIProduct: ObservableObject {
     func addProduct(product: Product) {
         
         //URL DB
-        guard let url = URL(string: "https://be-raindrop-app.herokuapp.com/products") else { return }
+        guard let url = URL(string: urlProduct) else { return }
         
         //Encoding Body
         
@@ -76,7 +76,7 @@ class APIProduct: ObservableObject {
     }
     
     func updateProduct() {
-        let url = URL(string: "https://be-raindrop-app.herokuapp.com/products")!
+        let url = URL(string: urlProduct)!
         let fullURL = url.appendingPathComponent("/PUT")
         
         var request = URLRequest(url: fullURL)

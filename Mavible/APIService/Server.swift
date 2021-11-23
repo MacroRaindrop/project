@@ -10,3 +10,5 @@ import SwiftUI
 
 let urlRegister = "https://be-raindrop-app.herokuapp.com/companies"
 let urlLogin = "https://be-raindrop-app.herokuapp.com/login"
+let urlProduct = "https://be-raindrop-app.herokuapp.com/products"
+let urlPurchaseOrder = ""

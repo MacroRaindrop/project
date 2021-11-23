@@ -48,6 +48,9 @@
 		C27E6B1327473D240090D424 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27E6B1227473D240090D424 /* RegisterViewModel.swift */; };
 		C27E6B1527473D700090D424 /* InboundBerhasilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27E6B1427473D700090D424 /* InboundBerhasilView.swift */; };
 		C27E6B75274CDB360090D424 /* PurchaseOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27E6B74274CDB360090D424 /* PurchaseOrder.swift */; };
+		C27E6B77274D15E50090D424 /* APIPurchaseOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27E6B76274D15E50090D424 /* APIPurchaseOrder.swift */; };
+		C27E6B79274D16010090D424 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27E6B78274D16010090D424 /* Owner.swift */; };
+		C27E6B7B274D160C0090D424 /* Staff.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27E6B7A274D160C0090D424 /* Staff.swift */; };
 		C2C3C14227421854007236DC /* APIPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3C14127421854007236DC /* APIPassword.swift */; };
 		C2C3C14427421863007236DC /* ForgetPassowordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3C14327421863007236DC /* ForgetPassowordViewModel.swift */; };
 		C2C3C14A27421EA3007236DC /* PICViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3C14927421EA3007236DC /* PICViewModel.swift */; };
@@ -97,6 +100,9 @@
 		C27E6B1227473D240090D424 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		C27E6B1427473D700090D424 /* InboundBerhasilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboundBerhasilView.swift; sourceTree = "<group>"; };
 		C27E6B74274CDB360090D424 /* PurchaseOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOrder.swift; sourceTree = "<group>"; };
+		C27E6B76274D15E50090D424 /* APIPurchaseOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPurchaseOrder.swift; sourceTree = "<group>"; };
+		C27E6B78274D16010090D424 /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
+		C27E6B7A274D160C0090D424 /* Staff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staff.swift; sourceTree = "<group>"; };
 		C2C3C14127421854007236DC /* APIPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPassword.swift; sourceTree = "<group>"; };
 		C2C3C14327421863007236DC /* ForgetPassowordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPassowordViewModel.swift; sourceTree = "<group>"; };
 		C2C3C14927421EA3007236DC /* PICViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PICViewModel.swift; sourceTree = "<group>"; };
@@ -208,6 +214,8 @@
 				C2445A56272BE41F00C19C05 /* Product.swift */,
 				C24123B9273E16B600A33C22 /* GetProduct.swift */,
 				C27E6B74274CDB360090D424 /* PurchaseOrder.swift */,
+				C27E6B78274D16010090D424 /* Owner.swift */,
+				C27E6B7A274D160C0090D424 /* Staff.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -243,6 +251,7 @@
 				C279B4C7273146FF00A4B8AF /* APILogin.swift */,
 				C2E50D40273BA8E000FC6A57 /* APIProduct.swift */,
 				C2C3C14127421854007236DC /* APIPassword.swift */,
+				C27E6B76274D15E50090D424 /* APIPurchaseOrder.swift */,
 				C2DA06D82746523500141E30 /* Server.swift */,
 			);
 			path = APIService;
@@ -369,6 +378,7 @@
 				7CB61379273281A00039C14D /* Coordinator.swift in Sources */,
 				C24123C0273E17C000A33C22 /* StockView.swift in Sources */,
 				C24123BC273E16D200A33C22 /* GetProductViewModel.swift in Sources */,
+				C27E6B79274D16010090D424 /* Owner.swift in Sources */,
 				7C1BC0FA2743A20D0022F4EB /* HistoryView.swift in Sources */,
 				7C2677E727314E2B00285B1A /* AddDetailView.swift in Sources */,
 				7C1BC0E92743A1E60022F4EB /* OutbondListView.swift in Sources */,
@@ -379,6 +389,7 @@
 				7CE356EC274CF939006EE579 /* PurchaseOrderView.swift in Sources */,
 				7C2677E927314E5800285B1A /* ShowModalView.swift in Sources */,
 				7C1BC0EF2743A1E60022F4EB /* OutbondConfirmationView.swift in Sources */,
+				C27E6B7B274D160C0090D424 /* Staff.swift in Sources */,
 				C2445A5B272BEFBB00C19C05 /* Color.swift in Sources */,
 				C279B4CA2731475400A4B8AF /* APIRegister.swift in Sources */,
 				7C2677F12731A84A00285B1A /* MaxTextField.swift in Sources */,
@@ -386,6 +397,7 @@
 				C24123BA273E16B600A33C22 /* GetProduct.swift in Sources */,
 				7C2286A9273C49DF00808B72 /* TutorDetail.swift in Sources */,
 				C2445A57272BE41F00C19C05 /* Product.swift in Sources */,
+				C27E6B77274D15E50090D424 /* APIPurchaseOrder.swift in Sources */,
 				C2C3C14227421854007236DC /* APIPassword.swift in Sources */,
 				7CE2BDF4274B96FE00054E0E /* loadingVIew.swift in Sources */,
 				7C1BC10527465F470022F4EB /* CheckBoxViewHolder.swift in Sources */,
