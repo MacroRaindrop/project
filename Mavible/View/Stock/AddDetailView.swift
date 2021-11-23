@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 import Camera_SwiftUI
 
 
@@ -132,12 +133,10 @@ struct AddDetailView: View {
                     HStack{
                         Text("Jumlah")
                             .padding()
-                        
                         //                        TextField("0", text: $jumlahProduk)
                         //                            .keyboardType(.numberPad)
                         //                            .textFieldStyle(RoundedBorderTextFieldStyle())
                         //                            .padding()
-                        
                         TextField("0", text: self.$jumlahProduk)
                             .font(.system(size: 14))
                             .frame(height: 34)
