@@ -43,6 +43,8 @@ struct AddDetailView: View {
     
     @ObservedObject var fetchProduct = APIProduct()
     
+    var body 
+    
     
     var body: some View {
         ScrollView{
@@ -56,7 +58,7 @@ struct AddDetailView: View {
                     Spacer()
                     Button(action: {
                         if authenticationDidSucceed {
-                            self.fetchProduct.addProduct(product: self.Product)
+                            self.fetchProduct.addProduct(product: )
                         } else {
                             print("gagal menambah produk")
                         }
