@@ -11,10 +11,12 @@ import SwiftUI
 //let storedPassword = "Mypassword"
 
 struct LoginView: View {
+    @State private var isLoading = false
     @State private var username: String = ""
     @State private var password: String = ""
     @State private var reminder: String = ""
     @State private var lupaSandi =  false
+    @State var hiddenPassword = false
     
     @State var authenticationDidFail: Bool = false
     @State var authenticationDidSucceed: Bool = false
@@ -50,36 +52,87 @@ struct LoginView: View {
                         HStack{
                             Text("Kata Sandi")
                                 .font(Font.headline.weight(.bold))
-                                
-
-                            Spacer()
                             
                             Button("Lupa Sandi?") {
                                 print("Button tapped!")
                             }
+                            .frame(maxWidth: .infinity, alignment: .trailing)
                             .foregroundColor(/*@START_MENU_TOKEN@*/Color("Accent")/*@END_MENU_TOKEN@*/)
                         }
                         .padding(.top, 50)
                         .padding(.bottom, 10.0)
-                        PasswordSecureField(password: self.$password)
-                        if usernameNull {
-                            Text("email tidak boleh kosong")
-                                .offset(y: -10)
-                                .foregroundColor(.red)
-                        }
-                        else if passwordNull {
-                            Text("password tidak boleh kosong")
-                                .offset(y: -10)
-                                .foregroundColor(.red)
-                        }
-                        else if authenticationDidFail {
-                            Text("email atau password salah")
-                                .offset(y: -10)
-                                .foregroundColor(.red)
+                        
+                        ZStack {
+                            Group{
+                                if self.hiddenPassword {
+                                    TextField("Masukkan Kata Sandi", text: self.$password)
+                                        .font(.system(size: 14))
+                                        .frame(height: 34)
+                                        .textFieldStyle(PlainTextFieldStyle())
+                                        .padding(.horizontal, 10)
+                                        .cornerRadius(20)
+                                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
+                                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                                        .autocapitalization(.none)
+                                    
+                                    if usernameNull {
+                                        Text("email tidak boleh kosong")
+                                            .offset(y: 40)
+                                            .foregroundColor(.red)
+                                    }
+                                    else if passwordNull {
+                                        Text("password tidak boleh kosong")
+                                            .offset(y: 40)
+                                            .foregroundColor(.red)
+                                    }
+                                    else if authenticationDidFail {
+                                        Text("email atau password salah")
+                                            .offset(y: 40)
+                                            .foregroundColor(.red)
+                                    }
+                                    
+                                } else {
+                                    SecureField("Masukkan Kata Sandi", text:
+                                                    self.$password)
+                                        .font(.system(size: 14))
+                                        .frame(height: 34)
+                                        .textFieldStyle(PlainTextFieldStyle())
+                                        .padding(.horizontal, 10)
+                                        .cornerRadius(20)
+                                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
+                                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                                        .autocapitalization(.none)
+                                    
+                                    if usernameNull {
+                                        Text("email tidak boleh kosong")
+                                            .offset(y: 40)
+                                            .foregroundColor(.red)
+                                    }
+                                    else if passwordNull {
+                                        Text("password tidak boleh kosong")
+                                            .offset(y: 40)
+                                            .foregroundColor(.red)
+                                    }
+                                    else if authenticationDidFail {
+                                        Text("email atau password salah")
+                                            .offset(y: 40)
+                                            .foregroundColor(.red)
+                                    }
+                                }
+                                Button(action : {
+                                    self.hiddenPassword.toggle()
+                                }) {
+                                    Image(systemName: self.hiddenPassword ? "eye.fill" : "eye.slash.fill")
+                                        .foregroundColor((self.hiddenPassword == true ) ? Color.green : Color.secondary)
+                                }
+                                .offset(x: 140, y: 0)
+                            }
+                            .padding(.bottom, 50)
                         }
                         
                         NavigationLink(destination: DashboardView(), isActive: $willMoveToNextScreen){
                             Button(action: {
+                                
                                 if username.isEmpty{
                                     usernameNull = true
                                 }else{
@@ -98,9 +151,11 @@ struct LoginView: View {
                                 if self.authenticationDidSucceed {
                                     self.loginManager.loginCheck(owner_email: self.username, owner_password: self.password)
                                     //kasih timer/delay async
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+                                    delay()
+                                    //DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+                                        
                                         self.willMoveToNextScreen = self.loginManager.loggedIn
-                                    }
+                                   // }
                                 } else {
                                     print("gagal login")
                                 }
@@ -130,6 +185,11 @@ struct LoginView: View {
                     Text(reminder).hidden()
                 }
                 .padding()
+                
+                if isLoading{
+                    loadingVIew()
+                }
+                
             }
             .navigationTitle(Text(""))
             .navigationBarHidden(true)
@@ -138,7 +198,19 @@ struct LoginView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
         .accentColor(Color.buttonFont)
+        
+            
+        
+        
+            //.onAppear{ delay() }
     }
+    func delay(){
+        isLoading = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+            isLoading = false
+        }
+    }
+    
 }
 
 //struct LoginView_Previews: PreviewProvider {
@@ -154,7 +226,7 @@ struct UsernameTextField : View {
     @Binding var editingMode: Bool
     
     var body: some View {
-        return TextField("Type your email", text: $username, onEditingChanged: {edit in
+        return TextField("Masukkan Email Anda", text: $username, onEditingChanged: {edit in
             if edit == true
             {self.editingMode = true}
             else
@@ -199,7 +271,7 @@ struct LoginButtonContent : View {
             .background(Color.raindrop1Color)
             .clipShape(RoundedRectangle(cornerRadius: 20))
             .padding(.horizontal, 60)
-            
+        
     }
 }
 

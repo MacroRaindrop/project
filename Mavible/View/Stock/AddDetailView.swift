@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 import Camera_SwiftUI
 
 
@@ -29,6 +30,7 @@ struct AddDetailView: View {
     @State var minNull: Bool = true
     
     @ObservedObject var namaProduk = TextBindingManager(limit: 20)
+    
     @State var namaItem: String = ""
     @State var image: Image? = Image("InboundIcon")
     @State var jumlahProduk : String = ""
@@ -37,6 +39,8 @@ struct AddDetailView: View {
     @State var imageName: String = ""
     @State var authenticationDidFail: Bool = false
     @State var authenticationDidSucceed: Bool = false
+    
+    
     @ObservedObject var fetchProduct = APIProduct()
     
     
@@ -52,7 +56,7 @@ struct AddDetailView: View {
                     Spacer()
                     Button(action: {
                         if authenticationDidSucceed {
-                            self.fetchProduct.addProduct(name: self.namaItem, minimum_stock: self.jumlahMinimalStok, image: self.imageName, unit: self.unitSelected, description: self.notesDeskripsi, quantity: self.jumlahProduk)
+//                            self.fetchProduct.addProduct(product: self.Product)
                         } else {
                             print("gagal menambah produk")
                         }
@@ -66,7 +70,7 @@ struct AddDetailView: View {
                 HStack {
                     Text("Nama Produk")
                         .padding()
-                    TextField("Masukkan nama barang", text: $namaProduk.text)
+                    TextField("Masukkan nama barang", text: self.$namaItem)
                         .font(.system(size: 14))
                         .frame(width: 193, height: 40, alignment: .trailing)
                         .textFieldStyle(PlainTextFieldStyle())
@@ -124,7 +128,6 @@ struct AddDetailView: View {
                             self.shouldPresentImagePicker = true
                             self.shouldPresentCamera = false
                         }), ActionSheet.Button.cancel()])
-                        
                     }
                 //                if (showCaptureImageView) {
                 //                        CaptureImageView(isShown: $showCaptureImageView, image: $image)
@@ -133,12 +136,10 @@ struct AddDetailView: View {
                     HStack{
                         Text("Jumlah")
                             .padding()
-                        
                         //                        TextField("0", text: $jumlahProduk)
                         //                            .keyboardType(.numberPad)
                         //                            .textFieldStyle(RoundedBorderTextFieldStyle())
                         //                            .padding()
-                        
                         TextField("0", text: self.$jumlahProduk)
                             .font(.system(size: 14))
                             .frame(height: 34)

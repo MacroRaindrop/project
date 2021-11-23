@@ -30,6 +30,8 @@
 		7CB61379273281A00039C14D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB613782732819F0039C14D /* Coordinator.swift */; };
 		7CB6137F273292F20039C14D /* Camera-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7CB6137E273292F20039C14D /* Camera-SwiftUI */; };
 		7CDA13292732E789005A2D05 /* SUImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDA13282732E789005A2D05 /* SUImagePickerView.swift */; };
+		7CE2BDF4274B96FE00054E0E /* loadingVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE2BDF3274B96FE00054E0E /* loadingVIew.swift */; };
+		7CE356EC274CF939006EE579 /* PurchaseOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE356EB274CF939006EE579 /* PurchaseOrderView.swift */; };
 		7CEA5FE4273D0B5300FC322F /* TestGroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEA5FE2273D0B5300FC322F /* TestGroundApp.swift */; };
 		7CEA5FE5273D0B5300FC322F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEA5FE3273D0B5300FC322F /* ContentView.swift */; };
 		B745DE5127439EFD006A5AF4 /* PO1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B745DE5027439EFD006A5AF4 /* PO1View.swift */; };
@@ -45,6 +47,7 @@
 		C279B4CA2731475400A4B8AF /* APIRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = C279B4C92731475400A4B8AF /* APIRegister.swift */; };
 		C27E6B1327473D240090D424 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27E6B1227473D240090D424 /* RegisterViewModel.swift */; };
 		C27E6B1527473D700090D424 /* InboundBerhasilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27E6B1427473D700090D424 /* InboundBerhasilView.swift */; };
+		C27E6B75274CDB360090D424 /* PurchaseOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27E6B74274CDB360090D424 /* PurchaseOrder.swift */; };
 		C2C3C14227421854007236DC /* APIPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3C14127421854007236DC /* APIPassword.swift */; };
 		C2C3C14427421863007236DC /* ForgetPassowordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3C14327421863007236DC /* ForgetPassowordViewModel.swift */; };
 		C2C3C14A27421EA3007236DC /* PICViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3C14927421EA3007236DC /* PICViewModel.swift */; };
@@ -75,6 +78,8 @@
 		7C2677F02731A84A00285B1A /* MaxTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxTextField.swift; sourceTree = "<group>"; };
 		7CB613782732819F0039C14D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7CDA13282732E789005A2D05 /* SUImagePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUImagePickerView.swift; sourceTree = "<group>"; };
+		7CE2BDF3274B96FE00054E0E /* loadingVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadingVIew.swift; sourceTree = "<group>"; };
+		7CE356EB274CF939006EE579 /* PurchaseOrderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseOrderView.swift; sourceTree = "<group>"; };
 		7CEA5FE2273D0B5300FC322F /* TestGroundApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestGroundApp.swift; path = Mavible/TestGroundApp.swift; sourceTree = SOURCE_ROOT; };
 		7CEA5FE3273D0B5300FC322F /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = Mavible/ContentView.swift; sourceTree = SOURCE_ROOT; };
 		B745DE5027439EFD006A5AF4 /* PO1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PO1View.swift; sourceTree = "<group>"; };
@@ -91,6 +96,7 @@
 		C279B4C92731475400A4B8AF /* APIRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRegister.swift; sourceTree = "<group>"; };
 		C27E6B1227473D240090D424 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		C27E6B1427473D700090D424 /* InboundBerhasilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboundBerhasilView.swift; sourceTree = "<group>"; };
+		C27E6B74274CDB360090D424 /* PurchaseOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseOrder.swift; sourceTree = "<group>"; };
 		C2C3C14127421854007236DC /* APIPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPassword.swift; sourceTree = "<group>"; };
 		C2C3C14327421863007236DC /* ForgetPassowordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPassowordViewModel.swift; sourceTree = "<group>"; };
 		C2C3C14927421EA3007236DC /* PICViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PICViewModel.swift; sourceTree = "<group>"; };
@@ -135,6 +141,7 @@
 			children = (
 				7C1BC0FC2743A2340022F4EB /* LoginView.swift */,
 				7C1BC0FD2743A2340022F4EB /* RegisterView.swift */,
+				7CE2BDF3274B96FE00054E0E /* loadingVIew.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -200,6 +207,7 @@
 				C2445A50272BDF9900C19C05 /* Register.swift */,
 				C2445A56272BE41F00C19C05 /* Product.swift */,
 				C24123B9273E16B600A33C22 /* GetProduct.swift */,
+				C27E6B74274CDB360090D424 /* PurchaseOrder.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -264,6 +272,7 @@
 		C2C3C13C27421676007236DC /* PurchaseOrder */ = {
 			isa = PBXGroup;
 			children = (
+				7CE356EB274CF939006EE579 /* PurchaseOrderView.swift */,
 				7C1BC0E52743A1E60022F4EB /* POdetailView.swift */,
 				7C1BC0E32743A1E60022F4EB /* DaftarPOView.swift */,
 				B745DE5027439EFD006A5AF4 /* PO1View.swift */,
@@ -367,6 +376,7 @@
 				7CDA13292732E789005A2D05 /* SUImagePickerView.swift in Sources */,
 				C2C3C14427421863007236DC /* ForgetPassowordViewModel.swift in Sources */,
 				C2445A51272BDF9900C19C05 /* Register.swift in Sources */,
+				7CE356EC274CF939006EE579 /* PurchaseOrderView.swift in Sources */,
 				7C2677E927314E5800285B1A /* ShowModalView.swift in Sources */,
 				7C1BC0EF2743A1E60022F4EB /* OutbondConfirmationView.swift in Sources */,
 				C2445A5B272BEFBB00C19C05 /* Color.swift in Sources */,
@@ -377,12 +387,14 @@
 				7C2286A9273C49DF00808B72 /* TutorDetail.swift in Sources */,
 				C2445A57272BE41F00C19C05 /* Product.swift in Sources */,
 				C2C3C14227421854007236DC /* APIPassword.swift in Sources */,
+				7CE2BDF4274B96FE00054E0E /* loadingVIew.swift in Sources */,
 				7C1BC10527465F470022F4EB /* CheckBoxViewHolder.swift in Sources */,
 				7C1BC0E82743A1E60022F4EB /* OutbondView.swift in Sources */,
 				C27E6B1527473D700090D424 /* InboundBerhasilView.swift in Sources */,
 				7CEA5FE5273D0B5300FC322F /* ContentView.swift in Sources */,
 				7CEA5FE4273D0B5300FC322F /* TestGroundApp.swift in Sources */,
 				C27E6B1327473D240090D424 /* RegisterViewModel.swift in Sources */,
+				C27E6B75274CDB360090D424 /* PurchaseOrder.swift in Sources */,
 				7C1BC0F82743A20D0022F4EB /* UpdateView.swift in Sources */,
 				7C1BC0EE2743A1E60022F4EB /* StockListView.swift in Sources */,
 				C2DA06D92746523500141E30 /* Server.swift in Sources */,
@@ -518,7 +530,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEPLOYMENT_LOCATION = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"Mavible/Preview Content\"";
-				DEVELOPMENT_TEAM = XWQ8XX5C45;
+				DEVELOPMENT_TEAM = WLF43H5K2J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "";
@@ -553,7 +565,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEPLOYMENT_LOCATION = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"Mavible/Preview Content\"";
-				DEVELOPMENT_TEAM = XWQ8XX5C45;
+				DEVELOPMENT_TEAM = WLF43H5K2J;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "";

@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import Combine
 
 struct StockListView: View {
     
-    @State var imageList: String = "beras-asset"
+    @State var imageList: String = "POicon"
     @State var strokeColor: Color = .raindropColor
     
     @State private var query = ""
@@ -55,27 +56,27 @@ struct StockListView: View {
                     }
                     .tint(.red)
                 }
-                .onDelete(perform: { (indexSet) in
-                    DispatchQueue.main.async {
-                        listModel.removeItem(for: UUID())
-                    }
-                })
             }
             .listStyle(PlainListStyle())
             .searchable(text: $query)
             .navigationBarTitle("Stok")
             .navigationBarItems(leading:
-                                    Button(action: {print("...")}) {Text("Edit")},
+                                    Button(action: {print("...")}) {Text("")},
                                 trailing:
-                                    Button(action: {
-                self.showDetailView = true}) {Image(systemName: "plus")})
-            NavigationLink(destination: AddDetailView(showModal: .constant(true)), isActive: $showDetailView){
-                Text ("Add Detail")
-            }
+                                    NavigationLink(destination: AddDetailView(showModal: .constant(true)), isActive: $showDetailView){
+                Button(action: {self.showDetailView = true}) {
+                    Image(systemName: "plus")
+                }
+            })
+                                
+////                                    Button(action: {
+////                self.showDetailView = true}) {Image(systemName: "plus")})
+//            NavigationLink(destination: AddDetailView(showModal: .constant(true)), isActive: $showDetailView){
+//                Button(action: { self.showDetailView = true}) {Image(systemName: "plus")})
+//            }
             .onAppear(perform: {
                 listModel.getProduct()
             })
-            .navigationBarBackButtonHidden(true)
         }
     }
 }
