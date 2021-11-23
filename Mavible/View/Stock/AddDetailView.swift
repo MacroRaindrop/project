@@ -30,6 +30,7 @@ struct AddDetailView: View {
     @State var minNull: Bool = true
     
     @ObservedObject var namaProduk = TextBindingManager(limit: 20)
+    
     @State var namaItem: String = ""
     @State var image: Image? = Image("InboundIcon")
     @State var jumlahProduk : String = ""
@@ -55,7 +56,7 @@ struct AddDetailView: View {
                     Spacer()
                     Button(action: {
                         if authenticationDidSucceed {
-                            self.fetchProduct.addProduct(product: )
+                            self.fetchProduct.addProduct(product: self.Product)
                         } else {
                             print("gagal menambah produk")
                         }
