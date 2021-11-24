@@ -102,21 +102,26 @@ struct LoginView: View {
                                         .offset(y: 40)
                                         .foregroundColor(.red)
                                 }
-                                else if authenticationDidFail {
+                                if authenticationDidFail {
                                     Text("email atau password salah")
                                         .offset(y: 40)
                                         .foregroundColor(.red)
                                 }
-                               else if authenticationDidSucceed{
-//                                   DispatchQueue.main.asyncAfter(deadline: .now() + 3){
-                                   
-                                   Text("email atau password salah")
-                                        .offset(y: 40)
-                                        .foregroundColor(.red)
-                                       // .onAppear(perform: delayText)
-                                   
-                                   
-                               }  //.task(delayText)
+//                                if  == false{
+//                                    Text("email atau password salah")
+//                                        .offset(y: 40)
+//                                        .foregroundColor(.red)
+//                                }
+////                               else if authenticationDidSucceed{
+////                                   DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+//
+//                                   Text("email atau password salah")
+//                                        .offset(y: 40)
+//                                        .foregroundColor(.red)
+//                                       // .onAppear(perform: delayText)
+//
+//
+//                               }  //.task(delayText)
                                 Button(action : {
                                     self.hiddenPassword.toggle()
                                 }) {
@@ -149,25 +154,20 @@ struct LoginView: View {
                                 
                                 if self.authenticationDidSucceed {
                                     isLoading = true
-                                    self.loginManager.loginCheck(owner_email: self.username, owner_password: self.password)
-                                    authenticationDidFail = false
-                                    //kasih timer/delay async
+                                    self.loginManager.loginCheck(owner_email: self.username, owner_password: self.password, completion: { status in
+                                        if status == true{
+                                            authenticationDidFail = false
+                                            self.willMoveToNextScreen = self.loginManager.loggedIn
+                                            isLoading = false
+                                        }else{
+                                            authenticationDidFail = true
+                                            isLoading = false
+                                            
+                                        }
+                                    })
+                                  
                                     
-                                    //DispatchQueue.main.asyncAfter(deadline: .now() + 3){
-                                    
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 3){
-                                        
-                                        self.willMoveToNextScreen = self.loginManager.loggedIn
-                                        isLoading = false
-                                    }
-                                    
-//                                    delay()
-                                   // }
-                                } else {
-                                    authenticationDidFail = true
-                                    print("gagal login")
                                 }
-                                
                             }){
                                 LoginButtonContent()
                             }
