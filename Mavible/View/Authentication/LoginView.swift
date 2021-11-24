@@ -107,21 +107,8 @@ struct LoginView: View {
                                         .offset(y: 40)
                                         .foregroundColor(.red)
                                 }
-//                                if  == false{
-//                                    Text("email atau password salah")
-//                                        .offset(y: 40)
-//                                        .foregroundColor(.red)
-//                                }
-////                               else if authenticationDidSucceed{
-////                                   DispatchQueue.main.asyncAfter(deadline: .now() + 3){
-//
-//                                   Text("email atau password salah")
-//                                        .offset(y: 40)
-//                                        .foregroundColor(.red)
-//                                       // .onAppear(perform: delayText)
-//
-//
-//                               }  //.task(delayText)
+                                
+                                
                                 Button(action : {
                                     self.hiddenPassword.toggle()
                                 }) {
