@@ -82,9 +82,6 @@ class APILogin: ObservableObject{
                 }
                 
             }
-            
-        
-            
         }.resume()
     }
 }
