@@ -31,4 +31,24 @@ class OrderService : ObservableObject {
         })
         task.resume()
     }
+    func getOrder(order:Order){
+        guard let url = URL(string: urlPurchaseOrder) else { return }
+        URLSession.shared.dataTask(with: url) {(data, response, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            guard let data = data else {
+                return
+            }
+            do {
+                let decodedData = try JSONDecoder().decode([Order].self, from: data)
+                DispatchQueue.main.async {
+                    self.purchaseOrders = decodedData
+                }
+            } catch {
+                print(error)
+            }
+        }.resume()
+    }
 }
