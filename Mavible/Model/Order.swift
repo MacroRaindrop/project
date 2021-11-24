@@ -22,9 +22,8 @@ struct Order: Codable {
         case date = "date"
         case products = "products"
     }
-    struct Products: Codable{
-        var id_product: Int
-        var quantity: Int
-    }
-
+}
+struct Products: Codable{
+    var id_product: Int
+    var quantity: Int
 }
