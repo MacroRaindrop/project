@@ -120,9 +120,9 @@ struct SummaryView: View {
                     .cornerRadius(15)
                 }
             }
-            .navigationBarTitle(Text("Ringkasan"))
-            .navigationBarTitleDisplayMode(.automatic)
-            .navigationBarBackButtonHidden(true)
+//            .navigationBarTitle(Text("Ringkasan"))
+//            .navigationBarTitleDisplayMode(.automatic)
+//            .navigationBarBackButtonHidden(true)
             //            .navigationTitle("Ringkasan")
             //            .navigationBarItems(trailing: Button(action: {
             //                             // button activates link
