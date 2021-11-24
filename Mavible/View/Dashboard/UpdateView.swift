@@ -12,7 +12,7 @@ struct UpdateView: View {
             ScrollView {
                 VStack(spacing: 20) {
                     Text("")
-                    NavigationLink(destination: POdetail() ) {
+                    NavigationLink(destination: PurchaseOrderView() ) {
                     PurchaseOrder()
                     }
                     NavigationLink(destination: daftarPO() ) {
