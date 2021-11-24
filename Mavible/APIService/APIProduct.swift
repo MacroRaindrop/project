@@ -36,7 +36,7 @@ class APIProduct: ObservableObject {
         
         //Encoding Body
         
-        guard let finishBody = try? JSONEncoder().encode(product) else { return }
+        guard let finishBody = try? JSONEncoder().encode(products) else { return }
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
