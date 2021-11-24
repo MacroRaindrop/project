@@ -18,7 +18,7 @@ struct StockListContentView: View {
     // 5. Text Qty
     // 6. Text Satuan
     
-    @State var imageList: String = "beras-asset"
+    @State var imageList: String = "POicon"
     @State var strokeColor: Color = .yellow
     @State var titleText: String = "This is title"
     @State var captionText: String = "This is caption This is Captiopn This is Caption"

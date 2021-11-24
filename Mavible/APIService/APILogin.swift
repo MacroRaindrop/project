@@ -24,10 +24,11 @@ class APILogin: ObservableObject{
     }
     
     
+    
     //isi kodingan
     @Published var logins: [Register] = []
     
-    func loginCheck(owner_email: String, owner_password: String ){
+    func loginCheck(owner_email: String, owner_password: String, completion: @escaping (Bool) -> Void ){
 
         // pasang url
         guard let url = URL(string: urlLogin) else {
@@ -67,16 +68,17 @@ class APILogin: ObservableObject{
             
             if let result = result {
                 DispatchQueue.main.async {
-                    self.email = result.owner_email
-                    self.password = result.owner_password
+                    self.email = result.ownerEmail
+                    self.password = result.password
                     self.loggedIn = true
+                    completion(true)
                 }
                 
             } else {
                 DispatchQueue.main.async {
-                   
                     print("Invalid response from web services!")
                     self.loggedIn = false
+                    completion(false)
                 }
                 
             }

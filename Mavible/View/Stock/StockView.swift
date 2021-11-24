@@ -21,12 +21,6 @@ struct StockView: View {
                             Text(item.description)
                         }
                     }
-                    //tambah func untuk delete, tapi mesti nambah model "remove" dulu
-                    .onDelete(perform: { (indexSet) in
-                        DispatchQueue.main.async {
-                            viewModel.removeItem(for: UUID())
-                        }
-                    })
                 }
                 .listStyle(GroupedListStyle())
             }

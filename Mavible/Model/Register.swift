@@ -9,11 +9,22 @@ import Foundation
 import SwiftUI
 
 struct Register: Codable, Identifiable {
-    var id: Int
-    var created_at: String
-    var owner_name: String
-    var name: String
-    var owner_email: String
-    var owner_password: String
+    let id: Int
+    let createdDate: String
+    let ownerName: String
+    let staffName: String
+    let ownerEmail: String
+    let password: String
+    
+    static let `default` = Self(id: 0, createdDate: "created_at",ownerName: "owner_name", staffName: "name", ownerEmail: "owner_email", password: "owner_password")
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case createdDate = "created_at"
+        case ownerName = "owner_name"
+        case staffName = "name"
+        case ownerEmail = "owner_email"
+        case password = "owner_password"
+    }
 }
 
