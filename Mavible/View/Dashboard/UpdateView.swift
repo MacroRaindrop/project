@@ -13,8 +13,9 @@ struct UpdateView: View {
             ScrollView {
                 VStack(spacing: 20) {
                     Text("")
-                    //                  NavigationLink(destination: PurchaseOrder()) {
+                    NavigationLink(destination: POdetail() ) {
                     PurchaseOrder()
+                    }
                     NavigationLink(destination: daftarPO() ) {
                         Inbound()
                     }
