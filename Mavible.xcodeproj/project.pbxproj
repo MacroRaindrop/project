@@ -35,6 +35,7 @@
 		7CEA5FE4273D0B5300FC322F /* TestGroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEA5FE2273D0B5300FC322F /* TestGroundApp.swift */; };
 		7CEA5FE5273D0B5300FC322F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEA5FE3273D0B5300FC322F /* ContentView.swift */; };
 		B745DE5127439EFD006A5AF4 /* PO1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B745DE5027439EFD006A5AF4 /* PO1View.swift */; };
+		B7D85E45274F58B5006323AD /* POConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D85E44274F58B5006323AD /* POConfirmationView.swift */; };
 		B828FCF1272179170015F0BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B828FCF0272179170015F0BF /* Assets.xcassets */; };
 		B828FCF4272179170015F0BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B828FCF3272179170015F0BF /* Preview Assets.xcassets */; };
 		C206F2AF274E164900A32986 /* OrderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206F2AE274E164900A32986 /* OrderService.swift */; };
@@ -90,6 +91,7 @@
 		7CEA5FE2273D0B5300FC322F /* TestGroundApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestGroundApp.swift; path = Mavible/TestGroundApp.swift; sourceTree = SOURCE_ROOT; };
 		7CEA5FE3273D0B5300FC322F /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = Mavible/ContentView.swift; sourceTree = SOURCE_ROOT; };
 		B745DE5027439EFD006A5AF4 /* PO1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PO1View.swift; sourceTree = "<group>"; };
+		B7D85E44274F58B5006323AD /* POConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POConfirmationView.swift; sourceTree = "<group>"; };
 		B828FCE9272179150015F0BF /* Mavible.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mavible.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B828FCF0272179170015F0BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B828FCF3272179170015F0BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				7CE356EB274CF939006EE579 /* PurchaseOrderView.swift */,
+				B7D85E44274F58B5006323AD /* POConfirmationView.swift */,
 				7C1BC0E52743A1E60022F4EB /* POdetailView.swift */,
 				7C1BC0E32743A1E60022F4EB /* DaftarPOView.swift */,
 				B745DE5027439EFD006A5AF4 /* PO1View.swift */,
@@ -420,6 +423,7 @@
 				C206F2B3274F7AFE00A32986 /* CompanyStaffViewModel.swift in Sources */,
 				7C1BC0F72743A20D0022F4EB /* SummaryView.swift in Sources */,
 				7C1BC0FE2743A2340022F4EB /* LoginView.swift in Sources */,
+				B7D85E45274F58B5006323AD /* POConfirmationView.swift in Sources */,
 				7CB61379273281A00039C14D /* Coordinator.swift in Sources */,
 				C24123C0273E17C000A33C22 /* StockView.swift in Sources */,
 				C24123BC273E16D200A33C22 /* GetProductViewModel.swift in Sources */,
