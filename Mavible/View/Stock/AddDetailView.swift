@@ -33,8 +33,8 @@ struct AddDetailView: View {
     
     @State var namaItem: String = ""
     @State var image: Image? = Image("InboundIcon")
-    @State var jumlahProduk : String = ""
-    @State var jumlahMinimalStok : String = ""
+    @State var jumlahProduk : Int = 0
+    @State var jumlahMinimalStok : Int = 0
     @State var notesDeskripsi: String = ""
     @State var imageName: String = ""
     @State var authenticationDidFail: Bool = false
@@ -56,7 +56,12 @@ struct AddDetailView: View {
                     Spacer()
                     Button(action: {
                         if authenticationDidSucceed {
-                            //                            fetchProduct.addProduct(product: Product)
+                            self.namaItem = fetchProduct.name
+                            self.jumlahProduk = fetchProduct.quantity
+                            self.jumlahMinimalStok = fetchProduct.minimum_stock
+                            self.notesDeskripsi = fetchProduct.description
+                            print("sukses")
+                            //TODO Nyambungin ke module api product
                         } else {
                             print("gagal menambah produk")
                         }
@@ -64,7 +69,7 @@ struct AddDetailView: View {
                         Text("Simpan")
                             .foregroundColor(.blue)
                     }
-                    .disabled(jumlahProduk.isEmpty || jumlahMinimalStok.isEmpty)
+//                    .disabled($jumlahProduk.isEmpty || $jumlahMinimalStok.isEmpty)
                     .padding()
                 }
                 
@@ -113,7 +118,7 @@ struct AddDetailView: View {
                             Text("Jumlah**")
                                 .fontWeight(.semibold)
                                 .foregroundColor(Color("ButtonFont"))
-                            TextField("0", text: self.$jumlahProduk)
+                            TextField("0", value: $jumlahProduk, formatter:  NumberFormatter())
                                 .font(.system(size: 14))
                                 .frame(height: 34)
                                 .textFieldStyle(PlainTextFieldStyle())
@@ -146,7 +151,7 @@ struct AddDetailView: View {
                                 .fontWeight(.semibold)
                                 .foregroundColor(Color("ButtonFont"))
                             
-                            TextField("0", text: self.$jumlahMinimalStok)
+                            TextField("0", value: $jumlahMinimalStok, formatter:  NumberFormatter())
                                 .font(.system(size: 13))
                                 .frame(height: 34)
                                 .textFieldStyle(PlainTextFieldStyle())
@@ -181,7 +186,7 @@ struct AddDetailView: View {
                 }
                 .padding()
             }
-        }
+        } .navigationBarHidden(true)
     }
 }
 
