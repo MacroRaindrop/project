@@ -26,4 +26,5 @@ struct Order: Codable {
 struct Products: Codable{
     var id_product: Int
     var quantity: Int
+    var notes: String
 }

@@ -74,7 +74,6 @@ class APIProduct: ObservableObject {
         })
             task.resume()
     }
-    
     func updateProduct() {
         let url = URL(string: urlProduct)!
         let fullURL = url.appendingPathComponent("/PUT")
