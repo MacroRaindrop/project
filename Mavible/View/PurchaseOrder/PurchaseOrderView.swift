@@ -11,9 +11,19 @@ struct PurchaseOrderView: View {
     var body: some View {
         ZStack {
             VStack {
-                Text("Buat PO")
+                HStack{
+                    
+                    Button("<") {
+                        print("balik ke awal")
+                    }
                     .padding()
-                    .font(.system(size: 30, weight: .bold))
+                    .foregroundColor(.gray)
+                   Text("Buat PO")
+                        .padding(15.0)
+                       .font(.system(size: 30, weight: .bold))
+                    Spacer()
+                }
+                
             VStack {
                 HStack {
                     Text("PIC")
@@ -21,12 +31,21 @@ struct PurchaseOrderView: View {
                             Spacer()
                     }
                 HStack{
-                    Picker(selection: .constant("pilih PIC"), label: Text("Picker")) {
+                    Picker(selection: .constant("pilih PIC"), label: Text("Picker")
+                            ) {
                         Text("staff1").tag(1)
                         Text("staff2").tag(2)
                         Text("staff3").tag(3)
                             .frame(width: UIScreen.main.bounds.width - 40)
                     }
+                            .font(.system(size: 14))
+                            .frame(width: 333, height: 34)
+                            .textFieldStyle(PlainTextFieldStyle())
+                            .padding([.horizontal], 10)
+                            .cornerRadius(20)
+                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
+                            .pickerStyle(WheelPickerStyle())
+                            
                     Spacer()
                 }
                 
@@ -42,9 +61,18 @@ struct PurchaseOrderView: View {
                         Text("supplier3").tag(3)
                             .frame(width: UIScreen.main.bounds.width - 40)
                     }
-                    
+                    .font(.system(size: 14))
+                    .frame(width: 333, height: 34)
+                    .textFieldStyle(PlainTextFieldStyle())
+                    .padding([.horizontal], 10)
+                    .cornerRadius(20)
+                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
+                    .pickerStyle(WheelPickerStyle())
+
                     Spacer()
+                        .border(/*@START_MENU_TOKEN@*/Color.gray/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/5/*@END_MENU_TOKEN@*/)
                 }
+                Spacer()
 
                         Text("Lanjut")
                             .frame(maxWidth: 219, maxHeight: 20)

@@ -10,15 +10,15 @@ import SwiftUI
 
 struct CheckBoxView: View {
     @State var checked: Bool
-    @Binding var checkedAll: Bool
+    //@Binding var checkedAll: Bool
 
     var body: some View {
         Image(systemName: checked ? "checkmark.square.fill" : "square")
-            //.frame(width: 100, height: 100)
+            
             .foregroundColor(checked ? Color(UIColor.systemBlue) : Color.secondary)
             .onTapGesture {
                 self.checked.toggle()
-            }//.frame(width: 100, height: 100)
+            }
     }
 }
 
@@ -28,7 +28,7 @@ struct CheckBoxView_Previews: PreviewProvider {
         @State var checkedAll = false
 
         var body: some View {
-            CheckBoxView(checked: checked, checkedAll: $checkedAll)
+            CheckBoxView(checked: checked)
         }
     }
 
