@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct purchaseOrder: Codable {
+struct Order: Codable {
     var id_company: Int
     var id_staff: Int
     var supplier: String
@@ -26,4 +26,5 @@ struct purchaseOrder: Codable {
 struct Products: Codable{
     var id_product: Int
     var quantity: Int
+    var notes: String
 }

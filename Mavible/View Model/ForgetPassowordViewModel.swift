@@ -6,3 +6,9 @@
 //
 
 import Foundation
+import Combine
+import SwiftUI
+
+class forgetPasswordViewModel: ObservableObject {
+    
+}

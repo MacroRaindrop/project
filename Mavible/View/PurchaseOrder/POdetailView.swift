@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import Foundation
+import Combine
+
 
 struct POdetail: View {
     
-    
+    @State  var checked = false
+    @StateObject var globalVariable = GlobalVariable()
     var body: some View {
         
         VStack{
@@ -17,7 +21,16 @@ struct POdetail: View {
             POlist() .padding(.top)
             
             Text("Pastikan jumlah barang yang datang sama dengan yang tertulis").padding(.top, 50) .padding()
-            cekButton()
+            Button(action: {
+//                if checked == false{
+//                    self.disabled(true)
+//                }
+            }){
+                cekButton()
+            }
+//            .disabled(CheckBoxView(checked: checked) == false)
+            
+            
         }
     }
 }
@@ -32,13 +45,14 @@ struct POdetail_Previews: PreviewProvider {
 struct POlist: View {
     @State var editingMode2: Bool = false
     @State private var jumlah: String = ""
-    @State private var checked = false
+    @State  var checked = false
+    
     @State private var checkedAll = false
     
     var body: some View {
-        //VStack{
+       
             Button(action: {
-//                CheckBoxView(checked: true, checkedAll: <#T##Binding<Bool>#>)
+
             checkedAll = true
             }) {
                 Text("Pilih semua")
@@ -62,7 +76,7 @@ struct POlist: View {
                         
                         POTextfield(jumlah: $jumlah, editingMode2: $editingMode2)
                     }
-                    CheckBoxView(checked: checked, checkedAll: $checkedAll)
+                    CheckBoxView(checked: checked)
                 } .background(Color.white)
                     //.padding()
                 //                .overlay(
@@ -70,7 +84,11 @@ struct POlist: View {
                 //                            .stroke(Color.white, lineWidth: 1)
                 //                )
             }.listStyle(PlainListStyle())
+//        if checked == false{
+//            cekButton.disabled(true)
+//        }
         } //.scaledToFit()
+    
         
    // }
 }
@@ -87,6 +105,7 @@ struct cekButton : View {
             .clipShape(RoundedRectangle(cornerRadius: 20))
         
     }
+    
 }
 
 struct detailPO : View {
@@ -156,4 +175,9 @@ struct POTextfield : View {
 //            .background(RoundedRectangle(cornerRadius: 5.0).fill(Color.gray))
             .foregroundColor(Color.gray)
     }
+}
+
+class GlobalVariable: ObservableObject {
+    @Published var dicek = ""
+  
 }

@@ -32,11 +32,11 @@ class APIProduct: ObservableObject {
     func addProduct(product: Product) {
         
         //URL DB
-        guard let url = URL(string: "https://be-raindrop-app.herokuapp.com/products") else { return }
+        guard let url = URL(string: urlProduct) else { return }
         
         //Encoding Body
         
-        guard let finishBody = try? JSONEncoder().encode(product) else { return }
+        guard let finishBody = try? JSONEncoder().encode(products) else { return }
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -74,9 +74,8 @@ class APIProduct: ObservableObject {
         })
             task.resume()
     }
-    
     func updateProduct() {
-        let url = URL(string: "https://be-raindrop-app.herokuapp.com/products")!
+        let url = URL(string: urlProduct)!
         let fullURL = url.appendingPathComponent("/PUT")
         
         var request = URLRequest(url: fullURL)
