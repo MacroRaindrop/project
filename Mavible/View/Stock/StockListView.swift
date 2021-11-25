@@ -11,7 +11,7 @@ import Combine
 struct StockListView: View {
     
     @State var imageList: String = "POicon"
-    @State var strokeColor: Color = .raindropColor
+    @State var strokeColor: Color = CustomColor.raindropColor
     
     @State private var query = ""
     @State var showDetailView = false

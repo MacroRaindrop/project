@@ -207,7 +207,7 @@ struct LoginView: View {
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
-        .accentColor(Color.buttonFont)
+        .accentColor(CustomColor.buttonFont)
         
             
         
@@ -282,8 +282,8 @@ struct LoginButtonContent : View {
             .multilineTextAlignment(.center)
             .frame(maxWidth: 220, maxHeight: 48)
             .font(.system(size: 20))
-            .foregroundColor(.buttonFont)
-            .background(Color.raindrop1Color)
+            .foregroundColor(CustomColor.buttonFont)
+            .background(CustomColor.raindrop1Color)
             .clipShape(RoundedRectangle(cornerRadius: 20))
             .padding(.horizontal, 60)
         

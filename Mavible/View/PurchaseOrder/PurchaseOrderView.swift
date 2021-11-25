@@ -51,7 +51,7 @@ struct PurchaseOrderView: View {
                             .font(.system(size: 20))
                             .padding()
                             .foregroundColor(.black)
-                            .background(Color.raindropColor)
+                            .background(CustomColor.discontinueColor)
                             .clipShape(RoundedRectangle(cornerRadius: 20))
                             .padding()
                     }

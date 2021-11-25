@@ -273,10 +273,10 @@
 		C2445A55272BE2C900C19C05 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C2BD5B452744FFD900604985 /* Outbond */,
 				7C1BC0FB2743A2340022F4EB /* Authentication */,
 				7C1BC0F02743A20D0022F4EB /* Dashboard */,
 				7C1BC0DF2743A1E60022F4EB /* Inbound */,
+				C2BD5B452744FFD900604985 /* Outbond */,
 				C2C3C13C27421676007236DC /* PurchaseOrder */,
 				C2C3C13B27421540007236DC /* Stock */,
 				7C2286A8273C49DF00808B72 /* TutorDetail.swift */,

@@ -85,7 +85,7 @@ struct cekButton : View {
             .font(.system(size: 20))
             .padding()
             .foregroundColor(.black)
-            .background(Color.raindrop1Color)
+            .background(CustomColor.raindrop1Color)
             .clipShape(RoundedRectangle(cornerRadius: 20))
         
     }

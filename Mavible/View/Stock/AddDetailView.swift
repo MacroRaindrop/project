@@ -139,7 +139,7 @@ struct AddDetailView: View {
                                 
                             Text("**Unit dipilih berdasarkan kemasan produk, contoh: 2 dus isi @12 kaleng, maka jumlah yang diisi 24 kaleng")
                         }
-                        .foregroundColor(.buttonFont)
+                        .foregroundColor(CustomColor.buttonFont)
                         .opacity(0.4)
                         .font(.system(size: 13))
                     }
@@ -160,7 +160,7 @@ struct AddDetailView: View {
                                 .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
                         }
                         Text("Masukkan jumlah minimum stok untuk diingatkan saat statusnya low")
-                            .foregroundColor(.buttonFont)
+                            .foregroundColor(CustomColor.buttonFont)
                             .font(.system(size: 13))
                             .opacity(0.4)
                             .frame(maxWidth: .infinity, alignment: .leading)

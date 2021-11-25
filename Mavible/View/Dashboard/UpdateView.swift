@@ -44,7 +44,7 @@ struct PurchaseOrder: View {
             Text("Buat PO baru dan lihat list barang yang akan di pesan")
                 .multilineTextAlignment(.leading)
                 .opacity(0.6)
-                .foregroundColor(.buttonFont)
+                .foregroundColor(CustomColor.buttonFont)
             HStack{
                 Spacer()
                 Image("POicon")
@@ -69,7 +69,7 @@ struct Inbound: View {
                 .foregroundColor(Color("ButtonFont"))
             Text("Cek barang yang akan masuk")
                 .opacity(0.6)
-                .foregroundColor(.buttonFont)
+                .foregroundColor(CustomColor.buttonFont)
             HStack{
                 Spacer()
                 Image("InboundIcon")
@@ -94,7 +94,7 @@ struct Outbound: View {
                 .foregroundColor(Color("ButtonFont"))
             Text("Buat list barang yang akan keluar")
                 .opacity(0.6)
-                .foregroundColor(.buttonFont)
+                .foregroundColor(CustomColor.buttonFont)
             HStack{
                 Spacer()
                 Image("OutboundIcon")
