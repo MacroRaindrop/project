@@ -14,10 +14,10 @@ struct daftarPO: View {
             List(0 ..< 10) { item in
                 HStack {
                     VStack(alignment: .leading){
-                    Text("PO1")
-                        .font(.title3)
-                        .fontWeight(.semibold)
-                    Text("PT binjai") .foregroundColor(CustomColor.buttonFont)
+                        Text("PO1")
+                            .font(.title3)
+                            .fontWeight(.semibold)
+                        Text("PT binjai") .foregroundColor(CustomColor.buttonFont)
                             .opacity(0.6)
                     }
                     NavigationLink(destination: POdetail()){

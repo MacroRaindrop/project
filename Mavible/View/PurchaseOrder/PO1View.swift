@@ -49,7 +49,7 @@ struct PO1View: View {
                         Text("tepung")
                             .font(.title3)
                             .fontWeight(.bold)
-                       
+                        
                         TextField("100", text: $qty)
                             .font(.system(size: 14))
                             .frame(height: 34)

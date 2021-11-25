@@ -22,13 +22,13 @@ struct POdetail: View {
             
             Text("Pastikan jumlah barang yang datang sama dengan yang tertulis").padding(.top, 50) .padding()
             Button(action: {
-//                if checked == false{
-//                    self.disabled(true)
-//                }
+                //                if checked == false{
+                //                    self.disabled(true)
+                //                }
             }){
                 cekButton()
             }
-//            .disabled(CheckBoxView(checked: checked) == false)
+            //            .disabled(CheckBoxView(checked: checked) == false)
             
             
         }
@@ -50,47 +50,47 @@ struct POlist: View {
     @State private var checkedAll = false
     
     var body: some View {
-       
-            Button(action: {
-
+        
+        Button(action: {
+            
             checkedAll = true
-            }) {
-                Text("Pilih semua")
-            }.frame(width: 350, alignment: .topTrailing)
+        }) {
+            Text("Pilih semua")
+        }.frame(width: 350, alignment: .topTrailing)
         
-            List(0 ..< 3) { item in
-                HStack {
-                    Image("OutboundIcon")
-                        
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 60, height: 60, alignment: .leading)
-                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
+        List(0 ..< 3) { item in
+            HStack {
+                Image("OutboundIcon")
+                
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 60, height: 60, alignment: .leading)
+                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
+                
+                VStack (alignment: .leading, spacing: 5) {
+                    Text("kelapa kering")
                     
-                    VStack (alignment: .leading, spacing: 5) {
-                        Text("kelapa kering")
-                            
-                            .font(.title3)
-                            .fontWeight(.bold)
-                            .padding(.top, 20)
-                        
-                        POTextfield(jumlah: $jumlah, editingMode2: $editingMode2)
-                    }
-                    CheckBoxView(checked: checked)
-                } .background(Color.white)
-                    //.padding()
-                //                .overlay(
-                //                        RoundedRectangle(cornerRadius: 3)
-                //                            .stroke(Color.white, lineWidth: 1)
-                //                )
-            }.listStyle(PlainListStyle())
-//        if checked == false{
-//            cekButton.disabled(true)
-//        }
-        } //.scaledToFit()
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .padding(.top, 20)
+                    
+                    POTextfield(jumlah: $jumlah, editingMode2: $editingMode2)
+                }
+                CheckBoxView(checked: checked)
+            } .background(Color.white)
+            //.padding()
+            //                .overlay(
+            //                        RoundedRectangle(cornerRadius: 3)
+            //                            .stroke(Color.white, lineWidth: 1)
+            //                )
+        }.listStyle(PlainListStyle())
+        //        if checked == false{
+        //            cekButton.disabled(true)
+        //        }
+    } //.scaledToFit()
     
-        
-   // }
+    
+    // }
 }
 
 struct cekButton : View {
@@ -118,7 +118,7 @@ struct detailPO : View {
                 Text("Tanggal")
                 
                 Text("4 november 2021")
-    
+                
             }
             HStack (spacing: 103){
                 Text("PIC")
@@ -172,12 +172,12 @@ struct POTextfield : View {
             .padding(.bottom, 20)
             .textFieldStyle(RoundedBorderTextFieldStyle())
             .autocapitalization(.none)
-//            .background(RoundedRectangle(cornerRadius: 5.0).fill(Color.gray))
+        //            .background(RoundedRectangle(cornerRadius: 5.0).fill(Color.gray))
             .foregroundColor(Color.gray)
     }
 }
 
 class GlobalVariable: ObservableObject {
     @Published var dicek = ""
-  
+    
 }

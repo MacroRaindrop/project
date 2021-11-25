@@ -9,3 +9,8 @@ import Foundation
 import Combine
 import SwiftUI
 import SystemConfiguration
+
+class InboundViewModel: ObservableObject {
+    @Published var inBound = [InBound]()
+     
+}

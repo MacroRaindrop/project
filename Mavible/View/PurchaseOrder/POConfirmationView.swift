@@ -32,7 +32,7 @@ struct POConfirmationView: View {
                     Text("100")
                 }.padding(.horizontal, 20)
                     .padding(.bottom, 2)
-                    
+                
                 
                 HStack{
                     Text("Minyak Kelapa")
@@ -56,7 +56,7 @@ struct POConfirmationView: View {
                 Rectangle().foregroundColor(Color.white) .frame(width: 350, height: 50)
                     .border(Color.black,width: 1)
                     .cornerRadius(10)
-            //buttons
+                //buttons
                 Button(action: {
                     print("berhasil konfirmasi")
                 }){
@@ -82,7 +82,7 @@ struct POConfirmationView: View {
             }
             
         }
-
+        
     }
     
 }
