@@ -53,7 +53,7 @@
 		C2C3C14A27421EA3007236DC /* PICViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3C14927421EA3007236DC /* PICViewModel.swift */; };
 		C2DA06D92746523500141E30 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DA06D82746523500141E30 /* Server.swift */; };
 		C2E50D41273BA8E000FC6A57 /* APIProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E50D40273BA8E000FC6A57 /* APIProduct.swift */; };
-		D53DF548274E36C300631439 /* onboardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53DF547274E36C300631439 /* onboardingPage.swift */; };
+		D50C8002274F770B004F5054 /* onboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50C8001274F770B004F5054 /* onboardingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,7 +103,7 @@
 		C2C3C14927421EA3007236DC /* PICViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PICViewModel.swift; sourceTree = "<group>"; };
 		C2DA06D82746523500141E30 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		C2E50D40273BA8E000FC6A57 /* APIProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProduct.swift; sourceTree = "<group>"; };
-		D53DF547274E36C300631439 /* onboardingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onboardingPage.swift; sourceTree = "<group>"; };
+		D50C8001274F770B004F5054 /* onboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = onboardingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +134,6 @@
 				7C1BC0F22743A20D0022F4EB /* SummaryView.swift */,
 				7C1BC0F32743A20D0022F4EB /* UpdateView.swift */,
 				7C1BC0F52743A20D0022F4EB /* HistoryView.swift */,
-				D53DF547274E36C300631439 /* onboardingPage.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -218,6 +217,7 @@
 		C2445A55272BE2C900C19C05 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D50C8000274F74F7004F5054 /* Onboarding */,
 				C2BD5B452744FFD900604985 /* Outbond */,
 				7C1BC0FB2743A2340022F4EB /* Authentication */,
 				7C1BC0F02743A20D0022F4EB /* Dashboard */,
@@ -281,6 +281,14 @@
 				B745DE5027439EFD006A5AF4 /* PO1View.swift */,
 			);
 			path = PurchaseOrder;
+			sourceTree = "<group>";
+		};
+		D50C8000274F74F7004F5054 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				D50C8001274F770B004F5054 /* onboardingView.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,6 +389,7 @@
 				C2445A51272BDF9900C19C05 /* Register.swift in Sources */,
 				7CE356EC274CF939006EE579 /* PurchaseOrderView.swift in Sources */,
 				7C2677E927314E5800285B1A /* ShowModalView.swift in Sources */,
+				D50C8002274F770B004F5054 /* onboardingView.swift in Sources */,
 				7C1BC0EF2743A1E60022F4EB /* OutbondConfirmationView.swift in Sources */,
 				C2445A5B272BEFBB00C19C05 /* Color.swift in Sources */,
 				C279B4CA2731475400A4B8AF /* APIRegister.swift in Sources */,
@@ -402,7 +411,6 @@
 				7C1BC0EE2743A1E60022F4EB /* StockListView.swift in Sources */,
 				C2DA06D92746523500141E30 /* Server.swift in Sources */,
 				B745DE5127439EFD006A5AF4 /* PO1View.swift in Sources */,
-				D53DF548274E36C300631439 /* onboardingPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
