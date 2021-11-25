@@ -23,7 +23,6 @@
 		7C1BC0FF2743A2340022F4EB /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1BC0FD2743A2340022F4EB /* RegisterView.swift */; };
 		7C1BC10527465F470022F4EB /* CheckBoxViewHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1BC10427465F470022F4EB /* CheckBoxViewHolder.swift */; };
 		7C2286A7273C484900808B72 /* Tutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2286A6273C484900808B72 /* Tutor.swift */; };
-		7C2286A9273C49DF00808B72 /* TutorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2286A8273C49DF00808B72 /* TutorDetail.swift */; };
 		7C2677E727314E2B00285B1A /* AddDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2677E627314E2B00285B1A /* AddDetailView.swift */; };
 		7C2677E927314E5800285B1A /* ShowModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2677E827314E5800285B1A /* ShowModalView.swift */; };
 		7C2677F12731A84A00285B1A /* MaxTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2677F02731A84A00285B1A /* MaxTextField.swift */; };
@@ -82,7 +81,6 @@
 		7C1BC0FD2743A2340022F4EB /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		7C1BC10427465F470022F4EB /* CheckBoxViewHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxViewHolder.swift; sourceTree = "<group>"; };
 		7C2286A6273C484900808B72 /* Tutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutor.swift; sourceTree = "<group>"; };
-		7C2286A8273C49DF00808B72 /* TutorDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorDetail.swift; sourceTree = "<group>"; };
 		7C2677E627314E2B00285B1A /* AddDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDetailView.swift; sourceTree = "<group>"; };
 		7C2677E827314E5800285B1A /* ShowModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowModalView.swift; sourceTree = "<group>"; };
 		7C2677F02731A84A00285B1A /* MaxTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxTextField.swift; sourceTree = "<group>"; };
@@ -281,7 +279,6 @@
 				C2BD5B452744FFD900604985 /* Outbond */,
 				C2C3C13C27421676007236DC /* PurchaseOrder */,
 				C2C3C13B27421540007236DC /* Stock */,
-				7C2286A8273C49DF00808B72 /* TutorDetail.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -452,7 +449,6 @@
 				C279B4C8273146FF00A4B8AF /* APILogin.swift in Sources */,
 				C24123BA273E16B600A33C22 /* GetProduct.swift in Sources */,
 				C206F2BD274F8CEC00A32986 /* InboundViewModel.swift in Sources */,
-				7C2286A9273C49DF00808B72 /* TutorDetail.swift in Sources */,
 				C2445A57272BE41F00C19C05 /* Product.swift in Sources */,
 				C2C3C14227421854007236DC /* APIPassword.swift in Sources */,
 				7CE2BDF4274B96FE00054E0E /* loadingVIew.swift in Sources */,
