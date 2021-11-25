@@ -29,7 +29,7 @@ struct OutbondListView: View {
                 
                 Spacer()
                 
-                Button(action: {print("...")}) {OutbondButtonContent(buttonColor: .blue, buttonText: "Lanjut")}
+                Button(action: {print("...")}) {OutbondButtonContent(buttonColor: CustomColor.raindrop1Color, buttonText: "Lanjut")}
             }
             .navigationTitle("Outbond")
             .searchable(text: $query)

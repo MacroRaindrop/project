@@ -32,7 +32,7 @@ struct DashboardView: View {
                         Text("Riwayat")
                     }
             }
-            .accentColor(.raindropColor)
+            .accentColor(CustomColor.raindropColor)
             .navigationBarBackButtonHidden(true)
             .navigationBarHidden(true)
     }

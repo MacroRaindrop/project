@@ -10,6 +10,7 @@ import SwiftUI
 struct PO1View: View {
     
     @Binding var text: String
+    @Binding var qty: String
     @State var isEditing: Bool = false
     var body: some View {
         VStack {
@@ -40,40 +41,41 @@ struct PO1View: View {
             Spacer()
             List(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { item in
                 HStack {
-                    Image("gambar item")
+                    Image("InboundIcon")
                         .resizable()
                         .scaledToFit()
-                        .frame(height: 70, alignment: .leading)
+                        .frame(width: 70, height: 70, alignment: .leading)
                     VStack (alignment: .leading, spacing: 5) {
-                        Text("nama item")
+                        Text("tepung")
                             .font(.title3)
                             .fontWeight(.bold)
-                       
-                        Text("lorem ipsum dolor sir amet")
-                            .font(.subheadline)
-                            .fontWeight(.semibold)
-                            .foregroundColor(.secondary)
-                    }
-                    VStack {
-                        Text("1")
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
-                    /*    Stepper(value: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant(4)/*@END_MENU_TOKEN@*/, in: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Range@*/1...10/*@END_MENU_TOKEN@*/) {
-                            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Label@*/Text("Stepper")/*@END_MENU_TOKEN@*/
-                        } */
-
+                        
+                        TextField("100", text: $qty)
+                            .font(.system(size: 14))
+                            .frame(height: 34)
+                            .textFieldStyle(PlainTextFieldStyle())
+                            .padding([.horizontal], 10)
+                            .cornerRadius(20)
+                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
                     }
                 }
+            }.padding()
+            Text("Lanjut")
+                .frame(maxWidth: 219, maxHeight: 20)
+                .font(.system(size: 20))
                 .padding()
-                
-                Spacer()
-            }
-        }
+                .foregroundColor(.black)
+                .background(CustomColor.raindropColor)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+                .padding()
+        }.listStyle(PlainListStyle())
+        
     }
 }
 
+
 struct PO1View_Previews: PreviewProvider {
     static var previews: some View {
-        PO1View(text: .constant(""))
+        PO1View(text: .constant(""), qty: .constant(""))
     }
 }

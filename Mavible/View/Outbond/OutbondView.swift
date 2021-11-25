@@ -27,7 +27,7 @@ struct OutbondView: View {
                 
                 Spacer()
                 
-                Button(action: {print("...")}) {OutbondButtonContent(buttonColor: .secondary, buttonText: "Lanjut")}
+                Button(action: {print("...")}) {OutbondButtonContent(buttonColor: CustomColor.disabledButtonColor, buttonText: "Lanjut")}
             }
             .navigationTitle("Outbond")
             .navigationBarItems(leading:
