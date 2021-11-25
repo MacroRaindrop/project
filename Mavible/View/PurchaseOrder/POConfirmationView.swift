@@ -47,7 +47,7 @@ struct POConfirmationView: View {
                     Text("35")
                 }.padding(.horizontal, 20)
                 Spacer()
-            } .border(Color.raindropColor,width: 5) .frame(width: 350, height: 300, alignment: .leading)
+            } .border(CustomColor.raindropColor,width: 5) .frame(width: 350, height: 300, alignment: .leading)
                 .cornerRadius(10)
                 .padding(.vertical, 20)
             //notes

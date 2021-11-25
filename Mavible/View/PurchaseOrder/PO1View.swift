@@ -65,7 +65,7 @@ struct PO1View: View {
                 .font(.system(size: 20))
                 .padding()
                 .foregroundColor(.black)
-                .background(Color.raindropColor)
+                .background(CustomColor.raindropColor)
                 .clipShape(RoundedRectangle(cornerRadius: 20))
                 .padding()
         }.listStyle(PlainListStyle())
