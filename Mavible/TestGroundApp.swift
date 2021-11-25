@@ -13,7 +13,8 @@ struct TestGroundApp: App {
     var body: some Scene {
         WindowGroup {
             //TODO : Routing Root View
-            LoginView(loginManager: loginManager)
+//            LoginView(loginManager: loginManager)
+            StockListView()
 //            inboundBerhasilView()
         }
     }

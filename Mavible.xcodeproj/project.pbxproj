@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		163BFF8F274E344E00465380 /* WheelPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163BFF8E274E344E00465380 /* WheelPickerView.swift */; };
 		7C1BC0E82743A1E60022F4EB /* OutbondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1BC0E02743A1E60022F4EB /* OutbondView.swift */; };
 		7C1BC0E92743A1E60022F4EB /* OutbondListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1BC0E12743A1E60022F4EB /* OutbondListView.swift */; };
 		7C1BC0EA2743A1E60022F4EB /* InboundConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1BC0E22743A1E60022F4EB /* InboundConfirmationView.swift */; };
@@ -56,6 +57,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		163BFF8E274E344E00465380 /* WheelPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelPickerView.swift; sourceTree = "<group>"; };
 		7C1BC0E02743A1E60022F4EB /* OutbondView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutbondView.swift; sourceTree = "<group>"; };
 		7C1BC0E12743A1E60022F4EB /* OutbondListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutbondListView.swift; sourceTree = "<group>"; };
 		7C1BC0E22743A1E60022F4EB /* InboundConfirmationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboundConfirmationView.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				7C1BC0E02743A1E60022F4EB /* OutbondView.swift */,
 				7C1BC0E12743A1E60022F4EB /* OutbondListView.swift */,
 				7C1BC0E72743A1E60022F4EB /* OutbondConfirmationView.swift */,
+				163BFF8E274E344E00465380 /* WheelPickerView.swift */,
 			);
 			path = Outbond;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				7CE2BDF4274B96FE00054E0E /* loadingVIew.swift in Sources */,
 				7C1BC10527465F470022F4EB /* CheckBoxViewHolder.swift in Sources */,
 				7C1BC0E82743A1E60022F4EB /* OutbondView.swift in Sources */,
+				163BFF8F274E344E00465380 /* WheelPickerView.swift in Sources */,
 				C27E6B1527473D700090D424 /* InboundBerhasilView.swift in Sources */,
 				7CEA5FE5273D0B5300FC322F /* ContentView.swift in Sources */,
 				7CEA5FE4273D0B5300FC322F /* TestGroundApp.swift in Sources */,

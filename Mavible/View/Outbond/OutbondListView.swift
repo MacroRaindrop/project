@@ -89,20 +89,27 @@ struct OutbondListContentView: View {
                 .frame(height: 70, alignment: .leading)
             
             VStack (alignment: .leading, spacing: 2) {
-                Text(titleText)
-                    .font(.body)
-                    .bold()
-                UserField(userFieldCutWidth: 200)
+                
+                HStack {
+                    Text(titleText)
+                        .font(.body)
+                        .bold()
+                    Spacer()
+                    Text("Stok: " + String(qtyText))
+                        .font(.caption)
+                        
+
+                }
+                UserField(userFieldCutWidth: 150)
+                
             }
             
-            VStack (alignment: .center, spacing: 20) {
-                Text("Stok: " + String(qtyText))
-                    .font(.body)
-                HStack {
-                    Button(action: {print("...")}) {Image(systemName: "plus")}
-                    Button(action: {print("...")}) {Image(systemName: "plus")}
-                }
-            }
+//            VStack (alignment: .center, spacing: 20) {
+                //                HStack {
+//                    Button(action: {print("...")}) {Image(systemName: "plus")}
+//                    Button(action: {print("...")}) {Image(systemName: "plus")}
+//                }
+//            }
             
         }
     }
@@ -113,7 +120,7 @@ struct UserField: View {
     @State var userFieldCutWidth: CGFloat
     
     var body: some View {
-        TextField("OB1", text: $idOutbond)
+        TextField("", text: $idOutbond)
             .frame(width: UIScreen.main.bounds.width - userFieldCutWidth)
             .textFieldStyle(RoundedBorderTextFieldStyle())
     }

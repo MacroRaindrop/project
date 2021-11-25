@@ -24,28 +24,53 @@ struct StockListContentView: View {
     @State var captionText: String = "This is caption This is Captiopn This is Caption"
     @State var qtyText: Int = 1
     @State var satuanText: String = "Satuan"
+    
+    @State var stockCondition: String = "Low Stock"
+    @State var stockConditionColor: Color = .yellow
+    
+    switch 
+    
+//    var id: Int
+//    var created_at: String
+//    var id_company: Int
+//    var name: String
+//    var minimum_stock: Int
+//    var image: String
+//    var unit: String
+//    var description: String
+//    var quantity: Int
 
+    
     
     var body: some View {
         HStack {
             Image(imageList)
                 .resizable()
                 .scaledToFit()
-                .frame(height: 70, alignment: .leading)
+                .frame(height: 40, alignment: .leading)
             
             VStack (alignment: .leading, spacing: 2) {
                 Text(titleText)
-                    .font(.title)
+                    .font(.title2)
+                    .bold()
+                    .lineLimit(1)
+                    
                 Divider()
-                Text(captionText)
-                    .font(.caption)
-                    .foregroundColor(.secondary)
-                    .lineLimit(2)
+                    .padding(.bottom, 3)
+//                Text(captionText)
+//                    .font(.caption)
+//                    .foregroundColor(.secondary)
+//                    .lineLimit(2)
+                Text(stockCondition)
+                    .frame(width: 100, height: 25)
+                    .background(.yellow)
+                    .clipShape(RoundedRectangle(cornerRadius: 10 ))
+                    
             }
             
             VStack {
                 Text(String(qtyText))
-                    .font(.largeTitle)
+                    .font(.title)
                 Text(satuanText)
             }
             

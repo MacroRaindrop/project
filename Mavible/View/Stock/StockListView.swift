@@ -20,36 +20,42 @@ struct StockListView: View {
     var body: some View {
         NavigationView {
             List {
+                // default di argument ForEach (listModel.items, id: \.id) { ...
                 ForEach(listModel.items, id: \.id) { item in
                     ZStack {
-                        HStack {
-                            Image(imageList)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(height: 70, alignment: .leading)
-                            
-                            VStack (alignment: .leading, spacing: 2) {
-                                Text(item.name)
-                                    .font(.title)
-                                Divider()
-                                Text(item.description)
-                                    .font(.caption)
-                                    .foregroundColor(.secondary)
-                                    .lineLimit(2)
-                            }
-                            
-                            VStack {
-                                Text(String(item.quantity))
-                                    .font(.largeTitle)
-                                Text(item.unit)
-                            }
-                            
-                        }
-                        .padding()
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 8)
-                                .stroke(strokeColor, lineWidth: 1)
-                        )
+//                        HStack {
+//                            Image(imageList)
+//                                .resizable()
+//                                .scaledToFit()
+//                                .frame(height: 70, alignment: .leading)
+//
+//                            VStack (alignment: .leading, spacing: 2) {
+//                                Text(item.name)
+//                                    .font(.title)
+//                                Divider()
+//                                Text(item.description)
+//                                    .font(.caption)
+//                                    .foregroundColor(.secondary)
+//                                    .lineLimit(2)
+//                            }
+//
+//
+//                            VStack {
+//                                Text(String(item.quantity))
+//                                    .font(.largeTitle)
+//                                Text(item.unit)
+//                            }
+//
+//                        }
+//                        .padding()
+//                        .overlay(
+//                            RoundedRectangle(cornerRadius: 8)
+//                                .stroke(strokeColor, lineWidth: 1)
+//                        )
+                        StockListContentView(titleText: item.name, stockConditionColor: .blue)
+
+//                            .padding(0)
+//                            .scaledToFit()
                     }
                     .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                         Button(action: {}) {Image(systemName: "trash")}

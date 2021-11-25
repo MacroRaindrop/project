@@ -19,7 +19,7 @@ struct OutbondConfirmationView: View {
             tableInbound()
             //notesPO()
             
-            CheckView(title: "Outbond karena rusak/kadeluasra")
+            CheckView(title: "Barang keluar karena rusak/kadeluasra")
                 .foregroundColor(.black)
                 .frame(width: 350, height: 20, alignment: .leading)
             
@@ -60,13 +60,13 @@ struct OutbondConfirmationView_Previews: PreviewProvider {
 
 struct detailOutbond : View {
     var body: some View{
-        Text("PO1").bold().font(.title2)
+        Text("Barang Keluar").bold().font(.title2)
             .padding()
         //padding()
         VStack(alignment: .leading){
             HStack (spacing: 70) {
                 Text("Tanggal")
-                
+                    .padding(.bottom, 1)
                 Text("4 november 2021")
                 
             }

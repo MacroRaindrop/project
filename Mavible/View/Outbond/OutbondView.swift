@@ -25,6 +25,13 @@ struct OutbondView: View {
                     .bold()
                 UserField(userFieldCutWidth: 40)
                 
+                Picker(selection: .constant("pilih PIC"), label: Text("Picker")) {
+                    Text("supplier1").tag(1)
+                    Text("supplier2").tag(2)
+                    Text("supplier3").tag(3)
+                        .frame(width: UIScreen.main.bounds.width - 40)
+                }
+                
                 Spacer()
                 
                 Button(action: {print("...")}) {OutbondButtonContent(buttonColor: .secondary, buttonText: "Lanjut")}
