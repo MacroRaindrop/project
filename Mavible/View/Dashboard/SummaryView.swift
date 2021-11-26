@@ -52,7 +52,7 @@ struct SummaryView: View {
                                         .font(.system(size: 15))
                                 }
                                 .frame(width: 109, height: 100)
-                                .background(RoundedCorners(color: .lowColor, tl: 15, tr: 0, bl: 15, br: 0))
+                                .background(RoundedCorners(color: CustomColor.lowColor, tl: 15, tr: 0, bl: 15, br: 0))
                                 
                                 VStack(alignment: .center){
                                     Text("\(noStockNumber)")
@@ -61,7 +61,7 @@ struct SummaryView: View {
                                         .font(.system(size: 15))
                                 }
                                 .frame(width: 109, height: 100)
-                                .background(RoundedCorners(color: .noStockColor, tl: 0, tr: 0, bl: 0, br: 0))
+                                .background(RoundedCorners(color: CustomColor.noStockColor, tl: 0, tr: 0, bl: 0, br: 0))
                                 
                                 VStack(alignment: .center){
                                     Text("\(discontinuedNumber)")
@@ -70,9 +70,9 @@ struct SummaryView: View {
                                         .font(.system(size: 15))
                                 }
                                 .frame(width: 109, height: 100)
-                                .background(RoundedCorners(color: .discontinueColor, tl: 0, tr: 15, bl: 0, br: 15))
+                                .background(RoundedCorners(color: CustomColor.discontinueColor, tl: 0, tr: 15, bl: 0, br: 15))
                             }
-                            .foregroundColor(.buttonFont)
+                            .foregroundColor(CustomColor.buttonFont)
                         }
                         
                         Text("Purchase Order")
@@ -94,7 +94,7 @@ struct SummaryView: View {
                                         Button(action: { goesToPOList = true }) {
                                             Text("View All")
                                                 .fontWeight(.regular)
-                                                .foregroundColor(.buttonFont)
+                                                .foregroundColor(CustomColor.buttonFont)
                                         }
                                     }
                                     .padding()

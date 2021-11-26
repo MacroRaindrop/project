@@ -40,7 +40,7 @@ struct onboardingView: View {
                     .foregroundColor(.blue)
                 }
                 .padding()
-                .foregroundColor(.buttonFont)
+                .foregroundColor(CustomColor.buttonFont)
             }
             .tabViewStyle(PageTabViewStyle())
         }
@@ -67,7 +67,7 @@ struct onboardingPage1: View {
                 .multilineTextAlignment(.center)
         }
         .padding()
-        .foregroundColor(.buttonFont)
+        .foregroundColor(CustomColor.buttonFont)
     }
 }
 
@@ -84,6 +84,6 @@ struct onboardingPage2: View {
                 .multilineTextAlignment(.center)
         }
         .padding()
-        .foregroundColor(.buttonFont)
+        .foregroundColor(CustomColor.buttonFont)
     }
 }
