@@ -13,9 +13,9 @@ import SystemConfiguration
 class OutboundViewModel: ObservableObject {
     var didChange = PassthroughSubject<OutboundViewModel, Never>()
     
-    @Published var id_company: Int
-    @Published var id_purchaseorder: Int
-    @Published var item: [Products]
+    @Published var id_company: Int = 0
+    @Published var id_purchaseorder: Int = 0
+    @Published var item: [Products] = []
     @Published var outBound: [OutBound] = []
     
     @Published var theAPIReachable : Bool = true {

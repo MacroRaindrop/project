@@ -9,14 +9,13 @@ import Foundation
 import Combine
 import SwiftUI
 import SystemConfiguration
-
 class InboundViewModel: ObservableObject {
     
     var didChange = PassthroughSubject<InboundViewModel, Never>()
     
-    @Published var id_company: Int
-    @Published var id_purchaseorder: Int
-    @Published var item: [Products]
+    @Published var id_company: Int = 0
+    @Published var id_purchaseorder: Int = 0
+    @Published var item: [Products] = []
     @Published var inBound: [InBound] = []
     
     @Published var theAPIReachable : Bool = true {
