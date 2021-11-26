@@ -24,7 +24,7 @@ struct TestGroundApp: App {
             //TODO : Routing Root View
             
             if appState.hasOnboarded{
-               DashboardView()
+                DashboardView()
                     .environmentObject(appState)
             } else {
                 onboardingView()

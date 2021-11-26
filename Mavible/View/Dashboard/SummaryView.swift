@@ -11,115 +11,115 @@ struct SummaryView: View {
     @State private var goesToPOList = false
     @State private var settingProfile = false
     
-    let lowStockNumber = 0
-    let noStockNumber = 0
-    let discontinuedNumber = 0
+    let lowStockNumber = 3
+    let noStockNumber = 5
+    let discontinuedNumber = 4
     let profileImage = Image(systemName: "person.circle")
     
     var body: some View {
         NavigationView {
             ScrollView {
-                    VStack(spacing:0){
-    //                    Spacer()
-                        
-    //                    profileImage
-    //                        .resizable()
-    //                        .frame(width: 32, height: 32)
-    //                        .frame(maxWidth: .infinity, alignment: .trailing)
-    //                        .padding(.trailing, 24)
-    //                        .padding(.bottom, 12)
-                        
-    //                    Spacer()
-                        
-                        Text(date, style: .date)
-                            .frame(maxWidth: .infinity, alignment: .trailing)
-                            .padding(.trailing, 24)
-    //                        .offset(y: -40)
-                        
-                        Text("Inventori")
-                            .font(.title3)
-                            .fontWeight(.semibold)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding()
-                        
-                        ScrollView {
-                            HStack(alignment: .center){
-                                
-                                VStack(alignment: .center){
-                                    Text("\(lowStockNumber)")
-                                        .font(.system(size: 36))
-                                    Text("Low Stock")
-                                        .font(.system(size: 15))
-                                }
-                                .frame(width: 109, height: 100)
-                                .background(RoundedCorners(color: CustomColor.lowColor, tl: 15, tr: 0, bl: 15, br: 0))
-                                
-                                VStack(alignment: .center){
-                                    Text("\(noStockNumber)")
-                                        .font(.system(size: 36))
-                                    Text("No Stock")
-                                        .font(.system(size: 15))
-                                }
-                                .frame(width: 109, height: 100)
-                                .background(RoundedCorners(color: CustomColor.noStockColor, tl: 0, tr: 0, bl: 0, br: 0))
-                                
-                                VStack(alignment: .center){
-                                    Text("\(discontinuedNumber)")
-                                        .font(.system(size: 36))
-                                    Text("Discontinued")
-                                        .font(.system(size: 15))
-                                }
-                                .frame(width: 109, height: 100)
-                                .background(RoundedCorners(color: CustomColor.discontinueColor, tl: 0, tr: 15, bl: 0, br: 15))
+                VStack(spacing:0){
+                    //                    Spacer()
+                    
+                    //                    profileImage
+                    //                        .resizable()
+                    //                        .frame(width: 32, height: 32)
+                    //                        .frame(maxWidth: .infinity, alignment: .trailing)
+                    //                        .padding(.trailing, 24)
+                    //                        .padding(.bottom, 12)
+                    
+                    //                    Spacer()
+                    
+                    Text(date, style: .date)
+                        .frame(maxWidth: .infinity, alignment: .trailing)
+                        .padding(.trailing, 24)
+                    //                        .offset(y: -40)
+                    
+                    Text("Inventori")
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding()
+                    
+                    ScrollView {
+                        HStack(alignment: .center){
+                            
+                            VStack(alignment: .center){
+                                Text("\(lowStockNumber)")
+                                    .font(.system(size: 36))
+                                Text("Low Stock")
+                                    .font(.system(size: 15))
                             }
-                            .foregroundColor(CustomColor.buttonFont)
-                        }
-                        
-                        Text("Purchase Order")
-                            .font(.title3)
-                            .fontWeight(.semibold)
-                            .foregroundColor(Color("ButtonFont"))
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding()
-                        
-                        ScrollView {
-                            VStack{
-                                
-                                listPurchaseOrder()
-                                
-                                
-                                NavigationLink(
-                                    destination: daftarPO(),
-                                    isActive: $goesToPOList) {
-                                        Button(action: { goesToPOList = true }) {
-                                            Text("View All")
-                                                .fontWeight(.regular)
-                                                .foregroundColor(CustomColor.buttonFont)
-                                        }
-                                    }
-                                    .padding()
+                            .frame(width: 109, height: 100)
+                            .background(RoundedCorners(color: CustomColor.lowColor, tl: 15, tr: 0, bl: 15, br: 0))
+                            
+                            VStack(alignment: .center){
+                                Text("\(noStockNumber)")
+                                    .font(.system(size: 36))
+                                Text("No Stock")
+                                    .font(.system(size: 15))
                             }
-                            .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color("raindrop2")/*@END_MENU_TOKEN@*/)
-                            .cornerRadius(/*@START_MENU_TOKEN@*/15.0/*@END_MENU_TOKEN@*/)
-                        }
-                        
-                        
-                        Text("Barang Keluar Hari Ini")
-                            .font(.title3)
-                            .fontWeight(.semibold)
-                            .foregroundColor(Color("ButtonFont"))
-                            .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        
-                        
-                        ScrollView {
-                            VStack {
-                                listOutbound()
+                            .frame(width: 109, height: 100)
+                            .background(RoundedCorners(color: CustomColor.noStockColor, tl: 0, tr: 0, bl: 0, br: 0))
+                            
+                            VStack(alignment: .center){
+                                Text("\(discontinuedNumber)")
+                                    .font(.system(size: 36))
+                                Text("Discontinued")
+                                    .font(.system(size: 15))
                             }
+                            .frame(width: 109, height: 100)
+                            .background(RoundedCorners(color: CustomColor.discontinueColor, tl: 0, tr: 15, bl: 0, br: 15))
                         }
-                        .background(Color.ui.raindrop2)
-                        .cornerRadius(15)
+                        .foregroundColor(CustomColor.buttonFont)
                     }
+                    
+                    Text("Purchase Order")
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color("ButtonFont"))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding()
+                    
+                    ScrollView {
+                        VStack{
+                            
+                            listPurchaseOrder()
+                            
+                            
+                            NavigationLink(
+                                destination: daftarPO(),
+                                isActive: $goesToPOList) {
+                                    Button(action: { goesToPOList = true }) {
+                                        Text("View All")
+                                            .fontWeight(.regular)
+                                            .foregroundColor(CustomColor.buttonFont)
+                                    }
+                                }
+                                .padding()
+                        }
+                        .background(Color("raindrop2"))
+                        .cornerRadius(15.0)
+                    }
+                    
+                    
+                    Text("Barang Keluar Hari Ini")
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color("ButtonFont"))
+                        .padding(.all)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    
+                    
+                    ScrollView {
+                        VStack {
+                            listOutbound()
+                        }
+                    }
+                    .background(Color.ui.raindrop2)
+                    .cornerRadius(15)
+                }
             }
             .navigationTitle("Ringkasan")
             .navigationBarTitle(Text("Ringkasan"))
@@ -206,11 +206,11 @@ struct listPurchaseOrder: View {
         List(0 ..< 30) { item in
             HStack {
                 VStack (alignment: .leading, spacing: 5) {
-                    Text("PO1")
+                    Text("PO" + String(item+1))
                         .font(.title3)
                         .fontWeight(.semibold)
                         .foregroundColor(Color("ButtonFont"))
-                    Text("PT binjai")
+                    Text("PT Semangat Binjai")
                         .foregroundColor(Color("ButtonFont"))
                         .opacity(0.6)
                 }
