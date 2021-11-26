@@ -178,8 +178,6 @@
 				C27E6B1227473D240090D424 /* RegisterViewModel.swift */,
 				C206F2B0274E307F00A32986 /* OrderViewModel.swift */,
 				C206F2B2274F7AFE00A32986 /* CompanyStaffViewModel.swift */,
-				C206F2BC274F8CEC00A32986 /* InboundViewModel.swift */,
-				C206F2BE274F8CFE00A32986 /* OutboundViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -305,6 +303,8 @@
 				C2C3C14127421854007236DC /* APIPassword.swift */,
 				C2DA06D82746523500141E30 /* Server.swift */,
 				C206F2AE274E164900A32986 /* OrderService.swift */,
+				C206F2BC274F8CEC00A32986 /* InboundViewModel.swift */,
+				C206F2BE274F8CFE00A32986 /* OutboundViewModel.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
