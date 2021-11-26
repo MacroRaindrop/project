@@ -9,29 +9,34 @@ import SwiftUI
 
 struct UpdateView: View {
     var body: some View {
+        NavigationView {
             ScrollView {
                 VStack(spacing: 20) {
-                    Text("")
-                    NavigationLink(destination: PurchaseOrderView() ) {
-                    PurchaseOrder()
+                    NavigationLink(destination: PurchaseOrderView()) {
+                        PurchaseOrder()
+                        
                     }
                     NavigationLink(destination: daftarPO() ) {
                         Inbound()
                     }
-                    //                  NavigationLink(destination: Text("Destination")) {
-                    //                        /*@PLACEHOLDER=Label Content@*/Text("Navigate")}
-                    Outbound()
+                    NavigationLink(destination: OutbondView()){
+                        Outbound()
+                    }
                 }
                 .navigationBarTitle("Pesanan")
                 .navigationBarBackButtonHidden(true)
                 .navigationBarTitleDisplayMode(.automatic)
             }
+        }
     }
 }
 
-struct updateView_Previews: PreviewProvider {
-    static var previews: some View {
-        UpdateView()
+    
+    
+    struct updateView_Previews: PreviewProvider {
+        static var previews: some View {
+            UpdateView()
+        }
     }
 }
 
@@ -52,14 +57,14 @@ struct PurchaseOrder: View {
                     .resizable(capInsets: EdgeInsets())
                     .frame(width: /*@START_MENU_TOKEN@*/135.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/75.0/*@END_MENU_TOKEN@*/)
                     .opacity(1.8)
+
             }
+            .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+            .frame(width: /*@START_MENU_TOKEN@*/361.0, height: 231.0/*@END_MENU_TOKEN@*/)
+            .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color("SecondaryButton")/*@END_MENU_TOKEN@*/)
+            .cornerRadius(15.0)
         }
-        .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-        .frame(width: /*@START_MENU_TOKEN@*/361.0, height: 231.0/*@END_MENU_TOKEN@*/)
-        .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color("SecondaryButton")/*@END_MENU_TOKEN@*/)
-        .cornerRadius(15.0)
     }
-}
 
 struct Inbound: View {
     var body: some View {
@@ -110,3 +115,4 @@ struct Outbound: View {
         .cornerRadius(15.0)
     }
 }
+
