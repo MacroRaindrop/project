@@ -11,6 +11,6 @@ import SwiftUI
 import SystemConfiguration
 
 class OutboundViewModel: ObservableObject {
-    @Published var ouBound = [OutBound]()
+    @Published var outBound = [OutBound]()
      
 }
