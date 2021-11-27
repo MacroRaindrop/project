@@ -253,8 +253,8 @@ struct RegisterView: View {
                             .multilineTextAlignment(.center)
                             .frame(maxWidth: 220, maxHeight: 48)
                             .font(.system(size: 20))
-                            .foregroundColor(.buttonFont)
-                            .background(Color.raindrop1Color)
+                            .foregroundColor(CustomColor.buttonFont)
+                            .background(CustomColor.raindrop1Color)
                             .clipShape(RoundedRectangle(cornerRadius: 20))
                             .padding(.horizontal, 60)
                     }
@@ -281,14 +281,5 @@ struct RegisterView_Previews: PreviewProvider {
     }
 }
 
-extension Color {
-    static let raindropColor = Color("Accent")
-    static let raindrop1Color = Color("raindrop1")
-    static let discontinueColor = Color("Discontinue")
-    static let disabledButtonColor = Color("DisabledButton")
-    static let lowColor = Color("LowStock")
-    static let noStockColor = Color("NoStock")
-    static let secondaryButtonColor = Color("SecondaryButton")
-    static let buttonFont = Color("ButtonFont")
-}
+
 

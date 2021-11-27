@@ -110,11 +110,11 @@ struct inboundHistoryView: View {
                     
                     Divider()
                 }
-                .foregroundColor(.buttonFont)
+                .foregroundColor(CustomColor.buttonFont)
                 .padding()
                 .overlay(
                     RoundedRectangle(cornerRadius: 16)
-                        .stroke(Color.raindropColor, lineWidth: 3)
+                        .stroke(CustomColor.raindropColor, lineWidth: 3)
                 )
             }
             
@@ -167,7 +167,7 @@ struct outboundHistoryView: View {
                 .padding()
                 .overlay(
                     RoundedRectangle(cornerRadius: 16)
-                        .stroke(Color.raindropColor, lineWidth: 3)
+                        .stroke(CustomColor.raindropColor, lineWidth: 3)
                 )
                 
             }

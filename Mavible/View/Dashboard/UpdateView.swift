@@ -9,31 +9,36 @@ import SwiftUI
 
 struct UpdateView: View {
     var body: some View {
+        NavigationView {
             ScrollView {
                 VStack(spacing: 20) {
-                    Text("")
-                    NavigationLink(destination: PurchaseOrderView() ) {
-                    PurchaseOrder()
+                    NavigationLink(destination: PurchaseOrderView()) {
+                        PurchaseOrder()
+                        
                     }
                     NavigationLink(destination: daftarPO() ) {
                         Inbound()
                     }
-                    //                  NavigationLink(destination: Text("Destination")) {
-                    //                        /*@PLACEHOLDER=Label Content@*/Text("Navigate")}
-                    Outbound()
+                    NavigationLink(destination: OutbondView()){
+                        Outbound()
+                    }
                 }
                 .navigationBarTitle("Pesanan")
                 .navigationBarBackButtonHidden(true)
                 .navigationBarTitleDisplayMode(.automatic)
             }
+        }
     }
 }
+
+
 
 struct updateView_Previews: PreviewProvider {
     static var previews: some View {
         UpdateView()
     }
 }
+
 
 struct PurchaseOrder: View {
     var body: some View {
@@ -45,7 +50,7 @@ struct PurchaseOrder: View {
             Text("Buat PO baru dan lihat list barang yang akan di pesan")
                 .multilineTextAlignment(.leading)
                 .opacity(0.6)
-                .foregroundColor(.buttonFont)
+                .foregroundColor(CustomColor.buttonFont)
             HStack{
                 Spacer()
                 Image("POicon")
@@ -61,6 +66,7 @@ struct PurchaseOrder: View {
     }
 }
 
+
 struct Inbound: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 6){
@@ -70,7 +76,7 @@ struct Inbound: View {
                 .foregroundColor(Color("ButtonFont"))
             Text("Cek barang yang akan masuk")
                 .opacity(0.6)
-                .foregroundColor(.buttonFont)
+                .foregroundColor(CustomColor.buttonFont)
             HStack{
                 Spacer()
                 Image("InboundIcon")
@@ -95,7 +101,7 @@ struct Outbound: View {
                 .foregroundColor(Color("ButtonFont"))
             Text("Buat list barang yang akan keluar")
                 .opacity(0.6)
-                .foregroundColor(.buttonFont)
+                .foregroundColor(CustomColor.buttonFont)
             HStack{
                 Spacer()
                 Image("OutboundIcon")
@@ -110,3 +116,5 @@ struct Outbound: View {
         .cornerRadius(15.0)
     }
 }
+
+

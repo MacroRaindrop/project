@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import Foundation
+import Combine
+
 
 struct POdetail: View {
     
-    
+    @State  var checked = false
+    @StateObject var globalVariable = GlobalVariable()
     var body: some View {
         
         VStack{
@@ -17,7 +21,16 @@ struct POdetail: View {
             POlist() .padding(.top)
             
             Text("Pastikan jumlah barang yang datang sama dengan yang tertulis").padding(.top, 50) .padding()
-            cekButton()
+            Button(action: {
+                //                if checked == false{
+                //                    self.disabled(true)
+                //                }
+            }){
+                cekButton()
+            }
+            //            .disabled(CheckBoxView(checked: checked) == false)
+            
+            
         }
     }
 }
@@ -32,47 +45,53 @@ struct POdetail_Previews: PreviewProvider {
 struct POlist: View {
     @State var editingMode2: Bool = false
     @State private var jumlah: String = ""
-    @State private var checked = false
+    @State  var checked = false
+    
     @State private var checkedAll = false
     
     var body: some View {
-        //VStack{
-            Button(action: {
-//                CheckBoxView(checked: true, checkedAll: <#T##Binding<Bool>#>)
+        
+        Button(action: {
+            
             checkedAll = true
-            }) {
-                Text("Pilih semua")
-            }.frame(width: 350, alignment: .topTrailing)
+        }) {
+            Text("Pilih semua")
+        }.frame(width: 350, alignment: .topTrailing)
         
-            List(0 ..< 3) { item in
-                HStack {
-                    Image("OutboundIcon")
-                        
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 60, height: 60, alignment: .leading)
-                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
+        List(0 ..< 3) { item in
+            HStack {
+                Image("OutboundIcon")
+                
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 60, height: 60, alignment: .leading)
+                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
+                
+                VStack (alignment: .leading, spacing: 5) {
+                    Text("kelapa kering")
                     
-                    VStack (alignment: .leading, spacing: 5) {
-                        Text("kelapa kering")
-                            
-                            .font(.title3)
-                            .fontWeight(.bold)
-                            .padding(.top, 20)
-                        
-                        POTextfield(jumlah: $jumlah, editingMode2: $editingMode2)
-                    }
-                    CheckBoxView(checked: checked, checkedAll: $checkedAll)
-                } .background(Color.white)
-                    //.padding()
-                //                .overlay(
-                //                        RoundedRectangle(cornerRadius: 3)
-                //                            .stroke(Color.white, lineWidth: 1)
-                //                )
-            }.listStyle(PlainListStyle())
-        } //.scaledToFit()
-        
-   // }
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .padding(.top, 20)
+                    
+                    POTextfield(jumlah: $jumlah, editingMode2: $editingMode2)
+                }
+                CheckBoxView(checked: checked)
+                
+            } .background(Color.white)
+            //.padding()
+            //                .overlay(
+            //                        RoundedRectangle(cornerRadius: 3)
+            //                            .stroke(Color.white, lineWidth: 1)
+            //                )
+        }.listStyle(PlainListStyle())
+        //        if checked == false{
+        //            cekButton.disabled(true)
+        //        }
+    } //.scaledToFit()
+    
+    
+    // }
 }
 
 struct cekButton : View {
@@ -83,10 +102,11 @@ struct cekButton : View {
             .font(.system(size: 20))
             .padding()
             .foregroundColor(.black)
-            .background(Color.raindrop1Color)
+            .background(CustomColor.raindrop1Color)
             .clipShape(RoundedRectangle(cornerRadius: 20))
         
     }
+    
 }
 
 struct detailPO : View {
@@ -99,7 +119,7 @@ struct detailPO : View {
                 Text("Tanggal")
                 
                 Text("4 november 2021")
-    
+                
             }
             HStack (spacing: 103){
                 Text("PIC")
@@ -153,7 +173,12 @@ struct POTextfield : View {
             .padding(.bottom, 20)
             .textFieldStyle(RoundedBorderTextFieldStyle())
             .autocapitalization(.none)
-//            .background(RoundedRectangle(cornerRadius: 5.0).fill(Color.gray))
+        //            .background(RoundedRectangle(cornerRadius: 5.0).fill(Color.gray))
             .foregroundColor(Color.gray)
     }
+}
+
+class GlobalVariable: ObservableObject {
+    @Published var dicek = ""
+    
 }

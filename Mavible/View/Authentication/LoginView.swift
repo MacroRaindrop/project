@@ -107,21 +107,8 @@ struct LoginView: View {
                                         .offset(y: 40)
                                         .foregroundColor(.red)
                                 }
-//                                if  == false{
-//                                    Text("email atau password salah")
-//                                        .offset(y: 40)
-//                                        .foregroundColor(.red)
-//                                }
-////                               else if authenticationDidSucceed{
-////                                   DispatchQueue.main.asyncAfter(deadline: .now() + 3){
-//
-//                                   Text("email atau password salah")
-//                                        .offset(y: 40)
-//                                        .foregroundColor(.red)
-//                                       // .onAppear(perform: delayText)
-//
-//
-//                               }  //.task(delayText)
+                                
+                                
                                 Button(action : {
                                     self.hiddenPassword.toggle()
                                 }) {
@@ -165,13 +152,14 @@ struct LoginView: View {
                                             
                                         }
                                     })
-                                  
+                                    
                                     
                                 }
                             }){
                                 LoginButtonContent()
+                                
                             }
-                             
+                            
                         }
                         if #available(iOS 15.0, *) {
                             NavigationLink(destination: RegisterView()){
@@ -201,18 +189,16 @@ struct LoginView: View {
                 }
                 
             }
-            .navigationTitle(Text(""))
+            //            .navigationTitle(Text(""))
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
-        .accentColor(Color.buttonFont)
-        
-            
+        .accentColor(CustomColor.buttonFont)
         
         
-            //.onAppear{ delay() }
+        //.onAppear{ delay() }
     }
     func delay(){
         isLoading = true
@@ -220,12 +206,12 @@ struct LoginView: View {
             isLoading = false
         }
     }
-     func delayText() async {
-            // Delay of 7.5 seconds (1 second = 1_000_000_000 nanoseconds)
-         DispatchQueue.main.asyncAfter(deadline: .now() + 7.5) {
-                     hasTimeElapsed = true
-                 }
+    func delayText() async {
+        // Delay of 7.5 seconds (1 second = 1_000_000_000 nanoseconds)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 7.5) {
+            hasTimeElapsed = true
         }
+    }
 }
 
 //struct LoginView_Previews: PreviewProvider {
@@ -282,8 +268,8 @@ struct LoginButtonContent : View {
             .multilineTextAlignment(.center)
             .frame(maxWidth: 220, maxHeight: 48)
             .font(.system(size: 20))
-            .foregroundColor(.buttonFont)
-            .background(Color.raindrop1Color)
+            .foregroundColor(CustomColor.buttonFont)
+            .background(CustomColor.raindrop1Color)
             .clipShape(RoundedRectangle(cornerRadius: 20))
             .padding(.horizontal, 60)
         
