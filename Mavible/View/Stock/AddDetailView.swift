@@ -56,11 +56,6 @@ struct AddDetailView: View {
                     .foregroundColor(.red)
                     Spacer()
                     Button(action: {
-//                        if namaItem.isEmpty || jumlahProduk.words.isEmpty || jumlahMinimalStok.words.isEmpty{
-//                            authenticationDidSucceed = false
-//                        }else{
-//                            authenticationDidSucceed = true
-//                        }
                         if authenticationDidSucceed {
                             self.namaItem = fetchProduct.name
                             self.jumlahProduk = fetchProduct.quantity
