@@ -21,7 +21,7 @@ struct StockListContentView: View {
     @State var imageList: String = "POicon"
     @State var strokeColor: Color = .yellow
     @State var titleText: String = "This is title"
-    @State var captionText: String = "This is caption This is Captiopn This is Caption"
+    @State var captionText: String = "Lorem ipsum dolor sit amet aksldjf lkavjoiwen"
     @State var qtyText: Int = 1
     @State var satuanText: String = "Satuan"
 
@@ -31,7 +31,7 @@ struct StockListContentView: View {
             Image(imageList)
                 .resizable()
                 .scaledToFit()
-                .frame(height: 70, alignment: .leading)
+                .frame(width: 70, height: 70, alignment: .leading)
             
             VStack (alignment: .leading, spacing: 2) {
                 Text(titleText)

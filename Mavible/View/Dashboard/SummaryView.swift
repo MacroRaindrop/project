@@ -13,7 +13,7 @@ struct SummaryView: View {
     
     let lowStockNumber = 3
     let noStockNumber = 5
-    let discontinuedNumber = 4
+    let discontinuedNumber = 0
     let profileImage = Image(systemName: "person.circle")
     
     var body: some View {
@@ -135,11 +135,23 @@ struct SummaryView: View {
                     .padding(2)
                     .frame(width: 36, height: 36)
             } )
+//            .toolbar {
+//                Button(action: {
+//                    // button activates link
+//                    self.settingProfile = true
+//                } ) {
+//                    profileImage
+//                        .resizable()
+//                        .foregroundColor(.black)
+//                        .padding(2)
+//                        .frame(width: 36, height: 36)
+//                }
+//            }
         }
-//
-//        // invisible link inside NavigationView for add mode
-//        NavigationLink(destination: UpdateView(existingItem: nil),
-//                       isActive: $settingProfile) { EmptyView() }
+        //
+        //        // invisible link inside NavigationView for add mode
+        //        NavigationLink(destination: UpdateView(existingItem: nil),
+        //                       isActive: $settingProfile) { EmptyView() }
         
     }
 }
@@ -210,9 +222,20 @@ struct listPurchaseOrder: View {
                         .font(.title3)
                         .fontWeight(.semibold)
                         .foregroundColor(Color("ButtonFont"))
-                    Text("PT Semangat Binjai")
-                        .foregroundColor(Color("ButtonFont"))
-                        .opacity(0.6)
+                    switch (item) {
+                    case 0:
+                        Text("PT Roti Sederhana")
+                            .foregroundColor(Color("ButtonFont"))
+                            .opacity(0.6)
+                    case 1:
+                        Text("PT Sayang Ibu")
+                            .foregroundColor(Color("ButtonFont"))
+                            .opacity(0.6)
+                    default:
+                        Text("PT Mikro Kelapa")
+                            .foregroundColor(Color("ButtonFont"))
+                            .opacity(0.6)
+                    }
                 }
                 NavigationLink(destination: POdetail()){
                 }
@@ -234,11 +257,20 @@ struct listOutbound: View {
     var body: some View {
         List(0 ..< 30) { item in
             HStack {
-                Text("Kelapa Kering")
-                Text("-\(outboundHariIni) \(unit[1])")
-                    .frame(maxWidth: .infinity, alignment: .trailing)
-                
-                
+                switch (item) {
+                case 0:
+                    Text("Kelapa Kering")
+                    Text("-\(2) \(unit[1])")
+                        .frame(maxWidth: .infinity, alignment: .trailing)
+                case 1:
+                    Text("Tepung Terigu")
+                    Text("-\(10) \(unit[1])")
+                        .frame(maxWidth: .infinity, alignment: .trailing)
+                default:
+                    Text("Minyak Kelapa")
+                    Text("-\(3) \(unit[0])")
+                        .frame(maxWidth: .infinity, alignment: .trailing)
+                }
             }
             .padding(.top, 10)
             .listRowBackground(Color.ui.raindrop2)

@@ -23,14 +23,14 @@ struct StockListView: View {
                 ForEach(listModel.items, id: \.id) { item in
                     ZStack {
                         HStack {
-                            Image(imageList)
+                            Image(item.image)
                                 .resizable()
                                 .scaledToFit()
-                                .frame(height: 70, alignment: .leading)
+                                .frame(width: 70, height: 70, alignment: .leading)
                             
                             VStack (alignment: .leading, spacing: 2) {
                                 Text(item.name)
-                                    .font(.title)
+                                    .font(.title2)
                                 Divider()
                                 Text(item.description)
                                     .font(.caption)
@@ -40,7 +40,7 @@ struct StockListView: View {
                             
                             VStack {
                                 Text(String(item.quantity))
-                                    .font(.largeTitle)
+                                    .font(.title)
                                 Text(item.unit)
                             }
                             

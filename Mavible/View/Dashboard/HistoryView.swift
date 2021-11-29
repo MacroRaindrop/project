@@ -27,10 +27,65 @@ struct HistoryView: View {
                     .padding(.all)
                     .pickerStyle(SegmentedPickerStyle())
                 
+                let nameHistory = ["Kelapa Kering", "Minyak Kelapa", "Tepung Terigu", "Bubuk Coklat", "Keju Cheddar"]
+                let stokHistory = ["+10", "+2", "+4", "+12", "+15"]
+                let unitHistory = ["kg", "liter", "kg", "kg", "kotak"]
+                let dateHistory = ["November 28, 2021", "November 27, 2021", "November 26, 2021", "November 25, 2021", "November 24, 2021"]
+                
                 if selected == 1 {
-                    List(0..<5) {_ in
-                        inboundHistoryView()
-                            .listRowSeparator(.hidden)
+                    List(0..<5) { brg in
+                        //                        inboundHistoryView()
+                        VStack(alignment: .leading, spacing: 8) {
+                            
+//                            Text(date, style: .date)
+                            Text(dateHistory[brg])
+                            
+                            HStack {
+                                VStack (alignment: .leading) {
+                                    HStack {
+                                        VStack (alignment: .leading) {
+                                            Text(nameHistory[brg])
+                                                .fontWeight(.semibold)
+                                            Text("")
+                                            
+                                        }
+                                        
+                                        Spacer()
+                                        
+                                        Text(stokHistory[brg])
+                                            .font(.largeTitle)
+                                            .fontWeight(.semibold)
+                                            .multilineTextAlignment(.center)
+                                        
+                                    }
+                                    
+                                    HStack {
+                                        Text("PIC: ")
+                                        
+                                        Text("Budi Goks")
+                                            .font(.body).italic().opacity(0.6)
+                                        
+                                        Spacer()
+                                        
+                                        Text(unitHistory[brg])
+                                        
+                                        
+                                        
+                                    }
+                                    
+                                    Divider()
+                                }
+                                .foregroundColor(CustomColor.buttonFont)
+                                .padding()
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 16)
+                                        .stroke(CustomColor.raindropColor, lineWidth: 3)
+                                )
+                            }
+                            
+                        }
+                        .listStyle(PlainListStyle())
+                        .listRowSeparator(.hidden)
                     }
                     .listStyle(PlainListStyle())
                     
@@ -61,70 +116,70 @@ struct HistoryView_Previews: PreviewProvider {
 
 
 
-
+//let oneDayAgo = now.addingTimeInterval(-3600 * 48)
 let now = Date() // Dec 6, 2020 at 2:51 PM
-let twoDays: TimeInterval = 2 * 24 * 60 * 60
-let date = now.advanced(by: twoDays) // Dec 8, 2020 at 2:51 PM
+let oneDay: TimeInterval = -1 * 24 * 60 * 60
+let date = now.advanced(by: oneDay) // Dec 8, 2020 at 2:51 PM
 
-struct inboundHistoryView: View {
-    
-    var body: some View {
-        
-        VStack(alignment: .leading, spacing: 8) {
-            
-            Text(date, style: .date)
-            
-            
-            HStack {
-                VStack (alignment: .leading) {
-                    HStack {
-                        VStack (alignment: .leading) {
-                            Text("Jagung Rebus")
-                                .fontWeight(.semibold)
-                            Text("-")
-                            
-                        }
-                        
-                        Spacer()
-                        
-                        Text("+26")
-                            .font(.largeTitle)
-                            .fontWeight(.semibold)
-                            .multilineTextAlignment(.center)
-                        
-                    }
-                    
-                    HStack {
-                        Text("PIC: ")
-                        
-                        Text("Budi Goks")
-                            .font(.body).italic().opacity(0.6)
-                        
-                        Spacer()
-                        
-                        Text("stok")
-                        
-                    
-                        
-                    }
-                    
-                    Divider()
-                }
-                .foregroundColor(CustomColor.buttonFont)
-                .padding()
-                .overlay(
-                    RoundedRectangle(cornerRadius: 16)
-                        .stroke(CustomColor.raindropColor, lineWidth: 3)
-                )
-            }
-            
-        }
-        .listStyle(PlainListStyle())
-        
-        
-        
-    }
-}
+//struct inboundHistoryView: View {
+//
+//    var body: some View {
+//
+//                VStack(alignment: .leading, spacing: 8) {
+//
+//                    Text(date, style: .date)
+//
+//
+//                    HStack {
+//                        VStack (alignment: .leading) {
+//                            HStack {
+//                                VStack (alignment: .leading) {
+//                                    Text("Jagung Rebus")
+//                                        .fontWeight(.semibold)
+//                                    Text("-")
+//
+//                                }
+//
+//                                Spacer()
+//
+//                                Text("+26")
+//                                    .font(.largeTitle)
+//                                    .fontWeight(.semibold)
+//                                    .multilineTextAlignment(.center)
+//
+//                            }
+//
+//                            HStack {
+//                                Text("PIC: ")
+//
+//                                Text("Budi Goks")
+//                                    .font(.body).italic().opacity(0.6)
+//
+//                                Spacer()
+//
+//                                Text("stok")
+//
+//
+//
+//                            }
+//
+//                            Divider()
+//                        }
+//                        .foregroundColor(CustomColor.buttonFont)
+//                        .padding()
+//                        .overlay(
+//                            RoundedRectangle(cornerRadius: 16)
+//                                .stroke(CustomColor.raindropColor, lineWidth: 3)
+//                        )
+//                    }
+//
+//                }
+//                .listStyle(PlainListStyle())
+//
+//
+//
+//    }
+//}
 
 struct outboundHistoryView: View {
     var body: some View {
