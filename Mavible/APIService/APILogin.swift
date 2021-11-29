@@ -80,7 +80,6 @@ class APILogin: ObservableObject{
                     self.loggedIn = false
                     completion(false)
                 }
-                
             }
         }.resume()
     }

@@ -11,29 +11,30 @@ struct SummaryView: View {
     @State private var goesToPOList = false
     @State private var settingProfile = false
     
-    let lowStockNumber = 0
-    let noStockNumber = 0
-    let discontinuedNumber = 0
+    let lowStockNumber = 3
+    let noStockNumber = 5
+    let discontinuedNumber = 4
     let profileImage = Image(systemName: "person.circle")
     
     var body: some View {
+        NavigationView {
             ScrollView {
                 VStack(spacing:0){
-//                    Spacer()
+                    //                    Spacer()
                     
-//                    profileImage
-//                        .resizable()
-//                        .frame(width: 32, height: 32)
-//                        .frame(maxWidth: .infinity, alignment: .trailing)
-//                        .padding(.trailing, 24)
-//                        .padding(.bottom, 12)
+                    //                    profileImage
+                    //                        .resizable()
+                    //                        .frame(width: 32, height: 32)
+                    //                        .frame(maxWidth: .infinity, alignment: .trailing)
+                    //                        .padding(.trailing, 24)
+                    //                        .padding(.bottom, 12)
                     
-//                    Spacer()
+                    //                    Spacer()
                     
                     Text(date, style: .date)
                         .frame(maxWidth: .infinity, alignment: .trailing)
                         .padding(.trailing, 24)
-//                        .offset(y: -40)
+                    //                        .offset(y: -40)
                     
                     Text("Inventori")
                         .font(.title3)
@@ -98,8 +99,8 @@ struct SummaryView: View {
                                 }
                                 .padding()
                         }
-                        .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color("raindrop2")/*@END_MENU_TOKEN@*/)
-                        .cornerRadius(/*@START_MENU_TOKEN@*/15.0/*@END_MENU_TOKEN@*/)
+                        .background(Color("raindrop2"))
+                        .cornerRadius(15.0)
                     }
                     
                     
@@ -107,7 +108,7 @@ struct SummaryView: View {
                         .font(.title3)
                         .fontWeight(.semibold)
                         .foregroundColor(Color("ButtonFont"))
-                        .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                        .padding(.all)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
                     
@@ -120,26 +121,27 @@ struct SummaryView: View {
                     .cornerRadius(15)
                 }
             }
-//            .navigationBarTitle(Text("Ringkasan"))
-//            .navigationBarTitleDisplayMode(.automatic)
-//            .navigationBarBackButtonHidden(true)
-            //            .navigationTitle("Ringkasan")
-            //            .navigationBarItems(trailing: Button(action: {
-            //                             // button activates link
-            //                              self.settingProfile = true
-            //                            } ) {
-            //                            profileImage
-            //                                .resizable()
-            //                                .foregroundColor(.black)
-            //                                .padding(2)
-            //                                .frame(width: 36, height: 36)
-            //                        } )
-            
-            //                        // invisible link inside NavigationView for add mode
-            //                        NavigationLink(destination: UpdateView(existingItem: nil),
-            //                            isActive: $settingProfile) { EmptyView() }
-            //
+            .navigationTitle("Ringkasan")
+            .navigationBarTitle(Text("Ringkasan"))
+            .navigationBarTitleDisplayMode(.automatic)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(trailing: Button(action: {
+                // button activates link
+                self.settingProfile = true
+            } ) {
+                profileImage
+                    .resizable()
+                    .foregroundColor(.black)
+                    .padding(2)
+                    .frame(width: 36, height: 36)
+            } )
         }
+//
+//        // invisible link inside NavigationView for add mode
+//        NavigationLink(destination: UpdateView(existingItem: nil),
+//                       isActive: $settingProfile) { EmptyView() }
+        
+    }
 }
 
 
@@ -204,11 +206,11 @@ struct listPurchaseOrder: View {
         List(0 ..< 30) { item in
             HStack {
                 VStack (alignment: .leading, spacing: 5) {
-                    Text("PO1")
+                    Text("PO" + String(item+1))
                         .font(.title3)
                         .fontWeight(.semibold)
                         .foregroundColor(Color("ButtonFont"))
-                    Text("PT binjai")
+                    Text("PT Semangat Binjai")
                         .foregroundColor(Color("ButtonFont"))
                         .opacity(0.6)
                 }

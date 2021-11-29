@@ -23,11 +23,8 @@ struct inboundBerhasilView: View {
             }){
                 kembaliButton()
             }
-            
             //konfirmasiButton
            // cekLagiButton
-            
-            
         }
     }
 }

@@ -9,7 +9,7 @@ import Foundation
 class GetProductViewModel: ObservableObject {
     @Published var items = [GetProduct]()
     func getProduct() {
-        guard let url = URL(string: urlGetPorduct) else { return }
+        guard let url = URL(string: urlGetProduct) else { return }
         URLSession.shared.dataTask(with: url) {(data, response, error) in
             if let error = error {
                 print(error)

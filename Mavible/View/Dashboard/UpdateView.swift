@@ -9,31 +9,36 @@ import SwiftUI
 
 struct UpdateView: View {
     var body: some View {
+        NavigationView {
             ScrollView {
                 VStack(spacing: 20) {
-                    Text("")
-                    NavigationLink(destination: PurchaseOrderView() ) {
-                    PurchaseOrder()
+                    NavigationLink(destination: PurchaseOrderView()) {
+                        PurchaseOrder()
+                        
                     }
                     NavigationLink(destination: daftarPO() ) {
                         Inbound()
                     }
-                    //                  NavigationLink(destination: Text("Destination")) {
-                    //                        /*@PLACEHOLDER=Label Content@*/Text("Navigate")}
-                    Outbound()
+                    NavigationLink(destination: OutbondView()){
+                        Outbound()
+                    }
                 }
                 .navigationBarTitle("Pesanan")
                 .navigationBarBackButtonHidden(true)
                 .navigationBarTitleDisplayMode(.automatic)
             }
+        }
     }
 }
+
+
 
 struct updateView_Previews: PreviewProvider {
     static var previews: some View {
         UpdateView()
     }
 }
+
 
 struct PurchaseOrder: View {
     var body: some View {
@@ -60,6 +65,7 @@ struct PurchaseOrder: View {
         .cornerRadius(15.0)
     }
 }
+
 
 struct Inbound: View {
     var body: some View {
@@ -110,3 +116,5 @@ struct Outbound: View {
         .cornerRadius(15.0)
     }
 }
+
+

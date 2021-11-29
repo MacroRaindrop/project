@@ -41,12 +41,11 @@ struct daftarPO_Previews: PreviewProvider {
 }
 
 struct TutorCell : View {
-    let tutor: Tutor
     var body: some View {
         return NavigationLink(destination: POdetail()) {
             VStack(alignment: .leading) {
-                Text(tutor.name)
-                Text(tutor.supplier)
+                Text("name")
+                Text("pt baju")
                     .font(.subheadline)
                     .foregroundColor(.gray)
             }

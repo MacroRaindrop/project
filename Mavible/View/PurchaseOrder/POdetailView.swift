@@ -89,8 +89,6 @@ struct POlist: View {
         //        }
     } //.scaledToFit()
     
-    
-    // }
 }
 
 struct cekButton : View {

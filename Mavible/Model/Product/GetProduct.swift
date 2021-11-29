@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct GetProduct: Codable{
+struct GetProduct: Codable, Identifiable{
     var id: Int
     var created_at: String
     var id_company: Int

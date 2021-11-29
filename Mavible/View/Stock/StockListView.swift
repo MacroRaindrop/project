@@ -16,7 +16,6 @@ struct StockListView: View {
     @State private var query = ""
     @State var showDetailView = false
     @ObservedObject var listModel = GetProductViewModel()
-    
     var body: some View {
         NavigationView {
             List {
@@ -27,7 +26,6 @@ struct StockListView: View {
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: 70, alignment: .leading)
-                            
                             VStack (alignment: .leading, spacing: 2) {
                                 Text(item.name)
                                     .font(.title)
@@ -37,13 +35,11 @@ struct StockListView: View {
                                     .foregroundColor(.secondary)
                                     .lineLimit(2)
                             }
-                            
                             VStack {
                                 Text(String(item.quantity))
                                     .font(.largeTitle)
                                 Text(item.unit)
                             }
-                            
                         }
                         .padding()
                         .overlay(
@@ -56,6 +52,7 @@ struct StockListView: View {
                     }
                     .tint(.red)
                 }
+                .onDelete(perform: self.deleteItem)
             }
             .listStyle(PlainListStyle())
             .searchable(text: $query)
@@ -68,20 +65,16 @@ struct StockListView: View {
                     Image(systemName: "plus")
                 }
             })
-                                
-////                                    Button(action: {
-////                self.showDetailView = true}) {Image(systemName: "plus")})
-//            NavigationLink(destination: AddDetailView(showModal: .constant(true)), isActive: $showDetailView){
-//                Button(action: { self.showDetailView = true}) {Image(systemName: "plus")})
-//            }
             .onAppear(perform: {
                 listModel.getProduct()
             })
+            
         }
     }
+    private func deleteItem(at offsets: IndexSet) {
+        self.listModel.items.remove(atOffsets: offsets)
+    }
 }
-
-
 
 struct StockListView_Previews: PreviewProvider {
     static var previews: some View {

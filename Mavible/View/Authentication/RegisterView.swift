@@ -247,7 +247,7 @@ struct RegisterView: View {
                         } else {
                             print("register gagal")
                         }
-                        //dismiss()
+                        dismiss()
                     }) {
                         Text("Buat Akun")
                             .multilineTextAlignment(.center)

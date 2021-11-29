@@ -18,6 +18,7 @@ struct CheckBoxView: View {
             .foregroundColor(checked ? Color(UIColor.systemBlue) : Color.secondary)
             .onTapGesture {
                 self.checked.toggle()
+                
             }
     }
 }
