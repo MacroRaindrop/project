@@ -8,9 +8,6 @@
 import SwiftUI
 import Combine
 import Camera_SwiftUI
-
-
-
 struct AddDetailView: View {
     
     @State private var shouldPresentImagePicker = false
@@ -18,7 +15,7 @@ struct AddDetailView: View {
     @State private var shouldPresentCamera = false
     
     @State var showCaptureImageView: Bool = false
-    @Binding var showModal: Bool
+//    @Binding var showModal: Bool
     //@State private var namaProduk: String = ""
     
     //TODO Nambah array + nambah fungsi buat ngirim array ke DB
@@ -39,9 +36,10 @@ struct AddDetailView: View {
     @State var imageName: String = ""
     @State var authenticationDidFail: Bool = false
     @State var authenticationDidSucceed: Bool = true
-    
+    var newProduct: Product = Product(id: 0 , created_at: "", id_company: 0, name: "", minimum_stock: 0, image: "", unit: "", description: "", quantity: 0)
     
     @ObservedObject var fetchProduct = APIProduct()
+    
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -49,7 +47,7 @@ struct AddDetailView: View {
             VStack(alignment: .leading, spacing: 16){
                 HStack {
                     Button("Batal") {
-                        self.showModal.toggle()
+//                        self.showModal.toggle()
                         dismiss()
                     }
                     .padding()
@@ -57,10 +55,19 @@ struct AddDetailView: View {
                     Spacer()
                     Button(action: {
                         if authenticationDidSucceed {
-                            self.namaItem = fetchProduct.name
-                            self.jumlahProduk = fetchProduct.quantity
-                            self.jumlahMinimalStok = fetchProduct.minimum_stock
-                            self.notesDeskripsi = fetchProduct.description
+                            var umah = Rumah(nama: "sdas", id: 0)
+                            umah.id = 11
+                            newProduct.id = 0
+                            newProduct.name = namaItem
+                            newProduct.quantity = jumlahProduk
+                            newProduct.minimum_stock = jumlahMinimalStok
+                            newProduct.description = notesDeskripsi
+//                            newProduct?.id = 0
+//                            newProduct?.id_company = 0
+//                            newProduct?.image = imageName
+//                            newProduct?.created_at = ""
+//                            AddProductViewModel().addProduct(name: self.namaItem, quantity: self.jumlahProduk, minimum_stock: self.jumlahMinimalStok, description: self.notesDeskripsi)
+                            fetchProduct.addProduct(product: newProduct)
                             print("sukses")
                             //TODO Nyambungin ke image biar bisa disave
                         } else {
@@ -161,9 +168,6 @@ struct AddDetailView: View {
                             .opacity(0.4)
                             .frame(maxWidth: .infinity, alignment: .leading)
                     }
-                    
-                    
-                    
                     VStack(spacing: 8) {
                         Text("Notes/Desc")
                             .fontWeight(.semibold)
@@ -186,11 +190,11 @@ struct AddDetailView: View {
     }
 }
 
-struct addDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddDetailView(showModal: .constant(true))
-    }
-}
+//struct addDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AddDetailView(showModal: .constant(true), newProduct: Product())
+//    }
+//}
 
 //struct CaptureImageView {
 //    

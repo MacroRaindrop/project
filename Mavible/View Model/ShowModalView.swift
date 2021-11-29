@@ -14,7 +14,7 @@ struct ShowModalView: View {
           Button("Show Modal") {
              self.showAddDetailView.toggle()
           }.sheet(isPresented: $showAddDetailView) {
-              AddDetailView(showModal: self.$showAddDetailView)
+              AddDetailView()
            }
        }
    }

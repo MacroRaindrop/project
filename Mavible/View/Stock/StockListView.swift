@@ -60,7 +60,7 @@ struct StockListView: View {
             .navigationBarItems(leading:
                                     Button(action: {print("...")}) {Text("")},
                                 trailing:
-                                    NavigationLink(destination: AddDetailView(showModal: .constant(true)), isActive: $showDetailView){
+                                    NavigationLink(destination: AddDetailView(), isActive: $showDetailView){
                 Button(action: {self.showDetailView = true}) {
                     Image(systemName: "plus")
                 }

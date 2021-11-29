@@ -43,6 +43,7 @@
 		C206F2BB274F7C6F00A32986 /* Outbound.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206F2BA274F7C6F00A32986 /* Outbound.swift */; };
 		C206F2BD274F8CEC00A32986 /* InboundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206F2BC274F8CEC00A32986 /* InboundViewModel.swift */; };
 		C206F2BF274F8CFE00A32986 /* OutboundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206F2BE274F8CFE00A32986 /* OutboundViewModel.swift */; };
+		C2178B3C2754ED0D005603FF /* AddProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2178B3B2754ED0D005603FF /* AddProductViewModel.swift */; };
 		C24123BA273E16B600A33C22 /* GetProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24123B9273E16B600A33C22 /* GetProduct.swift */; };
 		C24123BC273E16D200A33C22 /* GetProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24123BB273E16D200A33C22 /* GetProductViewModel.swift */; };
 		C2445A51272BDF9900C19C05 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2445A50272BDF9900C19C05 /* Register.swift */; };
@@ -100,6 +101,7 @@
 		C206F2BA274F7C6F00A32986 /* Outbound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outbound.swift; sourceTree = "<group>"; };
 		C206F2BC274F8CEC00A32986 /* InboundViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboundViewModel.swift; sourceTree = "<group>"; };
 		C206F2BE274F8CFE00A32986 /* OutboundViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutboundViewModel.swift; sourceTree = "<group>"; };
+		C2178B3B2754ED0D005603FF /* AddProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewModel.swift; sourceTree = "<group>"; };
 		C24123B9273E16B600A33C22 /* GetProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProduct.swift; sourceTree = "<group>"; };
 		C24123BB273E16D200A33C22 /* GetProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProductViewModel.swift; sourceTree = "<group>"; };
 		C2445A50272BDF9900C19C05 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				C27E6B1227473D240090D424 /* RegisterViewModel.swift */,
 				C206F2B0274E307F00A32986 /* OrderViewModel.swift */,
 				C206F2B2274F7AFE00A32986 /* CompanyStaffViewModel.swift */,
+				C2178B3B2754ED0D005603FF /* AddProductViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				7CB61379273281A00039C14D /* Coordinator.swift in Sources */,
 				C24123BC273E16D200A33C22 /* GetProductViewModel.swift in Sources */,
 				C27E6B79274D16010090D424 /* Owner.swift in Sources */,
+				C2178B3C2754ED0D005603FF /* AddProductViewModel.swift in Sources */,
 				7C1BC0FA2743A20D0022F4EB /* HistoryView.swift in Sources */,
 				7C2677E727314E2B00285B1A /* AddDetailView.swift in Sources */,
 				7C1BC0E92743A1E60022F4EB /* OutbondListView.swift in Sources */,
