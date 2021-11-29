@@ -47,9 +47,9 @@ struct StockListView: View {
                                 .stroke(strokeColor, lineWidth: 1)
                         )
                     }
-                    .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                        Button(action: {}) {Image(systemName: "trash")}
-                    }
+//                    .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+//                        Button(action: {self.deleteItem(at: id)}) {Image(systemName: "trash")}
+//                    }
                     .tint(.red)
                 }
                 .onDelete(perform: self.deleteItem)
@@ -68,11 +68,11 @@ struct StockListView: View {
             .onAppear(perform: {
                 listModel.getProduct()
             })
-            
         }
     }
-    private func deleteItem(at offsets: IndexSet) {
-        self.listModel.items.remove(atOffsets: offsets)
+    private func deleteItem(at indexSet: IndexSet) {
+        self.listModel.items.remove(atOffsets: indexSet)
+        print(listModel.items.count)
     }
 }
 
