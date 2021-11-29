@@ -46,8 +46,6 @@ struct OutbondConfirmationView: View {
             }
             //konfirmasiButton
             // cekLagiButton
-            
-            
         }
     }
 }

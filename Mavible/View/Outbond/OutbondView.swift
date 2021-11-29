@@ -35,8 +35,6 @@ struct OutbondView: View {
             
  
         }
-        
-        
     }
 }
 

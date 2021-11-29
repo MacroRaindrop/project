@@ -29,8 +29,6 @@ struct inboundConfirmation: View {
             }
             //konfirmasiButton
            // cekLagiButton
-            
-            
         }
     }
 }

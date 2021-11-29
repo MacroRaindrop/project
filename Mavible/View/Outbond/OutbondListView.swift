@@ -37,8 +37,6 @@ struct OutbondListView: View {
                                     Button(action: {print("...")}) {Image(systemName: "chevron.left")})
             
         }
-        
-        
     }
 }
 

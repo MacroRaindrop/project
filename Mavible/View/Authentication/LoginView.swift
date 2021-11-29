@@ -287,7 +287,6 @@ extension View {
                 self
                     .navigationBarTitle("")
                     .navigationBarHidden(true)
-                
                 NavigationLink(
                     destination: view
                         .navigationBarTitle("")
