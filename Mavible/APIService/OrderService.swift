@@ -12,6 +12,7 @@ import SystemConfiguration
 
 class OrderService : ObservableObject {
     @Published var purchaseOrders = [Order]()
+    
     func postOrder(order:Order){
         let parameter : [ String : Any ] = ["id_company" : 0, "id_staff" : 0, "supplier" : "string", "date" : "string", "products" : [order.products]]
         guard let url = URL(string: urlPurchaseOrder) else { return }
