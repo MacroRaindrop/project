@@ -77,7 +77,6 @@ struct POlist: View {
                     POTextfield(jumlah: $jumlah, editingMode2: $editingMode2)
                 }
                 CheckBoxView(checked: checked)
-                
             } .background(Color.white)
             //.padding()
             //                .overlay(
@@ -90,8 +89,6 @@ struct POlist: View {
         //        }
     } //.scaledToFit()
     
-    
-    // }
 }
 
 struct cekButton : View {
