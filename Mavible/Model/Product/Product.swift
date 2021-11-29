@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftUI
 
 struct Product: Codable, Identifiable{
     var id: Int
@@ -33,6 +32,7 @@ struct Product: Codable, Identifiable{
 //        case quantity = "quantity"
 //    }
 }
+
 struct Rumah: Codable, Identifiable {
     var nama: String
     var id: Int
