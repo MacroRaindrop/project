@@ -68,7 +68,6 @@ struct StockListView: View {
                     Image(systemName: "plus")
                 }
             })
-                                
 ////                                    Button(action: {
 ////                self.showDetailView = true}) {Image(systemName: "plus")})
 //            NavigationLink(destination: AddDetailView(showModal: .constant(true)), isActive: $showDetailView){
@@ -80,8 +79,6 @@ struct StockListView: View {
         }
     }
 }
-
-
 
 struct StockListView_Previews: PreviewProvider {
     static var previews: some View {

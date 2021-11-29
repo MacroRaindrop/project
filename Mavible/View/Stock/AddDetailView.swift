@@ -71,7 +71,6 @@ struct AddDetailView: View {
                         Text("Simpan")
                             .foregroundColor(.blue)
                     }
-//                    .disabled($jumlahProduk.isEmpty || $jumlahMinimalStok.isEmpty)
                     .padding()
                 }
                 
