@@ -42,7 +42,7 @@ struct AddDetailView: View {
     
     
     @ObservedObject var fetchProduct = APIProduct()
-    
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         ScrollView{
@@ -50,6 +50,7 @@ struct AddDetailView: View {
                 HStack {
                     Button("Batal") {
                         self.showModal.toggle()
+                        dismiss()
                     }
                     .padding()
                     .foregroundColor(.red)
@@ -61,10 +62,11 @@ struct AddDetailView: View {
                             self.jumlahMinimalStok = fetchProduct.minimum_stock
                             self.notesDeskripsi = fetchProduct.description
                             print("sukses")
-                            //TODO Nyambungin ke module api product
+                            //TODO Nyambungin ke image biar bisa disave
                         } else {
                             print("gagal menambah produk")
                         }
+                        dismiss()
                     }) {
                         Text("Simpan")
                             .foregroundColor(.blue)
@@ -109,9 +111,6 @@ struct AddDetailView: View {
                             }), ActionSheet.Button.cancel()])
                         }
                 }
-                
-                
-                
                 VStack(alignment: .leading, spacing: 32){
                     VStack(spacing:4) {
                         HStack{
@@ -143,8 +142,6 @@ struct AddDetailView: View {
                         .opacity(0.4)
                         .font(.system(size: 13))
                     }
-                    
-                    
                     VStack(spacing: 4) {
                         HStack{
                             Text("Minimal Stok")

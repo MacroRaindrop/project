@@ -22,7 +22,6 @@
 		7C1BC0FE2743A2340022F4EB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1BC0FC2743A2340022F4EB /* LoginView.swift */; };
 		7C1BC0FF2743A2340022F4EB /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1BC0FD2743A2340022F4EB /* RegisterView.swift */; };
 		7C1BC10527465F470022F4EB /* CheckBoxViewHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1BC10427465F470022F4EB /* CheckBoxViewHolder.swift */; };
-		7C2286A7273C484900808B72 /* Tutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2286A6273C484900808B72 /* Tutor.swift */; };
 		7C2677E727314E2B00285B1A /* AddDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2677E627314E2B00285B1A /* AddDetailView.swift */; };
 		7C2677E927314E5800285B1A /* ShowModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2677E827314E5800285B1A /* ShowModalView.swift */; };
 		7C2677F12731A84A00285B1A /* MaxTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2677F02731A84A00285B1A /* MaxTextField.swift */; };
@@ -81,7 +80,6 @@
 		7C1BC0FC2743A2340022F4EB /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		7C1BC0FD2743A2340022F4EB /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		7C1BC10427465F470022F4EB /* CheckBoxViewHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxViewHolder.swift; sourceTree = "<group>"; };
-		7C2286A6273C484900808B72 /* Tutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutor.swift; sourceTree = "<group>"; };
 		7C2677E627314E2B00285B1A /* AddDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDetailView.swift; sourceTree = "<group>"; };
 		7C2677E827314E5800285B1A /* ShowModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowModalView.swift; sourceTree = "<group>"; };
 		7C2677F02731A84A00285B1A /* MaxTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxTextField.swift; sourceTree = "<group>"; };
@@ -265,7 +263,6 @@
 				C206F2B6274F7C1000A32986 /* PurchaseOrder */,
 				C206F2B5274F7C0100A32986 /* Product */,
 				C206F2B4274F7BCC00A32986 /* CompanyAndStaff */,
-				7C2286A6273C484900808B72 /* Tutor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -432,7 +429,6 @@
 				C2E50D41273BA8E000FC6A57 /* APIProduct.swift in Sources */,
 				7C1BC0EB2743A1E60022F4EB /* DaftarPOView.swift in Sources */,
 				7C1BC0EC2743A1E60022F4EB /* StockListContentView.swift in Sources */,
-				7C2286A7273C484900808B72 /* Tutor.swift in Sources */,
 				7C1BC0EA2743A1E60022F4EB /* InboundConfirmationView.swift in Sources */,
 				C206F2B3274F7AFE00A32986 /* CompanyStaffViewModel.swift in Sources */,
 				7C1BC0F72743A20D0022F4EB /* SummaryView.swift in Sources */,
