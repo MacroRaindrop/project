@@ -38,7 +38,7 @@ struct AddDetailView: View {
     @State var notesDeskripsi: String = ""
     @State var imageName: String = ""
     @State var authenticationDidFail: Bool = false
-    @State var authenticationDidSucceed: Bool = false
+    @State var authenticationDidSucceed: Bool = true
     
     
     @ObservedObject var fetchProduct = APIProduct()
@@ -56,6 +56,11 @@ struct AddDetailView: View {
                     .foregroundColor(.red)
                     Spacer()
                     Button(action: {
+//                        if namaItem.isEmpty || jumlahProduk.words.isEmpty || jumlahMinimalStok.words.isEmpty{
+//                            authenticationDidSucceed = false
+//                        }else{
+//                            authenticationDidSucceed = true
+//                        }
                         if authenticationDidSucceed {
                             self.namaItem = fetchProduct.name
                             self.jumlahProduk = fetchProduct.quantity
@@ -70,7 +75,7 @@ struct AddDetailView: View {
                     }) {
                         Text("Simpan")
                             .foregroundColor(.blue)
-                    }
+                    }.disabled(namaItem.isEmpty || jumlahProduk.words.isEmpty || jumlahMinimalStok.words.isEmpty)
                     .padding()
                 }
                 

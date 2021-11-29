@@ -80,11 +80,8 @@ struct POConfirmationView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                 }
             }
-            
         }
-        
     }
-    
 }
 
 struct POConfirmationView_Previews: PreviewProvider {
