@@ -29,11 +29,16 @@ struct AddDetailView: View {
     @ObservedObject var namaProduk = TextBindingManager(limit: 20)
     
     @State var namaItem: String = ""
+    
+    //Image Dumb
     @State var image: Image? = Image("InboundIcon")
     @State var jumlahProduk : Int = 0
     @State var jumlahMinimalStok : Int = 0
     @State var notesDeskripsi: String = ""
+    
+    //Buat Masukin Imagenya
     @State var imageName: String = ""
+    
     @State var authenticationDidFail: Bool = false
     @State var authenticationDidSucceed: Bool = true
     
@@ -55,6 +60,8 @@ struct AddDetailView: View {
                     Spacer()
                     Button(action: {
                         if authenticationDidSucceed {
+                            
+                            //TODO nyambungin API sama masukin Image
                             var newProduct: Item?
                             newProduct?.name = self.namaItem
                             newProduct?.quantity = self.jumlahProduk
@@ -98,6 +105,7 @@ struct AddDetailView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding()
                     
+                    //TODO nyambungin image ke api
                     image!
                         .resizable()
                         .aspectRatio(contentMode: .fill)
