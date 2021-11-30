@@ -11,7 +11,9 @@ struct PO1View: View {
     
     @Binding var text: String
     @Binding var qty: String
+    @State var imageList: String = "InboundIcon"
     @State var isEditing: Bool = false
+    @ObservedObject var listPO = OrderService()
     var body: some View {
         VStack {
             // title
@@ -39,24 +41,25 @@ struct PO1View: View {
                 .transition(.move(edge: .trailing))
             }
             Spacer()
-            List(/*@START_MENU_TOKEN@*/0 ..< 5/*@END_MENU_TOKEN@*/) { item in
-                HStack {
-                    Image("InboundIcon")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 70, height: 70, alignment: .leading)
-                    VStack (alignment: .leading, spacing: 5) {
-                        Text("tepung")
-                            .font(.title3)
-                            .fontWeight(.bold)
-                        
-                        TextField("100", text: $qty)
-                            .font(.system(size: 14))
-                            .frame(height: 34)
-                            .textFieldStyle(PlainTextFieldStyle())
-                            .padding([.horizontal], 10)
-                            .cornerRadius(20)
-                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
+            List {
+                ForEach (listPO.purchaseOrders, id: \.id_company) { item in
+                    HStack {
+                        Image(imageList)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 70, height: 70, alignment: .leading)
+                        VStack (alignment: .leading, spacing: 5) {
+                            Text(item.supplier)
+                                .font(.title3)
+                                .fontWeight(.bold)
+                            TextField(item)
+                                .font(.system(size: 14))
+                                .frame(height: 34)
+                                .textFieldStyle(PlainTextFieldStyle())
+                                .padding([.horizontal], 10)
+                                .cornerRadius(20)
+                                .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
+                        }
                     }
                 }
             }.padding()

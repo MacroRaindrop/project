@@ -36,7 +36,7 @@ struct AddDetailView: View {
     @State var imageName: String = ""
     @State var authenticationDidFail: Bool = false
     @State var authenticationDidSucceed: Bool = true
-    var newProduct: Product = Product(id: 0 , created_at: "", id_company: 0, name: "", minimum_stock: 0, image: "", unit: "", description: "", quantity: 0)
+    
     
     @ObservedObject var fetchProduct = APIProduct()
     
@@ -55,19 +55,21 @@ struct AddDetailView: View {
                     Spacer()
                     Button(action: {
                         if authenticationDidSucceed {
-                            var umah = Rumah(nama: "sdas", id: 0)
-                            umah.id = 11
-                            newProduct.id = 0
-                            newProduct.name = namaItem
-                            newProduct.quantity = jumlahProduk
-                            newProduct.minimum_stock = jumlahMinimalStok
-                            newProduct.description = notesDeskripsi
+                            var newProduct: Item?
+                            newProduct?.name = self.namaItem
+                            newProduct?.quantity = self.jumlahProduk
+                            newProduct?.minimum_stock = self.jumlahMinimalStok
+                            newProduct?.description = self.notesDeskripsi
+//                            fetchProduct.name = newProduct.
+//                            newProduct.quantity = jumlahProduk
+//                            newProduct.minimum_stock = jumlahMinimalStok
+//                            newProduct.description = notesDeskripsi
 //                            newProduct?.id = 0
 //                            newProduct?.id_company = 0
 //                            newProduct?.image = imageName
 //                            newProduct?.created_at = ""
-//                            AddProductViewModel().addProduct(name: self.namaItem, quantity: self.jumlahProduk, minimum_stock: self.jumlahMinimalStok, description: self.notesDeskripsi)
-                            fetchProduct.addProduct(product: newProduct)
+                            AddProductViewModel().addProduct(name: self.namaItem, quantity: self.jumlahProduk, minimum_stock: self.jumlahMinimalStok, description: self.notesDeskripsi)
+//                            fetchProduct.addProduct(product: newProduct)
                             print("sukses")
                             //TODO Nyambungin ke image biar bisa disave
                         } else {

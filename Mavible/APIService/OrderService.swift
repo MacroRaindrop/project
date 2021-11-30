@@ -32,7 +32,7 @@ class OrderService : ObservableObject {
         })
         task.resume()
     }
-    func getOrder(order:Order){
+    func getOrder(){
         guard let url = URL(string: urlPurchaseOrder) else { return }
         URLSession.shared.dataTask(with: url) {(data, response, error) in
             if let error = error {

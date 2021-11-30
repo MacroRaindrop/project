@@ -12,7 +12,6 @@ struct PurchaseOrderView: View {
         ZStack {
             VStack {
                 HStack{
-                    
                     Button("<") {
                         print("balik ke awal")
                     }
@@ -23,7 +22,6 @@ struct PurchaseOrderView: View {
                         .font(.system(size: 30, weight: .bold))
                     Spacer()
                 }
-                
                 VStack {
                     HStack {
                         Text("PIC")
@@ -73,7 +71,6 @@ struct PurchaseOrderView: View {
                             .border(/*@START_MENU_TOKEN@*/Color.gray/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/5/*@END_MENU_TOKEN@*/)
                     }
                     Spacer()
-                    
                     Text("Lanjut")
                         .frame(maxWidth: 219, maxHeight: 20)
                         .font(.system(size: 20))

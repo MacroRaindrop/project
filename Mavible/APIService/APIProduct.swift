@@ -26,10 +26,10 @@ class APIProduct: ObservableObject {
         }
     }
     //Array Dari Model
-    @Published var products: [Product] = []
+    @Published var products: [Item] = []
     
     //Fungsi Menambah Product Ke DB
-    func addProduct(product: Product) {
+    func addProduct(product: Item) {
         
         //URL DB
         guard let url = URL(string: urlProduct) else { return }
@@ -56,7 +56,7 @@ class APIProduct: ObservableObject {
             print(response!)
             print(String(data: data, encoding: String.Encoding.utf8)!)
             
-            let result = try? JSONDecoder().decode(Product.self, from: data)
+            let result = try? JSONDecoder().decode(Item.self, from: data)
             if let result = result {
                 DispatchQueue.main.async {
                     self.name = result.name
@@ -76,7 +76,7 @@ class APIProduct: ObservableObject {
     }
     
     
-    func updateProduct(product: Product) {
+    func updateProduct(product: Item) {
         let url = URL(string: urlProduct)!
         let fullURL = url.appendingPathComponent("/PUT")
         

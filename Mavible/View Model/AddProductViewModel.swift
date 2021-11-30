@@ -17,7 +17,7 @@ class AddProductViewModel: ObservableObject {
     @State var jumlahMinimalStok : Int = 0
     @State var notesDeskripsi: String = ""
     @State var imageName: String = ""
-    var newProduct: Product?
+    var newProduct: Item?
     
     func addProduct(name: String, quantity: Int, minimum_stock: Int, description: String){
         

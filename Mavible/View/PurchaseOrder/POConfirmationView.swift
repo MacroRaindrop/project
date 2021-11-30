@@ -18,7 +18,6 @@ struct POConfirmationView: View {
             //tabel
             VStack{
                 HStack{
-                    
                     Text("Nama Item").bold()
                     Spacer()
                     Text("Jumlah").bold()

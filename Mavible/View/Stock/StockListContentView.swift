@@ -42,24 +42,19 @@ struct StockListContentView: View {
                     .foregroundColor(.secondary)
                     .lineLimit(2)
             }
-            
             VStack {
                 Text(String(qtyText))
                     .font(.largeTitle)
                 Text(satuanText)
             }
-            
         }
         .padding()
         .overlay(
             RoundedRectangle(cornerRadius: 8)
                 .stroke(strokeColor, lineWidth: 1)
         )
-
     }
-    
 }
-
 struct ContentListView_Previews: PreviewProvider {
     static var previews: some View {
         StockListContentView()
