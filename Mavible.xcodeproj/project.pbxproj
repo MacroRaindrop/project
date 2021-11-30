@@ -34,6 +34,7 @@
 		7CEA5FE4273D0B5300FC322F /* TestGroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEA5FE2273D0B5300FC322F /* TestGroundApp.swift */; };
 		7CEA5FE5273D0B5300FC322F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEA5FE3273D0B5300FC322F /* ContentView.swift */; };
 		B745DE5127439EFD006A5AF4 /* PO1View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B745DE5027439EFD006A5AF4 /* PO1View.swift */; };
+		B761C29727560DA300D7D1B7 /* POBerhasilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B761C29627560DA300D7D1B7 /* POBerhasilView.swift */; };
 		B7D85E45274F58B5006323AD /* POConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D85E44274F58B5006323AD /* POConfirmationView.swift */; };
 		B828FCF1272179170015F0BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B828FCF0272179170015F0BF /* Assets.xcassets */; };
 		B828FCF4272179170015F0BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B828FCF3272179170015F0BF /* Preview Assets.xcassets */; };
@@ -92,6 +93,7 @@
 		7CEA5FE2273D0B5300FC322F /* TestGroundApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestGroundApp.swift; path = Mavible/TestGroundApp.swift; sourceTree = SOURCE_ROOT; };
 		7CEA5FE3273D0B5300FC322F /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = Mavible/ContentView.swift; sourceTree = SOURCE_ROOT; };
 		B745DE5027439EFD006A5AF4 /* PO1View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PO1View.swift; sourceTree = "<group>"; };
+		B761C29627560DA300D7D1B7 /* POBerhasilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POBerhasilView.swift; sourceTree = "<group>"; };
 		B7D85E44274F58B5006323AD /* POConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POConfirmationView.swift; sourceTree = "<group>"; };
 		B828FCE9272179150015F0BF /* Mavible.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mavible.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B828FCF0272179170015F0BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 			children = (
 				7CE356EB274CF939006EE579 /* PurchaseOrderView.swift */,
 				B7D85E44274F58B5006323AD /* POConfirmationView.swift */,
+				B761C29627560DA300D7D1B7 /* POBerhasilView.swift */,
 				7C1BC0E52743A1E60022F4EB /* POdetailView.swift */,
 				7C1BC0E32743A1E60022F4EB /* DaftarPOView.swift */,
 				B745DE5027439EFD006A5AF4 /* PO1View.swift */,
@@ -475,6 +478,7 @@
 				C27E6B75274CDB360090D424 /* Order.swift in Sources */,
 				7C1BC0F82743A20D0022F4EB /* UpdateView.swift in Sources */,
 				C206F2AF274E164900A32986 /* OrderService.swift in Sources */,
+				B761C29727560DA300D7D1B7 /* POBerhasilView.swift in Sources */,
 				7C1BC0EE2743A1E60022F4EB /* StockListView.swift in Sources */,
 				C206F2B9274F7C6600A32986 /* Inbound.swift in Sources */,
 				C2DA06D92746523500141E30 /* Server.swift in Sources */,

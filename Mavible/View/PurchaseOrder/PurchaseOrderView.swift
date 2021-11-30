@@ -11,16 +11,9 @@ struct PurchaseOrderView: View {
         ZStack {
             VStack {
                 HStack{
-                    
-                    Button("<") {
-                        print("balik ke awal")
-                    }
-                    .padding()
-                    .foregroundColor(.gray)
                     Text("Buat PO")
                         .padding(15.0)
                         .font(.system(size: 30, weight: .bold))
-                    Spacer()
                 }
                 
                 VStack {
@@ -44,10 +37,8 @@ struct PurchaseOrderView: View {
                         .cornerRadius(20)
                         .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray))
                         .pickerStyle(WheelPickerStyle())
-                        
                         Spacer()
                     }
-                    
                     HStack {
                         Text("Supplier")
                             .font(Font.headline.weight(.bold))
@@ -72,15 +63,17 @@ struct PurchaseOrderView: View {
                             .border(/*@START_MENU_TOKEN@*/Color.gray/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/5/*@END_MENU_TOKEN@*/)
                     }
                     Spacer()
+                    NavigationLink(destination: PO1View(text: .constant(""), qty: .constant(""))){
+                        Text("Lanjut")
+                            .frame(maxWidth: 219, maxHeight: 20)
+                            .font(.system(size: 20))
+                            .padding()
+                            .foregroundColor(.black)
+                            .background(CustomColor.discontinueColor)
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                            .padding()
+                    }
                     
-                    Text("Lanjut")
-                        .frame(maxWidth: 219, maxHeight: 20)
-                        .font(.system(size: 20))
-                        .padding()
-                        .foregroundColor(.black)
-                        .background(CustomColor.discontinueColor)
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                        .padding()
                 }
                 Spacer()
                     .frame(height: 100)

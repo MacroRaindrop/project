@@ -60,14 +60,17 @@ struct PO1View: View {
                     }
                 }
             }.padding()
-            Text("Lanjut")
-                .frame(maxWidth: 219, maxHeight: 20)
-                .font(.system(size: 20))
-                .padding()
-                .foregroundColor(.black)
-                .background(CustomColor.raindropColor)
-                .clipShape(RoundedRectangle(cornerRadius: 20))
-                .padding()
+            NavigationLink(destination: POConfirmationView()){
+                Text("Lanjut")
+                    .frame(maxWidth: 219, maxHeight: 20)
+                    .font(.system(size: 20))
+                    .padding()
+                    .foregroundColor(.black)
+                    .background(CustomColor.raindropColor)
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                    .padding()
+            }
+           
         }.listStyle(PlainListStyle())
         
     }

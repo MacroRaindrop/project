@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct POConfirmationView: View {
+struct POBerhasilView: View {
     @State private var note: String = ""
     @State var editingMode: Bool = false
     @State private var backgroundColor: Color = .white
@@ -57,22 +57,13 @@ struct POConfirmationView: View {
                     .border(Color.black,width: 1)
                     .cornerRadius(10)
                 //buttons
-                NavigationLink(destination: POBerhasilView()){
-                    Text("Konfirmasi")
+                NavigationLink(destination: daftarPO()){
+                    Text("Kembali")
                         .frame(maxWidth: 330, maxHeight: 20)
                         .font(.system(size: 20))
                         .padding()
                         .foregroundColor(.black)
                         .background(Color.ui.raindrop1)
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
-                }
-                NavigationLink(destination: POdetail()){
-                    Text("Cek lagi")
-                        .frame(maxWidth: 330, maxHeight: 20)
-                        .font(.system(size: 20))
-                        .padding()
-                        .foregroundColor(.black)
-                        .background(CustomColor.raindrop2)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                 }
             }
@@ -83,8 +74,8 @@ struct POConfirmationView: View {
     
 }
 
-struct POConfirmationView_Previews: PreviewProvider {
+struct POBerhasilView_Previews: PreviewProvider {
     static var previews: some View {
-        POConfirmationView()
+        POBerhasilView()
     }
 }
