@@ -67,6 +67,7 @@ struct AddDetailView: View {
                             newProduct?.quantity = self.jumlahProduk
                             newProduct?.minimum_stock = self.jumlahMinimalStok
                             newProduct?.description = self.notesDeskripsi
+                            newProduct?.image = self.imageName
 //                            fetchProduct.name = newProduct.
 //                            newProduct.quantity = jumlahProduk
 //                            newProduct.minimum_stock = jumlahMinimalStok
