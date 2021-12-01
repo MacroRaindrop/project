@@ -52,7 +52,7 @@ struct PO1View: View {
                             Text(item.supplier)
                                 .font(.title3)
                                 .fontWeight(.bold)
-                            TextField(item.products, text: "")
+                            TextField("List", text: self.$text)
                                 .font(.system(size: 14))
                                 .frame(height: 34)
                                 .textFieldStyle(PlainTextFieldStyle())
