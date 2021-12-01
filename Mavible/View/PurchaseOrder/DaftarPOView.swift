@@ -16,10 +16,10 @@ struct daftarPO: View {
                 ForEach(getPO.purchaseOrders, id: \.id_company) { item in
                     HStack {
                         VStack(alignment: .leading){
-                            Text("PO1")
+                            Text(item.date)
                                 .font(.title3)
                                 .fontWeight(.semibold)
-                            Text("PT binjai") .foregroundColor(CustomColor.buttonFont)
+                            Text(item.supplier) .foregroundColor(CustomColor.buttonFont)
                                 .opacity(0.6)
                         }
                         NavigationLink(destination: POdetail()){
