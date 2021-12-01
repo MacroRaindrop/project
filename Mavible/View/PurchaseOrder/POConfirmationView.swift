@@ -24,22 +24,18 @@ struct POConfirmationView: View {
                 }.padding(.horizontal, 20)
                     .padding(.top, 20)
                     .padding(.bottom, 5)
-                
                 HStack{
                     Text("Kelapa Kering")
                     Spacer()
                     Text("100")
                 }.padding(.horizontal, 20)
                     .padding(.bottom, 2)
-                
-                
                 HStack{
                     Text("Minyak Kelapa")
                     Spacer()
                     Text("10")
                 }.padding(.horizontal, 20)
                     .padding(.bottom, 2)
-                
                 HStack{
                     Text("Madu")
                     Spacer()
