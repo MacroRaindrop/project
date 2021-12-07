@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>304909465841-0qi4b8uvvj28rmpcuaip7uc0gebqvpf7.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.304909465841-0qi4b8uvvj28rmpcuaip7uc0gebqvpf7</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBUjYeqSNOr76srUFxjVaYFNp47C1CIOJs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>304909465841</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.raindrop.mavible</string>
+	<key>PROJECT_ID</key>
+	<string>mavible-da3a3</string>
+	<key>STORAGE_BUCKET</key>
+	<string>mavible-da3a3.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:304909465841:ios:d9413fb80bf6b48bf19150</string>
+</dict>
+</plist>
