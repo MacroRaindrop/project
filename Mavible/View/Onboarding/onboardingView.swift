@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct onboardingView: View {
     @EnvironmentObject var appState: AppState
 
     init() {
+        FirebaseApp.configure()
         UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(CustomColor.raindrop1)
         UIPageControl.appearance().pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.2)
     }
