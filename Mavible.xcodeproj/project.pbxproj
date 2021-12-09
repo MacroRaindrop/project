@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3977D571275DECBA005E7935 /* Camera-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 3977D570275DECBA005E7935 /* Camera-SwiftUI */; };
+		3977D574275DEE72005E7935 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3977D573275DEE72005E7935 /* FirebaseAnalytics */; };
+		3977D576275DEE72005E7935 /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 3977D575275DEE72005E7935 /* FirebaseAnalyticsSwift-Beta */; };
+		3977D578275DEE72005E7935 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 3977D577275DEE72005E7935 /* FirebaseStorage */; };
+		3977D57A275DEE72005E7935 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 3977D579275DEE72005E7935 /* FirebaseStorageCombine-Community */; };
+		3977D57C275DEE72005E7935 /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 3977D57B275DEE72005E7935 /* FirebaseStorageSwift-Beta */; };
+		3977D57E275E3DB1005E7935 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3977D57D275E3DB1005E7935 /* GoogleService-Info.plist */; };
+		3977D580275E3F00005E7935 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3977D57F275E3F00005E7935 /* StorageManager.swift */; };
 		7C1BC0E82743A1E60022F4EB /* OutbondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1BC0E02743A1E60022F4EB /* OutbondView.swift */; };
 		7C1BC0E92743A1E60022F4EB /* OutbondListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1BC0E12743A1E60022F4EB /* OutbondListView.swift */; };
 		7C1BC0EA2743A1E60022F4EB /* InboundConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1BC0E22743A1E60022F4EB /* InboundConfirmationView.swift */; };
@@ -26,7 +34,6 @@
 		7C2677E927314E5800285B1A /* ShowModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2677E827314E5800285B1A /* ShowModalView.swift */; };
 		7C2677F12731A84A00285B1A /* MaxTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2677F02731A84A00285B1A /* MaxTextField.swift */; };
 		7CB61379273281A00039C14D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB613782732819F0039C14D /* Coordinator.swift */; };
-		7CB6137F273292F20039C14D /* Camera-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7CB6137E273292F20039C14D /* Camera-SwiftUI */; };
 		7CDA13292732E789005A2D05 /* SUImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDA13282732E789005A2D05 /* SUImagePickerView.swift */; };
 		7CE2BDF4274B96FE00054E0E /* loadingVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE2BDF3274B96FE00054E0E /* loadingVIew.swift */; };
 		7CE356EC274CF939006EE579 /* PurchaseOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE356EB274CF939006EE579 /* PurchaseOrderView.swift */; };
@@ -65,6 +72,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3977D57D275E3DB1005E7935 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "GoogleService-Info.plist"; path = "Mavible/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		3977D57F275E3F00005E7935 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		7C1BC0E02743A1E60022F4EB /* OutbondView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutbondView.swift; sourceTree = "<group>"; };
 		7C1BC0E12743A1E60022F4EB /* OutbondListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutbondListView.swift; sourceTree = "<group>"; };
 		7C1BC0E22743A1E60022F4EB /* InboundConfirmationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboundConfirmationView.swift; sourceTree = "<group>"; };
@@ -127,7 +136,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CB6137F273292F20039C14D /* Camera-SwiftUI in Frameworks */,
+				3977D576275DEE72005E7935 /* FirebaseAnalyticsSwift-Beta in Frameworks */,
+				3977D578275DEE72005E7935 /* FirebaseStorage in Frameworks */,
+				3977D57A275DEE72005E7935 /* FirebaseStorageCombine-Community in Frameworks */,
+				3977D574275DEE72005E7935 /* FirebaseAnalytics in Frameworks */,
+				3977D571275DECBA005E7935 /* Camera-SwiftUI in Frameworks */,
+				3977D57C275DEE72005E7935 /* FirebaseStorageSwift-Beta in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +151,7 @@
 		7C1BC0DF2743A1E60022F4EB /* Inbound */ = {
 			isa = PBXGroup;
 			children = (
+				3977D57D275E3DB1005E7935 /* GoogleService-Info.plist */,
 				7C1BC0E22743A1E60022F4EB /* InboundConfirmationView.swift */,
 				C27E6B1427473D700090D424 /* InboundBerhasilView.swift */,
 			);
@@ -303,6 +318,7 @@
 				C206F2AE274E164900A32986 /* OrderService.swift */,
 				C206F2BC274F8CEC00A32986 /* InboundViewModel.swift */,
 				C206F2BE274F8CFE00A32986 /* OutboundViewModel.swift */,
+				3977D57F275E3F00005E7935 /* StorageManager.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -364,7 +380,12 @@
 			);
 			name = Mavible;
 			packageProductDependencies = (
-				7CB6137E273292F20039C14D /* Camera-SwiftUI */,
+				3977D570275DECBA005E7935 /* Camera-SwiftUI */,
+				3977D573275DEE72005E7935 /* FirebaseAnalytics */,
+				3977D575275DEE72005E7935 /* FirebaseAnalyticsSwift-Beta */,
+				3977D577275DEE72005E7935 /* FirebaseStorage */,
+				3977D579275DEE72005E7935 /* FirebaseStorageCombine-Community */,
+				3977D57B275DEE72005E7935 /* FirebaseStorageSwift-Beta */,
 			);
 			productName = TestGround;
 			productReference = B828FCE9272179150015F0BF /* Mavible.app */;
@@ -395,7 +416,8 @@
 			);
 			mainGroup = B828FCE0272179150015F0BF;
 			packageReferences = (
-				7CB6137D273292F20039C14D /* XCRemoteSwiftPackageReference "Camera-SwiftUI" */,
+				3977D56F275DECBA005E7935 /* XCRemoteSwiftPackageReference "Camera-SwiftUI" */,
+				3977D572275DEE72005E7935 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = B828FCEA272179150015F0BF /* Products */;
 			projectDirPath = "";
@@ -413,6 +435,7 @@
 			files = (
 				B828FCF4272179170015F0BF /* Preview Assets.xcassets in Resources */,
 				B828FCF1272179170015F0BF /* Assets.xcassets in Resources */,
+				3977D57E275E3DB1005E7935 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +469,7 @@
 				C2AD35502755FD3D00CF29DC /* Item.swift in Sources */,
 				C2C3C14427421863007236DC /* ForgetPassowordViewModel.swift in Sources */,
 				C2445A51272BDF9900C19C05 /* Register.swift in Sources */,
+				3977D580275E3F00005E7935 /* StorageManager.swift in Sources */,
 				C206F2BF274F8CFE00A32986 /* OutboundViewModel.swift in Sources */,
 				7CE356EC274CF939006EE579 /* PurchaseOrderView.swift in Sources */,
 				7C2677E927314E5800285B1A /* ShowModalView.swift in Sources */,
@@ -603,10 +627,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEPLOYMENT_LOCATION = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"Mavible/Preview Content\"";
-				DEVELOPMENT_TEAM = XWQ8XX5C45;
+				DEVELOPMENT_TEAM = ARR94C5T3Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "";
@@ -638,10 +662,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEPLOYMENT_LOCATION = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"Mavible/Preview Content\"";
-				DEVELOPMENT_TEAM = XWQ8XX5C45;
+				DEVELOPMENT_TEAM = ARR94C5T3Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "";
@@ -691,21 +715,54 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7CB6137D273292F20039C14D /* XCRemoteSwiftPackageReference "Camera-SwiftUI" */ = {
+		3977D56F275DECBA005E7935 /* XCRemoteSwiftPackageReference "Camera-SwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/rorodriguez116/Camera-SwiftUI.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.5;
+				branch = main;
+				kind = branch;
+			};
+		};
+		3977D572275DEE72005E7935 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7CB6137E273292F20039C14D /* Camera-SwiftUI */ = {
+		3977D570275DECBA005E7935 /* Camera-SwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7CB6137D273292F20039C14D /* XCRemoteSwiftPackageReference "Camera-SwiftUI" */;
+			package = 3977D56F275DECBA005E7935 /* XCRemoteSwiftPackageReference "Camera-SwiftUI" */;
 			productName = "Camera-SwiftUI";
+		};
+		3977D573275DEE72005E7935 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3977D572275DEE72005E7935 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		3977D575275DEE72005E7935 /* FirebaseAnalyticsSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3977D572275DEE72005E7935 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAnalyticsSwift-Beta";
+		};
+		3977D577275DEE72005E7935 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3977D572275DEE72005E7935 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		3977D579275DEE72005E7935 /* FirebaseStorageCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3977D572275DEE72005E7935 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageCombine-Community";
+		};
+		3977D57B275DEE72005E7935 /* FirebaseStorageSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3977D572275DEE72005E7935 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageSwift-Beta";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
